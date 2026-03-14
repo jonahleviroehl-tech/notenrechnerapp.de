@@ -1,0 +1,1558 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Der Notenrechner — Die App für Lehrkräfte</title>
+  <meta name="description" content="Noten berechnen, Klassen verwalten, Zeugnisnoten generieren. Die kostenlose App für Lehrkräfte an Gymnasien, Realschulen, Hauptschulen und Berufsschulen.">
+  <meta property="og:title" content="Der Notenrechner — Die App für Lehrkräfte">
+  <meta property="og:description" content="Noten berechnen, Klassen verwalten, Zeugnisnoten generieren. Kostenlos im App Store.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://notenrechnerapp.de">
+  <meta name="theme-color" content="#6366F1">
+  <meta property="og:locale" content="de_DE">
+  <meta property="og:site_name" content="Der Notenrechner">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Der Notenrechner — Die App für Lehrkräfte">
+  <meta name="twitter:description" content="Noten berechnen, Klassen verwalten, Zeugnisnoten generieren. Kostenlos im App Store.">
+  <meta name="apple-itunes-app" content="app-id=1662507346">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔢</text></svg>">
+  <style>
+    /* ============================================
+       DESIGN TOKENS
+       ============================================ */
+    :root {
+      --primary: #6366F1;
+      --primary-light: #818CF8;
+      --primary-dark: #4F46E5;
+      --primary-50: #EEF2FF;
+      --primary-100: #E0E7FF;
+      --primary-900: #312E81;
+      --bg: #F8F9FC;
+      --card: #FFFFFF;
+      --text: #1F2937;
+      --text-secondary: #6B7280;
+      --text-muted: #737B8B;
+      --border: #E5E7EB;
+      --border-light: #F3F4F6;
+      --success: #10B981;
+      --warning: #F59E0B;
+      --error: #EF4444;
+      --grade-excellent: #2E7D32;
+      --grade-good: #558B2F;
+      --grade-satisfactory: #F9A825;
+      --grade-sufficient: #EF6C00;
+      --grade-failing: #C62828;
+      --shadow-card: 0 4px 24px rgba(99, 102, 241, 0.08);
+      --shadow-card-hover: 0 12px 40px rgba(99, 102, 241, 0.15);
+      --shadow-elevated: 0 8px 32px rgba(99, 102, 241, 0.12);
+      --radius-sm: 8px;
+      --radius-md: 12px;
+      --radius-lg: 16px;
+      --radius-xl: 24px;
+      --radius-pill: 999px;
+      --font: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+      --nav-height: 72px;
+    }
+
+    /* ============================================
+       RESET & BASE
+       ============================================ */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html {
+      scroll-behavior: smooth;
+      -webkit-text-size-adjust: 100%;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    body {
+      font-family: var(--font);
+      color: var(--text);
+      background: var(--bg);
+      line-height: 1.6;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    img { max-width: 100%; display: block; }
+    a { color: inherit; text-decoration: none; }
+    button { font-family: inherit; cursor: pointer; border: none; background: none; }
+
+    /* Focus styles for keyboard navigation */
+    :focus-visible {
+      outline: 2px solid var(--primary);
+      outline-offset: 3px;
+      border-radius: 4px;
+    }
+    a:focus:not(:focus-visible),
+    button:focus:not(:focus-visible) {
+      outline: none;
+    }
+
+    /* ============================================
+       SCROLL ANIMATIONS
+       ============================================ */
+    .reveal {
+      opacity: 0;
+      transform: translateY(32px);
+      transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .reveal-delay-1 { transition-delay: 0.1s; }
+    .reveal-delay-2 { transition-delay: 0.2s; }
+    .reveal-delay-3 { transition-delay: 0.3s; }
+    .reveal-delay-4 { transition-delay: 0.35s; }
+
+    @media (prefers-reduced-motion: reduce) {
+      .reveal { opacity: 1; transform: none; transition: none; }
+      .phone-float { animation: none !important; }
+      .geo-shape { animation: none !important; }
+    }
+
+    /* ============================================
+       LAYOUT
+       ============================================ */
+    .container {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    .section {
+      padding: 96px 0;
+    }
+
+    /* ============================================
+       NAVIGATION
+       ============================================ */
+    .nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: var(--nav-height);
+      z-index: 1000;
+      transition: background 0.3s, box-shadow 0.3s, backdrop-filter 0.3s;
+    }
+    .nav.scrolled {
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      box-shadow: 0 1px 0 var(--border);
+    }
+    .nav-inner {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 0 24px;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .nav-brand {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--text);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      z-index: 1001;
+    }
+    .nav-brand-icon {
+      width: 32px;
+      height: 32px;
+      border-radius: var(--radius-sm);
+      overflow: hidden;
+      flex-shrink: 0;
+    }
+    .nav-brand-icon img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+      list-style: none;
+    }
+    .nav-links a {
+      font-size: 15px;
+      font-weight: 500;
+      color: var(--text-secondary);
+      transition: color 0.2s;
+      padding: 8px 0;
+      min-height: 44px;
+      display: flex;
+      align-items: center;
+    }
+    .nav-links a:hover { color: var(--primary); }
+    .nav-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 36px;
+      min-height: 44px;
+      white-space: nowrap;
+      background: var(--primary);
+      color: white !important;
+      border-radius: var(--radius-pill);
+      font-size: 14px;
+      font-weight: 600;
+      transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
+      box-shadow: 0 2px 8px rgba(99, 102, 241, 0.3);
+    }
+    .nav-cta:hover {
+      background: var(--primary-dark);
+      transform: translateY(-1px);
+      box-shadow: 0 4px 12px rgba(99, 102, 241, 0.4);
+    }
+
+    /* Mobile menu */
+    .nav-toggle {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      padding: 10px;
+      min-width: 44px;
+      min-height: 44px;
+      justify-content: center;
+      align-items: center;
+      z-index: 1001;
+    }
+    .nav-toggle span {
+      display: block;
+      width: 22px;
+      height: 2px;
+      background: var(--text);
+      border-radius: 2px;
+      transition: transform 0.3s, opacity 0.3s;
+    }
+    .nav-toggle.active span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .nav-toggle.active span:nth-child(2) { opacity: 0; }
+    .nav-toggle.active span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+    @media (max-width: 768px) {
+      .nav-toggle { display: flex; }
+      .nav-links {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(255, 255, 255, 0.98);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        flex-direction: column;
+        justify-content: center;
+        gap: 24px;
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.3s;
+      }
+      .nav-links.open {
+        opacity: 1;
+        pointer-events: all;
+      }
+      .nav-links a {
+        font-size: 20px;
+        font-weight: 600;
+      }
+    }
+
+    /* ============================================
+       HERO
+       ============================================ */
+    .hero {
+      min-height: 100vh;
+      min-height: 100dvh;
+      display: flex;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+      padding-top: var(--nav-height);
+      background: linear-gradient(135deg, #F8F9FC 0%, #EEF2FF 40%, #E0E7FF 100%);
+    }
+
+    /* Geometric decoration */
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+      pointer-events: none;
+    }
+    .geo-shape {
+      position: absolute;
+      border-radius: 50%;
+      opacity: 0.5;
+    }
+    .geo-1 {
+      width: 500px;
+      height: 500px;
+      top: -120px;
+      right: -100px;
+      background: radial-gradient(circle, rgba(99, 102, 241, 0.08) 0%, transparent 70%);
+      animation: geo-float 20s ease-in-out infinite;
+    }
+    .geo-2 {
+      width: 300px;
+      height: 300px;
+      bottom: -50px;
+      left: -80px;
+      background: radial-gradient(circle, rgba(99, 102, 241, 0.06) 0%, transparent 70%);
+      animation: geo-float 16s ease-in-out infinite reverse;
+    }
+    .geo-3 {
+      width: 150px;
+      height: 150px;
+      top: 30%;
+      right: 15%;
+      background: radial-gradient(circle, rgba(99, 102, 241, 0.05) 0%, transparent 70%);
+      animation: geo-float 12s ease-in-out infinite 2s;
+    }
+    /* Dot grid pattern */
+    .hero-bg::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: radial-gradient(rgba(99, 102, 241, 0.07) 1px, transparent 1px);
+      background-size: 32px 32px;
+      mask-image: radial-gradient(ellipse 80% 60% at 50% 40%, black 20%, transparent 70%);
+      -webkit-mask-image: radial-gradient(ellipse 80% 60% at 50% 40%, black 20%, transparent 70%);
+    }
+
+    @keyframes geo-float {
+      0%, 100% { transform: translate(0, 0) scale(1); }
+      33% { transform: translate(20px, -15px) scale(1.03); }
+      66% { transform: translate(-10px, 10px) scale(0.98); }
+    }
+
+    .hero-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: center;
+      position: relative;
+      z-index: 1;
+      padding: 40px 0;
+    }
+
+    .hero-content {
+      max-width: 520px;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 14px;
+      background: var(--primary-50);
+      border: 1px solid var(--primary-100);
+      border-radius: var(--radius-pill);
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--primary);
+      margin-bottom: 24px;
+    }
+    .hero-badge-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--success);
+      animation: pulse-dot 2s ease-in-out infinite;
+    }
+    @keyframes pulse-dot {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.4; }
+    }
+
+    .hero h1 {
+      font-size: clamp(32px, 5vw, 48px);
+      font-weight: 800;
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+      color: var(--text);
+      margin-bottom: 20px;
+    }
+    .hero h1 span {
+      background: linear-gradient(135deg, var(--primary), var(--primary-light));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .hero-sub {
+      font-size: 18px;
+      line-height: 1.7;
+      color: var(--text-secondary);
+      margin-bottom: 36px;
+      max-width: 460px;
+    }
+
+    .hero-actions {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    /* App Store Badge */
+    .app-store-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      padding: 10px 22px 10px 18px;
+      background: #000;
+      border-radius: 12px;
+      border: 1.5px solid rgba(255,255,255,0.2);
+      color: white;
+      transition: transform 0.2s, box-shadow 0.2s;
+      text-decoration: none;
+      min-height: 52px;
+    }
+    .app-store-badge:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+      background: #1a1a1a;
+    }
+    .app-store-badge:active {
+      transform: translateY(0);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    }
+    .app-store-badge-icon {
+      width: 28px;
+      height: 28px;
+      flex-shrink: 0;
+    }
+    .app-store-badge-icon svg {
+      width: 100%;
+      height: 100%;
+      fill: currentColor;
+    }
+    .app-store-badge-text {
+      display: flex;
+      flex-direction: column;
+      line-height: 1;
+    }
+    .app-store-badge-small {
+      font-size: 11px;
+      font-weight: 400;
+      letter-spacing: 0.02em;
+      margin-bottom: 4px;
+      opacity: 0.9;
+    }
+    .app-store-badge-large {
+      font-size: 20px;
+      font-weight: 600;
+      letter-spacing: -0.01em;
+    }
+
+    .hero-trust {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-top: 32px;
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+    .hero-trust-item {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .hero-trust-icon {
+      font-size: 14px;
+    }
+
+    /* Phone mockup */
+    .hero-phone-wrapper {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .phone-float {
+      animation: phone-bob 6s ease-in-out infinite;
+    }
+    @keyframes phone-bob {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-12px); }
+    }
+
+    .phone-mockup {
+      width: 280px;
+      height: 570px;
+      background: #1a1a1a;
+      border-radius: 40px;
+      padding: 6px;
+      position: relative;
+      box-shadow:
+        0 0 0 1px #333,
+        0 20px 60px rgba(0, 0, 0, 0.2),
+        0 40px 80px rgba(99, 102, 241, 0.1);
+    }
+    .phone-screen {
+      width: 100%;
+      height: 100%;
+      background: var(--bg);
+      border-radius: 35px;
+      overflow: hidden;
+      position: relative;
+    }
+    /* Dynamic Island */
+    .phone-island {
+      position: absolute;
+      top: 8px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 90px;
+      height: 24px;
+      background: #1a1a1a;
+      border-radius: 16px;
+      z-index: 2;
+    }
+    /* Real screenshot inside phone */
+    .phone-screen-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top center;
+      border-radius: 34px;
+    }
+
+    @media (max-width: 768px) {
+      .section { padding: 64px 0; }
+      .hero-inner {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 40px;
+        padding: 20px 0 40px;
+      }
+      .hero-content { max-width: 100%; }
+      .hero-sub { max-width: 100%; font-size: 16px; }
+      .hero-actions { justify-content: center; }
+      .hero-trust { justify-content: center; flex-wrap: wrap; }
+      .phone-mockup { width: 240px; height: 490px; padding: 5px; }
+      .cta-banner { padding: 56px 24px; }
+      .legal-section:target { padding: 56px 0; }
+      .section-header { margin-bottom: 40px; }
+      .deep-row { margin-bottom: 56px; }
+    }
+    @media (max-width: 480px) {
+      .section { padding: 48px 0; }
+      .container { padding: 0 16px; }
+      .hero-sub { font-size: 15px; }
+      .cta-banner { padding: 44px 16px; }
+      .legal-section:target { padding: 44px 0; }
+      .deep-row { gap: 24px; margin-bottom: 44px; }
+      .deep-text h3 { font-size: 22px; }
+      .hero-trust { gap: 10px; font-size: 12px; }
+    }
+
+    /* ============================================
+       FEATURES GRID
+       ============================================ */
+    .features {
+      background: white;
+    }
+    .section-eyebrow {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--primary);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 12px;
+    }
+    .section-title {
+      font-size: clamp(26px, 3.5vw, 36px);
+      font-weight: 800;
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+      margin-bottom: 16px;
+    }
+    .section-subtitle {
+      font-size: 17px;
+      color: var(--text-secondary);
+      line-height: 1.7;
+      max-width: 560px;
+    }
+    .section-header {
+      text-align: center;
+      margin-bottom: 56px;
+    }
+    .section-header .section-subtitle {
+      margin: 0 auto;
+    }
+
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+    .feature-card {
+      background: var(--bg);
+      border-radius: var(--radius-lg);
+      padding: 36px 28px;
+      transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s;
+      border: 1px solid transparent;
+    }
+    .feature-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-card-hover);
+      border-color: var(--primary-100);
+    }
+    .feature-icon {
+      width: 56px;
+      height: 56px;
+      border-radius: var(--radius-md);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 26px;
+      margin-bottom: 20px;
+    }
+    .feature-icon-1 { background: linear-gradient(135deg, #EEF2FF, #E0E7FF); }
+    .feature-icon-2 { background: linear-gradient(135deg, #ECFDF5, #D1FAE5); }
+    .feature-icon-3 { background: linear-gradient(135deg, #FEF3C7, #FDE68A); }
+
+    .feature-card h3 {
+      font-size: 20px;
+      font-weight: 700;
+      margin-bottom: 10px;
+      letter-spacing: -0.01em;
+    }
+    .feature-card p {
+      font-size: 15px;
+      color: var(--text-secondary);
+      line-height: 1.6;
+    }
+
+    @media (max-width: 768px) {
+      .features-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+      }
+    }
+    @media (min-width: 769px) and (max-width: 1024px) {
+      .features-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    /* ============================================
+       DEEP FEATURES (Alternating rows)
+       ============================================ */
+    .deep-features {
+      background: var(--bg);
+    }
+    .deep-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: center;
+      margin-bottom: 80px;
+    }
+    .deep-row:last-child { margin-bottom: 0; }
+    .deep-row.reverse .deep-visual { order: 2; }
+    .deep-row.reverse .deep-text { order: 1; }
+
+    .deep-visual {
+      border-radius: var(--radius-xl);
+      aspect-ratio: 4/3;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .deep-visual-1 {
+      background: linear-gradient(135deg, #EEF2FF, #C7D2FE);
+    }
+    .deep-visual-2 {
+      background: linear-gradient(135deg, #ECFDF5, #A7F3D0);
+    }
+    .deep-visual-3 {
+      background: linear-gradient(135deg, #FEF3C7, #FCD34D);
+    }
+
+    .deep-visual-content {
+      text-align: center;
+      padding: 32px;
+    }
+    .deep-visual-icon {
+      font-size: 48px;
+      margin-bottom: 16px;
+    }
+    /* Screenshot in mini phone frame */
+    .deep-phone {
+      width: 180px;
+      height: 370px;
+      background: #1a1a1a;
+      border-radius: 26px;
+      padding: 5px;
+      box-shadow: 0 12px 40px rgba(0,0,0,0.15);
+      margin: 0 auto;
+    }
+    .deep-phone-screen {
+      width: 100%;
+      height: 100%;
+      border-radius: 22px;
+      overflow: hidden;
+      background: var(--bg);
+    }
+    .deep-phone-screen img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top center;
+    }
+    /* Backup mockup */
+    .mini-backup {
+      background: white;
+      border-radius: var(--radius-md);
+      padding: 20px;
+      box-shadow: var(--shadow-card);
+      width: 80%;
+      max-width: 260px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .mini-backup-icon {
+      font-size: 36px;
+      margin-bottom: 10px;
+    }
+    .mini-backup-title {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 4px;
+    }
+    .mini-backup-sub {
+      font-size: 11px;
+      color: var(--text-muted);
+      margin-bottom: 12px;
+    }
+    .mini-backup-btn {
+      display: inline-block;
+      padding: 6px 16px;
+      background: var(--primary);
+      color: white;
+      border-radius: var(--radius-pill);
+      font-size: 12px;
+      font-weight: 600;
+    }
+
+    .deep-text h3 {
+      font-size: clamp(22px, 3vw, 28px);
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      margin-bottom: 16px;
+      line-height: 1.2;
+    }
+    .deep-text p {
+      font-size: 16px;
+      color: var(--text-secondary);
+      line-height: 1.7;
+      margin-bottom: 20px;
+    }
+    .deep-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .deep-tag {
+      padding: 6px 14px;
+      background: var(--primary-50);
+      color: var(--primary);
+      border-radius: var(--radius-pill);
+      font-size: 13px;
+      font-weight: 600;
+    }
+
+    @media (max-width: 768px) {
+      .deep-row {
+        grid-template-columns: 1fr;
+        gap: 32px;
+      }
+      .deep-row.reverse .deep-visual { order: 0; }
+      .deep-row.reverse .deep-text { order: 0; }
+    }
+
+    /* ============================================
+       TRUST BAR
+       ============================================ */
+    .trust {
+      background: white;
+      border-top: 1px solid var(--border-light);
+      border-bottom: 1px solid var(--border-light);
+      padding: 56px 0;
+    }
+    .trust-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 32px;
+    }
+    .trust-item {
+      text-align: center;
+    }
+    .trust-icon {
+      font-size: 32px;
+      margin-bottom: 12px;
+    }
+    .trust-label {
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 4px;
+    }
+    .trust-desc {
+      font-size: 13px;
+      color: var(--text-secondary);
+      line-height: 1.5;
+    }
+
+    @media (max-width: 768px) {
+      .trust-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 28px;
+      }
+    }
+    @media (max-width: 480px) {
+      .trust-grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+      }
+    }
+
+    /* ============================================
+       HOW IT WORKS
+       ============================================ */
+    .how {
+      background: var(--bg);
+    }
+    .how-steps {
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      gap: 0;
+      position: relative;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    .how-step {
+      flex: 1;
+      text-align: center;
+      position: relative;
+      padding: 0 20px;
+    }
+    .how-step-number {
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      background: var(--primary);
+      color: white;
+      font-size: 22px;
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 16px;
+      position: relative;
+      z-index: 2;
+      box-shadow: 0 4px 16px rgba(99, 102, 241, 0.3);
+    }
+    .how-step-icon {
+      font-size: 28px;
+      margin-bottom: 8px;
+    }
+    .how-step h4 {
+      font-size: 16px;
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+    .how-step p {
+      font-size: 14px;
+      color: var(--text-secondary);
+      line-height: 1.5;
+    }
+    /* Connecting line */
+    .how-connector {
+      position: absolute;
+      top: 28px;
+      left: 25%;
+      right: 25%;
+      height: 2px;
+      background: var(--primary-100);
+      z-index: 1;
+    }
+
+    @media (max-width: 640px) {
+      .how-steps {
+        flex-direction: column;
+        gap: 32px;
+        align-items: center;
+      }
+      .how-connector { display: none; }
+      .how-step { max-width: 280px; }
+    }
+
+    /* ============================================
+       CTA BANNER
+       ============================================ */
+    .cta-banner {
+      background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 50%, var(--primary-light) 100%);
+      color: white;
+      text-align: center;
+      padding: 80px 24px;
+      position: relative;
+      overflow: hidden;
+    }
+    .cta-banner::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: radial-gradient(rgba(255,255,255,0.08) 1px, transparent 1px);
+      background-size: 24px 24px;
+    }
+    .cta-banner-content {
+      position: relative;
+      z-index: 1;
+    }
+    .cta-banner h2 {
+      font-size: clamp(26px, 4vw, 40px);
+      font-weight: 800;
+      margin-bottom: 12px;
+      letter-spacing: -0.02em;
+    }
+    .cta-banner-sub {
+      font-size: 17px;
+      color: rgba(255, 255, 255, 0.9);
+      margin-bottom: 36px;
+    }
+    .cta-banner .app-store-badge {
+      background: white;
+      color: #000;
+      border-color: transparent;
+    }
+    .cta-banner .app-store-badge:hover {
+      background: #f0f0f0;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+    }
+    .cta-social {
+      margin-top: 28px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      font-size: 15px;
+      color: rgba(255, 255, 255, 0.85);
+    }
+    .cta-social a {
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      transition: color 0.2s;
+    }
+    .cta-social a:hover { color: white; }
+    .cta-fine {
+      margin-top: 16px;
+      font-size: 13px;
+      color: rgba(255, 255, 255, 0.7);
+    }
+
+    /* ============================================
+       FOOTER
+       ============================================ */
+    .footer {
+      background: var(--text);
+      color: rgba(255, 255, 255, 0.7);
+      padding: 48px 24px;
+    }
+    .footer-inner {
+      max-width: 1120px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+    .footer-links {
+      display: flex;
+      gap: 24px;
+      list-style: none;
+    }
+    .footer-links a {
+      font-size: 14px;
+      transition: color 0.2s;
+      padding: 8px 0;
+      min-height: 44px;
+      display: inline-flex;
+      align-items: center;
+    }
+    .footer-links a:hover { color: white; }
+    .footer-tagline {
+      font-size: 14px;
+      font-style: italic;
+      opacity: 0.6;
+    }
+    .footer-copy {
+      font-size: 13px;
+      opacity: 0.5;
+      width: 100%;
+      text-align: center;
+      margin-top: 24px;
+      padding-top: 24px;
+      border-top: 1px solid rgba(255,255,255,0.1);
+    }
+
+    @media (max-width: 640px) {
+      .footer-inner {
+        flex-direction: column;
+        text-align: center;
+      }
+      .footer-links { flex-wrap: wrap; justify-content: center; }
+    }
+
+    /* ============================================
+       LEGAL PAGES (Datenschutz & Impressum)
+       ============================================ */
+    .legal-section {
+      display: none;
+      background: white;
+      padding: 80px 0;
+      border-top: 1px solid var(--border-light);
+    }
+    .legal-section:target {
+      display: block;
+    }
+    .legal-section + .legal-section:target {
+      border-top: 1px solid var(--border);
+    }
+    .legal-close {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      margin-bottom: 32px;
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--primary);
+      cursor: pointer;
+      padding: 8px 0;
+      min-height: 44px;
+      transition: opacity 0.2s;
+    }
+    .legal-close:hover { opacity: 0.7; }
+    .legal-close svg { width: 18px; height: 18px; }
+    .legal-content {
+      max-width: 720px;
+      margin: 0 auto;
+    }
+    .legal-content h2 {
+      font-size: 28px;
+      font-weight: 800;
+      margin-bottom: 32px;
+      letter-spacing: -0.02em;
+    }
+    .legal-content h3 {
+      font-size: 18px;
+      font-weight: 700;
+      margin-top: 28px;
+      margin-bottom: 10px;
+    }
+    .legal-content p {
+      font-size: 15px;
+      color: var(--text-secondary);
+      line-height: 1.8;
+      margin-bottom: 16px;
+    }
+    .legal-content ul {
+      padding-left: 20px;
+      margin-bottom: 16px;
+    }
+    .legal-content li {
+      font-size: 15px;
+      color: var(--text-secondary);
+      line-height: 1.8;
+      margin-bottom: 4px;
+    }
+    .legal-placeholder {
+      display: inline-block;
+      background: var(--primary-50);
+      color: var(--primary);
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-weight: 600;
+      font-size: 14px;
+    }
+
+    /* ============================================
+       BACK TO TOP
+       ============================================ */
+    .back-to-top {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: var(--primary);
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      box-shadow: 0 4px 16px rgba(99, 102, 241, 0.3);
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s, transform 0.3s;
+      z-index: 100;
+      cursor: pointer;
+    }
+    .back-to-top.visible {
+      opacity: 1;
+      pointer-events: all;
+    }
+    .back-to-top:hover {
+      transform: translateY(-2px);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Skip to content for keyboard users -->
+  <a href="#funktionen" class="skip-link" style="position:absolute;top:-100px;left:16px;padding:12px 24px;background:var(--primary);color:white;border-radius:var(--radius-sm);font-weight:600;z-index:9999;transition:top 0.2s;">Zum Inhalt springen</a>
+  <style>.skip-link:focus{top:16px;}</style>
+
+  <!-- ========== NAVIGATION ========== -->
+  <nav class="nav" id="nav" aria-label="Hauptnavigation">
+    <div class="nav-inner">
+      <a href="#" class="nav-brand">
+        <div class="nav-brand-icon"><img src="assets/logo.png" alt="Der Notenrechner Logo" width="32" height="32"></div>
+        Der Notenrechner
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#funktionen" onclick="closeMenu()">Funktionen</a></li>
+        <li><a href="#so-funktionierts" onclick="closeMenu()">So funktioniert's</a></li>
+        <li><a href="#datenschutz" onclick="closeMenu()">Datenschutz</a></li>
+        <li>
+          <a href="https://apps.apple.com/de/app/der-notenrechner/id1662507346" target="_blank" rel="noopener" class="nav-cta" style="padding: 9px 18px;" onclick="closeMenu()">
+            <svg width="16" height="16" viewBox="0 0 384 512" fill="currentColor" style="vertical-align:-2px"><path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184 4 273.5c0 26.2 4.8 53.3 14.4 81.2 12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/></svg> App Store
+          </a>
+        </li>
+      </ul>
+      <button class="nav-toggle" id="navToggle" aria-label="Menü öffnen">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ========== HERO ========== -->
+  <section class="hero" id="hero">
+    <div class="hero-bg">
+      <div class="geo-shape geo-1"></div>
+      <div class="geo-shape geo-2"></div>
+      <div class="geo-shape geo-3"></div>
+    </div>
+    <div class="container">
+      <div class="hero-inner">
+        <div class="hero-content">
+          <div class="hero-badge reveal">
+            <span class="hero-badge-dot"></span>
+            Kostenlos im App Store
+          </div>
+          <h1 class="reveal reveal-delay-1">
+            Noten berechnen.<br>
+            Klassen verwalten.<br>
+            <span>Zeit sparen.</span>
+          </h1>
+          <p class="hero-sub reveal reveal-delay-2">
+            Die App für Lehrkräfte — vom schnellen Notenrechner bis zur vollständigen Klassenverwaltung mit Zeugnisnoten.
+          </p>
+          <div class="hero-actions reveal reveal-delay-3">
+            <a href="https://apps.apple.com/de/app/der-notenrechner/id1662507346" target="_blank" rel="noopener" class="app-store-badge">
+              <span class="app-store-badge-icon"><svg viewBox="0 0 384 512"><path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184 4 273.5c0 26.2 4.8 53.3 14.4 81.2 12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/></svg></span>
+              <span class="app-store-badge-text">
+                <span class="app-store-badge-small">Laden im</span>
+                <span class="app-store-badge-large">App Store</span>
+              </span>
+            </a>
+          </div>
+          <div class="hero-trust reveal reveal-delay-4">
+            <span class="hero-trust-item"><span class="hero-trust-icon">&#x1F512;</span> Kein Tracking</span>
+            <span class="hero-trust-item"><span class="hero-trust-icon">&#x1F4F1;</span> 100% Offline</span>
+            <span class="hero-trust-item"><span class="hero-trust-icon">&#x2705;</span> DSGVO</span>
+          </div>
+        </div>
+
+        <div class="hero-phone-wrapper reveal reveal-delay-2">
+          <div class="phone-float">
+            <div class="phone-mockup">
+              <div class="phone-screen">
+                <div class="phone-island"></div>
+                <img src="assets/screen-rechner.png" alt="Notenrechner App — Rechner-Ansicht mit Note 15 (1+)" class="phone-screen-img" loading="eager" fetchpriority="high" width="1170" height="2532">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FEATURES GRID ========== -->
+  <section class="features section" id="funktionen">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-eyebrow reveal">Funktionen</div>
+        <h2 class="section-title reveal reveal-delay-1">Alles, was Sie für die Notenvergabe brauchen</h2>
+        <p class="section-subtitle reveal reveal-delay-2">Drei Bereiche, ein Ziel: Ihnen den Schulalltag erleichtern.</p>
+      </div>
+      <div class="features-grid">
+        <div class="feature-card reveal">
+          <div class="feature-icon feature-icon-1">&#x1F5A9;</div>
+          <h3>Notenrechner</h3>
+          <p>Geben Sie Punkte ein und erhalten Sie sofort die Note — mit IHK, Notenpunkte oder Ihrem eigenen Notenschlüssel.</p>
+        </div>
+        <div class="feature-card reveal reveal-delay-1">
+          <div class="feature-icon feature-icon-2">&#x1F3EB;</div>
+          <h3>Klassenverwaltung</h3>
+          <p>Erstellen Sie Klassen, fügen Sie Schüler hinzu, verwalten Sie Klausuren, Teilnoten, mündliche Noten und generieren Sie Zeugnisnoten — alles automatisch berechnet.</p>
+        </div>
+        <div class="feature-card reveal reveal-delay-2">
+          <div class="feature-icon feature-icon-3">&#x1F4CA;</div>
+          <h3>Notenübersicht</h3>
+          <p>Sehen Sie alle Notenschlüssel, Grenzen und Notentabellen auf einen Blick. Perfekt für die schnelle Einsicht vor der Klausur.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== DEEP FEATURES ========== -->
+  <section class="deep-features section">
+    <div class="container">
+      <!-- Row 1: Flexible grading tables -->
+      <div class="deep-row reveal">
+        <div class="deep-visual deep-visual-1">
+          <div class="deep-visual-content">
+            <div class="deep-phone">
+              <div class="deep-phone-screen">
+                <img src="assets/screen-notenliste.png" alt="Notenliste mit Notenschlüsseln und Punktetabelle" loading="lazy" width="1170" height="2532">
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="deep-text">
+          <h3>Flexible Notenschlüssel</h3>
+          <p>Wählen Sie zwischen IHK-Notenschlüssel, Notenpunkten (15–0) und linearen Schlüsseln — oder erstellen Sie Ihren eigenen mit individuellen Prozentgrenzen. Drei Rundungsmodi sorgen für maximale Flexibilität.</p>
+          <div class="deep-tags">
+            <span class="deep-tag">IHK</span>
+            <span class="deep-tag">Notenpunkte</span>
+            <span class="deep-tag">Eigene Schlüssel</span>
+            <span class="deep-tag">3 Rundungsmodi</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Row 2: Zeugnisnoten -->
+      <div class="deep-row reverse reveal">
+        <div class="deep-visual deep-visual-2">
+          <div class="deep-visual-content">
+            <div class="deep-phone">
+              <div class="deep-phone-screen">
+                <img src="assets/screen-zeugnis.png" alt="Zeugnisnoten-Berechnung mit Gewichtung" loading="lazy" width="1170" height="2532">
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="deep-text">
+          <h3>Zeugnisnoten auf Knopfdruck</h3>
+          <p>Gewichtete Berechnung aus Klausuren, Teilnoten und mündlicher Mitarbeit. Stellen Sie individuelle Gewichtungen pro Klausur ein und überschreiben Sie bei Bedarf einzelne Noten manuell. Export als PDF inklusive.</p>
+          <div class="deep-tags">
+            <span class="deep-tag">Gewichtung</span>
+            <span class="deep-tag">Teilnoten</span>
+            <span class="deep-tag">Mündl. Noten</span>
+            <span class="deep-tag">PDF-Export</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Row 3: Backup -->
+      <div class="deep-row reveal">
+        <div class="deep-visual deep-visual-3">
+          <div class="deep-visual-content">
+            <div class="mini-backup">
+              <div class="mini-backup-icon">&#x1F512;</div>
+              <div class="mini-backup-title">Ihre Daten. Ihr Gerät.</div>
+              <div class="mini-backup-sub">Letztes Backup: 14. März 2026</div>
+              <div class="mini-backup-btn">Backup erstellen</div>
+            </div>
+          </div>
+        </div>
+        <div class="deep-text">
+          <h3>Datensicherung & Privatsphäre</h3>
+          <p>Alle Daten werden ausschließlich lokal auf Ihrem Gerät gespeichert — keine Cloud, kein Account, kein Tracking. Mit einem Klick erstellen Sie ein vollständiges Backup als JSON-Datei und stellen es bei Bedarf wieder her.</p>
+          <div class="deep-tags">
+            <span class="deep-tag">Lokal gespeichert</span>
+            <span class="deep-tag">Ein-Klick-Backup</span>
+            <span class="deep-tag">Kein Tracking</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== TRUST BAR ========== -->
+  <section class="trust">
+    <div class="container">
+      <div class="trust-grid">
+        <div class="trust-item reveal">
+          <div class="trust-icon">&#x1F4F1;</div>
+          <div class="trust-label">100% Offline</div>
+          <div class="trust-desc">Keine Internetverbindung nötig</div>
+        </div>
+        <div class="trust-item reveal reveal-delay-1">
+          <div class="trust-icon">&#x1F512;</div>
+          <div class="trust-label">Kein Tracking</div>
+          <div class="trust-desc">Keine Daten, keine Werbung</div>
+        </div>
+        <div class="trust-item reveal reveal-delay-2">
+          <div class="trust-icon">&#x2705;</div>
+          <div class="trust-label">DSGVO-konform</div>
+          <div class="trust-desc">Alle Daten bleiben auf Ihrem Gerät</div>
+        </div>
+        <div class="trust-item reveal reveal-delay-3">
+          <div class="trust-icon">&#x1F4BE;</div>
+          <div class="trust-label">Backup</div>
+          <div class="trust-desc">Daten jederzeit sichern & wiederherstellen</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== HOW IT WORKS ========== -->
+  <section class="how section" id="so-funktionierts">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-eyebrow reveal">So einfach geht's</div>
+        <h2 class="section-title reveal reveal-delay-1">In drei Schritten zur Note</h2>
+      </div>
+      <div class="how-steps reveal">
+        <div class="how-connector"></div>
+        <div class="how-step">
+          <div class="how-step-number">1</div>
+          <div class="how-step-icon">&#x1F4CB;</div>
+          <h4>Notenschlüssel wählen</h4>
+          <p>IHK, Notenpunkte oder eigenen Schlüssel auswählen</p>
+        </div>
+        <div class="how-step">
+          <div class="how-step-number">2</div>
+          <div class="how-step-icon">&#x270F;&#xFE0F;</div>
+          <h4>Punkte eingeben</h4>
+          <p>Maximale Punktzahl und erreichte Punkte eintragen</p>
+        </div>
+        <div class="how-step">
+          <div class="how-step-number">3</div>
+          <div class="how-step-icon">&#x2705;</div>
+          <h4>Note ablesen</h4>
+          <p>Die Note wird sofort berechnet und farblich angezeigt</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== CTA BANNER ========== -->
+  <section class="cta-banner">
+    <div class="cta-banner-content reveal">
+      <h2>Jetzt kostenlos im App Store laden</h2>
+      <p class="cta-banner-sub">Keine Werbung. Keine In-App-Käufe. Einfach Noten berechnen.</p>
+      <a href="https://apps.apple.com/de/app/der-notenrechner/id1662507346" target="_blank" rel="noopener" class="app-store-badge">
+        <span class="app-store-badge-icon"><svg viewBox="0 0 384 512"><path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184 4 273.5c0 26.2 4.8 53.3 14.4 81.2 12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/></svg></span>
+        <span class="app-store-badge-text">
+          <span class="app-store-badge-small">Laden im</span>
+          <span class="app-store-badge-large">App Store</span>
+        </span>
+      </a>
+      <div class="cta-social">
+        &#x1F4F8;&nbsp;
+        <a href="https://instagram.com/notenrechnerapp" target="_blank" rel="noopener">Folgen Sie uns auf Instagram</a>
+      </div>
+      <div class="cta-fine">Kostenlos. Keine Werbung. Keine In-App-Käufe.</div>
+    </div>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <ul class="footer-links">
+        <li><a href="#datenschutz">Datenschutz</a></li>
+        <li><a href="#impressum">Impressum</a></li>
+        <li><a href="https://instagram.com/notenrechnerapp" target="_blank" rel="noopener">Instagram</a></li>
+      </ul>
+      <div class="footer-tagline">Entwickelt von einem Lehrer, für Lehrkräfte</div>
+      <div class="footer-copy">&copy; 2026 Der Notenrechner. Alle Rechte vorbehalten.</div>
+    </div>
+  </footer>
+
+  <!-- ========== DATENSCHUTZ ========== -->
+  <section class="legal-section" id="datenschutz" aria-labelledby="datenschutz-heading">
+    <div class="container">
+      <div class="legal-content">
+        <a href="#hero" class="legal-close" aria-label="Zurück zur Startseite"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5"/><path d="m12 19-7-7 7-7"/></svg> Zurück</a>
+        <h2 id="datenschutz-heading">Datenschutzerklärung</h2>
+
+        <h3>1. Verantwortlicher</h3>
+        <p>
+          Jonah Röhl<br>
+          Eppendorferstieg 5, 22299 Hamburg<br>
+          E-Mail: jonahleviroehl@googlemail.com
+        </p>
+
+        <h3>2. Allgemeines zur Datenverarbeitung</h3>
+        <p>Der Schutz Ihrer personenbezogenen Daten ist uns wichtig. Diese Datenschutzerklärung informiert Sie darüber, wie wir mit Ihren Daten umgehen — sowohl in der App „Der Notenrechner" als auch auf dieser Website.</p>
+
+        <h3>3. Datenverarbeitung in der App</h3>
+        <p>Die App „Der Notenrechner" erhebt, speichert und verarbeitet <strong>keine personenbezogenen Daten</strong>. Im Einzelnen:</p>
+        <ul>
+          <li>Es werden keine Daten an uns, an Dritte oder an externe Server übermittelt.</li>
+          <li>Es werden keine Analysedienste, Tracking-Tools oder Werbenetzwerke eingesetzt.</li>
+          <li>Alle in der App eingegebenen Daten (Noten, Klassen, Schüler, Klausuren) werden <strong>ausschließlich lokal auf Ihrem Gerät</strong> gespeichert.</li>
+          <li>Die Backup-Funktion erstellt eine lokale JSON-Datei, die Sie selbst verwalten. Es erfolgt kein automatischer Upload.</li>
+          <li>Die App benötigt <strong>keine Internetverbindung</strong> und funktioniert vollständig offline.</li>
+        </ul>
+
+        <h3>4. Datenverarbeitung auf dieser Website</h3>
+        <p>Diese Website erhebt keine personenbezogenen Daten. Es werden keine Cookies gesetzt, keine Analysedienste verwendet und keine Nutzerdaten gespeichert. Die Website wird über GitHub Pages gehostet. Beim Aufruf der Website können durch den Hosting-Anbieter (GitHub/Microsoft) technische Zugriffsdaten (z. B. IP-Adresse, Zeitpunkt des Zugriffs) in Server-Logfiles gespeichert werden. Weitere Informationen hierzu finden Sie in der <a href="https://docs.github.com/de/site-policy/privacy-policies/github-general-privacy-statement" target="_blank" rel="noopener" style="color: var(--primary); text-decoration: underline;">Datenschutzerklärung von GitHub</a>.</p>
+
+        <h3>5. Ihre Rechte</h3>
+        <p>Da wir keine personenbezogenen Daten erheben oder speichern, fallen die meisten Betroffenenrechte praktisch nicht an. Grundsätzlich stehen Ihnen gemäß DSGVO folgende Rechte zu:</p>
+        <ul>
+          <li><strong>Auskunftsrecht</strong> (Art. 15 DSGVO): Sie haben das Recht zu erfahren, ob und welche personenbezogenen Daten wir über Sie verarbeiten.</li>
+          <li><strong>Recht auf Berichtigung</strong> (Art. 16 DSGVO): Sie können die Berichtigung unrichtiger Daten verlangen.</li>
+          <li><strong>Recht auf Löschung</strong> (Art. 17 DSGVO): Sie können die Löschung Ihrer Daten verlangen.</li>
+          <li><strong>Recht auf Einschränkung der Verarbeitung</strong> (Art. 18 DSGVO)</li>
+          <li><strong>Recht auf Datenübertragbarkeit</strong> (Art. 20 DSGVO)</li>
+          <li><strong>Widerspruchsrecht</strong> (Art. 21 DSGVO)</li>
+          <li><strong>Beschwerderecht</strong>: Sie haben das Recht, sich bei einer Datenschutz-Aufsichtsbehörde zu beschweren.</li>
+        </ul>
+
+        <h3>6. Kontakt</h3>
+        <p>Bei Fragen zum Datenschutz können Sie uns jederzeit kontaktieren: jonahleviroehl@googlemail.com</p>
+
+        <h3>7. Änderungen</h3>
+        <p>Wir behalten uns vor, diese Datenschutzerklärung anzupassen, um sie stets den aktuellen rechtlichen Anforderungen entsprechend zu gestalten. Die jeweils aktuelle Fassung gilt bei Ihrem erneuten Besuch.</p>
+
+        <p><em>Stand: März 2026</em></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== IMPRESSUM ========== -->
+  <section class="legal-section" id="impressum" aria-labelledby="impressum-heading">
+    <div class="container">
+      <div class="legal-content">
+        <a href="#hero" class="legal-close" aria-label="Zurück zur Startseite"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5"/><path d="m12 19-7-7 7-7"/></svg> Zurück</a>
+        <h2 id="impressum-heading">Impressum</h2>
+        <h3>Angaben gemäß § 5 TMG</h3>
+        <p>
+          Jonah Röhl<br>
+          Eppendorferstieg 5<br>
+          22299 Hamburg
+        </p>
+
+        <h3>Kontakt</h3>
+        <p>E-Mail: jonahleviroehl@googlemail.com</p>
+
+        <h3>Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV</h3>
+        <p>
+          Jonah Röhl<br>
+          Eppendorferstieg 5, 22299 Hamburg
+        </p>
+
+        <h3>Haftungsausschluss</h3>
+        <p>Die Inhalte dieser Website wurden mit größtmöglicher Sorgfalt erstellt. Für die Richtigkeit, Vollständigkeit und Aktualität der Inhalte können wir jedoch keine Gewähr übernehmen.</p>
+
+        <p><em>Stand: März 2026</em></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Back to top -->
+  <button class="back-to-top" id="backToTop" aria-label="Nach oben scrollen">&#x2191;</button>
+
+  <!-- ========== JAVASCRIPT ========== -->
+  <script>
+    // --- Navigation scroll effect ---
+    const nav = document.getElementById('nav');
+    const backToTop = document.getElementById('backToTop');
+
+    function onScroll() {
+      const scrolled = window.scrollY > 40;
+      nav.classList.toggle('scrolled', scrolled);
+      backToTop.classList.toggle('visible', window.scrollY > 600);
+    }
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+
+    backToTop.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    // --- Mobile menu ---
+    const navToggle = document.getElementById('navToggle');
+    const navLinks = document.getElementById('navLinks');
+
+    navToggle.addEventListener('click', () => {
+      navToggle.classList.toggle('active');
+      navLinks.classList.toggle('open');
+      document.body.style.overflow = navLinks.classList.contains('open') ? 'hidden' : '';
+    });
+
+    function closeMenu() {
+      navToggle.classList.remove('active');
+      navLinks.classList.remove('open');
+      document.body.style.overflow = '';
+    }
+
+    // --- Scroll reveal animations ---
+    const revealElements = document.querySelectorAll('.reveal');
+
+    if ('IntersectionObserver' in window) {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, {
+        threshold: 0.1,
+        rootMargin: '0px 0px -40px 0px'
+      });
+
+      revealElements.forEach(el => observer.observe(el));
+    } else {
+      // Fallback: show everything
+      revealElements.forEach(el => el.classList.add('visible'));
+    }
+
+    // --- Smooth scroll for anchor links ---
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        const id = this.getAttribute('href');
+        if (id === '#') return;
+        const target = document.querySelector(id);
+        if (target) {
+          e.preventDefault();
+          const offset = parseInt(getComputedStyle(document.documentElement).getPropertyValue('--nav-height')) || 72;
+          const top = target.getBoundingClientRect().top + window.scrollY - offset;
+          window.scrollTo({ top, behavior: 'smooth' });
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>
