@@ -12,10 +12,18 @@
   <meta name="theme-color" content="#6366F1">
   <meta property="og:locale" content="de_DE">
   <meta property="og:site_name" content="Der Notenrechner">
-  <meta name="twitter:card" content="summary">
+  <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Der Notenrechner — Die App für Lehrkräfte">
   <meta name="twitter:description" content="Noten berechnen, Klassen verwalten, Zeugnisnoten generieren. Kostenlos im App Store.">
   <meta name="apple-itunes-app" content="app-id=1662507346">
+  <link rel="canonical" href="https://notenrechnerapp.de/">
+  <meta name="robots" content="index, follow">
+  <meta property="og:image" content="https://notenrechnerapp.de/assets/logo.png">
+  <meta property="og:image:width" content="1024">
+  <meta property="og:image:height" content="1024">
+  <meta property="og:image:alt" content="Der Notenrechner App Logo">
+  <meta name="twitter:image" content="https://notenrechnerapp.de/assets/logo.png">
+  <meta name="twitter:image:alt" content="Der Notenrechner App Logo">
   <link rel="icon" type="image/png" href="assets/logo.png">
   <link rel="apple-touch-icon" href="assets/logo.png">
   <style>
@@ -588,6 +596,14 @@
     .section-header .section-subtitle {
       margin: 0 auto;
     }
+    .section-definition {
+      font-size: 15px;
+      color: var(--text-muted);
+      line-height: 1.6;
+      max-width: 620px;
+      margin: 12px auto 0;
+      text-align: center;
+    }
 
     .features-grid {
       display: grid;
@@ -870,7 +886,7 @@
       font-size: 28px;
       margin-bottom: 8px;
     }
-    .how-step h4 {
+    .how-step h3 {
       font-size: 16px;
       font-weight: 700;
       margin-bottom: 6px;
@@ -1091,6 +1107,94 @@
     }
 
     /* ============================================
+       FAQ
+       ============================================ */
+    .faq {
+      background: white;
+    }
+    .faq-grid {
+      max-width: 800px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .faq-item {
+      background: var(--bg);
+      border-radius: var(--radius-lg);
+      border: 1px solid transparent;
+      overflow: hidden;
+      transition: border-color 0.3s, box-shadow 0.3s;
+    }
+    .faq-item:hover {
+      border-color: var(--primary-100);
+    }
+    .faq-question {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 24px 28px;
+      font-size: 17px;
+      font-weight: 700;
+      color: var(--text);
+      text-align: left;
+      gap: 16px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-family: var(--font);
+      min-height: 44px;
+      line-height: 1.4;
+    }
+    .faq-question:hover {
+      color: var(--primary);
+    }
+    .faq-icon {
+      width: 24px;
+      height: 24px;
+      flex-shrink: 0;
+      border-radius: 50%;
+      background: var(--primary-50);
+      color: var(--primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      font-weight: 600;
+      transition: transform 0.3s, background 0.3s;
+    }
+    .faq-item.open .faq-icon {
+      transform: rotate(45deg);
+      background: var(--primary);
+      color: white;
+    }
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s cubic-bezier(0.16, 1, 0.3, 1), padding 0.3s;
+    }
+    .faq-item.open .faq-answer {
+      max-height: 300px;
+    }
+    .faq-answer-inner {
+      padding: 0 28px 24px;
+      font-size: 15px;
+      color: var(--text-secondary);
+      line-height: 1.7;
+    }
+    @media (max-width: 480px) {
+      .faq-question {
+        padding: 20px 20px;
+        font-size: 16px;
+      }
+      .faq-answer-inner {
+        padding: 0 20px 20px;
+        font-size: 14px;
+      }
+    }
+
+    /* ============================================
        BACK TO TOP
        ============================================ */
     .back-to-top {
@@ -1121,6 +1225,85 @@
       transform: translateY(-2px);
     }
   </style>
+  <script type="application/ld+json">
+  [
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "Der Notenrechner",
+      "url": "https://notenrechnerapp.de/",
+      "description": "Noten berechnen, Klassen verwalten, Zeugnisnoten generieren. Die kostenlose App für Lehrkräfte.",
+      "inLanguage": "de"
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "Der Notenrechner",
+      "operatingSystem": "iOS",
+      "applicationCategory": "EducationApplication",
+      "description": "Die kostenlose App für Lehrkräfte — Noten berechnen mit IHK-Notenschlüssel, Notenpunkten oder eigenen Schlüsseln. Klassenverwaltung und Zeugnisnoten inklusive.",
+      "url": "https://notenrechnerapp.de/",
+      "downloadUrl": "https://apps.apple.com/de/app/der-notenrechner/id1662507346",
+      "softwareVersion": "2.3.1",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "EUR"
+      },
+      "image": "https://notenrechnerapp.de/assets/logo.png",
+      "author": {
+        "@type": "Person",
+        "name": "Jonah Röhl"
+      }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Was ist ein Notenschlüssel?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ein Notenschlüssel definiert, wie viele Punkte für welche Note nötig sind. Er legt die Prozentgrenzen fest, ab denen eine bestimmte Note vergeben wird — z. B. ab 50 % eine 4, ab 81 % eine 2. Lehrkräfte an Gymnasien, Realschulen, Hauptschulen und Berufsschulen verwenden unterschiedliche Schlüssel je nach Schulform und Bundesland."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Wie berechne ich Noten mit dem IHK-Notenschlüssel?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Beim IHK-Notenschlüssel teilen Sie die erreichten Punkte durch die Maximalpunktzahl und lesen die Note an festen Prozentgrenzen ab. Ab 92 % gibt es eine 1, ab 81 % eine 2, ab 67 % eine 3, ab 50 % eine 4, ab 30 % eine 5, darunter eine 6. Der Notenrechner berechnet das automatisch — einfach Punkte eingeben und die Note ablesen."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Welche Notenschlüssel gibt es in der App?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Der Notenrechner bietet den IHK-Notenschlüssel (Dezimalnoten 1,0–6,0), Notenpunkte (15–0, für die Oberstufe an Gymnasien) mit optionaler Anzeige traditioneller Noten, sowie lineare Schlüssel mit 50 %, 45 % und 40 % Bestehensgrenze. Zusätzlich können Sie eigene Notenschlüssel mit individuellen Prozentgrenzen erstellen."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Ist die App DSGVO-konform?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ja, vollständig — alle Daten bleiben lokal auf Ihrem Gerät. Es gibt keine Cloud-Anbindung, kein Tracking, keine Werbung und keine Datenübertragung an Dritte. Die App funktioniert zu 100 % offline und erfüllt damit die strengen Anforderungen der DSGVO für den Einsatz an Schulen."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Kann ich eigene Notenschlüssel erstellen?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ja, mit individuellen Prozentgrenzen und drei Rundungsmodi. Legen Sie für jede Note die Mindestprozentzahl fest und passen Sie den Schlüssel genau an Ihre Schule und Ihre Anforderungen an — egal ob Gymnasium, Realschule, Hauptschule oder Berufsschule."
+          }
+        }
+      ]
+    }
+  ]
+  </script>
 </head>
 <body>
 
@@ -1138,6 +1321,7 @@
       <ul class="nav-links" id="navLinks">
         <li><a href="#funktionen" onclick="closeMenu()">Funktionen</a></li>
         <li><a href="#so-funktionierts" onclick="closeMenu()">So funktioniert's</a></li>
+        <li><a href="#faq" onclick="closeMenu()">FAQ</a></li>
         <li><a href="#datenschutz" onclick="closeMenu()">Datenschutz</a></li>
         <li>
           <a href="https://apps.apple.com/de/app/der-notenrechner/id1662507346" target="_blank" rel="noopener" class="nav-cta" style="padding: 9px 18px;" onclick="closeMenu()">
@@ -1171,7 +1355,7 @@
             <span>Zeit sparen.</span>
           </h1>
           <p class="hero-sub reveal reveal-delay-2">
-            Die App für Lehrkräfte — vom schnellen Notenrechner bis zur vollständigen Klassenverwaltung mit Zeugnisnoten.
+            Die App für Lehrkräfte — vom schnellen Notenrechner mit allen Notenschlüsseln bis zur vollständigen Klassenverwaltung mit Zeugnisnoten.
           </p>
           <div class="hero-actions reveal reveal-delay-3">
             <a href="https://apps.apple.com/de/app/der-notenrechner/id1662507346" target="_blank" rel="noopener" class="app-store-badge">
@@ -1209,7 +1393,8 @@
       <div class="section-header">
         <div class="section-eyebrow reveal">Funktionen</div>
         <h2 class="section-title reveal reveal-delay-1">Alles, was Sie für die Notenvergabe brauchen</h2>
-        <p class="section-subtitle reveal reveal-delay-2">Drei Bereiche, ein Ziel: Ihnen den Schulalltag erleichtern.</p>
+        <p class="section-subtitle reveal reveal-delay-2">Drei Bereiche, ein Ziel: die Notenverwaltung für Ihren Schulalltag erleichtern.</p>
+        <p class="section-definition reveal reveal-delay-3">Der Notenrechner ist eine kostenlose App für Lehrkräfte, mit der Sie Notenschlüssel berechnen, Klassen verwalten und Zeugnisnoten generieren — offline, ohne Tracking und DSGVO-konform.</p>
       </div>
       <div class="features-grid">
         <div class="feature-card reveal">
@@ -1322,7 +1507,7 @@
         <div class="trust-item reveal reveal-delay-2">
           <div class="trust-icon">&#x2705;</div>
           <div class="trust-label">DSGVO-konform</div>
-          <div class="trust-desc">Alle Daten bleiben auf Ihrem Gerät</div>
+          <div class="trust-desc">Sicher für Gymnasium, Realschule & Berufsschule</div>
         </div>
         <div class="trust-item reveal reveal-delay-3">
           <div class="trust-icon">&#x1F4BE;</div>
@@ -1345,20 +1530,88 @@
         <div class="how-step">
           <div class="how-step-number">1</div>
           <div class="how-step-icon">&#x1F4CB;</div>
-          <h4>Notenschlüssel wählen</h4>
+          <h3>Notenschlüssel wählen</h3>
           <p>IHK, Notenpunkte oder eigenen Schlüssel auswählen</p>
         </div>
         <div class="how-step">
           <div class="how-step-number">2</div>
           <div class="how-step-icon">&#x270F;&#xFE0F;</div>
-          <h4>Punkte eingeben</h4>
+          <h3>Punkte eingeben</h3>
           <p>Maximale Punktzahl und erreichte Punkte eintragen</p>
         </div>
         <div class="how-step">
           <div class="how-step-number">3</div>
           <div class="how-step-icon">&#x2705;</div>
-          <h4>Note ablesen</h4>
+          <h3>Note ablesen</h3>
           <p>Die Note wird sofort berechnet und farblich angezeigt</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FAQ ========== -->
+  <section class="faq section" id="faq">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-eyebrow reveal">Häufige Fragen</div>
+        <h2 class="section-title reveal reveal-delay-1">Alles rund um Notenschlüssel & Notenverwaltung</h2>
+        <p class="section-subtitle reveal reveal-delay-2">Antworten auf die häufigsten Fragen von Lehrkräften an Gymnasium, Realschule, Hauptschule und Berufsschule.</p>
+      </div>
+      <div class="faq-grid">
+        <div class="faq-item reveal">
+          <button class="faq-question" aria-expanded="false">
+            Was ist ein Notenschlüssel?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer" role="region">
+            <div class="faq-answer-inner">
+              Ein Notenschlüssel definiert, wie viele Punkte für welche Note nötig sind. Er legt die Prozentgrenzen fest, ab denen eine bestimmte Note vergeben wird — z.&nbsp;B. ab 50&nbsp;% eine 4, ab 81&nbsp;% eine 2. Lehrkräfte an Gymnasien, Realschulen, Hauptschulen und Berufsschulen verwenden unterschiedliche Schlüssel je nach Schulform und Bundesland.
+            </div>
+          </div>
+        </div>
+        <div class="faq-item reveal reveal-delay-1">
+          <button class="faq-question" aria-expanded="false">
+            Wie berechne ich Noten mit dem IHK-Notenschlüssel?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer" role="region">
+            <div class="faq-answer-inner">
+              Beim IHK-Notenschlüssel teilen Sie die erreichten Punkte durch die Maximalpunktzahl und lesen die Note an festen Prozentgrenzen ab. Ab 92&nbsp;% gibt es eine 1, ab 81&nbsp;% eine 2, ab 67&nbsp;% eine 3, ab 50&nbsp;% eine 4, ab 30&nbsp;% eine 5, darunter eine 6. Der Notenrechner berechnet das automatisch — einfach Punkte eingeben und die Note ablesen.
+            </div>
+          </div>
+        </div>
+        <div class="faq-item reveal reveal-delay-2">
+          <button class="faq-question" aria-expanded="false">
+            Welche Notenschlüssel gibt es in der App?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer" role="region">
+            <div class="faq-answer-inner">
+              Der Notenrechner bietet den IHK-Notenschlüssel (Dezimalnoten 1,0–6,0), Notenpunkte (15–0, für die Oberstufe an Gymnasien) mit optionaler Anzeige traditioneller Noten, sowie lineare Schlüssel mit 50&nbsp;%, 45&nbsp;% und 40&nbsp;% Bestehensgrenze. Zusätzlich können Sie eigene Notenschlüssel mit individuellen Prozentgrenzen erstellen.
+            </div>
+          </div>
+        </div>
+        <div class="faq-item reveal reveal-delay-3">
+          <button class="faq-question" aria-expanded="false">
+            Ist die App DSGVO-konform?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer" role="region">
+            <div class="faq-answer-inner">
+              Ja, vollständig — alle Daten bleiben lokal auf Ihrem Gerät. Es gibt keine Cloud-Anbindung, kein Tracking, keine Werbung und keine Datenübertragung an Dritte. Die App funktioniert zu 100&nbsp;% offline und erfüllt damit die strengen Anforderungen der DSGVO für den Einsatz an Schulen.
+            </div>
+          </div>
+        </div>
+        <div class="faq-item reveal reveal-delay-4">
+          <button class="faq-question" aria-expanded="false">
+            Kann ich eigene Notenschlüssel erstellen?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer" role="region">
+            <div class="faq-answer-inner">
+              Ja, mit individuellen Prozentgrenzen und drei Rundungsmodi. Legen Sie für jede Note die Mindestprozentzahl fest und passen Sie den Schlüssel genau an Ihre Schule und Ihre Anforderungen an — egal ob Gymnasium, Realschule, Hauptschule oder Berufsschule.
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -1538,6 +1791,22 @@
       // Fallback: show everything
       revealElements.forEach(el => el.classList.add('visible'));
     }
+
+    // --- FAQ accordion ---
+    document.querySelectorAll('.faq-question').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const item = btn.closest('.faq-item');
+        const isOpen = item.classList.contains('open');
+        document.querySelectorAll('.faq-item.open').forEach(other => {
+          if (other !== item) {
+            other.classList.remove('open');
+            other.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
+          }
+        });
+        item.classList.toggle('open', !isOpen);
+        btn.setAttribute('aria-expanded', !isOpen);
+      });
+    });
 
     // --- Smooth scroll for anchor links ---
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
