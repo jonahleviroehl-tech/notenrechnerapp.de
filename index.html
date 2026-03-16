@@ -1816,6 +1816,8 @@
         const target = document.querySelector(id);
         if (target) {
           e.preventDefault();
+          // Set hash first so :target CSS activates (shows legal sections)
+          location.hash = id;
           const offset = parseInt(getComputedStyle(document.documentElement).getPropertyValue('--nav-height')) || 72;
           const top = target.getBoundingClientRect().top + window.scrollY - offset;
           window.scrollTo({ top, behavior: 'smooth' });
