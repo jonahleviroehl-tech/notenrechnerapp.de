@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IHK Notenschlüssel: Punkte in Noten umrechnen | Der Notenrechner</title>
+  <meta name="description" content="IHK-Notenschlüssel: Prozent und Punkte in IHK-Noten (1-6) umrechnen. Die offizielle IHK-Notentabelle für Zwischen- und Abschlussprüfungen. Kostenlos online.">
+  <meta property="og:title" content="IHK Notenschlüssel: Punkte in Noten umrechnen | Der Notenrechner">
+  <meta property="og:description" content="IHK-Notenschlüssel: Punkte in IHK-Noten umrechnen. Offizielle IHK-Notentabelle für Prüfungen.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://notenrechnerapp.de/ihk-notenschluessel/">
+  <meta property="og:locale" content="de_DE">
+  <meta property="og:site_name" content="Der Notenrechner">
+  <meta property="og:image" content="https://notenrechnerapp.de/assets/og-ihk.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="IHK Notenschlüssel — Punkte in Noten umrechnen">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="IHK Notenschlüssel: Punkte in Noten umrechnen | Der Notenrechner">
+  <meta name="twitter:description" content="IHK-Notenschlüssel: Punkte in IHK-Noten umrechnen. Offizielle IHK-Notentabelle für Prüfungen.">
+  <meta name="twitter:image" content="https://notenrechnerapp.de/assets/og-ihk.png">
+  <meta name="twitter:image:alt" content="IHK Notenschlüssel — Punkte in Noten umrechnen">
+  <meta name="theme-color" content="#6366F1">
+  <meta name="apple-itunes-app" content="app-id=1662507346">
+  <link rel="canonical" href="https://notenrechnerapp.de/ihk-notenschluessel/">
+  <link rel="alternate" hreflang="de" href="https://notenrechnerapp.de/ihk-notenschluessel/">
+  <link rel="alternate" hreflang="x-default" href="https://notenrechnerapp.de/ihk-notenschluessel/">
+  <meta name="robots" content="index, follow">
+  <link rel="icon" type="image/png" href="../assets/logo.png">
+  <link rel="apple-touch-icon" href="../assets/logo.png">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "IHK-Notenschlüssel",
+    "description": "IHK-Notenschlüssel: Prozent und Punkte in IHK-Noten (1-6) umrechnen.",
+    "url": "https://notenrechnerapp.de/ihk-notenschluessel/",
+    "applicationCategory": "EducationalApplication",
+    "operatingSystem": "All",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "EUR" },
+    "datePublished": "2026-03-15",
+    "dateModified": "2026-03-17",
+    "author": { "@type": "Organization", "name": "Der Notenrechner", "url": "https://notenrechnerapp.de" }
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Der Notenrechner", "item": "https://notenrechnerapp.de/" },
+      { "@type": "ListItem", "position": 2, "name": "IHK-Notenschlüssel", "item": "https://notenrechnerapp.de/ihk-notenschluessel/" }
+    ]
+  }
+  </script>
+
+  <style>
+    :root {
+      --primary: #6366F1;
+      --primary-light: #818CF8;
+      --primary-dark: #4F46E5;
+      --primary-50: #EEF2FF;
+      --primary-100: #E0E7FF;
+      --primary-900: #312E81;
+      --bg: #F8F9FC;
+      --card: #FFFFFF;
+      --text: #1F2937;
+      --text-secondary: #6B7280;
+      --text-muted: #737B8B;
+      --border: #E5E7EB;
+      --border-light: #F3F4F6;
+      --grade-1: #2E7D32;
+      --grade-1-bg: #E8F5E9;
+      --grade-2: #558B2F;
+      --grade-2-bg: #F1F8E9;
+      --grade-3: #F9A825;
+      --grade-3-bg: #FFFDE7;
+      --grade-4: #EF6C00;
+      --grade-4-bg: #FFF3E0;
+      --grade-5: #C62828;
+      --grade-5-bg: #FFEBEE;
+      --shadow-card: 0 4px 24px rgba(99, 102, 241, 0.08);
+      --shadow-elevated: 0 8px 32px rgba(99, 102, 241, 0.12);
+      --radius-sm: 8px;
+      --radius-md: 12px;
+      --radius-lg: 16px;
+      --radius-pill: 999px;
+      --font: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+      --nav-height: 72px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; -webkit-tap-highlight-color: transparent; }
+    body { font-family: var(--font); color: var(--text); background: var(--bg); line-height: 1.6; overflow-x: hidden; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+    img { max-width: 100%; display: block; }
+    a { color: inherit; text-decoration: none; }
+    button { font-family: inherit; cursor: pointer; border: none; background: none; }
+    :focus-visible { outline: 2px solid var(--primary); outline-offset: 3px; border-radius: 4px; }
+    a:focus:not(:focus-visible), button:focus:not(:focus-visible) { outline: none; }
+
+    /* NAV */
+    .nav { position: fixed; top: 0; left: 0; right: 0; height: var(--nav-height); z-index: 1000; background: rgba(255,255,255,0.85); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); box-shadow: 0 1px 0 var(--border); }
+    .nav-inner { max-width: 1120px; margin: 0 auto; padding: 0 24px; height: 100%; display: flex; align-items: center; justify-content: space-between; }
+    .nav-brand { font-size: 18px; font-weight: 700; color: var(--text); display: flex; align-items: center; gap: 10px; z-index: 1001; }
+    .nav-brand-icon { width: 32px; height: 32px; border-radius: var(--radius-sm); overflow: hidden; flex-shrink: 0; }
+    .nav-brand-icon img { width: 100%; height: 100%; object-fit: cover; }
+    .nav-links { display: flex; align-items: center; gap: 28px; list-style: none; }
+    .nav-links a { font-size: 15px; font-weight: 500; color: var(--text-secondary); transition: color 0.2s; padding: 8px 0; min-height: 44px; display: flex; align-items: center; }
+    .nav-links a:hover { color: var(--primary); }
+    .nav-links a.active { color: var(--primary); font-weight: 600; }
+    .nav-cta { display: inline-flex; align-items: center; gap: 8px; padding: 9px 18px; min-height: 44px; white-space: nowrap; background: var(--primary); color: white !important; border-radius: var(--radius-pill); font-size: 14px; font-weight: 600; transition: background 0.2s, transform 0.2s, box-shadow 0.2s; box-shadow: 0 2px 8px rgba(99,102,241,0.3); }
+    .nav-cta:hover { background: var(--primary-dark); transform: translateY(-1px); box-shadow: 0 4px 12px rgba(99,102,241,0.4); }
+    .nav-toggle { display: none; flex-direction: column; gap: 5px; padding: 10px; min-width: 44px; min-height: 44px; justify-content: center; align-items: center; z-index: 1001; }
+    .nav-toggle span { display: block; width: 22px; height: 2px; background: var(--text); border-radius: 2px; transition: transform 0.3s, opacity 0.3s; }
+    .nav-toggle.active span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .nav-toggle.active span:nth-child(2) { opacity: 0; }
+    .nav-toggle.active span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+    @media (max-width: 768px) {
+      .nav-toggle { display: flex; }
+      .nav-links { position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(255,255,255,0.98); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); flex-direction: column; justify-content: center; gap: 24px; opacity: 0; pointer-events: none; transition: opacity 0.3s; }
+      .nav-links.open { opacity: 1; pointer-events: all; }
+      .nav-links a { font-size: 20px; font-weight: 600; }
+    }
+
+    .container { max-width: 1120px; margin: 0 auto; padding: 0 24px; }
+
+    /* HERO */
+    .tool-hero { padding-top: calc(var(--nav-height) + 48px); padding-bottom: 64px; background: linear-gradient(168deg, #F8F9FC 0%, #EEF2FF 50%, #E0E7FF 100%); position: relative; }
+    .tool-hero::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 1px; background: var(--border); }
+    .tool-hero-header { text-align: center; margin-bottom: 40px; }
+    .tool-hero-header h1 { font-size: clamp(28px, 4.5vw, 42px); font-weight: 800; letter-spacing: -0.025em; line-height: 1.15; margin-bottom: 12px; }
+    .tool-hero-header h1 span { background: linear-gradient(135deg, var(--primary), var(--primary-light)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    .tool-hero-sub { font-size: 17px; color: var(--text-secondary); max-width: 520px; margin: 0 auto; }
+
+    /* CALCULATOR */
+    .ihk-calc {
+      max-width: 480px;
+      margin: 0 auto 48px;
+    }
+    .calc-card {
+      background: var(--card);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-card);
+      padding: 32px;
+    }
+    .calc-inputs {
+      display: flex;
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+    .calc-field { flex: 1; }
+    .calc-label {
+      display: block; font-size: 13px; font-weight: 600;
+      color: var(--text-secondary); margin-bottom: 6px;
+      letter-spacing: 0.02em; text-transform: uppercase;
+    }
+    .calc-input {
+      width: 100%; height: 52px; padding: 0 16px;
+      border: 2px solid var(--border); border-radius: var(--radius-md);
+      font-family: var(--font); font-size: 18px; font-weight: 600;
+      color: var(--text); background: var(--bg);
+      transition: border-color 0.2s, box-shadow 0.2s;
+      -moz-appearance: textfield;
+    }
+    .calc-input::-webkit-outer-spin-button,
+    .calc-input::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; }
+    .calc-input:focus { outline: none; border-color: var(--primary); box-shadow: 0 0 0 4px rgba(99,102,241,0.1); }
+
+    /* Result display */
+    .calc-result {
+      text-align: center;
+      padding: 24px;
+      border-radius: var(--radius-md);
+      transition: background 0.3s, color 0.3s;
+    }
+    .calc-result-label {
+      font-size: 13px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 8px;
+      opacity: 0.7;
+    }
+    .calc-result-grade {
+      font-size: 48px;
+      font-weight: 800;
+      line-height: 1;
+      letter-spacing: -0.02em;
+    }
+    .calc-result-desc {
+      font-size: 16px;
+      font-weight: 600;
+      margin-top: 6px;
+    }
+    .calc-result-pct {
+      font-size: 14px;
+      margin-top: 8px;
+      opacity: 0.7;
+    }
+
+    /* IHK TABLE */
+    .ihk-table-wrapper {
+      max-width: 620px;
+      margin: 0 auto;
+      background: var(--card);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-card);
+      overflow: hidden;
+    }
+    .ihk-table-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 20px 24px 16px;
+      border-bottom: 1px solid var(--border-light);
+    }
+    .ihk-table-title { font-size: 16px; font-weight: 700; }
+    .ihk-table-badge { font-size: 12px; font-weight: 600; padding: 4px 12px; border-radius: var(--radius-pill); background: var(--primary-50); color: var(--primary); }
+    .ihk-table { width: 100%; border-collapse: collapse; }
+    .ihk-table thead th {
+      padding: 12px 24px; font-size: 12px; font-weight: 600;
+      text-transform: uppercase; letter-spacing: 0.05em;
+      color: var(--text-secondary); text-align: left;
+      background: var(--border-light); border-bottom: 1px solid var(--border);
+    }
+    .ihk-table tbody tr { transition: background 0.15s; }
+    .ihk-table tbody tr:hover { background: rgba(99,102,241,0.03); }
+    .ihk-table tbody td { padding: 14px 24px; font-size: 15px; border-bottom: 1px solid var(--border-light); }
+    .ihk-table tbody tr:last-child td { border-bottom: none; }
+    .ihk-table tbody tr.passing-line td { border-bottom: 2px dashed var(--grade-4); }
+    .ihk-table tbody tr.active-row { background: rgba(99,102,241,0.06); }
+
+    .grade-cell { display: flex; align-items: center; gap: 10px; }
+    .grade-dot { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; }
+    .grade-name { font-weight: 700; font-size: 18px; }
+    .grade-desc { color: var(--text-secondary); font-size: 14px; font-weight: 500; }
+    .grade-pct { font-variant-numeric: tabular-nums; }
+    .grade-pts { font-weight: 600; font-variant-numeric: tabular-nums; }
+
+    @media (max-width: 480px) {
+      .ihk-table thead th { padding: 10px 16px; font-size: 11px; }
+      .ihk-table tbody td { padding: 12px 16px; font-size: 14px; }
+      .calc-card { padding: 24px; }
+      .calc-result-grade { font-size: 40px; }
+    }
+
+    /* INLINE CTA */
+    .inline-cta {
+      max-width: 620px;
+      margin: 24px auto 0;
+      padding: 20px 24px;
+      background: var(--primary-50);
+      border: 1px solid var(--primary-100);
+      border-radius: var(--radius-lg);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .inline-cta-text { flex: 1; min-width: 200px; }
+    .inline-cta-title { font-size: 15px; font-weight: 700; color: var(--text); margin-bottom: 4px; }
+    .inline-cta-desc { font-size: 14px; color: var(--text-secondary); line-height: 1.5; }
+    .inline-cta-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 20px;
+      background: var(--primary);
+      color: white;
+      border-radius: var(--radius-pill);
+      font-size: 14px;
+      font-weight: 600;
+      white-space: nowrap;
+      transition: background 0.2s, transform 0.2s;
+      text-decoration: none;
+    }
+    .inline-cta-link:hover { background: var(--primary-dark); transform: translateY(-1px); }
+    .inline-cta-link svg { width: 16px; height: 16px; fill: currentColor; flex-shrink: 0; }
+
+    /* CONTENT */
+    .content-section { padding: 80px 0; }
+    .content-prose { max-width: 720px; margin: 0 auto; }
+    .content-prose h2 { font-size: clamp(24px, 3.5vw, 32px); font-weight: 800; letter-spacing: -0.02em; margin-bottom: 16px; }
+    .content-prose h3 { font-size: 20px; font-weight: 700; margin-top: 40px; margin-bottom: 12px; }
+    .content-prose p { font-size: 16px; line-height: 1.75; color: var(--text-secondary); margin-bottom: 16px; }
+    .content-prose a { color: var(--primary); font-weight: 500; text-decoration: underline; text-underline-offset: 3px; transition: color 0.2s; }
+    .content-prose a:hover { color: var(--primary-dark); }
+    .internal-links { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 32px; }
+    .internal-link { display: inline-flex; align-items: center; gap: 6px; padding: 10px 18px; background: var(--card); border: 1px solid var(--border); border-radius: var(--radius-pill); font-size: 14px; font-weight: 500; color: var(--text); text-decoration: none !important; transition: border-color 0.2s, box-shadow 0.2s; }
+    .internal-link:hover { border-color: var(--primary); box-shadow: 0 2px 8px rgba(99,102,241,0.1); }
+    .internal-link svg { width: 14px; height: 14px; color: var(--primary); }
+
+    /* CTA */
+    .cta-banner { background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 50%, var(--primary-light) 100%); color: white; text-align: center; padding: 80px 24px; position: relative; overflow: hidden; }
+    .cta-banner::before { content: ''; position: absolute; inset: 0; background-image: radial-gradient(rgba(255,255,255,0.08) 1px, transparent 1px); background-size: 24px 24px; }
+    .cta-banner-content { position: relative; z-index: 1; }
+    .cta-banner h2 { font-size: clamp(24px, 4vw, 36px); font-weight: 800; margin-bottom: 12px; letter-spacing: -0.02em; }
+    .cta-banner-sub { font-size: 17px; color: rgba(255,255,255,0.9); margin-bottom: 36px; max-width: 480px; margin-left: auto; margin-right: auto; }
+    .app-store-badge { display: inline-flex; align-items: center; gap: 12px; padding: 10px 22px 10px 18px; border-radius: 12px; border: 1.5px solid transparent; transition: transform 0.2s, box-shadow 0.2s; text-decoration: none; min-height: 52px; }
+    .app-store-badge:hover { transform: translateY(-2px); }
+    .app-store-badge-icon { width: 28px; height: 28px; flex-shrink: 0; }
+    .app-store-badge-icon svg { width: 100%; height: 100%; fill: currentColor; }
+    .app-store-badge-text { display: flex; flex-direction: column; line-height: 1; }
+    .app-store-badge-small { font-size: 11px; font-weight: 400; letter-spacing: 0.02em; margin-bottom: 4px; opacity: 0.9; }
+    .app-store-badge-large { font-size: 20px; font-weight: 600; letter-spacing: -0.01em; }
+    .cta-banner .app-store-badge { background: white; color: #000; }
+    .cta-banner .app-store-badge:hover { background: #f0f0f0; box-shadow: 0 8px 24px rgba(0,0,0,0.3); }
+    .cta-features {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 12px 24px;
+      margin-bottom: 32px;
+      max-width: 560px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .cta-feature {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 15px;
+      font-weight: 500;
+      color: rgba(255,255,255,0.95);
+    }
+    .cta-feature svg {
+      width: 18px; height: 18px;
+      flex-shrink: 0;
+      color: rgba(255,255,255,0.7);
+    }
+    .cta-note {
+      font-size: 13px;
+      color: rgba(255,255,255,0.6);
+      margin-top: 16px;
+    }
+    @media (max-width: 640px) { .cta-banner { padding: 56px 24px; } }
+
+    /* FOOTER */
+    .footer { background: var(--text); color: rgba(255,255,255,0.7); padding: 48px 24px; }
+    .footer-inner { max-width: 1120px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; }
+    .footer-links { display: flex; gap: 24px; list-style: none; }
+    .footer-links a { font-size: 14px; transition: color 0.2s; padding: 8px 0; min-height: 44px; display: inline-flex; align-items: center; }
+    .footer-links a:hover { color: white; }
+    .footer-tagline { font-size: 14px; font-style: italic; opacity: 0.6; }
+    .footer-copy { font-size: 13px; opacity: 0.5; width: 100%; text-align: center; margin-top: 24px; padding-top: 24px; border-top: 1px solid rgba(255,255,255,0.1); }
+    @media (max-width: 640px) { .footer-inner { flex-direction: column; text-align: center; } .footer-links { flex-wrap: wrap; justify-content: center; } }
+
+    @media (prefers-reduced-motion: no-preference) {
+      .fade-in { opacity: 0; transform: translateY(20px); animation: fadeIn 0.5s ease forwards; }
+      .fade-in-delay-1 { animation-delay: 0.1s; }
+      .fade-in-delay-2 { animation-delay: 0.2s; }
+      @keyframes fadeIn { to { opacity: 1; transform: translateY(0); } }
+    }
+    /* ========== PRINT ========== */
+    @media print {
+      body { background: white; }
+      .nav, .cta-banner, .inline-cta, .footer, .content-section { display: none !important; }
+      .hero { padding: 20px 0 0; min-height: auto; background: none !important; }
+      .ihk-table-wrapper { box-shadow: none; }
+      .ihk-table th, .ihk-table td { padding: 4px 8px; font-size: 12px; }
+      .print-header { display: flex !important; align-items: center; justify-content: space-between; padding: 12px 0; margin-bottom: 16px; border-bottom: 2px solid #6366F1; }
+      .print-header-brand { font-size: 16px; font-weight: 700; color: #6366F1; }
+      .print-header-url { font-size: 12px; color: #6B7280; }
+      .print-footer { display: block !important; text-align: center; margin-top: 24px; padding-top: 12px; border-top: 1px solid #E5E7EB; font-size: 11px; color: #9CA3AF; }
+    }
+    .print-header, .print-footer { display: none; }
+  </style>
+</head>
+<body>
+  <div class="print-header"><span class="print-header-brand">Der Notenrechner</span><span class="print-header-url">notenrechnerapp.de</span></div>
+
+  <nav class="nav" aria-label="Hauptnavigation">
+    <div class="nav-inner">
+      <a href="../" class="nav-brand">
+        <div class="nav-brand-icon"><img src="../assets/logo.png" alt="Der Notenrechner Logo" width="32" height="32"></div>
+        Der Notenrechner
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="../">Startseite</a></li>
+        <li><a href="../notenschluessel-rechner/">Rechner</a></li>
+        <li><a href="../notenpunkte-tabelle/">Notenpunkte</a></li>
+        <li><a href="../ihk-notenschluessel/" class="active" onclick="closeMenu()">IHK</a></li>
+        <li>
+          <a href="https://apps.apple.com/de/app/der-notenrechner/id1662507346" target="_blank" rel="noopener" class="nav-cta" onclick="closeMenu()">
+            <svg width="16" height="16" viewBox="0 0 384 512" fill="currentColor"><path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184 4 273.5c0 26.2 4.8 53.3 14.4 81.2 12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/></svg>
+            App Store
+          </a>
+        </li>
+      </ul>
+      <button class="nav-toggle" id="navToggle" aria-label="Menü öffnen">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <main>
+    <section class="tool-hero">
+      <div class="container">
+        <div class="tool-hero-header fade-in">
+          <h1>IHK-<span>Notenschlüssel</span></h1>
+          <p class="tool-hero-sub">Punkte in IHK-Noten umrechnen — der offizielle Bewertungsschlüssel für Zwischen- und Abschlussprüfungen.</p>
+          <p style="font-size:13px;color:var(--text-muted);margin-top:8px;">Letzte Aktualisierung: März 2026</p>
+        </div>
+
+        <!-- Calculator -->
+        <div class="ihk-calc fade-in fade-in-delay-1">
+          <div class="calc-card">
+            <div class="calc-inputs">
+              <div class="calc-field">
+                <label class="calc-label" for="achieved">Erreichte Punkte</label>
+                <input type="number" id="achieved" class="calc-input" value="" placeholder="?" min="0" inputmode="numeric">
+              </div>
+              <div class="calc-field">
+                <label class="calc-label" for="maxPts">Maximale Punkte</label>
+                <input type="number" id="maxPts" class="calc-input" value="100" min="1" max="999" inputmode="numeric">
+              </div>
+            </div>
+            <div class="calc-result" id="calcResult" aria-live="polite" style="background: var(--border-light); color: var(--text-muted);">
+              <div class="calc-result-label">IHK-Note</div>
+              <div class="calc-result-grade" id="resultGrade">—</div>
+              <div class="calc-result-desc" id="resultDesc">Punkte eingeben</div>
+              <div class="calc-result-pct" id="resultPct"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- IHK Reference Table -->
+        <div class="ihk-table-wrapper fade-in fade-in-delay-2">
+          <div class="ihk-table-header">
+            <span class="ihk-table-title">IHK-Notentabelle</span>
+            <span class="ihk-table-badge" id="tableBadge">100 Punkte</span>
+          </div>
+          <table class="ihk-table" role="table">
+            <thead>
+              <tr>
+                <th>Note</th>
+                <th>Mindestprozent</th>
+                <th>Mindestpunktzahl</th>
+              </tr>
+            </thead>
+            <tbody id="ihkTableBody"></tbody>
+          </table>
+        </div>
+
+        <!-- Inline CTA -->
+        <div class="inline-cta">
+          <div class="inline-cta-text">
+            <div class="inline-cta-title">Prüfungsergebnisse verwalten?</div>
+            <div class="inline-cta-desc">In der App geben Sie alle Ergebnisse ein, sehen den Schnitt und exportieren als PDF.</div>
+          </div>
+          <a href="https://apps.apple.com/de/app/der-notenrechner/id1662507346" target="_blank" rel="noopener" class="inline-cta-link">
+            <svg viewBox="0 0 384 512"><path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184 4 273.5c0 26.2 4.8 53.3 14.4 81.2 12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/></svg>
+            Kostenlos laden
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-banner">
+      <div class="cta-banner-content">
+        <h2>IHK-Prüfungen komplett verwalten.</h2>
+        <p class="cta-banner-sub">In der App geben Sie alle Prüfungsergebnisse ein, sehen den Schnitt und exportieren die Ergebnisliste als PDF.</p>
+        <div class="cta-features">
+          <div class="cta-feature"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Prüfungsergebnisse eingeben</div>
+          <div class="cta-feature"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Schnitt automatisch berechnen</div>
+          <div class="cta-feature"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Daten lokal & sicher speichern</div>
+          <div class="cta-feature"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Ergebnisliste als PDF</div>
+        </div>
+        <a href="https://apps.apple.com/de/app/der-notenrechner/id1662507346" target="_blank" rel="noopener" class="app-store-badge">
+          <span class="app-store-badge-icon"><svg viewBox="0 0 384 512"><path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184 4 273.5c0 26.2 4.8 53.3 14.4 81.2 12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/></svg></span>
+          <span class="app-store-badge-text">
+            <span class="app-store-badge-small">Laden im</span>
+            <span class="app-store-badge-large">App Store</span>
+          </span>
+        </a>
+        <p class="cta-note">Kostenlos · Keine Werbung · Kein Abo</p>
+      </div>
+    </section>
+
+    <section class="content-section">
+      <div class="container">
+        <article class="content-prose">
+          <h2>Der offizielle IHK-Notenschlüssel</h2>
+          <p>Der IHK-Notenschlüssel ist der einheitliche Bewertungsmaßstab der Industrie- und Handelskammern in Deutschland. Er wird bei allen IHK-Prüfungen angewendet — von der Zwischenprüfung über die Abschlussprüfung bis hin zu Weiterbildungsprüfungen wie dem Fachwirt oder Betriebswirt. Die Prozentgrenzen sind bundesweit einheitlich festgelegt.</p>
+
+          <h3>Wie funktioniert der IHK-Notenschlüssel?</h3>
+          <p>Bei IHK-Prüfungen werden die erreichten Punkte ins Verhältnis zur Maximalpunktzahl gesetzt. Aus dem Prozentsatz ergibt sich die Note: Ab 92 % eine 1 (sehr gut), ab 81 % eine 2 (gut), ab 67 % eine 3 (befriedigend), ab 50 % eine 4 (ausreichend), ab 30 % eine 5 (mangelhaft) und darunter eine 6 (ungenügend). Die genauen Dezimalnoten werden anhand des detaillierten Bewertungsschlüssels ermittelt.</p>
+          <p>Mit dem Rechner oben können Sie die Note für jede beliebige Punktzahl sofort berechnen. Geben Sie die Maximalpunktzahl und die erreichten Punkte ein — die Note erscheint in Echtzeit.</p>
+
+          <h3>Ab wie viel Prozent besteht man eine IHK-Prüfung?</h3>
+          <p>Eine IHK-Prüfung gilt als bestanden, wenn mindestens 50 % der erreichbaren Punkte erzielt werden. Das entspricht der Note 4,4 (ausreichend). Unterhalb von 50 % erhält man die Note 5 (mangelhaft) oder 6 (ungenügend) — die Prüfung ist dann nicht bestanden.</p>
+          <p>Bei der Abschlussprüfung müssen zudem alle Prüfungsbereiche einzeln bestanden werden — es genügt nicht, einen schwachen Bereich durch einen starken auszugleichen. In manchen Berufen gibt es zusätzlich sogenannte Sperrfächer, in denen eine Mindestpunktzahl erreicht werden muss.</p>
+
+          <h3>Was ist der Unterschied zwischen IHK- und Schulnoten?</h3>
+          <p>Im Gegensatz zum schulischen Notensystem, bei dem Lehrkräfte die Prozentgrenzen selbst festlegen können (z.&nbsp;B. 50 %, 45 % oder 40 % als Bestehensgrenze), verwendet der IHK-Schlüssel feste, unveränderbare Grenzen. Zudem arbeitet das IHK-System mit Dezimalnoten von 1,0 bis 6,0, was eine feinere Abstufung als die klassischen Schulnoten erlaubt.</p>
+          <p>Einen schulischen <a href="../notenschluessel-rechner/">Notenschlüssel-Rechner</a> mit wählbaren Prozentgrenzen finden Sie auf unserer Rechner-Seite.</p>
+
+          <h3>Welche Prüfungen verwenden den IHK-Notenschlüssel?</h3>
+          <p>Der IHK-Schlüssel gilt für alle Prüfungen, die von einer Industrie- und Handelskammer abgenommen werden. Dazu gehören die Zwischenprüfung und Abschlussprüfung in über 250 anerkannten Ausbildungsberufen (z.&nbsp;B. Kaufleute für Büromanagement, Industriemechaniker, Fachinformatiker), Weiterbildungsprüfungen (Fachwirt, Betriebswirt, Meister) sowie die Ausbildereignungsprüfung (AEVO/AdA-Schein).</p>
+          <p>Nicht unter den IHK-Schlüssel fallen Prüfungen der Handwerkskammern (HWK), die einen eigenen, aber sehr ähnlichen Bewertungsmaßstab haben.</p>
+
+          <h3>Wie werden IHK-Dezimalnoten berechnet?</h3>
+          <p>Die Dezimalnote ergibt sich aus dem exakten Prozentsatz innerhalb einer Notenstufe. Wer z.&nbsp;B. 86 % erreicht, liegt im Bereich „gut" (81–91 %) und erhält eine Dezimalnote zwischen 2,0 und 2,4. Die genaue Berechnung erfolgt durch lineare Interpolation innerhalb der Stufe. Der Rechner oben zeigt Ihnen die exakte Dezimalnote für jede Punktzahl.</p>
+
+          <h3>Was passiert, wenn man die IHK-Prüfung nicht besteht?</h3>
+          <p>Bei Nichtbestehen kann die IHK-Prüfung zweimal wiederholt werden — insgesamt hat man also drei Versuche. Zwischen den Versuchen gibt es keine vorgeschriebene Wartezeit, allerdings werden Prüfungstermine in der Regel nur zweimal jährlich angeboten (Sommer und Winter). Bereits bestandene Prüfungsteile können auf Antrag angerechnet werden, sodass nur die nicht bestandenen Teile wiederholt werden müssen.</p>
+
+          <h3>IHK-Notenschlüssel für die mündliche Prüfung</h3>
+          <p>Auch für mündliche Prüfungen (Fachgespräch, Präsentation, mündliche Ergänzungsprüfung) gilt derselbe IHK-Notenschlüssel mit denselben Prozentgrenzen. Die Prüfer vergeben Punkte nach einem Bewertungsbogen, und die Gesamtpunktzahl wird prozentual umgerechnet. Bei der mündlichen Ergänzungsprüfung, die bei knappem Nichtbestehen beantragt werden kann, werden mündliches und schriftliches Ergebnis im Verhältnis 2:1 gewichtet.</p>
+
+          <div class="internal-links">
+            <a href="../notenschluessel-rechner/" class="internal-link">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+              Notenschlüssel-Rechner
+            </a>
+            <a href="../notenpunkte-tabelle/" class="internal-link">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+              Notenpunkte-Tabelle
+            </a>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <ul class="footer-links">
+        <li><a href="../#datenschutz">Datenschutz</a></li>
+        <li><a href="../#impressum">Impressum</a></li>
+        <li><a href="https://instagram.com/notenrechnerapp" target="_blank" rel="noopener">Instagram</a></li>
+      </ul>
+      <div class="footer-tagline">Entwickelt von einem Lehrer, für Lehrkräfte</div>
+      <div class="footer-copy">&copy; 2026 Der Notenrechner. Alle Rechte vorbehalten.</div>
+    </div>
+  </footer>
+
+  <script>
+    // Nav
+    const navToggle = document.getElementById('navToggle');
+    const navLinks = document.getElementById('navLinks');
+    navToggle.addEventListener('click', () => { navToggle.classList.toggle('active'); navLinks.classList.toggle('open'); });
+    function closeMenu() { navToggle.classList.remove('active'); navLinks.classList.remove('open'); }
+
+    // IHK data
+    const IHK_GRADES = [
+      { note: '1', label: 'sehr gut', minPct: 92, maxPct: 100 },
+      { note: '2', label: 'gut', minPct: 81, maxPct: 91 },
+      { note: '3', label: 'befriedigend', minPct: 67, maxPct: 80 },
+      { note: '4', label: 'ausreichend', minPct: 50, maxPct: 66 },
+      { note: '5', label: 'mangelhaft', minPct: 30, maxPct: 49 },
+      { note: '6', label: 'ungenügend', minPct: 0, maxPct: 29 }
+    ];
+
+    // Detailed IHK thresholds for precise decimal grade
+    const IHK_DETAIL = [
+      { grade: 10, minPct: 100 }, { grade: 11, minPct: 98 }, { grade: 12, minPct: 96 },
+      { grade: 13, minPct: 94 }, { grade: 14, minPct: 92 }, { grade: 15, minPct: 91 },
+      { grade: 16, minPct: 90 }, { grade: 17, minPct: 89 }, { grade: 18, minPct: 88 },
+      { grade: 19, minPct: 87 }, { grade: 20, minPct: 85 }, { grade: 21, minPct: 84 },
+      { grade: 22, minPct: 83 }, { grade: 23, minPct: 82 }, { grade: 24, minPct: 81 },
+      { grade: 25, minPct: 80 }, { grade: 26, minPct: 79 }, { grade: 27, minPct: 77 },
+      { grade: 28, minPct: 76 }, { grade: 29, minPct: 74 }, { grade: 30, minPct: 73 },
+      { grade: 31, minPct: 71 }, { grade: 32, minPct: 70 }, { grade: 33, minPct: 68 },
+      { grade: 34, minPct: 67 }, { grade: 35, minPct: 66 }, { grade: 36, minPct: 64 },
+      { grade: 37, minPct: 62 }, { grade: 38, minPct: 61 }, { grade: 39, minPct: 59 },
+      { grade: 40, minPct: 57 }, { grade: 41, minPct: 55 }, { grade: 42, minPct: 54 },
+      { grade: 43, minPct: 52 }, { grade: 44, minPct: 50 }, { grade: 45, minPct: 49 },
+      { grade: 46, minPct: 47 }, { grade: 47, minPct: 45 }, { grade: 48, minPct: 43 },
+      { grade: 49, minPct: 41 }, { grade: 50, minPct: 38 }, { grade: 51, minPct: 36 },
+      { grade: 52, minPct: 34 }, { grade: 53, minPct: 32 }, { grade: 54, minPct: 30 },
+      { grade: 55, minPct: 29 }, { grade: 56, minPct: 23 }, { grade: 57, minPct: 17 },
+      { grade: 58, minPct: 12 }, { grade: 59, minPct: 6 }, { grade: 60, minPct: 0 }
+    ];
+
+    function gradeColor(noteNum) {
+      if (noteNum <= 1.5) return { dot: 'var(--grade-1)', bg: 'var(--grade-1-bg)', text: 'var(--grade-1)' };
+      if (noteNum <= 2.5) return { dot: 'var(--grade-2)', bg: 'var(--grade-2-bg)', text: 'var(--grade-2)' };
+      if (noteNum <= 3.5) return { dot: 'var(--grade-3)', bg: 'var(--grade-3-bg)', text: 'var(--grade-3)' };
+      if (noteNum <= 4.5) return { dot: 'var(--grade-4)', bg: 'var(--grade-4-bg)', text: 'var(--grade-4)' };
+      return { dot: 'var(--grade-5)', bg: 'var(--grade-5-bg)', text: 'var(--grade-5)' };
+    }
+
+    const achievedInput = document.getElementById('achieved');
+    const maxPtsInput = document.getElementById('maxPts');
+    const calcResult = document.getElementById('calcResult');
+    const resultGrade = document.getElementById('resultGrade');
+    const resultDesc = document.getElementById('resultDesc');
+    const resultPct = document.getElementById('resultPct');
+    const tableBadge = document.getElementById('tableBadge');
+    const ihkTableBody = document.getElementById('ihkTableBody');
+
+    function calculate() {
+      const maxPts = Math.max(1, parseInt(maxPtsInput.value) || 100);
+      const achieved = parseInt(achievedInput.value);
+      tableBadge.textContent = maxPts + ' Punkte';
+
+      // Determine active decimal grade from achieved points
+      let activeDecimalGrade = null;
+      if (!isNaN(achieved) && achieved >= 0) {
+        const pct = Math.round((Math.min(achieved, maxPts) / maxPts) * 10000) / 100;
+        for (const d of IHK_DETAIL) {
+          if (pct >= d.minPct) { activeDecimalGrade = d.grade; break; }
+        }
+      }
+
+      // Render ALL 51 IHK grades
+      let tableHtml = '';
+      for (const d of IHK_DETAIL) {
+        const decNote = (d.grade / 10).toFixed(1).replace('.', ',');
+        const minPoints = (d.minPct / 100) * maxPts;
+        const minPtsStr = minPoints === Math.floor(minPoints) ? minPoints.toString() : minPoints.toFixed(1).replace('.', ',');
+        const c = gradeColor(d.grade / 10);
+        const isActive = activeDecimalGrade === d.grade;
+        const isPassing = d.grade === 44; // 4.4 is the passing boundary
+        const cls = (isActive ? ' active-row' : '') + (isPassing ? ' passing-line' : '');
+
+        tableHtml += '<tr' + (cls ? ' class="' + cls.trim() + '"' : '') + '>'
+          + '<td><div class="grade-cell"><span class="grade-dot" style="background:' + c.dot + '"></span><span class="grade-name">' + decNote + '</span></div></td>'
+          + '<td><span class="grade-pct">' + d.minPct + ' %</span></td>'
+          + '<td><span class="grade-pts">' + minPtsStr + '</span></td>'
+          + '</tr>';
+      }
+      ihkTableBody.innerHTML = tableHtml;
+
+      // Update result
+      if (isNaN(achieved) || achieved < 0 || achievedInput.value === '') {
+        calcResult.style.background = 'var(--border-light)';
+        calcResult.style.color = 'var(--text-muted)';
+        resultGrade.textContent = '—';
+        resultDesc.textContent = 'Punkte eingeben';
+        resultPct.textContent = '';
+        return;
+      }
+
+      const clamped = Math.min(Math.max(achieved, 0), maxPts);
+      const pct = Math.round((clamped / maxPts) * 10000) / 100;
+
+      // Find precise decimal grade
+      let decimalGrade = 60;
+      for (const d of IHK_DETAIL) {
+        if (pct >= d.minPct) { decimalGrade = d.grade; break; }
+      }
+      const displayGrade = (decimalGrade / 10).toFixed(1).replace('.', ',');
+
+      // Find main grade label
+      let mainLabel = 'ungenügend';
+      for (const ig of IHK_GRADES) {
+        if (pct >= ig.minPct) { mainLabel = ig.label; break; }
+      }
+
+      const c = gradeColor(decimalGrade / 10);
+      calcResult.style.background = c.bg;
+      calcResult.style.color = c.text;
+      resultGrade.textContent = displayGrade;
+      resultDesc.textContent = mainLabel;
+      resultPct.textContent = pct.toFixed(1).replace('.', ',') + ' %';
+    }
+
+    achievedInput.addEventListener('input', calculate);
+    maxPtsInput.addEventListener('input', calculate);
+    calculate();
+  </script>
+  <div class="print-footer">Erstellt mit notenrechnerapp.de — Kostenlose App im App Store laden</div>
+</body>
+</html>

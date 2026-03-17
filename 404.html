@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Seite nicht gefunden — Der Notenrechner</title>
+  <meta name="robots" content="noindex">
+  <link rel="icon" type="image/png" href="/assets/logo.png">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+      background: #F8F9FC;
+      color: #1F2937;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+    }
+    .container {
+      text-align: center;
+      max-width: 480px;
+    }
+    .error-code {
+      font-size: 96px;
+      font-weight: 800;
+      color: #6366F1;
+      line-height: 1;
+      margin-bottom: 8px;
+      letter-spacing: -2px;
+    }
+    h1 {
+      font-size: 22px;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+    p {
+      font-size: 16px;
+      color: #6B7280;
+      line-height: 1.6;
+      margin-bottom: 32px;
+    }
+    .links {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      align-items: center;
+    }
+    .link-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 28px;
+      background: #6366F1;
+      color: white;
+      border-radius: 999px;
+      font-size: 15px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: background 0.2s, transform 0.2s;
+    }
+    .link-primary:hover { background: #4F46E5; transform: translateY(-1px); }
+    .tools {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      justify-content: center;
+      margin-top: 8px;
+    }
+    .tool-link {
+      padding: 8px 16px;
+      background: white;
+      border: 1px solid #E5E7EB;
+      border-radius: 999px;
+      font-size: 14px;
+      font-weight: 500;
+      color: #1F2937;
+      text-decoration: none;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+    .tool-link:hover {
+      border-color: #6366F1;
+      box-shadow: 0 0 0 3px rgba(99,102,241,0.1);
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="error-code">404</div>
+    <h1>Seite nicht gefunden</h1>
+    <p>Die angeforderte Seite existiert nicht oder wurde verschoben. Nutzen Sie einen der Links unten.</p>
+    <div class="links">
+      <a href="/" class="link-primary">Zur Startseite</a>
+      <div class="tools">
+        <a href="/notenschluessel-rechner/" class="tool-link">Notenschlüssel-Rechner</a>
+        <a href="/notenpunkte-tabelle/" class="tool-link">Notenpunkte-Tabelle</a>
+        <a href="/ihk-notenschluessel/" class="tool-link">IHK-Notenschlüssel</a>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
