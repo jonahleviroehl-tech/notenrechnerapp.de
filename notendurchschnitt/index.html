@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Notendurchschnitt berechnen — mit Notenpunkten oder Schulnoten | Der Notenrechner</title>
+  <meta name="description" content="Notendurchschnitt aus mehreren Klausuren oder Halbjahresnoten berechnen. Funktioniert mit Notenpunkten (15–0) und Schulnoten (1–6). Mit Dezimalnote für Bewerbungen.">
+  <meta property="og:title" content="Notendurchschnitt berechnen — mit Notenpunkten oder Schulnoten | Der Notenrechner">
+  <meta property="og:description" content="Notendurchschnitt aus mehreren Klausuren oder Halbjahresnoten berechnen. Funktioniert mit Notenpunkten (15–0) und Schulnoten (1–6). Mit Dezimalnote für Bewerbungen.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://notenrechnerapp.de/notendurchschnitt/">
+  <meta property="og:locale" content="de_DE">
+  <meta property="og:site_name" content="Der Notenrechner">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Notendurchschnitt berechnen — mit Notenpunkten oder Schulnoten | Der Notenrechner">
+  <meta name="twitter:description" content="Notendurchschnitt aus mehreren Klausuren oder Halbjahresnoten berechnen. Funktioniert mit Notenpunkten (15–0) und Schulnoten (1–6).">
+  <meta name="theme-color" content="#2F60C0">
+  <meta name="apple-itunes-app" content="app-id=1662507346">
+  <link rel="canonical" href="https://notenrechnerapp.de/notendurchschnitt/">
+  <meta name="robots" content="index, follow">
+  <link rel="icon" type="image/png" href="/assets/logo.png">
+  <link rel="apple-touch-icon" href="/assets/logo.png">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Notendurchschnitt-Rechner",
+    "description": "Notendurchschnitt aus mehreren Klausuren oder Halbjahresnoten berechnen.",
+    "url": "https://notenrechnerapp.de/notendurchschnitt/",
+    "applicationCategory": "EducationalApplication",
+    "operatingSystem": "All",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "EUR" }
+  }
+  </script>
+
+  <style>
+    :root {
+      --primary: #2F60C0; --primary-light: #6B94E0; --primary-dark: #1F4A9C;
+      --primary-50: #EEF3FB; --primary-100: #DCE5F5;
+      --bg: #F7F6F3; --card: #FFFFFF; --surface-subtle: #F1EFEA;
+      --text: #0F0F10; --text-secondary: #3B3B3F; --text-muted: #6E6E73;
+      --border: #E8E6E1; --border-light: #F1EFEA;
+      --grade-1: #15803D; --grade-1-bg: #E6F2EA;
+      --grade-2: #4D7C0F; --grade-2-bg: #EFF1E2;
+      --grade-3: #A16207; --grade-3-bg: #F8EFE0;
+      --grade-4: #C2410C; --grade-4-bg: #FAEADD;
+      --grade-5: #B91C1C; --grade-5-bg: #F7E6E6;
+      --shadow-card: 0 1px 2px rgba(15,15,16,0.04), 0 0 0 1px rgba(15,15,16,0.04);
+      --radius-sm: 8px; --radius-md: 12px; --radius-lg: 16px; --radius-pill: 999px;
+      --font: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+      --nav-height: 72px;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: var(--font); color: var(--text); background: var(--bg); line-height: 1.6; -webkit-font-smoothing: antialiased; }
+    a { color: inherit; text-decoration: none; }
+    button { font-family: inherit; cursor: pointer; border: none; background: none; }
+    :focus-visible { outline: 2px solid var(--primary); outline-offset: 3px; border-radius: 4px; }
+
+    .nav { position: fixed; top: 0; left: 0; right: 0; height: var(--nav-height); z-index: 1000; }
+    .nav::before { content: ''; position: absolute; inset: 0; background: rgba(255,255,255,0.85); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); box-shadow: 0 1px 0 var(--border); z-index: -1; }
+    .nav-inner { max-width: 1120px; margin: 0 auto; padding: 0 24px; height: 100%; display: flex; align-items: center; justify-content: space-between; }
+    .nav-brand { font-size: 18px; font-weight: 700; color: var(--text); display: flex; align-items: center; gap: 10px; z-index: 1001; }
+    .nav-brand-icon { width: 32px; height: 32px; border-radius: var(--radius-sm); overflow: hidden; flex-shrink: 0; }
+    .nav-brand-icon img { width: 100%; height: 100%; object-fit: cover; }
+    .nav-links { display: flex; align-items: center; gap: 28px; list-style: none; }
+    .nav-links a { font-size: 15px; font-weight: 500; color: var(--text-secondary); transition: color 0.2s; padding: 8px 0; min-height: 44px; display: flex; align-items: center; }
+    .nav-links a:hover { color: var(--primary); }
+    .nav-links a.active { color: var(--primary); font-weight: 600; }
+    .nav-links a.nav-cta { display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 0 22px 0 18px; height: 36px; min-height: 0; line-height: 1; white-space: nowrap; background: var(--primary); color: white !important; border-radius: var(--radius-pill); font-size: 15px; font-weight: 700; transition: background 0.15s, transform 0.15s; }
+    .nav-links a.nav-cta svg { width: 13px; height: 15px; flex-shrink: 0; display: block; }
+    .nav-links a.nav-cta:hover { background: var(--primary-dark); color: white !important; transform: translateY(-1px); }
+    .nav-toggle { display: none; flex-direction: column; gap: 5px; padding: 10px; min-width: 44px; min-height: 44px; justify-content: center; align-items: center; z-index: 1001; }
+    .nav-toggle span { display: block; width: 22px; height: 2px; background: var(--text); border-radius: 2px; transition: transform 0.3s, opacity 0.3s; }
+    .nav-toggle.active span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .nav-toggle.active span:nth-child(2) { opacity: 0; }
+    .nav-toggle.active span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+    @media (max-width: 768px) {
+      .nav-toggle { display: flex; }
+      .nav-links { position: fixed; top: 0; left: 0; right: 0; bottom: 0; z-index: 999; background: rgba(255,255,255,0.98); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); flex-direction: column; justify-content: center; gap: 24px; opacity: 0; pointer-events: none; transition: opacity 0.3s; }
+      .nav-links.open { opacity: 1; pointer-events: all; }
+      .nav-links a { font-size: 20px; font-weight: 600; }
+      .nav-links a.nav-cta { height: 46px; padding: 0 30px 0 26px; font-size: 17px; gap: 10px; }
+      .nav-links a.nav-cta svg { width: 15px; height: 17px; }
+    }
+
+    .container { max-width: 1120px; margin: 0 auto; padding: 0 24px; }
+
+    .tool-hero { padding-top: calc(var(--nav-height) + 40px); padding-bottom: 32px; background: linear-gradient(180deg, var(--bg) 0%, #FBFAF6 100%); border-bottom: 1px solid var(--border); }
+    .breadcrumbs { font-size: 13px; color: var(--text-muted); margin-bottom: 16px; display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
+    .breadcrumbs a { color: var(--text-secondary); }
+    .breadcrumbs a:hover { color: var(--primary); }
+    .breadcrumbs span[aria-current] { color: var(--text); font-weight: 500; }
+    .tool-hero-header { text-align: center; margin-bottom: 32px; }
+    .tool-hero-header h1 { font-size: clamp(28px, 4.5vw, 42px); font-weight: 800; letter-spacing: -0.025em; line-height: 1.15; margin-bottom: 12px; }
+    .tool-hero-header h1 span { color: var(--primary); }
+    .tool-hero-sub { font-size: 17px; color: var(--text-secondary); max-width: 580px; margin: 0 auto; }
+
+    /* Mode toggle */
+    .mode-toggle { display: inline-flex; padding: 4px; background: var(--card); border: 1px solid var(--border); border-radius: var(--radius-pill); margin: 0 auto 24px; }
+    .mode-toggle-wrap { text-align: center; }
+    .mode-btn { padding: 8px 20px; border-radius: var(--radius-pill); font-size: 14px; font-weight: 600; color: var(--text-secondary); transition: background 0.15s, color 0.15s; }
+    .mode-btn.active { background: var(--primary); color: white; }
+
+    /* Average calculator */
+    .avg-calc { max-width: 720px; margin: 0 auto; }
+    .avg-card { background: var(--card); border-radius: var(--radius-lg); box-shadow: var(--shadow-card); padding: 24px 24px 20px; }
+    .avg-rows { display: flex; flex-direction: column; gap: 10px; margin-bottom: 16px; }
+    .avg-row { display: grid; grid-template-columns: 1fr 110px 40px; gap: 12px; align-items: center; }
+    .avg-row input.subj { width: 100%; height: 44px; padding: 0 14px; border: 1.5px solid var(--border); border-radius: var(--radius-md); font-family: var(--font); font-size: 15px; color: var(--text); background: var(--bg); transition: border-color 0.15s, box-shadow 0.15s; }
+    .avg-row input.subj:focus, .avg-row input.val:focus { outline: none; border-color: var(--primary); box-shadow: 0 0 0 4px rgba(47,96,192,0.1); }
+    .avg-row input.val { width: 100%; height: 44px; padding: 0 12px; border: 1.5px solid var(--border); border-radius: var(--radius-md); font-family: var(--font); font-size: 17px; font-weight: 700; text-align: center; color: var(--text); background: var(--bg); font-variant-numeric: tabular-nums; transition: border-color 0.15s, box-shadow 0.15s; -moz-appearance: textfield; }
+    .avg-row input.val::-webkit-outer-spin-button, .avg-row input.val::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; }
+    .avg-row .remove-btn { width: 40px; height: 40px; border-radius: var(--radius-md); border: 1px solid var(--border); background: var(--card); color: var(--text-muted); font-size: 18px; line-height: 1; display: flex; align-items: center; justify-content: center; transition: border-color 0.15s, color 0.15s; }
+    .avg-row .remove-btn:hover { border-color: var(--grade-5); color: var(--grade-5); }
+    .avg-row.disabled-remove .remove-btn { opacity: 0.3; cursor: not-allowed; }
+    .add-row-btn { display: inline-flex; align-items: center; gap: 6px; padding: 8px 16px; background: var(--primary-50); color: var(--primary); border-radius: var(--radius-pill); font-size: 14px; font-weight: 600; transition: background 0.15s, transform 0.15s; }
+    .add-row-btn:hover { background: var(--primary-100); transform: translateY(-1px); }
+
+    .avg-result { margin-top: 18px; padding: 22px 24px 20px; border-radius: var(--radius-md); text-align: center; transition: background 0.25s ease-out, color 0.25s ease-out; }
+    .avg-result-label { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; opacity: 0.7; margin-bottom: 6px; }
+    .avg-result-grade { font-size: 48px; font-weight: 800; line-height: 1; letter-spacing: -0.02em; font-variant-numeric: tabular-nums; }
+    .avg-result-meta { font-size: 14px; font-weight: 600; margin-top: 6px; font-variant-numeric: tabular-nums; }
+    .avg-result-count { font-size: 12px; opacity: 0.7; margin-top: 4px; font-variant-numeric: tabular-nums; }
+    .avg-empty { color: var(--text-muted); }
+
+    /* Content */
+    .content-section { padding: 56px 0 64px; }
+    .content-prose { max-width: 720px; margin: 0 auto; }
+    .content-prose h2 { font-size: clamp(22px, 3vw, 28px); font-weight: 800; letter-spacing: -0.02em; margin-bottom: 14px; }
+    .content-prose h3 { font-size: 19px; font-weight: 700; margin-top: 36px; margin-bottom: 10px; }
+    .content-prose p { font-size: 16px; line-height: 1.75; color: var(--text-secondary); margin-bottom: 14px; }
+    .content-prose a { color: var(--primary); font-weight: 500; text-decoration: underline; text-underline-offset: 3px; }
+    .content-prose strong { color: var(--text); }
+
+    .internal-links { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 36px; }
+    .internal-link { display: inline-flex; align-items: center; gap: 6px; padding: 10px 16px; background: var(--card); border: 1px solid var(--border); border-radius: var(--radius-pill); font-size: 14px; font-weight: 500; color: var(--text); text-decoration: none !important; transition: border-color 0.2s, transform 0.15s; }
+    .internal-link:hover { border-color: var(--primary); transform: translateY(-1px); color: var(--primary); }
+
+    .cta-banner { background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 100%); color: white; text-align: center; padding: 64px 24px; position: relative; overflow: hidden; }
+    .cta-banner::before { content: ''; position: absolute; inset: 0; background-image: radial-gradient(rgba(255,255,255,0.08) 1px, transparent 1px); background-size: 24px 24px; }
+    .cta-banner-content { position: relative; z-index: 1; max-width: 640px; margin: 0 auto; }
+    .cta-banner h2 { font-size: clamp(22px, 3.5vw, 28px); font-weight: 800; margin-bottom: 10px; letter-spacing: -0.02em; }
+    .cta-banner-sub { font-size: 15px; color: rgba(255,255,255,0.9); margin-bottom: 28px; }
+    .app-store-badge { display: inline-flex; align-items: center; gap: 12px; padding: 10px 22px 10px 18px; border-radius: 12px; min-height: 52px; background: #000; color: white; transition: transform 0.2s, box-shadow 0.2s; }
+    .app-store-badge:hover { transform: translateY(-2px); background: #1a1a1a; box-shadow: 0 10px 28px rgba(0,0,0,0.35); }
+    .app-store-badge-icon { width: 28px; height: 28px; flex-shrink: 0; }
+    .app-store-badge-icon svg { width: 100%; height: 100%; fill: currentColor; }
+    .app-store-badge-text { display: flex; flex-direction: column; line-height: 1; }
+    .app-store-badge-small { font-size: 11px; opacity: 0.9; margin-bottom: 4px; }
+    .app-store-badge-large { font-size: 20px; font-weight: 600; letter-spacing: -0.01em; }
+
+    .footer { background: var(--surface-subtle); padding: 36px 24px; border-top: 1px solid var(--border); }
+    .footer-inner { max-width: 1120px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; gap: 12px; }
+    .footer-links { display: flex; gap: 24px; list-style: none; flex-wrap: wrap; justify-content: center; }
+    .footer-links a { font-size: 14px; color: var(--text-secondary); transition: color 0.2s; }
+    .footer-links a:hover { color: var(--primary); }
+    .footer-tagline { font-size: 13px; color: var(--text-muted); font-style: italic; }
+    .footer-copy { font-size: 13px; color: var(--text-muted); }
+  </style>
+</head>
+<body>
+  <nav class="nav" role="navigation" aria-label="Hauptnavigation">
+    <div class="nav-inner">
+      <a href="/" class="nav-brand"><span class="nav-brand-icon"><img src="/assets/logo.png" alt=""></span>Der Notenrechner</a>
+      <button class="nav-toggle" id="navToggle" aria-label="Menü öffnen" aria-expanded="false"><span></span><span></span><span></span></button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="/" onclick="closeMenu()">Startseite</a></li>
+        <li><a href="/notenschluessel-rechner/" onclick="closeMenu()">Notenschlüssel-Rechner</a></li>
+        <li><a href="/notenpunkte-tabelle/" onclick="closeMenu()">Notenpunkte-Tabelle</a></li>
+        <li><a href="/ihk-notenschluessel/" onclick="closeMenu()">IHK-Rechner</a></li>
+        <li><a href="https://apps.apple.com/de/app/der-notenrechner/id1662507346" target="_blank" rel="noopener" class="nav-cta" onclick="closeMenu()" aria-label="Im App Store laden"><svg viewBox="0 0 384 512" fill="currentColor" aria-hidden="true"><path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184 4 273.5c0 26.2 4.8 53.3 14.4 81.2 12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/></svg>Laden</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main>
+    <section class="tool-hero">
+      <div class="container">
+        <nav class="breadcrumbs" aria-label="Brotkrumen">
+          <a href="/">Start</a>
+          <span aria-hidden="true">›</span>
+          <span aria-current="page">Notendurchschnitt</span>
+        </nav>
+        <div class="tool-hero-header">
+          <h1>Notendurchschnitt <span>berechnen</span></h1>
+          <p class="tool-hero-sub">Mehrere Klausuren oder Halbjahresnoten eintragen — Schnitt sofort berechnet, mit Dezimalnote für Bewerbungen.</p>
+        </div>
+
+        <div class="mode-toggle-wrap">
+          <div class="mode-toggle" role="tablist">
+            <button class="mode-btn active" id="modeNP" role="tab" aria-selected="true">Notenpunkte (15–0)</button>
+            <button class="mode-btn" id="modeNote" role="tab" aria-selected="false">Schulnote (1–6)</button>
+          </div>
+        </div>
+
+        <div class="avg-calc">
+          <div class="avg-card">
+            <div class="avg-rows" id="rows">
+              <!-- rows injected by JS -->
+            </div>
+            <button type="button" class="add-row-btn" id="addRow">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+              Note hinzufügen
+            </button>
+
+            <div class="avg-result" id="avgResult" aria-live="polite" style="background: var(--border-light); color: var(--text-muted);">
+              <div class="avg-result-label">Durchschnitt</div>
+              <div class="avg-result-grade avg-empty" id="avgGrade">—</div>
+              <div class="avg-result-meta" id="avgMeta">Werte eingeben</div>
+              <div class="avg-result-count" id="avgCount"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="content-section">
+      <div class="container">
+        <article class="content-prose">
+          <h2>Wie wird der Notendurchschnitt berechnet?</h2>
+          <p>Der einfache Notendurchschnitt ist das arithmetische Mittel: Summe aller Notenwerte geteilt durch die Anzahl der Noten. Bei <strong>Notenpunkten</strong> liegt der Durchschnitt zwischen 0 und 15. Bei <strong>Schulnoten</strong> zwischen 1 und 6.</p>
+          <p>Beispiel: Vier Klausuren mit den Notenpunkten 13, 11, 12, 10 ergeben einen Durchschnitt von (13 + 11 + 12 + 10) ÷ 4 = 11,5 Notenpunkten. Das entspricht ungefähr der Note 2 (1,8 als Dezimalnote).</p>
+
+          <h3>Notenpunkte oder Schulnoten — was eingeben?</h3>
+          <p>Wer in der gymnasialen Oberstufe ist, rechnet meist mit <strong>Notenpunkten (15–0)</strong>. In der Sekundarstufe I (Klassen 5–10), Realschulen oder Hauptschulen werden klassische <strong>Schulnoten (1–6)</strong> verwendet. Der Rechner unterstützt beide Modi — einfach oben umschalten.</p>
+
+          <h3>Halbe Noten und Tendenzen erlaubt</h3>
+          <p>In Schulnoten-Modus sind Werte mit Komma erlaubt — etwa 2,3 für die Tendenz „2 minus\". Im Notenpunkte-Modus werden integer Werte (0 bis 15) erwartet, weil Notenpunkte selbst keine Dezimalstellen haben.</p>
+
+          <h3>Was zählt als guter Durchschnitt?</h3>
+          <p>Im 15-Punkte-System gilt: ab 13 Notenpunkten (Note 1-) eine sehr gute Leistung, ab 10 Notenpunkten (2-) noch gut, ab 5 Notenpunkten (4) bestanden. In Schulnoten: 1,0 bis 1,5 sehr gut, 1,6 bis 2,5 gut, 2,6 bis 3,5 befriedigend, 3,6 bis 4,0 ausreichend, schlechter als 4,0 nicht bestanden.</p>
+
+          <h3>Gewichtete Durchschnitte (Abitur)</h3>
+          <p>Für die Abitur-Gesamtqualifikation wird ein <em>gewichteter</em> Durchschnitt berechnet — Leistungskurse zählen anders als Grundkurse, und Block II (Abiturprüfungen) wird gegen Block I (Kursnoten) verrechnet. Dieser einfache Notendurchschnitt-Rechner deckt den ungewichteten Schnitt ab. Für die Gesamtqualifikation: <a href="/abitur-rechner/">Abitur-Rechner</a>.</p>
+
+          <div class="internal-links">
+            <a href="/notenpunkte-tabelle/" class="internal-link">Notenpunkte-Tabelle</a>
+            <a href="/notenschluessel-rechner/" class="internal-link">Notenschlüssel-Rechner</a>
+            <a href="/lexikon/notenpunkte/" class="internal-link">Lexikon: Notenpunkte</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="cta-banner">
+      <div class="cta-banner-content">
+        <h2>Klausuren bewerten, Klassen führen, Zeugnisse berechnen.</h2>
+        <p class="cta-banner-sub">Der Notenrechner — kostenlos im App Store. Lokal, ohne Account, ohne Werbung.</p>
+        <a href="https://apps.apple.com/de/app/der-notenrechner/id1662507346" target="_blank" rel="noopener" class="app-store-badge">
+          <span class="app-store-badge-icon"><svg viewBox="0 0 384 512"><path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184 4 273.5c0 26.2 4.8 53.3 14.4 81.2 12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/></svg></span>
+          <span class="app-store-badge-text"><span class="app-store-badge-small">Laden im</span><span class="app-store-badge-large">App Store</span></span>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <ul class="footer-links">
+        <li><a href="/#datenschutz">Datenschutz</a></li>
+        <li><a href="/#impressum">Impressum</a></li>
+        <li><a href="https://instagram.com/notenrechnerapp" target="_blank" rel="noopener">Instagram</a></li>
+      </ul>
+      <div class="footer-tagline">Entwickelt von einem Lehrer, für Lehrkräfte</div>
+      <div class="footer-copy">&copy; 2026 Der Notenrechner. Alle Rechte vorbehalten.</div>
+    </div>
+  </footer>
+
+  <script>
+    const navToggle = document.getElementById('navToggle');
+    const navLinks = document.getElementById('navLinks');
+    navToggle.addEventListener('click', () => {
+      const open = !navLinks.classList.contains('open');
+      navToggle.classList.toggle('active', open);
+      navLinks.classList.toggle('open', open);
+      navToggle.setAttribute('aria-expanded', String(open));
+    });
+    function closeMenu() { navToggle.classList.remove('active'); navLinks.classList.remove('open'); navToggle.setAttribute('aria-expanded', 'false'); }
+
+    // ─── Notendurchschnitt-Rechner ───────────────────────────────
+    let mode = 'np'; // 'np' or 'note'
+    const rowsEl = document.getElementById('rows');
+    const addRowBtn = document.getElementById('addRow');
+    const modeNP = document.getElementById('modeNP');
+    const modeNote = document.getElementById('modeNote');
+    const avgResult = document.getElementById('avgResult');
+    const avgGrade = document.getElementById('avgGrade');
+    const avgMeta = document.getElementById('avgMeta');
+    const avgCount = document.getElementById('avgCount');
+
+    // Initial 4 placeholder rows for typical semester
+    const DEFAULT_SUBJECTS_NP = ['Mathe', 'Deutsch', 'Englisch', ''];
+    const DEFAULT_VALUES_NP   = ['13', '11', '12', ''];
+    const DEFAULT_VALUES_NOTE = ['1,7', '2,3', '2,0', ''];
+
+    function gradeColor(np) {
+      if (np >= 13) return { dot: 'var(--grade-1)', bg: 'var(--grade-1-bg)', text: 'var(--grade-1)' };
+      if (np >= 10) return { dot: 'var(--grade-2)', bg: 'var(--grade-2-bg)', text: 'var(--grade-2)' };
+      if (np >=  7) return { dot: 'var(--grade-3)', bg: 'var(--grade-3-bg)', text: 'var(--grade-3)' };
+      if (np >=  4) return { dot: 'var(--grade-4)', bg: 'var(--grade-4-bg)', text: 'var(--grade-4)' };
+      return { dot: 'var(--grade-5)', bg: 'var(--grade-5-bg)', text: 'var(--grade-5)' };
+    }
+    function noteToColor(note) {
+      // For schulnote 1-6 mode: invert mapping
+      if (note <= 1.5) return { bg: 'var(--grade-1-bg)', text: 'var(--grade-1)' };
+      if (note <= 2.5) return { bg: 'var(--grade-2-bg)', text: 'var(--grade-2)' };
+      if (note <= 3.5) return { bg: 'var(--grade-3-bg)', text: 'var(--grade-3)' };
+      if (note <= 4.0) return { bg: 'var(--grade-4-bg)', text: 'var(--grade-4)' };
+      return { bg: 'var(--grade-5-bg)', text: 'var(--grade-5)' };
+    }
+    // NP integer 0-15 → trad note string
+    const NP_TO_TRAD = ['6','5-','5','5+','4-','4','4+','3-','3','3+','2-','2','2+','1-','1','1+'];
+    function npToTrad(np) {
+      const i = Math.max(0, Math.min(15, Math.round(np)));
+      return NP_TO_TRAD[i];
+    }
+    function fmt(n, places) { return Number(n).toFixed(places).replace('.', ','); }
+
+    function makeRow(subject, value) {
+      const row = document.createElement('div');
+      row.className = 'avg-row';
+      row.innerHTML = `
+        <input type="text" class="subj" placeholder="Fach (optional)" value="${subject || ''}">
+        <input type="text" class="val" inputmode="decimal" placeholder="${mode === 'np' ? '0–15' : '1–6'}" value="${value || ''}" autocomplete="off">
+        <button type="button" class="remove-btn" aria-label="Zeile entfernen">×</button>
+      `;
+      row.querySelector('.val').addEventListener('input', recalc);
+      row.querySelector('.subj').addEventListener('input', recalc);
+      row.querySelector('.remove-btn').addEventListener('click', () => {
+        if (rowsEl.children.length > 1) {
+          row.remove();
+          recalc();
+        }
+      });
+      return row;
+    }
+
+    function rebuildRows(subjects, values) {
+      rowsEl.innerHTML = '';
+      for (let i = 0; i < subjects.length; i++) {
+        rowsEl.appendChild(makeRow(subjects[i], values[i]));
+      }
+    }
+
+    function parseValue(raw) {
+      const s = (raw || '').trim().replace(',', '.');
+      if (s === '') return null;
+      const n = parseFloat(s);
+      if (isNaN(n)) return null;
+      if (mode === 'np') {
+        if (n < 0 || n > 15) return null;
+        return n;
+      } else {
+        if (n < 1 || n > 6) return null;
+        return n;
+      }
+    }
+
+    function recalc() {
+      const inputs = rowsEl.querySelectorAll('input.val');
+      const values = [];
+      inputs.forEach(inp => {
+        const v = parseValue(inp.value);
+        if (v !== null) values.push(v);
+      });
+
+      if (values.length === 0) {
+        avgResult.style.background = 'var(--border-light)';
+        avgResult.style.color = 'var(--text-muted)';
+        avgGrade.textContent = '—';
+        avgGrade.classList.add('avg-empty');
+        avgMeta.textContent = mode === 'np' ? 'Notenpunkte eingeben' : 'Schulnoten eingeben';
+        avgCount.textContent = '';
+        return;
+      }
+
+      const sum = values.reduce((a, b) => a + b, 0);
+      const avg = sum / values.length;
+      avgGrade.classList.remove('avg-empty');
+
+      if (mode === 'np') {
+        const c = gradeColor(avg);
+        avgResult.style.background = c.bg;
+        avgResult.style.color = c.text;
+        // Show: NP avg as e.g. "11,5" big, then trad + decimal note line
+        const decimal = (17 - avg) / 3;
+        avgGrade.textContent = fmt(avg, 1);
+        avgMeta.textContent = '≈ Note ' + npToTrad(avg) + ' · Dezimal ' + fmt(decimal, 2);
+      } else {
+        const c = noteToColor(avg);
+        avgResult.style.background = c.bg;
+        avgResult.style.color = c.text;
+        avgGrade.textContent = fmt(avg, 2);
+        // Determine label
+        let label = 'ungenügend';
+        if (avg <= 1.5) label = 'sehr gut';
+        else if (avg <= 2.5) label = 'gut';
+        else if (avg <= 3.5) label = 'befriedigend';
+        else if (avg <= 4.0) label = 'ausreichend';
+        else if (avg <= 5.0) label = 'mangelhaft';
+        avgMeta.textContent = label;
+      }
+      avgCount.textContent = values.length === 1 ? '(aus 1 Note)' : '(aus ' + values.length + ' Noten)';
+    }
+
+    // Mode toggle
+    function setMode(newMode) {
+      if (mode === newMode) return;
+      mode = newMode;
+      modeNP.classList.toggle('active', mode === 'np');
+      modeNote.classList.toggle('active', mode === 'note');
+      modeNP.setAttribute('aria-selected', String(mode === 'np'));
+      modeNote.setAttribute('aria-selected', String(mode === 'note'));
+      // Reset rows with appropriate defaults
+      rebuildRows(DEFAULT_SUBJECTS_NP, mode === 'np' ? DEFAULT_VALUES_NP : DEFAULT_VALUES_NOTE);
+      recalc();
+    }
+    modeNP.addEventListener('click', () => setMode('np'));
+    modeNote.addEventListener('click', () => setMode('note'));
+
+    addRowBtn.addEventListener('click', () => {
+      rowsEl.appendChild(makeRow('', ''));
+      // Focus the new value input
+      const newRow = rowsEl.lastElementChild;
+      newRow.querySelector('.val').focus();
+    });
+
+    // Initial render
+    rebuildRows(DEFAULT_SUBJECTS_NP, DEFAULT_VALUES_NP);
+    recalc();
+  </script>
+</body>
+</html>

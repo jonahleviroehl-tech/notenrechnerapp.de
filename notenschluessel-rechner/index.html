@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Notenschlüssel Rechner: Kostenlos online berechnen | Der Notenrechner</title>
-  <meta name="description" content="Notenschlüssel online berechnen: Maximalpunktzahl eingeben, Prozentgrenzen wählen, sofort die Notentabelle erhalten. Linear, mit Knick oder eigene Grenzen. Kostenlos, ohne Anmeldung.">
-  <meta property="og:title" content="Notenschlüssel Rechner: Kostenlos online berechnen | Der Notenrechner">
-  <meta property="og:description" content="Notenschlüssel online berechnen: Maximalpunktzahl eingeben, Notentabelle sofort erhalten. Kostenlos, ohne Anmeldung.">
+  <title>Notenschlüssel-Rechner: Punkte sofort in Note umrechnen | Der Notenrechner</title>
+  <meta name="description" content="Erreichte Punkte eingeben → Note sofort, mit voller Tabelle für die ganze Klausur. 50/45/40 %-Schlüssel. Notenschlüssel mit Knick in der App.">
+  <meta property="og:title" content="Notenschlüssel-Rechner: Punkte sofort in Note umrechnen | Der Notenrechner">
+  <meta property="og:description" content="Erreichte Punkte eingeben → Note sofort, mit voller Tabelle für die ganze Klausur. 50/45/40 %-Schlüssel. Notenschlüssel mit Knick in der App.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://notenrechnerapp.de/notenschluessel-rechner/">
   <meta property="og:locale" content="de_DE">
@@ -14,13 +14,13 @@
   <meta property="og:image" content="https://notenrechnerapp.de/assets/og-rechner.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="Notenschlüssel Rechner — Kostenlos online berechnen">
+  <meta property="og:image:alt" content="Notenschlüssel-Rechner — Punkte sofort in Note umrechnen">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Notenschlüssel Rechner: Kostenlos online berechnen | Der Notenrechner">
-  <meta name="twitter:description" content="Notenschlüssel online berechnen: Maximalpunktzahl eingeben, Notentabelle sofort erhalten. Kostenlos, ohne Anmeldung.">
+  <meta name="twitter:title" content="Notenschlüssel-Rechner: Punkte sofort in Note umrechnen | Der Notenrechner">
+  <meta name="twitter:description" content="Erreichte Punkte eingeben → Note sofort, mit voller Tabelle für die ganze Klausur. 50/45/40 %-Schlüssel. Notenschlüssel mit Knick in der App.">
   <meta name="twitter:image" content="https://notenrechnerapp.de/assets/og-rechner.png">
-  <meta name="twitter:image:alt" content="Notenschlüssel Rechner — Kostenlos online berechnen">
-  <meta name="theme-color" content="#6366F1">
+  <meta name="twitter:image:alt" content="Notenschlüssel-Rechner — Punkte sofort in Note umrechnen">
+  <meta name="theme-color" content="#2F60C0">
   <meta name="apple-itunes-app" content="app-id=1662507346">
   <link rel="canonical" href="https://notenrechnerapp.de/notenschluessel-rechner/">
   <link rel="alternate" hreflang="de" href="https://notenrechnerapp.de/notenschluessel-rechner/">
@@ -69,34 +69,38 @@
        DESIGN TOKENS
        ============================================ */
     :root {
-      --primary: #6366F1;
-      --primary-light: #818CF8;
-      --primary-dark: #4F46E5;
-      --primary-50: #EEF2FF;
-      --primary-100: #E0E7FF;
-      --primary-900: #312E81;
-      --bg: #F8F9FC;
+      /* v3 Neutral Workbench — mirrors src/components/design/theme.ts */
+      --primary: #2F60C0;
+      --primary-light: #6B94E0;
+      --primary-dark: #1F4A9C;
+      --primary-50: #EEF3FB;
+      --primary-100: #DCE5F5;
+      --primary-900: #15336B;
+      --bg: #F7F6F3;
       --card: #FFFFFF;
-      --text: #1F2937;
-      --text-secondary: #6B7280;
-      --text-muted: #737B8B;
-      --border: #E5E7EB;
-      --border-light: #F3F4F6;
-      --success: #10B981;
-      --warning: #F59E0B;
-      --error: #EF4444;
-      --grade-1: #2E7D32;
-      --grade-1-bg: #E8F5E9;
-      --grade-2: #558B2F;
-      --grade-2-bg: #F1F8E9;
-      --grade-3: #F9A825;
-      --grade-3-bg: #FFFDE7;
-      --grade-4: #EF6C00;
-      --grade-4-bg: #FFF3E0;
-      --grade-5: #C62828;
-      --grade-5-bg: #FFEBEE;
-      --shadow-card: 0 4px 24px rgba(99, 102, 241, 0.08);
-      --shadow-elevated: 0 8px 32px rgba(99, 102, 241, 0.12);
+      --surface-subtle: #F1EFEA;
+      --text: #0F0F10;
+      --text-secondary: #3B3B3F;
+      --text-muted: #6E6E73;
+      --border: #E8E6E1;
+      --border-light: #F1EFEA;
+      --success: #15803D;
+      --warning: #A16207;
+      --error: #B91C1C;
+      /* Earth-tone grade scale */
+      --grade-1: #15803D;
+      --grade-1-bg: #E6F2EA;
+      --grade-2: #4D7C0F;
+      --grade-2-bg: #EFF1E2;
+      --grade-3: #A16207;
+      --grade-3-bg: #F8EFE0;
+      --grade-4: #C2410C;
+      --grade-4-bg: #FAEADD;
+      --grade-5: #B91C1C;
+      --grade-5-bg: #F7E6E6;
+      /* Near-invisible shadows — v3 leans on borders + fills */
+      --shadow-card: 0 1px 2px rgba(15, 15, 16, 0.04), 0 0 0 1px rgba(15, 15, 16, 0.04);
+      --shadow-elevated: 0 2px 8px rgba(15, 15, 16, 0.08);
       --radius-sm: 8px;
       --radius-md: 12px;
       --radius-lg: 16px;
@@ -188,25 +192,29 @@
     }
     .nav-links a:hover { color: var(--primary); }
     .nav-links a.active { color: var(--primary); font-weight: 600; }
-    .nav-cta {
+    .nav-links a.nav-cta {
       display: inline-flex;
       align-items: center;
+      justify-content: center;
       gap: 8px;
-      padding: 9px 18px;
-      min-height: 44px;
+      padding: 0 22px 0 18px;
+      height: 36px;
+      min-height: 0;
+      line-height: 1;
       white-space: nowrap;
       background: var(--primary);
       color: white !important;
       border-radius: var(--radius-pill);
-      font-size: 14px;
-      font-weight: 600;
-      transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
-      box-shadow: 0 2px 8px rgba(99, 102, 241, 0.3);
+      font-size: 15px;
+      font-weight: 700;
+      letter-spacing: 0.005em;
+      transition: background 0.15s, transform 0.15s;
     }
-    .nav-cta:hover {
-      background: var(--primary-dark);
-      transform: translateY(-1px);
-      box-shadow: 0 4px 12px rgba(99, 102, 241, 0.4);
+    .nav-links a.nav-cta svg { width: 13px; height: 15px; flex-shrink: 0; display: block; }
+    .nav-links a.nav-cta:hover { background: var(--primary-dark); color: white !important; transform: translateY(-1px); }
+    @media (max-width: 768px) {
+      .nav-links a.nav-cta { height: 46px; padding: 0 30px 0 26px; font-size: 17px; gap: 10px; }
+      .nav-links a.nav-cta svg { width: 15px; height: 17px; }
     }
 
     /* Mobile menu */
@@ -260,7 +268,7 @@
     .tool-hero {
       padding-top: calc(var(--nav-height) + 48px);
       padding-bottom: 64px;
-      background: linear-gradient(168deg, #F8F9FC 0%, #EEF2FF 50%, #E0E7FF 100%);
+      background: linear-gradient(180deg, var(--bg) 0%, #FBFAF6 100%);
       position: relative;
     }
     .tool-hero::after {
@@ -282,10 +290,7 @@
       margin-bottom: 12px;
     }
     .tool-hero-header h1 span {
-      background: linear-gradient(135deg, var(--primary), var(--primary-light));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
+      color: var(--primary);
     }
     .tool-hero-sub {
       font-size: 17px;
@@ -301,37 +306,49 @@
       max-width: 720px;
       margin: 0 auto;
     }
-    .calc-controls {
-      display: flex;
-      gap: 16px;
+    .calc-card {
+      background: var(--card);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-card);
+      padding: 28px 28px 24px;
       margin-bottom: 24px;
-      flex-wrap: wrap;
     }
-    .calc-field {
-      flex: 1;
-      min-width: 180px;
+    .calc-controls {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1.4fr;
+      gap: 16px;
+      margin-bottom: 22px;
     }
+    @media (max-width: 640px) {
+      .calc-controls { grid-template-columns: 1fr 1fr; }
+      .calc-controls > .calc-field--full { grid-column: 1 / -1; }
+    }
+    @media (max-width: 380px) {
+      .calc-controls { grid-template-columns: 1fr; }
+    }
+    .calc-field { min-width: 0; }
     .calc-label {
       display: block;
-      font-size: 13px;
-      font-weight: 600;
+      font-size: 11px;
+      font-weight: 700;
       color: var(--text-secondary);
       margin-bottom: 6px;
-      letter-spacing: 0.02em;
+      letter-spacing: 0.08em;
       text-transform: uppercase;
     }
     .calc-input {
       width: 100%;
       height: 52px;
       padding: 0 16px;
-      border: 2px solid var(--border);
+      border: 1.5px solid var(--border);
       border-radius: var(--radius-md);
       font-family: var(--font);
       font-size: 18px;
       font-weight: 600;
       color: var(--text);
-      background: var(--card);
-      transition: border-color 0.2s, box-shadow 0.2s;
+      background: var(--bg);
+      font-variant-numeric: tabular-nums;
+      transition: border-color 0.15s, box-shadow 0.15s;
       -moz-appearance: textfield;
     }
     .calc-input::-webkit-outer-spin-button,
@@ -339,29 +356,91 @@
     .calc-input:focus {
       outline: none;
       border-color: var(--primary);
-      box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.1);
+      box-shadow: 0 0 0 4px rgba(47, 96, 192, 0.1);
     }
     .calc-select {
       width: 100%;
       height: 52px;
       padding: 0 40px 0 16px;
-      border: 2px solid var(--border);
+      border: 1.5px solid var(--border);
       border-radius: var(--radius-md);
       font-family: var(--font);
-      font-size: 16px;
+      font-size: 15px;
       font-weight: 500;
       color: var(--text);
-      background: var(--card) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' fill='none'%3E%3Cpath d='M1 1.5l5 5 5-5' stroke='%236B7280' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") no-repeat right 16px center;
+      background: var(--bg) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' fill='none'%3E%3Cpath d='M1 1.5l5 5 5-5' stroke='%236B7280' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") no-repeat right 16px center;
       -webkit-appearance: none;
       -moz-appearance: none;
       appearance: none;
       cursor: pointer;
-      transition: border-color 0.2s, box-shadow 0.2s;
+      transition: border-color 0.15s, box-shadow 0.15s;
     }
     .calc-select:focus {
       outline: none;
       border-color: var(--primary);
-      box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.1);
+      box-shadow: 0 0 0 4px rgba(47, 96, 192, 0.1);
+    }
+
+    /* Live result card */
+    .calc-result {
+      text-align: center;
+      padding: 22px 24px 20px;
+      border-radius: var(--radius-md);
+      transition: background 0.25s ease-out, color 0.25s ease-out;
+    }
+    .calc-result-label {
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 6px;
+      opacity: 0.7;
+    }
+    .calc-result-grade {
+      font-size: 56px;
+      font-weight: 800;
+      line-height: 1;
+      letter-spacing: -0.02em;
+      font-variant-numeric: tabular-nums;
+    }
+    .calc-result-desc {
+      font-size: 16px;
+      font-weight: 600;
+      margin-top: 8px;
+      font-variant-numeric: tabular-nums;
+    }
+    .calc-result-pct {
+      font-size: 13px;
+      margin-top: 6px;
+      opacity: 0.75;
+      font-variant-numeric: tabular-nums;
+    }
+    @keyframes resultPulse {
+      0%   { transform: scale(1); }
+      40%  { transform: scale(1.025); }
+      100% { transform: scale(1); }
+    }
+    .calc-result.pulse {
+      animation: resultPulse 0.32s ease-out;
+    }
+    @media (max-width: 480px) {
+      .calc-card { padding: 22px 20px 18px; }
+      .calc-result-grade { font-size: 44px; }
+    }
+
+    /* Active row highlight (mirrors IHK page pattern) */
+    .grade-table tbody tr.active-row {
+      background: rgba(47, 96, 192, 0.06);
+    }
+    .grade-table tbody tr.active-row td {
+      position: relative;
+    }
+    .grade-table tbody tr.active-row td:first-child::before {
+      content: '';
+      position: absolute;
+      left: 0; top: 0; bottom: 0;
+      width: 3px;
+      background: var(--primary);
     }
 
     /* ============================================
@@ -413,7 +492,7 @@
       transition: background 0.15s;
     }
     .grade-table tbody tr:hover {
-      background: rgba(99, 102, 241, 0.03);
+      background: rgba(47, 96, 192, 0.03);
     }
     .grade-table tbody td {
       padding: 11px 24px;
@@ -519,7 +598,7 @@
     }
     .internal-link:hover {
       border-color: var(--primary);
-      box-shadow: 0 2px 8px rgba(99, 102, 241, 0.1);
+      box-shadow: 0 2px 8px rgba(47, 96, 192, 0.1);
     }
     .internal-link svg { width: 14px; height: 14px; color: var(--primary); }
 
@@ -560,10 +639,128 @@
     .inline-cta-link svg { width: 16px; height: 16px; fill: currentColor; flex-shrink: 0; }
 
     /* ============================================
+       KNICK TEASER (P3 — funnels Knick keyword traffic into the app)
+       ============================================ */
+    .knick-teaser {
+      padding: 80px 0;
+      background: var(--card);
+      border-top: 1px solid var(--border-light);
+    }
+    .knick-teaser-inner {
+      max-width: 1024px;
+      margin: 0 auto;
+      padding: 0 24px;
+      display: grid;
+      grid-template-columns: minmax(0, 280px) 1fr;
+      gap: 56px;
+      align-items: center;
+    }
+    .knick-screen-frame {
+      position: relative;
+      width: 100%;
+      max-width: 280px;
+      aspect-ratio: 9 / 19.5;
+      background: var(--text);
+      border-radius: 36px;
+      padding: 8px;
+      box-shadow: 0 20px 40px -16px rgba(15, 15, 16, 0.28);
+      justify-self: center;
+    }
+    .knick-screen-frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top;
+      border-radius: 28px;
+      display: block;
+    }
+    .knick-teaser-text { min-width: 0; }
+    .knick-teaser h2 {
+      font-size: clamp(24px, 3.5vw, 32px);
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      line-height: 1.2;
+      margin-bottom: 12px;
+      color: var(--text);
+    }
+    .knick-teaser p {
+      font-size: 16px;
+      color: var(--text-secondary);
+      line-height: 1.6;
+      margin-bottom: 24px;
+      max-width: 520px;
+    }
+    .knick-features {
+      list-style: none;
+      margin: 0 0 28px;
+      padding: 0;
+      display: grid;
+      gap: 12px;
+      max-width: 520px;
+    }
+    .knick-feature {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      font-size: 15px;
+      color: var(--text);
+      line-height: 1.5;
+    }
+    .knick-feature-check {
+      flex-shrink: 0;
+      width: 22px; height: 22px;
+      border-radius: 50%;
+      background: var(--primary-50);
+      color: var(--primary);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 1px;
+    }
+    .knick-feature-check svg {
+      width: 12px; height: 12px;
+      stroke: currentColor; stroke-width: 3;
+      fill: none; stroke-linecap: round; stroke-linejoin: round;
+    }
+    .knick-feature strong { font-weight: 600; }
+    .knick-cta-row {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .knick-teaser .app-store-badge {
+      background: var(--text);
+      color: white;
+    }
+    .knick-teaser .app-store-badge:hover {
+      background: #000;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+    }
+    .knick-cta-note {
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+    @media (max-width: 768px) {
+      .knick-teaser { padding: 56px 0; }
+      .knick-teaser-inner {
+        grid-template-columns: 1fr;
+        gap: 32px;
+        text-align: center;
+        justify-items: center;
+      }
+      .knick-features { text-align: left; }
+      .knick-cta-row { justify-content: center; }
+    }
+    @media (max-width: 480px) {
+      .knick-screen-frame { max-width: 220px; }
+    }
+
+    /* ============================================
        CTA BANNER
        ============================================ */
     .cta-banner {
-      background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 50%, var(--primary-light) 100%);
+      background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 100%);
       color: white;
       text-align: center;
       padding: 80px 24px;
@@ -610,8 +807,8 @@
     .app-store-badge-text { display: flex; flex-direction: column; line-height: 1; }
     .app-store-badge-small { font-size: 11px; font-weight: 400; letter-spacing: 0.02em; margin-bottom: 4px; opacity: 0.9; }
     .app-store-badge-large { font-size: 20px; font-weight: 600; letter-spacing: -0.01em; }
-    .cta-banner .app-store-badge { background: white; color: #000; }
-    .cta-banner .app-store-badge:hover { background: #f0f0f0; box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3); }
+    .cta-banner .app-store-badge { background: #000; color: white; }
+    .cta-banner .app-store-badge:hover { background: #1a1a1a; box-shadow: 0 10px 28px rgba(0, 0, 0, 0.35); }
 
     .cta-features {
       display: flex;
@@ -706,8 +903,8 @@
       .hero { padding: 0; min-height: auto; background: none !important; }
       .calc { box-shadow: none; border: 1px solid #ddd; }
       .grade-table th, .grade-table td { padding: 4px 8px; font-size: 12px; }
-      .print-header { display: flex !important; align-items: center; justify-content: space-between; padding: 12px 0; margin-bottom: 16px; border-bottom: 2px solid #6366F1; }
-      .print-header-brand { font-size: 16px; font-weight: 700; color: #6366F1; }
+      .print-header { display: flex !important; align-items: center; justify-content: space-between; padding: 12px 0; margin-bottom: 16px; border-bottom: 2px solid #2F60C0; }
+      .print-header-brand { font-size: 16px; font-weight: 700; color: #2F60C0; }
       .print-header-url { font-size: 12px; color: #6B7280; }
       .print-footer { display: block !important; text-align: center; margin-top: 24px; padding-top: 12px; border-top: 1px solid #E5E7EB; font-size: 11px; color: #9CA3AF; }
     }
@@ -730,10 +927,7 @@
         <li><a href="../notenpunkte-tabelle/" onclick="closeMenu()">Notenpunkte-Tabelle</a></li>
         <li><a href="../ihk-notenschluessel/" onclick="closeMenu()">IHK-Rechner</a></li>
         <li>
-          <a href="https://apps.apple.com/de/app/der-notenrechner/id1662507346" target="_blank" rel="noopener" class="nav-cta" onclick="closeMenu()">
-            <svg width="16" height="16" viewBox="0 0 384 512" fill="currentColor"><path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184 4 273.5c0 26.2 4.8 53.3 14.4 81.2 12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/></svg>
-            App Store
-          </a>
+          <a href="https://apps.apple.com/de/app/der-notenrechner/id1662507346" target="_blank" rel="noopener" class="nav-cta" onclick="closeMenu()" aria-label="Im App Store laden"><svg viewBox="0 0 384 512" fill="currentColor" aria-hidden="true"><path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184 4 273.5c0 26.2 4.8 53.3 14.4 81.2 12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/></svg>Laden</a>
         </li>
       </ul>
       <button class="nav-toggle" id="navToggle" aria-label="Menü öffnen">
@@ -748,31 +942,43 @@
       <div class="container">
         <div class="tool-hero-header fade-in">
           <h1>Notenschlüssel <span>berechnen</span></h1>
-          <p class="tool-hero-sub">Maximalpunktzahl eingeben, Notenschlüssel wählen, Tabelle sofort erhalten.</p>
+          <p class="tool-hero-sub">Erreichte Punkte eingeben — Note sofort, mit voller Notentabelle für die ganze Klausur.</p>
           <p style="font-size:13px;color:var(--text-muted);margin-top:8px;">Letzte Aktualisierung: März 2026</p>
         </div>
 
         <div class="calc fade-in fade-in-delay-1">
-          <!-- Controls -->
-          <div class="calc-controls">
-            <div class="calc-field">
-              <label class="calc-label" for="maxPoints">Maximale Punktzahl</label>
-              <input type="number" id="maxPoints" class="calc-input" value="100" min="1" max="999" inputmode="numeric">
+          <!-- Live calculator card: inputs + result -->
+          <div class="calc-card">
+            <div class="calc-controls">
+              <div class="calc-field">
+                <label class="calc-label" for="achievedPts">Erreichte Punkte</label>
+                <input type="number" id="achievedPts" class="calc-input" value="" placeholder="?" min="0" step="0.5" inputmode="decimal">
+              </div>
+              <div class="calc-field">
+                <label class="calc-label" for="maxPoints">Maximale Punktzahl</label>
+                <input type="number" id="maxPoints" class="calc-input" value="100" min="1" max="999" inputmode="numeric">
+              </div>
+              <div class="calc-field calc-field--full">
+                <label class="calc-label" for="gradeType">Notenschlüssel</label>
+                <select id="gradeType" class="calc-select">
+                  <option value="50">50 % Schlüssel (Note 4 ab 50 %)</option>
+                  <option value="45">45 % Schlüssel (Note 4 ab 45 %)</option>
+                  <option value="40">40 % Schlüssel (Note 4 ab 40 %)</option>
+                </select>
+              </div>
             </div>
-            <div class="calc-field">
-              <label class="calc-label" for="gradeType">Notenschlüssel</label>
-              <select id="gradeType" class="calc-select">
-                <option value="50">50 % Schlüssel (Note 4 ab 50 %)</option>
-                <option value="45">45 % Schlüssel (Note 4 ab 45 %)</option>
-                <option value="40">40 % Schlüssel (Note 4 ab 40 %)</option>
-              </select>
+            <div class="calc-result" id="calcResult" aria-live="polite" style="background: var(--border-light); color: var(--text-muted);">
+              <div class="calc-result-label">Notenpunkte</div>
+              <div class="calc-result-grade" id="resultGrade">—</div>
+              <div class="calc-result-desc" id="resultDesc">Erreichte Punkte eingeben</div>
+              <div class="calc-result-pct" id="resultPct"></div>
             </div>
           </div>
 
-          <!-- Grade Table -->
+          <!-- Threshold table -->
           <div class="grade-table-wrapper fade-in fade-in-delay-2">
             <div class="grade-table-header">
-              <span class="grade-table-title" id="tableTitle">Notenliste</span>
+              <span class="grade-table-title">Notenschlüssel-Tabelle</span>
               <span class="grade-table-badge" id="tableBadge">100 Punkte</span>
             </div>
             <table class="grade-table" id="gradeTable" role="table">
@@ -790,16 +996,57 @@
       </div>
     </section>
 
+    <!-- ========== KNICK TEASER (P3) ========== -->
+    <section class="knick-teaser" aria-labelledby="knick-heading">
+      <div class="knick-teaser-inner">
+        <div class="knick-screen-frame" aria-hidden="true">
+          <img src="../assets/screen-knick.png" alt="Notenschlüssel-Generator mit Knick-Schieberegler in der Der-Notenrechner-App" loading="lazy" width="1206" height="2622">
+        </div>
+        <div class="knick-teaser-text">
+          <h2 id="knick-heading">Notenschlüssel mit Knick erstellen</h2>
+          <p>In der App stellst du die Bestehensgrenze per Schieberegler ein — auch außerhalb der 50/45/40-Standards. Optional kommt ein Sockel dazu. Alle 16 Notenstufen werden automatisch berechnet.</p>
+          <ul class="knick-features">
+            <li class="knick-feature">
+              <span class="knick-feature-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>
+              <span><strong>Knick frei wählbar</strong> — Bestehensgrenze von 30 bis 60 % per Slider</span>
+            </li>
+            <li class="knick-feature">
+              <span class="knick-feature-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>
+              <span><strong>Sockel optional</strong> — Mindestprozent für 0 Punkte setzen</span>
+            </li>
+            <li class="knick-feature">
+              <span class="knick-feature-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>
+              <span><strong>Eigene Schlüssel speichern</strong> — für jede Klausur und jedes Fach wiederverwenden</span>
+            </li>
+            <li class="knick-feature">
+              <span class="knick-feature-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>
+              <span><strong>Direkt mit Klassen</strong> — Schüler-Ergebnisse eintragen, Klassenschnitt live</span>
+            </li>
+          </ul>
+          <div class="knick-cta-row">
+            <a href="https://apps.apple.com/de/app/der-notenrechner/id1662507346" target="_blank" rel="noopener" class="app-store-badge">
+              <span class="app-store-badge-icon"><svg viewBox="0 0 384 512"><path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184 4 273.5c0 26.2 4.8 53.3 14.4 81.2 12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/></svg></span>
+              <span class="app-store-badge-text">
+                <span class="app-store-badge-small">Laden im</span>
+                <span class="app-store-badge-large">App Store</span>
+              </span>
+            </a>
+            <span class="knick-cta-note">Kostenlos · Keine Werbung · Kein Abo</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- ========== CTA BANNER ========== -->
     <section class="cta-banner">
       <div class="cta-banner-content">
-        <h2>Dieser Rechner kann noch mehr.</h2>
-        <p class="cta-banner-sub">In der App generieren Sie Notenschlüssel per Schieberegler — Bestehensgrenze einstellen, fertig. Dazu Klassenverwaltung, Zeugnisnoten und mehr.</p>
+        <h2>Klausuren, Klassen, Zeugnisse — alles in einer App.</h2>
+        <p class="cta-banner-sub">Lokal auf dem iPhone, ohne Account, ohne Abo. Alles, was nach dem Notenschlüssel kommt.</p>
         <div class="cta-features">
-          <div class="cta-feature"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Generator mit Knick & Sockel</div>
-          <div class="cta-feature"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Ergebnisse für 30+ Schüler eingeben</div>
-          <div class="cta-feature"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Klassenschnitt live berechnen</div>
-          <div class="cta-feature"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Zeugnisnoten & PDF-Export</div>
+          <div class="cta-feature"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Klausuren mit ganzer Klasse eingeben</div>
+          <div class="cta-feature"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Klassenschnitt + Verteilungs-Diagramm</div>
+          <div class="cta-feature"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Zeugnisnoten mit Mündlich & Teilnoten</div>
+          <div class="cta-feature"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>PDF-Export für Konferenzen</div>
         </div>
         <a href="https://apps.apple.com/de/app/der-notenrechner/id1662507346" target="_blank" rel="noopener" class="app-store-badge">
           <span class="app-store-badge-icon"><svg viewBox="0 0 384 512"><path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184 4 273.5c0 26.2 4.8 53.3 14.4 81.2 12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/></svg></span>
@@ -857,6 +1104,14 @@
             <a href="../ihk-notenschluessel/" class="internal-link">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
               IHK-Notenschlüssel
+            </a>
+            <a href="../lexikon/notenschluessel/" class="internal-link">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+              Lexikon: Notenschlüssel
+            </a>
+            <a href="../lexikon/knick/" class="internal-link">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+              Lexikon: Knick
             </a>
           </div>
         </article>
@@ -944,28 +1199,71 @@
       return v === Math.floor(v) ? v.toString() : v.toFixed(1).replace('.', ',');
     }
 
-    // ==========================================
-    // CALCULATION (mirrors NotenlisteScreen.tsx)
-    // ==========================================
-    const maxPointsInput = document.getElementById('maxPoints');
-    const gradeTypeSelect = document.getElementById('gradeType');
-    const tableBody = document.getElementById('tableBody');
-    const tableHead = document.getElementById('tableHead');
-    const tableBadge = document.getElementById('tableBadge');
+    // Earth-tone background tints for the result card (mirrors gradeColor())
+    function gradeBgColor(grade) {
+      if (grade >= 13) return 'var(--grade-1-bg)';
+      if (grade >= 10) return 'var(--grade-2-bg)';
+      if (grade >= 7)  return 'var(--grade-3-bg)';
+      if (grade >= 4)  return 'var(--grade-4-bg)';
+      return 'var(--grade-5-bg)';
+    }
 
-    function calculate() {
-      const maxPoints = Math.max(1, parseFloat(maxPointsInput.value) || 100);
+    // Bezeichnung for each Notenpunkte value
+    function gradeDescription(np) {
+      if (np >= 13) return 'sehr gut';
+      if (np >= 10) return 'gut';
+      if (np >= 7)  return 'befriedigend';
+      if (np >= 4)  return 'ausreichend';
+      if (np >= 1)  return 'mangelhaft';
+      return 'ungenügend';
+    }
+
+    function fmtPctDe(n) {
+      return n.toFixed(1).replace('.', ',');
+    }
+
+    // ==========================================
+    // CALCULATION (mirrors src/screens/calculator/CalculatorScreen.tsx)
+    // ==========================================
+    const maxPointsInput  = document.getElementById('maxPoints');
+    const achievedInput   = document.getElementById('achievedPts');
+    const gradeTypeSelect = document.getElementById('gradeType');
+    const tableBody       = document.getElementById('tableBody');
+    const tableBadge      = document.getElementById('tableBadge');
+    const calcResult      = document.getElementById('calcResult');
+    const resultGrade     = document.getElementById('resultGrade');
+    const resultDesc      = document.getElementById('resultDesc');
+    const resultPct       = document.getElementById('resultPct');
+
+    let pulseTimer = null;
+
+    function calculate(triggerPulse) {
+      const maxPoints  = Math.max(1, parseFloat((maxPointsInput.value || '').replace(',', '.')) || 100);
       const thresholds = PRESETS[gradeTypeSelect.value];
+      const achievedRaw = (achievedInput.value || '').replace(',', '.').trim();
+      const achievedNum = parseFloat(achievedRaw);
+      const hasAchieved = achievedRaw !== '' && !isNaN(achievedNum) && achievedNum >= 0;
 
       tableBadge.textContent = (maxPoints === Math.floor(maxPoints) ? maxPoints : maxPoints.toFixed(1)) + ' Punkte';
 
-      // Build rows — one per threshold, exactly like app's NotenlisteScreen
+      // Determine the active grade from achieved points
+      let activeGrade = null;
+      let pct = 0;
+      if (hasAchieved) {
+        const clamped = Math.min(achievedNum, maxPoints);
+        pct = (clamped / maxPoints) * 100;
+        for (const t of thresholds) {
+          if (pct >= t.minPct) { activeGrade = t.grade; break; }
+        }
+      }
+
+      // Render threshold rows; highlight the active grade's row
       let html = '';
       for (const t of thresholds) {
         const minPoints = (t.minPct / 100) * maxPoints;
         const color = gradeColor(t.grade);
-
-        html += '<tr>'
+        const trAttr = (activeGrade === t.grade) ? ' class="active-row"' : '';
+        html += '<tr' + trAttr + '>'
           + '<td><div class="grade-cell">'
           + '<span class="grade-dot" style="background:' + color + '"></span>'
           + '<span class="grade-name">' + t.grade + '</span>'
@@ -976,14 +1274,40 @@
           + '</tr>';
       }
       tableBody.innerHTML = html;
+
+      // Update the result card
+      if (!hasAchieved) {
+        calcResult.style.background = 'var(--border-light)';
+        calcResult.style.color = 'var(--text-muted)';
+        resultGrade.textContent = '—';
+        resultDesc.textContent = 'Erreichte Punkte eingeben';
+        resultPct.textContent = '';
+        return;
+      }
+
+      calcResult.style.background = gradeBgColor(activeGrade);
+      calcResult.style.color = gradeColor(activeGrade);
+      resultGrade.textContent = activeGrade;
+      resultDesc.textContent = (NP_MAP[activeGrade] || '') + ' · ' + gradeDescription(activeGrade);
+      resultPct.textContent = fmtPctDe(pct) + ' % erreicht';
+
+      if (triggerPulse) {
+        calcResult.classList.remove('pulse');
+        // force reflow so the animation can replay on rapid input
+        void calcResult.offsetWidth;
+        calcResult.classList.add('pulse');
+        clearTimeout(pulseTimer);
+        pulseTimer = setTimeout(() => calcResult.classList.remove('pulse'), 360);
+      }
     }
 
     // Listen for changes
-    maxPointsInput.addEventListener('input', calculate);
-    gradeTypeSelect.addEventListener('change', calculate);
+    maxPointsInput.addEventListener('input', () => calculate(true));
+    achievedInput.addEventListener('input', () => calculate(true));
+    gradeTypeSelect.addEventListener('change', () => calculate(true));
 
-    // Initial calculation
-    calculate();
+    // Initial render — no achieved value yet
+    calculate(false);
   </script>
   <div class="print-footer">Erstellt mit notenrechnerapp.de — Kostenlose App im App Store laden</div>
 </body>
