@@ -21,6 +21,61 @@
   <meta name="robots" content="index, follow">
   <link rel="icon" type="image/png" href="/assets/logo.png">
   <link rel="apple-touch-icon" href="/assets/logo.png">
+
+  <!-- Schema.org structured data — Organization + Person + CollectionPage + SoftwareApplication
+       Designed for Google AI Overviews / GEO citation eligibility. -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://notenrechnerapp.de/#organization",
+        "name": "Der Notenrechner",
+        "url": "https://notenrechnerapp.de/",
+        "logo": "https://notenrechnerapp.de/assets/logo.png",
+        "founder": { "@id": "https://notenrechnerapp.de/#author" }
+      },
+      {
+        "@type": "Person",
+        "@id": "https://notenrechnerapp.de/#author",
+        "name": "Jonah Röhl",
+        "jobTitle": "Lehrer & Entwickler",
+        "description": "Lehrkraft in Hamburg und Entwickler von Der Notenrechner.",
+        "url": "https://notenrechnerapp.de/#author",
+        "worksFor": { "@id": "https://notenrechnerapp.de/#organization" }
+      },
+      {
+        "@type": "CollectionPage",
+        "headline": "Lexikon — Begriffe rund um Noten und Notenschlüssel",
+        "description": "Kompakte Definitionen rund um Noten, Notenschlüssel, Notenpunkte und Bewertung — für Lehrkräfte, Schülerinnen und Schüler.",
+        "url": "https://notenrechnerapp.de/lexikon/",
+        "datePublished": "2026-04-01",
+        "dateModified": "2026-05-08",
+        "author": { "@id": "https://notenrechnerapp.de/#author" },
+        "publisher": { "@id": "https://notenrechnerapp.de/#organization" },
+        "inLanguage": "de-DE"
+      },
+      {
+        "@type": "SoftwareApplication",
+        "@id": "https://notenrechnerapp.de/#app",
+        "name": "Der Notenrechner",
+        "applicationCategory": "EducationApplication",
+        "operatingSystem": "iOS, iPadOS",
+        "downloadUrl": "https://apps.apple.com/de/app/der-notenrechner/id1662507346",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "EUR" }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Der Notenrechner", "item": "https://notenrechnerapp.de/" },
+          { "@type": "ListItem", "position": 2, "name": "Lexikon", "item": "https://notenrechnerapp.de/lexikon/" }
+        ]
+      }
+    ]
+  }
+  </script>
+
   <style>
 :root {
   --primary: #2F60C0; --primary-light: #6B94E0; --primary-dark: #1F4A9C;

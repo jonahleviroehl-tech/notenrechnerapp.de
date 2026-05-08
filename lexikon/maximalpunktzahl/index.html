@@ -21,14 +21,36 @@
   <meta name="robots" content="index, follow">
   <link rel="icon" type="image/png" href="/assets/logo.png">
   <link rel="apple-touch-icon" href="/assets/logo.png">
+  <!-- Schema.org structured data — Organization + Person + Article + SoftwareApplication
+       Designed for Google AI Overviews / GEO citation eligibility. -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    "itemListElement": [
-      { "@type": "ListItem", "position": 1, "name": "Der Notenrechner", "item": "https://notenrechnerapp.de/" },
-      { "@type": "ListItem", "position": 2, "name": "Lexikon", "item": "https://notenrechnerapp.de/lexikon/" },
-      { "@type": "ListItem", "position": 3, "name": "Maximalpunktzahl", "item": "https://notenrechnerapp.de/lexikon/maximalpunktzahl/" }
+    "@graph": [
+      { "@type": "Organization", "@id": "https://notenrechnerapp.de/#organization", "name": "Der Notenrechner", "url": "https://notenrechnerapp.de/", "logo": "https://notenrechnerapp.de/assets/logo.png", "founder": { "@id": "https://notenrechnerapp.de/#author" } },
+      { "@type": "Person", "@id": "https://notenrechnerapp.de/#author", "name": "Jonah Röhl", "jobTitle": "Lehrer & Entwickler", "description": "Lehrkraft in Hamburg und Entwickler von Der Notenrechner.", "url": "https://notenrechnerapp.de/#author", "worksFor": { "@id": "https://notenrechnerapp.de/#organization" } },
+      {
+        "@type": "Article",
+        "headline": "Maximalpunktzahl in Klausuren: Definition und Anwendung",
+        "description": "Die Maximalpunktzahl ist die maximal erreichbare Punktzahl einer Klausur. Definition, übliche Werte und wie sie zur Notenberechnung genutzt wird.",
+        "url": "https://notenrechnerapp.de/lexikon/maximalpunktzahl/",
+        "datePublished": "2026-04-01",
+        "dateModified": "2026-05-08",
+        "author": { "@id": "https://notenrechnerapp.de/#author" },
+        "publisher": { "@id": "https://notenrechnerapp.de/#organization" },
+        "mainEntityOfPage": "https://notenrechnerapp.de/lexikon/maximalpunktzahl/",
+        "inLanguage": "de-DE",
+        "about": { "@type": "Thing", "name": "Maximalpunktzahl" }
+      },
+      { "@type": "SoftwareApplication", "@id": "https://notenrechnerapp.de/#app", "name": "Der Notenrechner", "applicationCategory": "EducationApplication", "operatingSystem": "iOS, iPadOS", "downloadUrl": "https://apps.apple.com/de/app/der-notenrechner/id1662507346", "offers": { "@type": "Offer", "price": "0", "priceCurrency": "EUR" } },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Der Notenrechner", "item": "https://notenrechnerapp.de/" },
+          { "@type": "ListItem", "position": 2, "name": "Lexikon", "item": "https://notenrechnerapp.de/lexikon/" },
+          { "@type": "ListItem", "position": 3, "name": "Maximalpunktzahl", "item": "https://notenrechnerapp.de/lexikon/maximalpunktzahl/" }
+        ]
+      }
     ]
   }
   </script>

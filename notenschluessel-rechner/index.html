@@ -4,9 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Notenschlüssel-Rechner: Punkte sofort in Note umrechnen | Der Notenrechner</title>
-  <meta name="description" content="Erreichte Punkte eingeben → Note sofort, mit voller Tabelle für die ganze Klausur. 50/45/40 %-Schlüssel. Notenschlüssel mit Knick in der App.">
+  <meta name="description" content="Erreichte Punkte eingeben → Note sofort, mit voller Tabelle für die ganze Klausur. 50/45/40 %-Schlüssel. Mit der App auf iPhone und iPad: Knick, Klassen, Zeugnisnoten.">
   <meta property="og:title" content="Notenschlüssel-Rechner: Punkte sofort in Note umrechnen | Der Notenrechner">
-  <meta property="og:description" content="Erreichte Punkte eingeben → Note sofort, mit voller Tabelle für die ganze Klausur. 50/45/40 %-Schlüssel. Notenschlüssel mit Knick in der App.">
+  <meta property="og:description" content="Erreichte Punkte eingeben → Note sofort, mit voller Tabelle für die ganze Klausur. 50/45/40 %-Schlüssel. Mit der App auf iPhone und iPad: Knick, Klassen, Zeugnisnoten.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://notenrechnerapp.de/notenschluessel-rechner/">
   <meta property="og:locale" content="de_DE">
@@ -29,37 +29,62 @@
   <link rel="icon" type="image/png" href="../assets/logo.png">
   <link rel="apple-touch-icon" href="../assets/logo.png">
 
-  <!-- Schema.org structured data -->
+  <!-- Schema.org structured data — Organization + Person + WebApplication + SoftwareApplication
+       Designed for Google AI Overviews / GEO citation eligibility. -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "WebApplication",
-    "name": "Notenschlüssel-Rechner",
-    "description": "Notenschlüssel online berechnen: Maximalpunktzahl eingeben, Prozentgrenzen wählen, sofort die Notentabelle erhalten.",
-    "url": "https://notenrechnerapp.de/notenschluessel-rechner/",
-    "applicationCategory": "EducationalApplication",
-    "operatingSystem": "All",
-    "offers": {
-      "@type": "Offer",
-      "price": "0",
-      "priceCurrency": "EUR"
-    },
-    "datePublished": "2026-03-15",
-    "dateModified": "2026-03-17",
-    "author": {
-      "@type": "Organization",
-      "name": "Der Notenrechner",
-      "url": "https://notenrechnerapp.de"
-    }
-  }
-  </script>
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    "itemListElement": [
-      { "@type": "ListItem", "position": 1, "name": "Der Notenrechner", "item": "https://notenrechnerapp.de/" },
-      { "@type": "ListItem", "position": 2, "name": "Notenschlüssel-Rechner", "item": "https://notenrechnerapp.de/notenschluessel-rechner/" }
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://notenrechnerapp.de/#organization",
+        "name": "Der Notenrechner",
+        "url": "https://notenrechnerapp.de/",
+        "logo": "https://notenrechnerapp.de/assets/logo.png",
+        "founder": { "@id": "https://notenrechnerapp.de/#author" },
+        "sameAs": [
+          "https://apps.apple.com/de/app/der-notenrechner/id1662507346",
+          "https://instagram.com/notenrechnerapp"
+        ]
+      },
+      {
+        "@type": "Person",
+        "@id": "https://notenrechnerapp.de/#author",
+        "name": "Jonah Röhl",
+        "jobTitle": "Lehrer & Entwickler",
+        "description": "Lehrkraft in Hamburg und Entwickler von Der Notenrechner.",
+        "url": "https://notenrechnerapp.de/#author",
+        "worksFor": { "@id": "https://notenrechnerapp.de/#organization" }
+      },
+      {
+        "@type": "WebApplication",
+        "name": "Notenschlüssel-Rechner",
+        "description": "Notenschlüssel online berechnen: Maximalpunktzahl eingeben, Prozentgrenzen wählen, sofort die Notentabelle erhalten.",
+        "url": "https://notenrechnerapp.de/notenschluessel-rechner/",
+        "applicationCategory": "EducationalApplication",
+        "operatingSystem": "All",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "EUR" },
+        "datePublished": "2026-03-15",
+        "dateModified": "2026-05-08",
+        "author": { "@id": "https://notenrechnerapp.de/#author" },
+        "publisher": { "@id": "https://notenrechnerapp.de/#organization" }
+      },
+      {
+        "@type": "SoftwareApplication",
+        "@id": "https://notenrechnerapp.de/#app",
+        "name": "Der Notenrechner",
+        "applicationCategory": "EducationApplication",
+        "operatingSystem": "iOS, iPadOS",
+        "downloadUrl": "https://apps.apple.com/de/app/der-notenrechner/id1662507346",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "EUR" }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Der Notenrechner", "item": "https://notenrechnerapp.de/" },
+          { "@type": "ListItem", "position": 2, "name": "Notenschlüssel-Rechner", "item": "https://notenrechnerapp.de/notenschluessel-rechner/" }
+        ]
+      }
     ]
   }
   </script>
@@ -942,8 +967,8 @@
       <div class="container">
         <div class="tool-hero-header fade-in">
           <h1>Notenschlüssel <span>berechnen</span></h1>
-          <p class="tool-hero-sub">Erreichte Punkte eingeben — Note sofort, mit voller Notentabelle für die ganze Klausur.</p>
-          <p style="font-size:13px;color:var(--text-muted);margin-top:8px;">Letzte Aktualisierung: März 2026</p>
+          <p class="tool-hero-sub lead-answer">Ein Notenschlüssel ordnet erreichten Punkten in einer Klausur eine Note zu — meist prozentbasiert. Geben Sie hier die erreichten Punkte und die Maximalpunktzahl ein und wählen Sie zwischen 50&nbsp;%-, 45&nbsp;%- und 40&nbsp;%-Schlüssel — die Note erscheint sofort, mit der vollständigen Notentabelle für die ganze Klausur.</p>
+          <p style="font-size:13px;color:var(--text-muted);margin-top:8px;">Letzte Aktualisierung: Mai 2026 · Auch in der App für iPhone &amp; iPad</p>
         </div>
 
         <div class="calc fade-in fade-in-delay-1">
@@ -1041,7 +1066,7 @@
     <section class="cta-banner">
       <div class="cta-banner-content">
         <h2>Klausuren, Klassen, Zeugnisse — alles in einer App.</h2>
-        <p class="cta-banner-sub">Lokal auf dem iPhone, ohne Account, ohne Abo. Alles, was nach dem Notenschlüssel kommt.</p>
+        <p class="cta-banner-sub">Lokal auf iPhone und iPad, ohne Account, ohne Abo. Alles, was nach dem Notenschlüssel kommt.</p>
         <div class="cta-features">
           <div class="cta-feature"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Klausuren mit ganzer Klasse eingeben</div>
           <div class="cta-feature"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Klassenschnitt + Verteilungs-Diagramm</div>
