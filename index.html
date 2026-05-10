@@ -2123,48 +2123,111 @@
         <a href="#hero" class="legal-close" aria-label="Zurück zur Startseite"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5"/><path d="m12 19-7-7 7-7"/></svg> Zurück</a>
         <h2 id="datenschutz-heading">Datenschutzerklärung</h2>
 
+        <h3>Datenschutz auf einen Blick</h3>
+        <p>Der Notenrechner ist datenschutzfreundlich konzipiert. <strong>Alle in der App eingegebenen Daten — insbesondere Klassen-, Schüler- und Notendaten — bleiben ausschließlich auf Ihrem Gerät.</strong> Es findet keine Übermittlung an uns, an Drittanbieter oder an Server statt. Die App kommt ohne Tracking, Analyse, Werbung und ohne Internetverbindung aus. Diese Erklärung beschreibt im Detail, welche Daten wann durch wen verarbeitet werden — und welche eben nicht.</p>
+
         <h3>1. Verantwortlicher</h3>
+        <p>Verantwortlich im Sinne der DSGVO und anderer nationaler Datenschutzgesetze:</p>
         <p>
           Jonah Röhl<br>
-          Eppendorferstieg 5, 22299 Hamburg<br>
+          Jungiusstraße 5, 20355 Hamburg, Deutschland<br>
           E-Mail: notenrechnerapp.de@gmail.com
         </p>
 
-        <h3>2. Allgemeines zur Datenverarbeitung</h3>
-        <p>Der Schutz Ihrer personenbezogenen Daten ist uns wichtig. Diese Datenschutzerklärung informiert Sie darüber, wie wir mit Ihren Daten umgehen — sowohl in der App „Der Notenrechner" als auch auf dieser Website.</p>
+        <h3>2. Geltungsbereich</h3>
+        <p>Diese Datenschutzerklärung gilt für die App „Der Notenrechner" (iOS und iPadOS sowie ggf. Android) und für die Website notenrechnerapp.de inklusive aller Unterseiten.</p>
 
-        <h3>3. Datenverarbeitung in der App</h3>
-        <p>Die App „Der Notenrechner" erhebt, speichert und verarbeitet <strong>keine personenbezogenen Daten</strong>. Im Einzelnen:</p>
+        <h3>3. Begriffe und Rollen</h3>
         <ul>
-          <li>Es werden keine Daten an uns, an Dritte oder an externe Server übermittelt.</li>
-          <li>Es werden keine Analysedienste, Tracking-Tools oder Werbenetzwerke eingesetzt.</li>
-          <li>Alle in der App eingegebenen Daten (Noten, Klassen, Schüler, Klausuren) werden <strong>ausschließlich lokal auf Ihrem Gerät</strong> gespeichert.</li>
-          <li>Die Backup-Funktion erstellt eine lokale JSON-Datei, die Sie selbst verwalten. Es erfolgt kein automatischer Upload.</li>
-          <li>Die App benötigt <strong>keine Internetverbindung</strong> und funktioniert vollständig offline.</li>
+          <li><strong>Nutzer</strong> ist die Lehrkraft, die die App auf ihrem Endgerät installiert und verwendet.</li>
+          <li><strong>Schülerdaten</strong> sind alle Daten, die der Nutzer in die App eingibt und sich auf bestimmbare Schülerinnen und Schüler beziehen — z. B. Namen, Notenpunkte, Punktzahlen.</li>
+          <li><strong>Anbieter</strong> ist der oben genannte Verantwortliche.</li>
+        </ul>
+        <p>Wichtiger Hinweis zu Schülerdaten: siehe Abschnitt 9.</p>
+
+        <h3>4. Datenverarbeitung in der App</h3>
+        <p><strong>Welche Daten werden verarbeitet?</strong> Innerhalb der App können vom Nutzer folgende Daten eingegeben werden:</p>
+        <ul>
+          <li>Klassen- und Fachbezeichnungen, individuelle Notenschlüssel</li>
+          <li>Namen oder Pseudonyme von Schülerinnen und Schülern</li>
+          <li>Punktzahlen, Notenpunkte, mündliche Noten, Teilnoten</li>
+          <li>Klausur- und zeugnisbezogene Berechnungen</li>
+          <li>App-Einstellungen (z. B. Anzeige traditioneller Noten)</li>
         </ul>
 
-        <h3>4. Datenverarbeitung auf dieser Website</h3>
-        <p>Diese Website erhebt keine personenbezogenen Daten. Es werden keine Cookies gesetzt, keine Analysedienste verwendet und keine Nutzerdaten gespeichert. Die Website wird über GitHub Pages gehostet. Beim Aufruf der Website können durch den Hosting-Anbieter (GitHub/Microsoft) technische Zugriffsdaten (z. B. IP-Adresse, Zeitpunkt des Zugriffs) in Server-Logfiles gespeichert werden. Weitere Informationen hierzu finden Sie in der <a href="https://docs.github.com/de/site-policy/privacy-policies/github-general-privacy-statement" target="_blank" rel="noopener" style="color: var(--primary); text-decoration: underline;">Datenschutzerklärung von GitHub</a>.</p>
+        <p><strong>Lokale Speicherung.</strong> Sämtliche Daten werden in einer SQLite-Datenbank im Sandbox-Verzeichnis der App auf dem Endgerät gespeichert. iOS und iPadOS schotten dieses Verzeichnis pro App ab; ein Zugriff durch andere Apps ist betriebssystemseitig ausgeschlossen.</p>
 
-        <h3>5. Ihre Rechte</h3>
-        <p>Da wir keine personenbezogenen Daten erheben oder speichern, fallen die meisten Betroffenenrechte praktisch nicht an. Grundsätzlich stehen Ihnen gemäß DSGVO folgende Rechte zu:</p>
+        <p><strong>Keine Übermittlung an den Anbieter.</strong> Die App enthält keine Funktion, die Inhalte automatisch an den Anbieter überträgt. Es werden keine Cloud-Dienste, Analyse-Tools, Crash-Reporter, Tracking-Pixel oder Werbenetzwerke eingesetzt. Eine Internetverbindung ist für die Kernfunktion nicht erforderlich.</p>
+
+        <p><strong>Backup-Funktion.</strong> Auf ausdrückliche Anweisung des Nutzers erstellt die App eine JSON-Datei mit allen lokalen Daten und übergibt sie an die System-Teilen-Funktion (iOS Share Sheet). Über welchen Kanal die Datei ausgeleitet wird — AirDrop, E-Mail, iCloud Drive, Messenger — entscheidet ausschließlich der Nutzer. Der Anbieter erhält dabei zu keinem Zeitpunkt Kenntnis von der Datei oder ihrem Inhalt.</p>
+
+        <p><strong>In-App-Bewertungsdialog.</strong> Die App kann in seltenen Fällen das vom Betriebssystem bereitgestellte Bewertungs-Dialogfenster anzeigen (Apple StoreKit „requestReview" bzw. Google Play In-App Review). Dieser Dialog wird vom App Store gesteuert; der Anbieter erhält ausschließlich aggregierte Sternebewertungen und freiwillig hinterlassene Texte ohne Personenbezug.</p>
+
+        <h3>5. Datenverarbeitung beim App Store-Kauf</h3>
+        <p>Der Kauf der App erfolgt über den Apple App Store (bzw. Google Play). Die Kaufabwicklung, Zahlung, Quittungserstellung und gegebenenfalls Erstattung verantwortet der jeweilige Plattformbetreiber. Der Anbieter erhält von Apple bzw. Google <strong>ausschließlich aggregierte, anonymisierte Verkaufs- und Kennzahlenberichte</strong> (App Store Connect Sales/Trends, Google Play Console Statistics) — etwa Anzahl der Downloads, Umsätze pro Land, Geräteklassen, Absturzraten. Eine Identifizierung einzelner Käufer ist dem Anbieter nicht möglich.</p>
+        <p>Für die durch Apple bzw. Google selbst erfolgende Datenverarbeitung gelten deren Datenschutzbestimmungen:</p>
         <ul>
-          <li><strong>Auskunftsrecht</strong> (Art. 15 DSGVO): Sie haben das Recht zu erfahren, ob und welche personenbezogenen Daten wir über Sie verarbeiten.</li>
-          <li><strong>Recht auf Berichtigung</strong> (Art. 16 DSGVO): Sie können die Berichtigung unrichtiger Daten verlangen.</li>
-          <li><strong>Recht auf Löschung</strong> (Art. 17 DSGVO): Sie können die Löschung Ihrer Daten verlangen.</li>
+          <li>Apple: <a href="https://www.apple.com/de/legal/privacy/" target="_blank" rel="noopener" style="color: var(--primary); text-decoration: underline;">apple.com/de/legal/privacy</a></li>
+          <li>Google: <a href="https://policies.google.com/privacy" target="_blank" rel="noopener" style="color: var(--primary); text-decoration: underline;">policies.google.com/privacy</a></li>
+        </ul>
+
+        <h3>6. Datenverarbeitung auf der Website</h3>
+        <p>Die Website notenrechnerapp.de wird über GitHub Pages (GitHub Inc., 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, USA — eine Microsoft-Tochter) gehostet. Beim Aufruf können durch GitHub technische Zugriffsdaten (insbesondere IP-Adresse, Datum/Uhrzeit, abgerufene URL, Referrer, User-Agent) in Server-Logfiles erfasst werden. Diese Verarbeitung erfolgt durch GitHub im Rahmen des Betriebs der Hosting-Infrastruktur. Rechtsgrundlage ist Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an einer technisch funktionierenden Website).</p>
+        <p>Die Website selbst setzt <strong>keine Cookies</strong>, keine Analyse-Tools (z. B. Google Analytics, Plausible, Matomo) und keine Drittanbieter-Skripte ein.</p>
+        <p>GitHub-Datenschutzerklärung: <a href="https://docs.github.com/de/site-policy/privacy-policies/github-general-privacy-statement" target="_blank" rel="noopener" style="color: var(--primary); text-decoration: underline;">docs.github.com</a></p>
+        <p>Zur Übermittlung in Drittländer (USA): GitHub ist nach dem EU-U.S. Data Privacy Framework zertifiziert; für die Übermittlung an Apple/Google in den USA gelten Standardvertragsklauseln gemäß Art. 46 Abs. 2 lit. c DSGVO.</p>
+
+        <h3>7. Web-Tools (Online-Notenrechner)</h3>
+        <p>Die unter <a href="/notenschluessel-rechner/" style="color: var(--primary); text-decoration: underline;">/notenschluessel-rechner/</a>, <a href="/notenpunkte-tabelle/" style="color: var(--primary); text-decoration: underline;">/notenpunkte-tabelle/</a> und <a href="/ihk-notenschluessel/" style="color: var(--primary); text-decoration: underline;">/ihk-notenschluessel/</a> erreichbaren Online-Rechner laufen vollständig im Browser des Nutzers (clientseitig). Eingegebene Werte werden weder gespeichert noch übermittelt; sie verlassen das Gerät nicht.</p>
+
+        <h3>8. Hinweise für Lehrkräfte zum Umgang mit Schülerdaten</h3>
+        <p>Die App ist datenschutzfreundlich, ersetzt aber nicht die schulrechtlichen Pflichten der Lehrkraft. Wenn Sie identifizierende Daten von Schülerinnen und Schülern (z. B. Klarnamen) eingeben, sind <strong>Sie</strong> datenschutzrechtlich Verantwortlicher gegenüber den Betroffenen. Bitte beachten Sie:</p>
+        <ul>
+          <li>Die <strong>Schule</strong> ist in der Regel datenschutzrechtlich für die Verarbeitung von Schülerdaten verantwortlich; die Verarbeitung auf privaten Geräten von Lehrkräften ist landesrechtlich unterschiedlich geregelt (vgl. die jeweiligen Schul- und Datenschutzgesetze der Länder).</li>
+          <li>Wir empfehlen, Schülerinnen und Schüler <strong>pseudonymisiert</strong> zu erfassen (z. B. Listenplatz, Initialen, Codes) — die App ist hierfür ausdrücklich ausgelegt.</li>
+          <li>Klären Sie mit Ihrer Schule und ggf. dem behördlichen Datenschutzbeauftragten, ob die Nutzung auf einem privaten Gerät bzw. eine Auftragsverarbeitung erforderlich ist.</li>
+          <li>Eine Auftragsverarbeitung im Sinne des Art. 28 DSGVO besteht zwischen dem Anbieter und der Lehrkraft/Schule <strong>nicht</strong>, da der Anbieter zu keinem Zeitpunkt Zugriff auf die Daten erhält.</li>
+        </ul>
+
+        <h3>9. Speicherdauer</h3>
+        <p>Lokal in der App gespeicherte Daten verbleiben dort, bis der Nutzer sie löscht oder die App deinstalliert. Der Anbieter selbst speichert keine personenbezogenen Daten und kann sie folglich auch nicht löschen.</p>
+
+        <h3>10. Datensicherheit</h3>
+        <p>Der Anbieter trifft im Rahmen seiner Verantwortlichkeit angemessene technische und organisatorische Maßnahmen (Art. 32 DSGVO):</p>
+        <ul>
+          <li>App-Daten liegen in der vom Betriebssystem geschützten App-Sandbox.</li>
+          <li>Die App fordert keine Berechtigungen an, die für ihre Funktion nicht erforderlich sind.</li>
+          <li>Es bestehen keine offenen Schnittstellen, die einen Zugriff Dritter ermöglichen würden.</li>
+        </ul>
+        <p>Für Datensicherungen außerhalb des Geräts (z. B. iCloud-Backup des gesamten Geräts, Backup-Datei per Mail an sich selbst) gelten zusätzlich die Sicherungsmaßnahmen des jeweils gewählten Dienstes.</p>
+
+        <h3>11. Rechtsgrundlagen</h3>
+        <p>Soweit personenbezogene Daten verarbeitet werden, geschieht dies auf folgender Rechtsgrundlage:</p>
+        <ul>
+          <li><strong>Lokale Verarbeitung in der App</strong>: Art. 6 Abs. 1 lit. b DSGVO (Vertragserfüllung) bzw. lit. f DSGVO (berechtigtes Interesse an der bestimmungsgemäßen Funktion).</li>
+          <li><strong>Hosting der Website (Server-Logs)</strong>: Art. 6 Abs. 1 lit. f DSGVO.</li>
+          <li><strong>Kaufabwicklung über App Stores</strong>: Art. 6 Abs. 1 lit. b DSGVO durch den jeweiligen Plattformbetreiber.</li>
+        </ul>
+
+        <h3>12. Ihre Rechte</h3>
+        <p>Da der Anbieter keine personenbezogenen Daten erhebt, gehen die meisten Betroffenenrechte gegenüber dem Anbieter ins Leere — sie bestehen aber dem Grunde nach. Ihnen stehen nach DSGVO zu:</p>
+        <ul>
+          <li><strong>Auskunftsrecht</strong> (Art. 15 DSGVO)</li>
+          <li><strong>Recht auf Berichtigung</strong> (Art. 16 DSGVO)</li>
+          <li><strong>Recht auf Löschung</strong> (Art. 17 DSGVO) — in der App lokal jederzeit selbst durchführbar</li>
           <li><strong>Recht auf Einschränkung der Verarbeitung</strong> (Art. 18 DSGVO)</li>
-          <li><strong>Recht auf Datenübertragbarkeit</strong> (Art. 20 DSGVO)</li>
+          <li><strong>Recht auf Datenübertragbarkeit</strong> (Art. 20 DSGVO) — über die App-eigene Backup-Funktion bereits technisch umgesetzt</li>
           <li><strong>Widerspruchsrecht</strong> (Art. 21 DSGVO)</li>
-          <li><strong>Beschwerderecht</strong>: Sie haben das Recht, sich bei einer Datenschutz-Aufsichtsbehörde zu beschweren.</li>
+          <li><strong>Beschwerderecht</strong> bei einer Aufsichtsbehörde (Art. 77 DSGVO) — für Hamburg: <a href="https://datenschutz-hamburg.de" target="_blank" rel="noopener" style="color: var(--primary); text-decoration: underline;">Hamburgischer Beauftragter für Datenschutz und Informationsfreiheit</a></li>
         </ul>
 
-        <h3>6. Kontakt</h3>
-        <p>Bei Fragen zum Datenschutz können Sie uns jederzeit kontaktieren: notenrechnerapp.de@gmail.com</p>
+        <h3>13. Änderungen dieser Erklärung</h3>
+        <p>Der Anbieter behält sich vor, diese Datenschutzerklärung anzupassen, um sie an geänderte Rechtslage oder geänderte App-Funktionen anzupassen. Die jeweils aktuelle Fassung ist in der App unter „Einstellungen → Rechtliches" und auf notenrechnerapp.de/#datenschutz abrufbar. Wesentliche Änderungen werden in der App durch einen Hinweis kenntlich gemacht.</p>
 
-        <h3>7. Änderungen</h3>
-        <p>Wir behalten uns vor, diese Datenschutzerklärung anzupassen, um sie stets den aktuellen rechtlichen Anforderungen entsprechend zu gestalten. Die jeweils aktuelle Fassung gilt bei Ihrem erneuten Besuch.</p>
+        <h3>14. Kontakt</h3>
+        <p>Fragen zum Datenschutz richten Sie bitte an: notenrechnerapp.de@gmail.com</p>
 
-        <p><em>Stand: März 2026</em></p>
+        <p><em>Stand: Mai 2026</em></p>
       </div>
     </div>
   </section>
@@ -2178,8 +2241,8 @@
         <h3>Angaben gemäß § 5 TMG</h3>
         <p>
           Jonah Röhl<br>
-          Eppendorferstieg 5<br>
-          22299 Hamburg
+          Jungiusstraße 5<br>
+          20355 Hamburg
         </p>
 
         <h3>Kontakt</h3>
@@ -2188,13 +2251,13 @@
         <h3>Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV</h3>
         <p>
           Jonah Röhl<br>
-          Eppendorferstieg 5, 22299 Hamburg
+          Jungiusstraße 5, 20355 Hamburg
         </p>
 
         <h3>Haftungsausschluss</h3>
         <p>Die Inhalte dieser Website wurden mit größtmöglicher Sorgfalt erstellt. Für die Richtigkeit, Vollständigkeit und Aktualität der Inhalte können wir jedoch keine Gewähr übernehmen.</p>
 
-        <p><em>Stand: März 2026</em></p>
+        <p><em>Stand: Mai 2026</em></p>
       </div>
     </div>
   </section>
