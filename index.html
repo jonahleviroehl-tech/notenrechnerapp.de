@@ -1149,6 +1149,74 @@
     /* ============================================
        TRUST BAR
        ============================================ */
+    /* Social proof strip — sits between hero and features.
+       Shows App Store rating (live: 4,5 / 6) and download count. Honest framing only. */
+    .social-proof {
+      padding: 36px 0;
+      background: white;
+      border-top: 1px solid var(--border-light);
+    }
+    .social-proof-row {
+      display: flex;
+      align-items: stretch;
+      justify-content: center;
+      gap: 0;
+      max-width: 720px;
+      margin: 0 auto;
+    }
+    .social-proof-item {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding: 4px 28px;
+      text-decoration: none;
+      color: inherit;
+      transition: transform 0.2s ease;
+    }
+    .social-proof-item:hover { transform: translateY(-1px); }
+    .social-proof-item + .social-proof-item {
+      border-left: 1px solid var(--border-light);
+    }
+    .social-proof-value {
+      font-size: 26px;
+      font-weight: 800;
+      letter-spacing: -0.01em;
+      color: var(--text);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      line-height: 1;
+      font-variant-numeric: tabular-nums;
+    }
+    .social-proof-stars {
+      color: #F59E0B;
+      font-size: 22px;
+      line-height: 1;
+    }
+    .social-proof-label {
+      font-size: 13px;
+      color: var(--text-secondary);
+      margin-top: 8px;
+      line-height: 1.5;
+      font-weight: 500;
+    }
+    .social-proof-label strong { font-weight: 700; color: var(--text); }
+    @media (max-width: 540px) {
+      .social-proof { padding: 32px 0; }
+      .social-proof-row {
+        flex-direction: column;
+        gap: 22px;
+      }
+      .social-proof-item { padding: 0; }
+      .social-proof-item + .social-proof-item {
+        border-left: none;
+        border-top: 1px solid var(--border-light);
+        padding-top: 22px;
+      }
+    }
+
     .trust {
       background: white;
       border-top: 1px solid var(--border-light);
@@ -1762,6 +1830,25 @@
             </div>
           </div>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== SOCIAL PROOF (App Store rating + downloads) ========== -->
+  <section class="social-proof" aria-label="App Store Bewertung und Verbreitung">
+    <div class="container">
+      <div class="social-proof-row">
+        <a href="https://apps.apple.com/de/app/der-notenrechner/id1662507346" target="_blank" rel="noopener" class="social-proof-item" aria-label="App Store Bewertung — 4,5 von 5 Sternen aus 6 Bewertungen">
+          <span class="social-proof-value">
+            <span class="social-proof-stars" aria-hidden="true">★</span>
+            <span>4,5</span>
+          </span>
+          <span class="social-proof-label">Bewertet von <strong>6 Lehrkräften</strong> im App Store</span>
+        </a>
+        <a href="https://apps.apple.com/de/app/der-notenrechner/id1662507346" target="_blank" rel="noopener" class="social-proof-item" aria-label="Über 250 Downloads im App Store">
+          <span class="social-proof-value">Über 250</span>
+          <span class="social-proof-label">Downloads · iPhone, iPad — <strong>Android in Kürze</strong></span>
+        </a>
       </div>
     </div>
   </section>
