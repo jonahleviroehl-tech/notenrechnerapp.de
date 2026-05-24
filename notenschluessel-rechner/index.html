@@ -496,6 +496,46 @@
       background: var(--primary-50);
       color: var(--primary);
     }
+    .grade-table-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 14px 24px 16px;
+      border-top: 1px solid var(--border-light);
+      flex-wrap: wrap;
+    }
+    .grade-table-footer-note {
+      font-size: 12.5px;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+    .pdf-download-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 9px 16px 9px 14px;
+      background: var(--primary-50);
+      color: var(--primary);
+      border-radius: var(--radius-pill);
+      font-family: inherit;
+      font-size: 13.5px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: background 0.15s ease, transform 0.15s ease, color 0.15s ease;
+      min-height: 36px;
+      white-space: nowrap;
+    }
+    .pdf-download-btn:hover {
+      background: var(--primary);
+      color: #fff;
+      transform: translateY(-1px);
+    }
+    .pdf-download-btn svg {
+      width: 14px;
+      height: 14px;
+      flex-shrink: 0;
+    }
     .grade-table {
       width: 100%;
       border-collapse: collapse;
@@ -1016,6 +1056,17 @@
               <tbody id="tableBody">
               </tbody>
             </table>
+            <div class="grade-table-footer">
+              <span class="grade-table-footer-note">Übersicht aller drei Schlüssel (50 %, 45 %, 40 %) als druckbares A4-PDF — zum Pinnen an die Tür oder Verteilen in der Fachschaft.</span>
+              <a href="/assets/notenschluessel-uebersicht.pdf" class="pdf-download-btn" download="notenschluessel-uebersicht.pdf" aria-label="Notenschlüssel-Tabelle als PDF herunterladen">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M12 3v12"/>
+                  <polyline points="7 10 12 15 17 10"/>
+                  <path d="M5 21h14"/>
+                </svg>
+                Tabelle als PDF
+              </a>
+            </div>
           </div>
         </div>
       </div>
