@@ -27,7 +27,7 @@
   {
     "@context": "https://schema.org",
     "@graph": [
-      { "@type": "Organization", "@id": "https://notenrechnerapp.de/#organization", "name": "Der Notenrechner", "url": "https://notenrechnerapp.de/", "logo": "https://notenrechnerapp.de/assets/logo.png", "founder": { "@id": "https://notenrechnerapp.de/#author" } },
+      { "@type": "Organization", "@id": "https://notenrechnerapp.de/#organization", "name": "Der Notenrechner", "url": "https://notenrechnerapp.de/", "logo": "https://notenrechnerapp.de/assets/logo.png", "founder": { "@id": "https://notenrechnerapp.de/#author" }, "sameAs": ["https://apps.apple.com/de/app/der-notenrechner/id1662507346", "https://instagram.com/notenrechnerapp"] },
       { "@type": "Person", "@id": "https://notenrechnerapp.de/#author", "name": "Jonah Röhl", "jobTitle": "Lehrer & Entwickler", "description": "Lehrkraft in Hamburg und Entwickler von Der Notenrechner.", "url": "https://notenrechnerapp.de/#author", "worksFor": { "@id": "https://notenrechnerapp.de/#organization" } },
       {
         "@type": "Article",
@@ -42,13 +42,42 @@
         "inLanguage": "de-DE",
         "about": { "@type": "Thing", "name": "Notenschlüssel-Rechner ohne Werbung" }
       },
-      { "@type": "SoftwareApplication", "@id": "https://notenrechnerapp.de/#app", "name": "Der Notenrechner", "applicationCategory": "EducationApplication", "operatingSystem": "iOS, iPadOS, Android", "downloadUrl": "https://apps.apple.com/de/app/der-notenrechner/id1662507346", "offers": { "@type": "Offer", "price": "0", "priceCurrency": "EUR" } },
+      { "@type": "SoftwareApplication", "@id": "https://notenrechnerapp.de/#app", "name": "Der Notenrechner", "applicationCategory": "EducationApplication", "operatingSystem": "iOS, iPadOS, Android", "downloadUrl": "https://apps.apple.com/de/app/der-notenrechner/id1662507346", "offers": { "@type": "Offer", "price": "0", "priceCurrency": "EUR" }, "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.5", "ratingCount": "6", "bestRating": "5", "worstRating": "1" } },
       {
         "@type": "BreadcrumbList",
         "itemListElement": [
           { "@type": "ListItem", "position": 1, "name": "Der Notenrechner", "item": "https://notenrechnerapp.de/" },
           { "@type": "ListItem", "position": 2, "name": "Notenschlüssel-Rechner", "item": "https://notenrechnerapp.de/notenschluessel-rechner/" },
           { "@type": "ListItem", "position": 3, "name": "Werbefreie Alternative", "item": "https://notenrechnerapp.de/notenschluessel-rechner/lehrerfreund-alternative/" }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Warum werbefrei?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Werbefrei nicht aus Prinzipien-Reiterei, sondern aus einer Lehrer-Perspektive: Wenn ich Sonntagabend Klausuren korrigiere, möchte ich keine Anzeigen-Pop-ups oder Newsletter-Aufforderungen zwischen mir und dem Rechner. Schon gar nicht möchte ich Cookies oder Tracking-Pixel im Hintergrund, wenn ich gleich Klassennoten in die Eingabemaske tippe. Schülernoten sind personenbezogene Daten besonderer Kategorie nach DSGVO Art. 9. Selbst wenn der Web-Rechner selbst keine Schülernamen verarbeitet, ist das Werbe-/Tracking-Ökosystem auf vergleichbaren Seiten genug Reibung, dass ich es bei Der Notenrechner bewusst weggelassen habe."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Funktioniert der Rechner auf jedem Gerät?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Ja. Der Web-Rechner läuft im Browser auf Smartphone, Tablet, Laptop, Desktop — überall, wo eine moderne Browser-Engine läuft. Wer mehr braucht (Klassenverwaltung, Zeugnisnoten, PDF-Export, Offline-Modus), lädt die kostenlose App: iPhone + iPad im App Store. Die Android-Version ist in der finalen Test-Phase — Public Release in Kürze im Google Play Store."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Was kostet das?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Nichts. Web-Rechner und App sind kostenlos. Keine In-App-Käufe, kein „Pro\"-Modell, kein Abonnement. Die App finanziert sich nicht — sie ist ein Projekt aus dem eigenen Schulalltag, kein Geschäftsmodell. Impressum und Datenschutzerklärung sind transparent."
+            }
+          }
         ]
       }
     ]

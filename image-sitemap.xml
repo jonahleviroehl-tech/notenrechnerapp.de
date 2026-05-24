@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <url>
+    <loc>https://notenrechnerapp.de/</loc>
+    <image:image>
+      <image:loc>https://notenrechnerapp.de/assets/screen-rechner.png</image:loc>
+      <image:title>Der Notenrechner — iPhone-Hauptbildschirm</image:title>
+      <image:caption>Notenrechner-App auf dem iPhone: Klausurpunkte werden live in die Note umgerechnet — mit Knick, ohne Werbung, ohne Tracking.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://notenrechnerapp.de/assets/screen-notenliste.png</image:loc>
+      <image:title>Klassenliste mit Notenpunkten</image:title>
+      <image:caption>Klassenübersicht in der Notenrechner-App: Notenpunkte (15–0) und Tendenznoten Schülerin pro Schülerin.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://notenrechnerapp.de/assets/screen-zeugnis.png</image:loc>
+      <image:title>Zeugnisnoten-Generator</image:title>
+      <image:caption>Zeugnisnoten aus mehreren Halbjahres- oder Jahresnoten automatisch berechnen — gewichteter Durchschnitt inklusive.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://notenrechnerapp.de/assets/screen-ipad-rechner.png</image:loc>
+      <image:title>Notenrechner für iPad — Splitscreen-Ansicht</image:title>
+      <image:caption>Notenrechner-App auf dem iPad: voller Notenschlüssel ohne Scrollen, Klausurspiegel und Glockenkurve in einer Ansicht.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://notenrechnerapp.de/assets/screen-ipad-klassen.png</image:loc>
+      <image:title>Klassenverwaltung auf dem iPad</image:title>
+      <image:caption>Master-Detail-Layout: links Klassenliste, rechts Schülerinnen-Details mit Notenpunkten und Tendenzen.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://notenrechnerapp.de/assets/screen-ipad-bellcurve.png</image:loc>
+      <image:title>Klassenspiegel mit Glockenkurve</image:title>
+      <image:caption>Glockenkurve der Klausurnoten — Verteilung pro Notenstufe auf einen Blick.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://notenrechnerapp.de/assets/screen-ipad-zeugnis.png</image:loc>
+      <image:title>Zeugnisnoten Seite an Seite auf dem iPad</image:title>
+      <image:caption>Halbjahresnoten und Jahresnoten in der iPad-Splitscreen-Ansicht parallel sichtbar.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://notenrechnerapp.de/assets/screen-ipad-schueler.png</image:loc>
+      <image:title>Einzelschüler-Profil mit Notenverlauf</image:title>
+      <image:caption>Notenverlauf pro Schülerin über mehrere Halbjahre — Klausur- und mündliche Anteile getrennt erfasst.</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://notenrechnerapp.de/notenschluessel-rechner/</loc>
+    <image:image>
+      <image:loc>https://notenrechnerapp.de/assets/screen-knick.png</image:loc>
+      <image:title>Notenschlüssel mit Knick — App-Editor</image:title>
+      <image:caption>Notenschlüssel mit Knick und Bestehensgrenze per Schieberegler: 50/45/40 % oder eigene Werte einstellen.</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://notenrechnerapp.de/tablet/</loc>
+    <image:image>
+      <image:loc>https://notenrechnerapp.de/assets/screen-ipad-rechner.png</image:loc>
+      <image:title>Notenrechner für iPad — Splitscreen-Hauptansicht</image:title>
+      <image:caption>iPad-Layout mit Apple Pencil und Splitscreen: Master-Detail-Ansicht für Klassen und Klausuren.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://notenrechnerapp.de/assets/screen-ipad-klassen.png</image:loc>
+      <image:title>iPad-Klassenverwaltung</image:title>
+      <image:caption>Klassenliste auf dem iPad mit Splitscreen-Schülerinnen-Detail.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://notenrechnerapp.de/assets/screen-ipad-bellcurve.png</image:loc>
+      <image:title>Klausurspiegel mit Glockenkurve — iPad</image:title>
+      <image:caption>Notenverteilung einer Klausur als Glockenkurve, optimiert für das iPad-Display.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://notenrechnerapp.de/assets/screen-ipad-zeugnis.png</image:loc>
+      <image:title>Zeugnisnoten auf dem iPad</image:title>
+      <image:caption>Zeugnisnoten in der iPad-Splitscreen-Ansicht — Halbjahres- und Jahresnoten gleichzeitig.</image:caption>
+    </image:image>
+  </url>
+</urlset>

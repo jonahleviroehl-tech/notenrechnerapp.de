@@ -36,3 +36,4 @@ User-agent: CCBot
 Allow: /
 
 Sitemap: https://notenrechnerapp.de/sitemap.xml
+Sitemap: https://notenrechnerapp.de/image-sitemap.xml
