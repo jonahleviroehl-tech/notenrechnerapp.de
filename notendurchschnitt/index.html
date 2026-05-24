@@ -4,9 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Notendurchschnitt berechnen — mit Notenpunkten oder Schulnoten | Der Notenrechner</title>
-  <meta name="description" content="Notendurchschnitt aus mehreren Klausuren oder Halbjahresnoten berechnen. Funktioniert mit Notenpunkten (15–0) und Schulnoten (1–6). Mit Dezimalnote für Bewerbungen. Auch in der App für iPhone &amp; iPad.">
+  <meta name="description" content="Notendurchschnitt aus Klausuren, Halbjahres- oder Jahresnoten — mit Notenpunkten (15–0), Schulnoten (1–6) und Dezimalnote. Auch gewichtet (mündlich/schriftlich). Kostenlos &amp; ohne Anmeldung — auch in der App für iPhone, iPad (Android in Kürze).">
   <meta property="og:title" content="Notendurchschnitt berechnen — mit Notenpunkten oder Schulnoten | Der Notenrechner">
-  <meta property="og:description" content="Notendurchschnitt aus mehreren Klausuren oder Halbjahresnoten berechnen. Funktioniert mit Notenpunkten (15–0) und Schulnoten (1–6). Mit Dezimalnote für Bewerbungen. Auch in der App für iPhone &amp; iPad.">
+  <meta property="og:description" content="Notendurchschnitt aus Klausuren, Halbjahres- oder Jahresnoten — mit Notenpunkten (15–0), Schulnoten (1–6) und Dezimalnote. Auch gewichtet (mündlich/schriftlich). Kostenlos &amp; ohne Anmeldung.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://notenrechnerapp.de/notendurchschnitt/">
   <meta property="og:locale" content="de_DE">
@@ -47,10 +47,10 @@
       {
         "@type": "Article",
         "headline": "Notendurchschnitt berechnen — mit Notenpunkten oder Schulnoten",
-        "description": "Notendurchschnitt aus mehreren Klausuren oder Halbjahresnoten berechnen. Funktioniert mit Notenpunkten (15–0) und Schulnoten (1–6).",
+        "description": "Notendurchschnitt aus Klausuren, Halbjahres- oder Jahresnoten berechnen. Mit Notenpunkten (15–0), Schulnoten (1–6) und Dezimalnote für Bewerbungen. Auch gewichtet (mündlich/schriftlich).",
         "url": "https://notenrechnerapp.de/notendurchschnitt/",
         "datePublished": "2026-04-01",
-        "dateModified": "2026-05-08",
+        "dateModified": "2026-05-24",
         "author": { "@id": "https://notenrechnerapp.de/#author" },
         "publisher": { "@id": "https://notenrechnerapp.de/#organization" },
         "mainEntityOfPage": "https://notenrechnerapp.de/notendurchschnitt/",
@@ -70,6 +70,43 @@
         "itemListElement": [
           { "@type": "ListItem", "position": 1, "name": "Der Notenrechner", "item": "https://notenrechnerapp.de/" },
           { "@type": "ListItem", "position": 2, "name": "Notendurchschnitt-Rechner", "item": "https://notenrechnerapp.de/notendurchschnitt/" }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Wie viele Noten brauche ich für einen aussagekräftigen Durchschnitt?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Mathematisch funktioniert der Durchschnitt ab zwei Noten. Pädagogisch ist ein Durchschnitt aus zwei Klausuren wenig belastbar — ab vier Noten wird der Schnitt stabiler. Bei nur einer Note ist der Durchschnitt identisch mit der Note selbst."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Werden mündliche Noten anders als schriftliche bewertet?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Numerisch nicht — eine 2 ist eine 2. Sie werden aber in der Regel anders gewichtet (oft 50:50, manchmal 60:40 oder 40:60). Das Verhältnis ist länderabhängig und in den schulinternen Curricula festgelegt."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Was passiert mit 0 Notenpunkten („ungenügend") im Durchschnitt?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Eine 0 zieht den Durchschnitt mathematisch stark nach unten. In der Oberstufe gilt ein Halbjahr mit 0 Notenpunkten in einem schriftlichen Prüfungsfach als nicht erbracht — mit Versetzungs- und Zulassungsfolgen je nach Oberstufen- bzw. Abiturverordnung des Bundeslandes."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Lässt sich der Notendurchschnitt nachträglich verbessern?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Nur über zusätzliche Noten — eine weitere Klausur oder verstärkte mündliche Mitarbeit, die in den Gesamtschnitt einfließt. Eine schlechte Note streichen geht in der Regel nicht."
+            }
+          }
         ]
       }
     ]
@@ -262,25 +299,69 @@
       <div class="container">
         <article class="content-prose">
           <h2>Wie wird der Notendurchschnitt berechnet?</h2>
-          <p>Der einfache Notendurchschnitt ist das arithmetische Mittel: Summe aller Notenwerte geteilt durch die Anzahl der Noten. Bei <strong>Notenpunkten</strong> liegt der Durchschnitt zwischen 0 und 15. Bei <strong>Schulnoten</strong> zwischen 1 und 6.</p>
-          <p>Beispiel: Vier Klausuren mit den Notenpunkten 13, 11, 12, 10 ergeben einen Durchschnitt von (13 + 11 + 12 + 10) ÷ 4 = 11,5 Notenpunkten. Das entspricht ungefähr der Note 2 (1,8 als Dezimalnote).</p>
+          <p>Der einfache Notendurchschnitt ist das arithmetische Mittel: Summe aller Notenwerte geteilt durch die Anzahl der Noten. Bei <strong>Notenpunkten</strong> liegt der Durchschnitt zwischen 0 und 15. Bei <strong>Schulnoten</strong> zwischen 1 und 6. Der Rechner oben übernimmt die Arithmetik — interessant wird die Frage, <em>was</em> Sie einrechnen, mit welcher <em>Gewichtung</em>, und wie Sie das Ergebnis lesen.</p>
+          <p>Beispiel ungewichtet: Vier Klausuren mit den Notenpunkten 13, 11, 12, 10 ergeben einen Durchschnitt von (13&nbsp;+&nbsp;11&nbsp;+&nbsp;12&nbsp;+&nbsp;10)&nbsp;÷&nbsp;4&nbsp;=&nbsp;11,5 Notenpunkten. Das entspricht ungefähr der traditionellen Note 2 (1,8 als Dezimalnote, siehe <a href="/notenpunkte-tabelle/">Notenpunkte-Tabelle</a>).</p>
 
           <h3>Notenpunkte oder Schulnoten — was eingeben?</h3>
-          <p>Wer in der gymnasialen Oberstufe ist, rechnet meist mit <strong>Notenpunkten (15–0)</strong>. In der Sekundarstufe I (Klassen 5–10), Realschulen oder Hauptschulen werden klassische <strong>Schulnoten (1–6)</strong> verwendet. Der Rechner unterstützt beide Modi — einfach oben umschalten.</p>
+          <p>In der gymnasialen Oberstufe wird mit <strong>Notenpunkten (15–0)</strong> gerechnet — die Skala hat 16 Stufen, je drei Notenpunkte ergeben eine Schulnote. Hintergrund dazu im Lexikoneintrag <a href="/lexikon/notenpunkte/">Notenpunkte</a>. In der Sekundarstufe&nbsp;I (Klassen 5–10), an Realschulen, Hauptschulen, Berufsschulen und teilweise an Gesamtschulen sind klassische <strong>Schulnoten (1–6)</strong> üblich, oft mit Tendenzen („2 plus", „3 minus") in Dezimalform. Der Rechner unterstützt beide Modi — einfach oben umschalten.</p>
 
-          <h3>Halbe Noten und Tendenzen erlaubt</h3>
-          <p>In Schulnoten-Modus sind Werte mit Komma erlaubt — etwa 2,3 für die Tendenz „2 minus\". Im Notenpunkte-Modus werden integer Werte (0 bis 15) erwartet, weil Notenpunkte selbst keine Dezimalstellen haben.</p>
+          <h3>Halbe Noten und Tendenzen</h3>
+          <p>Im Schulnoten-Modus sind Werte mit Komma erlaubt — etwa 2,3 für die Tendenz „2 minus" oder 1,7 für „2 plus". Im Notenpunkte-Modus werden ganzzahlige Werte (0 bis 15) erwartet, weil Notenpunkte selbst keine Dezimalstellen haben. Wer einzelne Tendenzen wie „11 plus" eintragen möchte, kann das durch eine Halbschrittweite (10,5 oder 11,5) abbilden — pädagogisch sauberer ist allerdings, in der App pro Klausur einen sauberen Notenpunkt zu vergeben.</p>
 
-          <h3>Was zählt als guter Durchschnitt?</h3>
-          <p>Im 15-Punkte-System gilt: ab 13 Notenpunkten (Note 1-) eine sehr gute Leistung, ab 10 Notenpunkten (2-) noch gut, ab 5 Notenpunkten (4) bestanden. In Schulnoten: 1,0 bis 1,5 sehr gut, 1,6 bis 2,5 gut, 2,6 bis 3,5 befriedigend, 3,6 bis 4,0 ausreichend, schlechter als 4,0 nicht bestanden.</p>
+          <h2>Gewichteter Notendurchschnitt — wann ist er sinnvoll?</h2>
+          <p>Der oben implementierte Rechner ermittelt den <em>ungewichteten</em> Durchschnitt — jede Note zählt gleich viel. In der Praxis kommt das selten so vor. Drei häufige Fälle, in denen Sie gewichten müssen:</p>
 
-          <h3>Gewichtete Durchschnitte (Abitur)</h3>
-          <p>Für die Abitur-Gesamtqualifikation wird ein <em>gewichteter</em> Durchschnitt berechnet — Leistungskurse zählen anders als Grundkurse, und Block II (Abiturprüfungen) wird gegen Block I (Kursnoten) verrechnet. Dieser einfache Notendurchschnitt-Rechner deckt den ungewichteten Schnitt ab. Für die Gesamtqualifikation: <a href="/abitur-rechner/">Abitur-Rechner</a>.</p>
+          <h3>1. Klausuren vs. mündliche Mitarbeit</h3>
+          <p>An den meisten Schulen zählt die mündliche Mitarbeit (sonstige Leistungen, SoMi) zu einem festen Anteil neben den Klausuren. Die Gewichtung ist <strong>länderabhängig und schulinterner Beschluss</strong> — gängige Verhältnisse sind 50:50 (zwei gleichwertige Säulen), 60:40 zugunsten mündlich, oder 40:60 zugunsten schriftlich. In der gymnasialen Oberstufe schreibt z.&nbsp;B. Hamburg in den Bildungsplänen ein 50:50-Verhältnis als Regelfall vor; an einzelnen Bundesländern und Schulformen weicht das ab. <strong>Klären Sie das mit Ihrer Fachkonferenz, nicht mit diesem Artikel.</strong></p>
+          <p>Rechen-Beispiel 50:50, Schulnoten-Modus: Schriftliche Note 2,3, mündliche Note 1,7 → (2,3&nbsp;+&nbsp;1,7)&nbsp;÷&nbsp;2&nbsp;=&nbsp;2,0 als Halbjahresnote. Bei 60:40 zugunsten mündlich: (2,3&nbsp;×&nbsp;0,4)&nbsp;+&nbsp;(1,7&nbsp;×&nbsp;0,6)&nbsp;=&nbsp;0,92&nbsp;+&nbsp;1,02&nbsp;=&nbsp;1,94 → gerundet 2.</p>
+
+          <h3>2. Klausuren unterschiedlicher Wertigkeit</h3>
+          <p>Manchmal zählen einzelne Klausuren mehr — etwa eine zentrale Klausur am Halbjahresende stärker als eine reguläre. Auch hier gilt: das schulinterne Konzept entscheidet. Praktisch rechnet sich das so: Werte mit der jeweiligen Gewichtung multiplizieren, aufsummieren, durch die Summe der Gewichte teilen. Beispiel mit drei Klausuren (Notenpunkte 12, 10, 14) und Gewichten (1, 1, 2): (12&nbsp;×&nbsp;1)&nbsp;+&nbsp;(10&nbsp;×&nbsp;1)&nbsp;+&nbsp;(14&nbsp;×&nbsp;2)&nbsp;=&nbsp;50, geteilt durch (1&nbsp;+&nbsp;1&nbsp;+&nbsp;2)&nbsp;=&nbsp;4 ergibt 12,5 Notenpunkte.</p>
+
+          <h3>3. Halbjahresnoten zur Jahresnote zusammenführen</h3>
+          <p>Die <strong>Jahresnote</strong> setzt sich an vielen Schulen aus dem ersten und zweiten Halbjahr zusammen — wieder mit lokal vereinbarter Gewichtung. Häufig zählt das zweite Halbjahr stärker (z.&nbsp;B. 40:60), weil dort die Lernfortschritte aus dem ersten Halbjahr eingeflossen sein sollen. Andere Schulen rechnen 50:50. Für den Übergang in die Qualifikationsphase (Q1, Q2) sind <em>beide</em> Halbjahresnoten getrennt relevant — die Jahresnote ist hier kein zusammenfassender Rundungswert, sondern die beiden Halbjahre erscheinen separat als zwei eingebrachte Halbjahresnoten.</p>
+
+          <h2>Dezimalnote für Bewerbungen</h2>
+          <p>Bewerbungen — etwa um Ausbildungs- oder Studienplätze — verlangen meist die <strong>Dezimalnote</strong>, also einen Durchschnitt im Format „2,3" statt einer Notenpunktzahl. Wenn Sie aus der Oberstufe kommen, rechnen Sie den Notenpunkte-Durchschnitt mit der Formel (17&nbsp;−&nbsp;Notenpunkte)&nbsp;÷&nbsp;3 in eine Dezimalnote um. Beispiel: 11,5 Notenpunkte → (17&nbsp;−&nbsp;11,5)&nbsp;÷&nbsp;3&nbsp;=&nbsp;1,83. Der Rechner oben zeigt diese Umrechnung automatisch unter dem Hauptergebnis an.</p>
+          <p>Bei reinen Schulnoten-Halbjahren (Sek&nbsp;I, Realschule, Berufsschule) ist der ungewichtete Durchschnitt aus den Fachnoten bereits die Dezimalnote. Achtung beim Zeugnis-Durchschnitt: Hier zählen typischerweise <em>alle</em> versetzungsrelevanten Fächer, nicht nur die Klausurfächer.</p>
+
+          <h2>Was zählt als guter Durchschnitt?</h2>
+          <p>Im 15-Punkte-System der Oberstufe gilt grob:</p>
+          <p>
+            <strong>13–15 Notenpunkte</strong> — sehr gut (1+, 1, 1−)<br>
+            <strong>10–12 Notenpunkte</strong> — gut (2+, 2, 2−)<br>
+            <strong>7–9 Notenpunkte</strong> — befriedigend (3+, 3, 3−)<br>
+            <strong>5–6 Notenpunkte</strong> — ausreichend (4+, 4)<br>
+            <strong>0–4 Notenpunkte</strong> — mangelhaft bis ungenügend (gilt als nicht bestanden / <a href="/lexikon/unterkurs/">Unterkurs</a>)
+          </p>
+          <p>In Schulnoten: 1,0–1,5 sehr gut, 1,6–2,5 gut, 2,6–3,5 befriedigend, 3,6–4,0 ausreichend, schlechter als 4,0 nicht bestanden. Was als „gut" wahrgenommen wird, hängt stark vom Kontext ab — ein Notendurchschnitt von 2,3 in Mathematik-Leistungskurs ist ein anderes Signal als 2,3 in Sport-Grundkurs. Den Bezug zur Bestehensgrenze einer einzelnen Klausur erklärt der Lexikoneintrag <a href="/lexikon/bestehensgrenze/">Bestehensgrenze</a>.</p>
+
+          <h2>Abitur-Gesamtqualifikation: deutlich mehr als ein Mittelwert</h2>
+          <p>Die Gesamtnote des Abiturs ist <em>kein</em> einfacher Durchschnitt aus allen Halbjahresnoten. Sie setzt sich aus Block&nbsp;I (eingebrachte Kurse aus Q1–Q4 mit Gewichtung nach Leistungs- und Grundkursen) und Block&nbsp;II (Abiturprüfungen, vierfach gewichtet) zusammen — die Punktsumme aus beiden Blöcken wird per Bundesland-spezifischer Tabelle in die Abiturnote (1,0 bis 4,0) übersetzt. Dieser einfache Notendurchschnitt-Rechner ist dafür nicht das richtige Werkzeug — er bildet Halbjahresnoten und Klausurschnitte ab, nicht Block-II-Verrechnungen. Hintergrund zu unterpunkteten Halbjahren im Lexikoneintrag <a href="/lexikon/unterkurs/">Unterkurs</a>.</p>
+
+          <h2>Häufige Fragen</h2>
+          <h3>Wie viele Noten brauche ich für einen aussagekräftigen Durchschnitt?</h3>
+          <p>Mathematisch funktioniert der Durchschnitt ab zwei Noten. Pädagogisch ist ein Durchschnitt aus zwei Klausuren wenig belastbar — eine schwache oder eine sehr gute Klausur verzerrt das Bild stark. Ab vier Noten wird der Schnitt stabiler. Bei nur einer Note ist der „Durchschnitt" identisch mit der Note selbst.</p>
+
+          <h3>Werden mündliche Noten anders als schriftliche bewertet?</h3>
+          <p>Numerisch nicht — eine 2 ist eine 2. Aber sie werden in der Regel <em>anders gewichtet</em>, siehe oben. Das Verhältnis steht im schulinternen Curriculum oder in den Fachkonferenz-Beschlüssen. Wenn Sie unsicher sind, fragen Sie Ihre Klassenleitung oder die Fachschaft — wir nennen hier bewusst keine bundesweit „richtigen" Zahlen, weil es die schlicht nicht gibt.</p>
+
+          <h3>Was passiert mit 0 Notenpunkten („ungenügend") im Durchschnitt?</h3>
+          <p>Eine 0 zieht den Durchschnitt mathematisch stark nach unten. In der Oberstufe gilt ein Halbjahr mit 0 Notenpunkten in einem schriftlichen Prüfungsfach als nicht erbracht — was über die reine Durchschnittsberechnung hinaus Versetzungs- und Zulassungsfolgen haben kann. Details und Bundesland-Unterschiede stehen in den jeweiligen Oberstufen- und Abiturverordnungen.</p>
+
+          <h3>Lässt sich der Durchschnitt nachträglich „verbessern"?</h3>
+          <p>Nur über zusätzliche Noten — entweder durch eine weitere Klausur (sofern noch möglich), oder durch verstärkte mündliche Mitarbeit, die in den Gesamtschnitt einfließt. Eine schlechte Note „streichen" geht in der Regel nicht. Wer früh im Halbjahr eine schwache Note bekommt, kann sie mit guten Folgenoten relativieren, aber nicht löschen.</p>
+
+          <h2>In der App: gewichteter Schnitt automatisch</h2>
+          <p>Wenn Sie den Notendurchschnitt nicht für eine einzelne Bewerbung, sondern für eine komplette Klasse über mehrere Klausuren hinweg führen wollen, ist die Web-Version hier irgendwann zu fummelig. In der <strong>Der&nbsp;Notenrechner</strong>-App legen Sie pro Klasse die Gewichtung einmal fest (schriftlich/mündlich-Anteil, Klausur-Gewichte), tragen pro Klausur die Punkte ein und sehen Halbjahres- und Jahresnoten automatisch — inkl. Klassenspiegel und Tendenzen. Datenhaltung lokal, ohne Cloud, ohne Account.</p>
 
           <div class="internal-links">
             <a href="/notenpunkte-tabelle/" class="internal-link">Notenpunkte-Tabelle</a>
             <a href="/notenschluessel-rechner/" class="internal-link">Notenschlüssel-Rechner</a>
             <a href="/lexikon/notenpunkte/" class="internal-link">Lexikon: Notenpunkte</a>
+            <a href="/lexikon/notenschluessel/" class="internal-link">Lexikon: Notenschlüssel</a>
+            <a href="/lexikon/unterkurs/" class="internal-link">Lexikon: Unterkurs</a>
+            <a href="/lexikon/bestehensgrenze/" class="internal-link">Lexikon: Bestehensgrenze</a>
           </div>
         </article>
       </div>
