@@ -45,6 +45,7 @@ REGIONS = [
         "slug": "nrw",
         "name": "Nordrhein-Westfalen",
         "preposition": "in",
+        "school_url": "/notenschluessel-rechner/nrw/",  # Cross-link to school Notenschlüssel NRW hub
         "summary": "In NRW betreuen 16 IHKs zusammen mehr Auszubildende als jedes andere Bundesland. Der Notenschlüssel ist bundeseinheitlich — bestanden ab 50 %.",
         "intro": "Nordrhein-Westfalen hat die mit Abstand größte IHK-Landschaft Deutschlands: 16 selbstständige Kammern decken vom Niederrhein bis zum Sauerland alle Wirtschaftsregionen ab.",
         "chambers": [

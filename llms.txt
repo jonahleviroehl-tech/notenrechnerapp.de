@@ -26,6 +26,12 @@
 - [Notenschlüssel Bayern Realschule](https://notenrechnerapp.de/notenschluessel-rechner/bayern/realschule/): Schulaufgabe und Mittlerer Schulabschluss (MAP) gemäß RSO.
 - [Notenschlüssel Bayern Berufsschule](https://notenrechnerapp.de/notenschluessel-rechner/bayern/berufsschule/): Schulische Klausur (1–6) und IHK-Prüfung (DIHK-Tabelle) parallel — zwei Bewertungssysteme.
 
+## Notenschlüssel NRW (Schulform-spezifisch)
+
+- [Notenschlüssel NRW — Übersicht](https://notenrechnerapp.de/notenschluessel-rechner/nrw/): Hub für Schulen in Nordrhein-Westfalen. Was APO-S I, APO-GOSt und SchulG NRW regeln; Bestehensgrenzen für ZP10 und Zentralabitur; Klassenraum-Schlüssel als Fachkonferenz-Beschluss (§ 70 SchulG).
+- [Notenschlüssel NRW Grundschule](https://notenrechnerapp.de/notenschluessel-rechner/nrw/grundschule/): Klassenarbeit in Note umrechnen, Ziffernnoten ab dem 2. Halbjahr Klasse 3 gemäß AO-GS NRW, Schulformempfehlung Klasse 4 (in NRW nicht bindend).
+- [Notenschlüssel NRW Gymnasium](https://notenrechnerapp.de/notenschluessel-rechner/nrw/gymnasium/): Klassenarbeit (Sek I) und Oberstufenklausur (Q1/Q2) gemäß APO-S I und APO-GOSt. Zentralabitur seit 2007 landeseinheitlich.
+
 ## Lexikon
 
 - [Notenpunkte](https://notenrechnerapp.de/lexikon/notenpunkte/): 16-stufiges Punktesystem (15–0) der gymnasialen Oberstufe. Jeweils 3 Notenpunkte entsprechen einer Schulnote.

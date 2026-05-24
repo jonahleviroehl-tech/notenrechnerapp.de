@@ -1,6 +1,13 @@
-"""Generates Bayern Notenschlüssel cluster: 1 hub + 4 Schulform sub-pages.
+"""Generates per-Bundesland Notenschlüssel clusters.
 
-Output: website/notenschluessel-rechner/bayern/[index.html, gymnasium/index.html, ...]
+Currently in scope:
+- Bayern: 1 hub + 4 Schulform sub-pages (Gymnasium, Grundschule, Realschule, Berufsschule)
+  Targets: notenschlüssel bayern (4,400/mo) + Schulform variants
+- NRW: 1 hub + 2 Schulform sub-pages (Grundschule, Gymnasium)
+  Targets: notenschlüssel nrw grundschule (1,000/mo) + notenschlüssel nrw (260/mo) + nrw gymnasium (260/mo)
+  Per Track E DataForSEO research: Realschule/Gesamtschule/Hauptschule have <10 vol — skipped.
+
+Output: website/notenschluessel-rechner/<bundesland>/[index.html, <schulform>/index.html, ...]
 
 Visual template mirrors `_build/gen_ihk_regional.py` (same hero, calc card,
 content prose, CTA). The calculator is the school Notenschlüssel (50/45/40 %),
@@ -9,27 +16,20 @@ not the IHK one.
 Each page has:
 - Working Notenschlüssel calculator (PRESETS mirrored from /notenschluessel-rechner/)
 - Schulform-specific intro
-- Schulform-specific Bayern context (BaySchO / GSO / RSO references)
+- Schulform-specific Bundesland context (Schulordnung references)
 - Internal links to other Schulform sub-pages + pillar + main hub
-
-Targets per Phase 2 cluster recommendation:
-- bayern/                — notenschlüssel bayern (4,400/mo)
-- bayern/gymnasium/      — notenschlüssel bayern gymnasium (1,900/mo)
-- bayern/grundschule/    — notenschlüssel bayern grundschule (~300/mo)
-- bayern/realschule/     — notenschlüssel bayern realschule (~200/mo)
-- bayern/berufsschule/   — notenschlüssel bayern berufsschule (~100/mo)
 """
 from pathlib import Path
 from textwrap import dedent
 
 ROOT = Path(__file__).resolve().parent.parent
-OUT = ROOT / "notenschluessel-rechner" / "bayern"
+OUT_BASE = ROOT / "notenschluessel-rechner"
 
 DATE_PUBLISHED = "2026-05-24"
 DATE_MODIFIED = "2026-05-24"
 
 
-PAGES = [
+BAYERN_PAGES = [
     {
         "slug": "",  # pillar at /notenschluessel-rechner/bayern/
         "schulform": None,
@@ -198,6 +198,150 @@ PAGES = [
             ("Gibt es einen einheitlichen Notenschlüssel für Berufsschulen in Bayern?", "Nein — die BSO macht keine landesweite Vorgabe für reguläre Klausuren. Üblich ist der 50-%-Schlüssel."),
             ("Wie wird die IHK-Prüfung bewertet?", "Nach der bundeseinheitlichen DIHK-Tabelle: bestanden ab 50&nbsp;% (Note 4,4). Für die Umrechnung Punkte → Dezimalnote ist der <a href=\"/ihk-notenschluessel/bayern/\">IHK-Notenschlüssel Bayern</a> das richtige Werkzeug."),
             ("Zählt die Berufsschulnote auf dem IHK-Zeugnis?", "Nein. Die Berufsschulnote wird separat im Berufsschulzeugnis ausgewiesen. Die IHK-Gesamtnote bildet sich nur aus den Ergebnissen der IHK-Prüfungen."),
+        ],
+    },
+]
+
+
+# NRW cluster — sized per Track E DataForSEO research:
+# - Grundschule (1,000/mo) is the biggest single sub
+# - Gymnasium (260/mo) is second
+# - Hub (260/mo)
+# - Realschule/Gesamtschule/Hauptschule have <10 vol — deliberately skipped.
+NRW_PAGES = [
+    {
+        "slug": "",  # pillar at /notenschluessel-rechner/nrw/
+        "schulform": None,
+        "title_h1": ("Notenschlüssel ", "NRW"),
+        "page_title": "Notenschlüssel NRW — Rechner für Grundschule, Gymnasium und Sek-I-Klausuren | Der Notenrechner",
+        "meta_desc": "Notenschlüssel für Schulen in Nordrhein-Westfalen — Punkte sofort in Note umrechnen. 50/45/40 %-Schlüssel, auch mit Knick. Schulform-Hinweise zu Grundschule und Gymnasium.",
+        "summary": "NRW kennt — wie alle Bundesländer — keinen landesweit einheitlichen Notenschlüssel für reguläre Klausuren. Geregelt sind die Bestehensgrenzen für Abschlussprüfungen (zentrale Klassenarbeiten Klasse 8, ZP10, Abitur). Für den Klassenraum entscheidet die Fachkonferenz. Die drei gängigen Varianten 50/45/40 % sind unten direkt rechenbar.",
+        "default_preset": "50",
+        "default_max": "60",
+        "intro_h2": "Notenschlüssel in NRW: was die APO-S I, APO-GOSt und SchulG regeln",
+        "intro_body": [
+            "In Nordrhein-Westfalen regelt das <strong>Schulgesetz (SchulG NRW)</strong> die Grundlagen der Leistungsbewertung, die <strong>APO-S&nbsp;I</strong> (Ausbildungs- und Prüfungsordnung Sekundarstufe&nbsp;I) und die <strong>APO-GOSt</strong> (Ausbildungs- und Prüfungsordnung Sekundarstufe&nbsp;II / Gymnasiale Oberstufe) die Details für die jeweiligen Schulformen. Diese Verordnungen definieren die Notenstufen (1–6 in Sek&nbsp;I, 15–0 Notenpunkte in der Oberstufe) und die <em>Bestehensgrenzen</em> für Abschlussprüfungen — aber <strong>nicht</strong> den Schlüssel für reguläre Klassenarbeiten.",
+            "Der Klassenraum-Schlüssel ist Sache der <strong>Fachkonferenz</strong> (§&nbsp;70 SchulG NRW). Üblich sind 50&nbsp;% Bestehensgrenze am Gymnasium, 40–50&nbsp;% an Grund- und Realschulen, oft mit <a href=\"/lexikon/knick/\">Knick</a> an der Bestehensgrenze. Der Rechner oben zeigt die drei gängigen Varianten — wählen Sie unten Ihre Schulform aus für detailliertere Hinweise.",
+        ],
+        "section_h2": "NRW nach Schulform",
+        "section_intro": "Wechseln Sie zu Ihrer Schulform — jede Unterseite enthält die einschlägige NRW-Verordnung, gebräuchliche Bestehensgrenzen und Hinweise zur Umrechnung Punkte → Note.",
+        "show_subpage_cards": True,
+        "subpage_notes": True,
+        "context_h2": "Was unterscheidet die NRW-Notengebung?",
+        "context_body": [
+            "NRW hat als bevölkerungsreichstes Bundesland eine besonders breite Schullandschaft: rund 4.500 Schulen, davon allein 600 Gymnasien und 2.700 Grundschulen. Einige Besonderheiten der Leistungsbewertung:",
+            "<strong>Lernstandserhebungen (LSE) Klasse 8</strong>: zentrale, vom MSB landeseinheitlich gestellte Aufgaben in Deutsch, Mathematik und Englisch. Diese werden nach einem MSB-Schlüssel ausgewertet, nicht schulintern.",
+            "<strong>Zentrale Prüfungen Klasse 10 (ZP10)</strong>: am Ende der Sek&nbsp;I (an Real-, Gesamt- und Sekundarschulen). Auch hier gibt das MSB einen Schlüssel vor.",
+            "<strong>Zentralabitur</strong>: schriftliches Abitur seit 2007 landeseinheitlich. Für die Korrektur gelten zentrale Korrekturanweisungen mit verbindlichem Schlüssel; für die mündlichen Prüfungen und Vorabiturklausuren bleibt der Schulschlüssel maßgeblich.",
+            "<strong>G8 / G9</strong>: NRW ist seit 2019 wieder fast vollständig G9. Notenpunkte (15–0) gelten in der Qualifikationsphase (Q1/Q2), Ziffernnoten in der Einführungsphase und der gesamten Sek&nbsp;I.",
+        ],
+        "faq": [
+            ("Gibt es einen offiziellen NRW-Notenschlüssel für Klausuren?", "Nein — die APO-S&nbsp;I und APO-GOSt enthalten keinen landeseinheitlichen Schlüssel für reguläre Klassenarbeiten. Geregelt sind nur die Notenstufen und Bestehensgrenzen für Abschlussprüfungen. Den Klassenraum-Schlüssel bestimmt die Fachkonferenz (§&nbsp;70 SchulG NRW)."),
+            ("Welcher Schlüssel wird in NRW am häufigsten verwendet?", "Am Gymnasium üblicherweise der 50-%-Schlüssel (Note 4 ab 50&nbsp;%), oft mit Knick. An Grundschulen häufig 40–50&nbsp;% mit Knick. An Real-, Gesamt- und Sekundarschulen 45–50&nbsp;%. Verbindliche Zahlen stehen im fachschaftsinternen Konzept der jeweiligen Schule."),
+            ("Was gilt für Zentrale Prüfungen (ZP10, Abitur)?", "Für ZP10 und das Zentralabitur gibt das Ministerium (MSB NRW) landeseinheitliche Korrekturhinweise und Schlüssel vor. Lehrkräfte folgen diesen Anweisungen statt eines schulinternen Schlüssels."),
+            ("Welche Bundesland-Regelungen gelten für Notenpunkte in NRW?", "Die APO-GOSt definiert das Notenpunktesystem 15–0 für die Qualifikationsphase (Q1/Q2). Sie steht weitgehend bundesweit im Einklang mit der KMK-Vereinbarung. Hintergrund im <a href=\"/lexikon/notenpunkte/\">Lexikon: Notenpunkte</a>."),
+        ],
+    },
+    {
+        "slug": "grundschule",
+        "schulform": "Grundschule",
+        "title_h1": ("Notenschlüssel NRW ", "Grundschule"),
+        "page_title": "Notenschlüssel NRW Grundschule — Klassenarbeit in Note umrechnen | Der Notenrechner",
+        "meta_desc": "Notenschlüssel für nordrhein-westfälische Grundschulen — Klassenarbeit in Note umrechnen. Ziffernnoten ab Klasse 3 (AO-GS). Typische 40–50 %-Bestehensgrenze, oft mit Knick.",
+        "summary": "An NRW-Grundschulen werden Ziffernnoten ab dem 2. Halbjahr der 3. Klasse vergeben — geregelt in der Ausbildungs- und Prüfungsordnung Grundschule (AO-GS). Davor stehen Berichtszeugnisse mit Lernentwicklungsdokumentation. Der Klassenraum-Schlüssel ist schulintern; üblich sind 40–50&nbsp;% Bestehensgrenze.",
+        "default_preset": "45",
+        "default_max": "20",
+        "intro_h2": "Notengebung an der NRW-Grundschule",
+        "intro_body": [
+            "Die <strong>Ausbildungsordnung Grundschule (AO-GS NRW)</strong> regelt Leistungsbewertung und Versetzung. Die wichtigsten Punkte:",
+            "<strong>Klasse 1 und 2</strong>: keine Ziffernnoten. Zeugnisse enthalten Berichte zu Arbeits-/Sozialverhalten und fachbezogenen Kompetenzen. Lernentwicklungsgespräche ergänzen das Zeugnis.",
+            "<strong>Klasse 3 (zweites Halbjahr) und Klasse 4</strong>: Ziffernnoten 1–6, ergänzt durch Berichte zum Arbeits- und Sozialverhalten. Manche Schulen behalten die Berichtsform auch in Klasse 3 noch bei.",
+            "<strong>Klassenarbeiten</strong> sind die zentralen schriftlichen Leistungserhebungen — typischerweise 30–45 Minuten, Maximalpunktzahl meist zwischen 15 und 30 Punkten. Die Bestehensgrenze legt die Schule fest; gängig sind 40–50&nbsp;% Bestehensgrenze, oft mit Knick (40&nbsp;% → Note 4, dann linear bis 95–100&nbsp;% → Note 1).",
+        ],
+        "section_h2": "Klassenarbeit in Note umrechnen — Beispiel",
+        "section_intro_body": [
+            "Typische Mathematik-Klassenarbeit in Klasse 4, Maximalpunktzahl&nbsp;20, 45-%-Schlüssel (Note&nbsp;4 ab&nbsp;9&nbsp;Punkten). Ein Kind erreicht 15&nbsp;Punkte → 75&nbsp;% → Note 2−. Der Rechner oben rechnet das sofort durch — Maximalpunktzahl ändern, Punkte eintippen, Note ablesen.",
+            "<strong>Anmeldung Sek I (Schulformempfehlung)</strong>: Am Ende der 4. Klasse stellt die Grundschule eine begründete Empfehlung für die weiterführende Schulform aus (Gymnasium, Realschule, Gesamtschule). Anders als in Bayern ist die Empfehlung in NRW <em>nicht bindend</em> — Eltern entscheiden über die Anmeldung. Die Empfehlung basiert auf Leistungen, Arbeitsverhalten und Sozialkompetenz, nicht auf einem festen Notenschnitt. Den Notendurchschnitt aus den Hauptfächern können Sie mit dem <a href=\"/notendurchschnitt/\">Notendurchschnitt-Rechner</a> bilden.",
+        ],
+        "show_subpage_cards": False,
+        "subpage_notes": False,
+        "context_h2": "Was unterscheidet NRW-Grundschulen von weiterführenden Schulen?",
+        "context_body": [
+            "Im Vergleich zur Sek&nbsp;I und zur Oberstufe ist die Bewertung an der Grundschule <em>pädagogisch milder</em> ausgelegt — Lernfreude erhalten, Lernerfolg über Selektion stellen. Konkrete Konsequenzen:",
+            "<strong>Tendenznoten erlaubt</strong>: 2+ oder 3− sind in NRW-Grundschulzeugnissen üblich. Für die Dezimaldarstellung: 2+ = 1,7 / 2 = 2,0 / 2− = 2,3. Manche Lehrkräfte vergeben Tendenznoten auch innerhalb von Klassenarbeiten, andere nur ganze Noten — Konzept der jeweiligen Schule.",
+            "<strong>Bericht über Ziffernnote hinaus</strong>: Auch wenn Ziffernnoten ab Klasse 3 verpflichtend sind, ergänzen Berichtszeugnisse die reine Note — kein nacktes Zahlenwerk. Diese Regel gilt nur in der Grundschule.",
+            "<strong>Versetzungsregeln</strong> in der AO-GS: Versetzungsrelevant sind Deutsch und Mathematik. Eine 5 in einem dieser Hauptfächer kann durch eine 3 in einem anderen Hauptfach ausgeglichen werden. Bei 6 oder zwei 5-en ist die Versetzung in der Regel gefährdet — die Klassenkonferenz entscheidet.",
+        ],
+        "faq": [
+            ("Ab welcher Klasse gibt es in NRW Noten in der Grundschule?", "Verpflichtend ab dem zweiten Halbjahr der dritten Klasse. Klasse 1 und 2 sowie das erste Halbjahr der dritten Klasse sind notenfrei — geregelt in der AO-GS NRW. Zeugnisse enthalten in dieser Zeit Berichte zu Arbeits-/Sozialverhalten und fachlichen Kompetenzen."),
+            ("Welche Bestehensgrenze gilt für Klassenarbeiten an NRW-Grundschulen?", "Keine landesweite Vorgabe. Üblich sind 40–50&nbsp;% — Note 4 ab 8–10 Punkten bei einer 20-Punkte-Arbeit. Die Schule legt das im Leistungsbewertungskonzept fest, das jeder Eltern auf Anfrage einsehen kann."),
+            ("Ist die Schulformempfehlung der Grundschule in NRW bindend?", "Nein. Anders als in Bayern entscheiden in NRW die Eltern, an welcher weiterführenden Schulform sie ihr Kind anmelden. Die Empfehlung der Grundschule ist ein Beratungsdokument, keine Zulassungsentscheidung."),
+        ],
+    },
+    {
+        "slug": "gymnasium",
+        "schulform": "Gymnasium",
+        "title_h1": ("Notenschlüssel NRW ", "Gymnasium"),
+        "page_title": "Notenschlüssel NRW Gymnasium — Klausur und Klassenarbeit in Note umrechnen | Der Notenrechner",
+        "meta_desc": "Notenschlüssel für nordrhein-westfälische Gymnasien — Klassenarbeit oder Klausur in Note umrechnen. 50/45 %-Schlüssel mit Knick. Sek&nbsp;I (1–6) und Oberstufe (15–0 Notenpunkte) gemäß APO-S&nbsp;I und APO-GOSt.",
+        "summary": "Am NRW-Gymnasium gilt in Sek&nbsp;I die APO-S&nbsp;I (Ziffernnoten 1–6), in der Oberstufe (Q1/Q2) die APO-GOSt mit Notenpunkten 15–0. Der konkrete Schlüssel für Klassenarbeiten und Klausuren wird fachschaftlich festgelegt — meist 50&nbsp;% Bestehensgrenze, häufig mit Knick.",
+        "default_preset": "50",
+        "default_max": "60",
+        "intro_h2": "Notengebung am NRW-Gymnasium",
+        "intro_body": [
+            "Zwei Verordnungen regeln am NRW-Gymnasium die Leistungserhebung: <strong>APO-S&nbsp;I</strong> für die Klassen 5–10 und <strong>APO-GOSt</strong> für die Einführungs- und Qualifikationsphase. Beide enthalten die Notenstufen und Bestehensgrenzen, aber keinen verbindlichen Schlüssel für reguläre Klassenarbeiten und Klausuren.",
+            "In der Sek&nbsp;I werden Ziffernnoten 1–6 vergeben; in der Q1/Q2 das Notenpunktesystem 15–0 — drei Notenpunkte entsprechen einer Notenstufe. Hintergrund im <a href=\"/lexikon/notenpunkte/\">Lexikon: Notenpunkte</a>. Der Schlüssel selbst (Prozente → Note) ist Sache der Fachkonferenz; üblich ist der lineare 50-%-Schlüssel, optional mit <a href=\"/lexikon/knick/\">Knick</a>.",
+        ],
+        "section_h2": "Klassenarbeit oder Oberstufenklausur — was zählt wie?",
+        "section_intro_body": [
+            "Zwei Hauptformen schriftlicher Leistungserhebung am NRW-Gymnasium:",
+            "<strong>Klassenarbeiten</strong> (Sek&nbsp;I, Klassen 5–10): meist 45 Minuten, pro Halbjahr 2–4 je Hauptfach. Sie zählen in der Regel zu 50&nbsp;% der Halbjahresnote (schriftliche Säule), die andere Hälfte sind „Sonstige Leistungen\" (mündliche Mitarbeit, Heftführung, kurze Tests). Konkrete Anteile bestimmt das schulinterne Leistungsbewertungskonzept.",
+            "<strong>Oberstufenklausuren</strong> (Q1/Q2): meist 90–135 Minuten in Leistungskursen, 60–90 Minuten in Grundkursen. Pro Halbjahr typischerweise zwei Klausuren je Fach. In den Abiturfächern gilt die Klausur als „Vorbereitungs-Klausur\" mit Abitur-Format und -Anforderungen.",
+            "Der Notenschlüssel ist <em>typischerweise</em> für Klassenarbeit und Klausur identisch (oft 50-%-Schlüssel mit Knick), aber die Gewichtung der schriftlichen vs. mündlichen Säule unterscheidet sich. In der Oberstufe ist die Gewichtung schriftlich vs. „Sonstige Mitarbeit\" oft 50:50, in der Sek&nbsp;I teils mit Schwerpunkt auf der schriftlichen Säule.",
+        ],
+        "show_subpage_cards": False,
+        "subpage_notes": False,
+        "context_h2": "Zentralabitur in NRW: was bedeutet das für den Schlüssel?",
+        "context_body": [
+            "Seit 2007 hat NRW landeseinheitliches schriftliches Zentralabitur. Aufgaben kommen vom Schulministerium (MSB), die Korrektur folgt verbindlichen Korrekturhinweisen — inklusive Punkteverteilung und Schlüssel.",
+            "Praktisch heißt das: In den Abitur-Klausuren der Q2 (insbesondere der letzten Klausur unter Abitur-Bedingungen, „Vor-Abitur\") wenden Lehrkräfte den MSB-Schlüssel an, nicht den schulinternen. Außerhalb dieser Klausuren bleibt der Fachschaftsbeschluss maßgeblich.",
+            "Für die <strong>Gesamtqualifikation Abitur</strong> kommen Block I (eingebrachte Kurse Q1/Q2) und Block II (Abiturprüfungen, vierfach gewichtet) zusammen — die Punktsumme wird per Bundesland-spezifischer Tabelle in die Abiturnote 1,0–4,0 übersetzt. Block I ist in NRW größer dimensioniert als z.&nbsp;B. in Bayern: 35–40 Halbjahresnoten werden eingebracht, je nach Profilwahl. Details siehe Lexikoneintrag <a href=\"/lexikon/notenpunkte/\">Notenpunkte</a> und <a href=\"/lexikon/unterkurs/\">Unterkurs</a>.",
+        ],
+        "faq": [
+            ("Welche Bestehensgrenze gilt am NRW-Gymnasium?", "Die APO-S&nbsp;I und APO-GOSt schreiben keine landesweit verbindliche Bestehensgrenze für reguläre Klassenarbeiten/Klausuren vor — üblich sind 50&nbsp;% am Gymnasium, oft mit Knick. Die Fachkonferenz beschließt."),
+            ("Wie wirken sich Klassenarbeiten in NRW auf die Halbjahresnote aus?", "In den meisten Fächern zählen Klassenarbeiten zu 50&nbsp;% der Halbjahresnote (schriftliche Säule), die andere Hälfte sind „Sonstige Leistungen\". Manche Schulen bilanzieren 60:40 oder 40:60 — Beschluss der Lehrerkonferenz."),
+            ("Was passiert bei einem Unterkurs in NRW?", "Ein Halbjahr mit 0 Notenpunkten gilt als nicht erbracht; ein Halbjahr mit weniger als 5 Notenpunkten ist ein <a href=\"/lexikon/unterkurs/\">Unterkurs</a>. Zu viele Unterkurse können zum Nichtbestehen des Abiturs führen — Details in der APO-GOSt §§&nbsp;19, 28."),
+        ],
+    },
+]
+
+
+# All Bundesländer in scope. Add new ones here — main() iterates over this list.
+REGIONS = [
+    {
+        "slug": "bayern",
+        "name": "Bayern",
+        "pages": BAYERN_PAGES,
+        "subpages_list": [
+            ("gymnasium", "Gymnasium",
+             "Schulaufgabe und Stegreifaufgabe — GSO, Sek&nbsp;I und Oberstufe (15–0 Notenpunkte)."),
+            ("grundschule", "Grundschule",
+             "Probe in Note umrechnen — Ziffernnoten ab Klasse 3, Übertrittszeugnis nach Klasse 4."),
+            ("realschule", "Realschule",
+             "Schulaufgabe und Mittlerer Schulabschluss — Realschulordnung RSO."),
+            ("berufsschule", "Berufsschule",
+             "Berufsschulklausur und IHK-Prüfung parallel — schulischer und kammergeführter Teil."),
+        ],
+    },
+    {
+        "slug": "nrw",
+        "name": "NRW",
+        "pages": NRW_PAGES,
+        "subpages_list": [
+            ("grundschule", "Grundschule",
+             "Klassenarbeit in Note umrechnen — Ziffernnoten ab Klasse 3, Schulformempfehlung Klasse 4 (nicht bindend)."),
+            ("gymnasium", "Gymnasium",
+             "Klassenarbeit und Oberstufenklausur — APO-S I (1–6) und APO-GOSt (15–0 Notenpunkte)."),
         ],
     },
 ]
@@ -477,26 +621,15 @@ calculate();
 """
 
 
-SUBPAGES_LIST = [
-    ("gymnasium", "Gymnasium",
-     "Schulaufgabe und Stegreifaufgabe — GSO, Sek&nbsp;I und Oberstufe (15–0 Notenpunkte)."),
-    ("grundschule", "Grundschule",
-     "Probe in Note umrechnen — Ziffernnoten ab Klasse 3, Übertrittszeugnis nach Klasse 4."),
-    ("realschule", "Realschule",
-     "Schulaufgabe und Mittlerer Schulabschluss — Realschulordnung RSO."),
-    ("berufsschule", "Berufsschule",
-     "Berufsschulklausur und IHK-Prüfung parallel — schulischer und kammergeführter Teil."),
-]
-
-
-def render_subpage_cards(current_slug):
+def render_subpage_cards(region, current_slug):
+    """Render the subpage cards block for a region's pillar page."""
     cards_html = ""
-    for slug, name, desc in SUBPAGES_LIST:
+    for slug, name, desc in region["subpages_list"]:
         if slug == current_slug:
             continue
         cards_html += (
-            f'\n            <a href="/notenschluessel-rechner/bayern/{slug}/" class="subpage-card">'
-            f'\n              <span class="subpage-card-title">Bayern {name}</span>'
+            f'\n            <a href="/notenschluessel-rechner/{region["slug"]}/{slug}/" class="subpage-card">'
+            f'\n              <span class="subpage-card-title">{region["name"]} {name}</span>'
             f'\n              <span class="subpage-card-desc">{desc}</span>'
             f'\n            </a>'
         )
@@ -526,40 +659,44 @@ def render_faq_schema(faq):
     return ",\n          ".join(parts)
 
 
-def render_page(p):
+def render_page(p, region):
+    region_slug = region["slug"]
+    region_name = region["name"]
     slug = p["slug"]
     schulform = p["schulform"]
     is_pillar = slug == ""
+    region_base = f"https://notenrechnerapp.de/notenschluessel-rechner/{region_slug}/"
+    region_path = f"/notenschluessel-rechner/{region_slug}/"  # relative for internal links
 
     if is_pillar:
-        canonical = "https://notenrechnerapp.de/notenschluessel-rechner/bayern/"
+        canonical = region_base
         breadcrumbs_html = (
             '<a href="/">Start</a>'
             '<span aria-hidden="true">›</span>'
             '<a href="/notenschluessel-rechner/">Notenschlüssel-Rechner</a>'
             '<span aria-hidden="true">›</span>'
-            '<span aria-current="page">Bayern</span>'
+            f'<span aria-current="page">{region_name}</span>'
         )
         breadcrumb_items = (
             '{ "@type": "ListItem", "position": 1, "name": "Der Notenrechner", "item": "https://notenrechnerapp.de/" },'
             '{ "@type": "ListItem", "position": 2, "name": "Notenschlüssel-Rechner", "item": "https://notenrechnerapp.de/notenschluessel-rechner/" },'
-            '{ "@type": "ListItem", "position": 3, "name": "Bayern", "item": "' + canonical + '" }'
+            f'{{ "@type": "ListItem", "position": 3, "name": "{region_name}", "item": "{canonical}" }}'
         )
     else:
-        canonical = f"https://notenrechnerapp.de/notenschluessel-rechner/bayern/{slug}/"
+        canonical = f"{region_base}{slug}/"
         breadcrumbs_html = (
             '<a href="/">Start</a>'
             '<span aria-hidden="true">›</span>'
             '<a href="/notenschluessel-rechner/">Notenschlüssel-Rechner</a>'
             '<span aria-hidden="true">›</span>'
-            '<a href="/notenschluessel-rechner/bayern/">Bayern</a>'
+            f'<a href="{region_path}">{region_name}</a>'
             '<span aria-hidden="true">›</span>'
             f'<span aria-current="page">{schulform}</span>'
         )
         breadcrumb_items = (
             '{ "@type": "ListItem", "position": 1, "name": "Der Notenrechner", "item": "https://notenrechnerapp.de/" },'
             '{ "@type": "ListItem", "position": 2, "name": "Notenschlüssel-Rechner", "item": "https://notenrechnerapp.de/notenschluessel-rechner/" },'
-            '{ "@type": "ListItem", "position": 3, "name": "Bayern", "item": "https://notenrechnerapp.de/notenschluessel-rechner/bayern/" },'
+            f'{{ "@type": "ListItem", "position": 3, "name": "{region_name}", "item": "{region_base}" }},'
             f'{{ "@type": "ListItem", "position": 4, "name": "{schulform}", "item": "{canonical}" }}'
         )
 
@@ -569,7 +706,7 @@ def render_page(p):
 
     section_block = ""
     if p.get("show_subpage_cards"):
-        cards = render_subpage_cards(slug)
+        cards = render_subpage_cards(region, slug)
         section_block = (
             f'<h2>{p["section_h2"]}</h2>\n'
             f'          <p>{p["section_intro"]}</p>\n'
@@ -597,21 +734,21 @@ def render_page(p):
     if is_pillar:
         internal_links = (
             '<a href="/notenschluessel-rechner/" class="internal-link">Hauptrechner</a>\n'
-            '            <a href="/ihk-notenschluessel/bayern/" class="internal-link">IHK Bayern</a>\n'
+            f'            <a href="/ihk-notenschluessel/{region_slug}/" class="internal-link">IHK {region_name}</a>\n'
             '            <a href="/lexikon/notenschluessel/" class="internal-link">Lexikon: Notenschlüssel</a>\n'
             '            <a href="/lexikon/knick/" class="internal-link">Lexikon: Knick</a>\n'
             '            <a href="/lexikon/bestehensgrenze/" class="internal-link">Lexikon: Bestehensgrenze</a>'
         )
     else:
         internal_links = (
-            '<a href="/notenschluessel-rechner/bayern/" class="internal-link">Bayern-Übersicht</a>\n'
+            f'<a href="{region_path}" class="internal-link">{region_name}-Übersicht</a>\n'
             '            <a href="/notenschluessel-rechner/" class="internal-link">Hauptrechner</a>\n'
             '            <a href="/notendurchschnitt/" class="internal-link">Notendurchschnitt</a>\n'
             '            <a href="/lexikon/notenschluessel/" class="internal-link">Lexikon: Notenschlüssel</a>'
         )
         if slug == "berufsschule":
             internal_links += (
-                '\n            <a href="/ihk-notenschluessel/bayern/" class="internal-link">IHK Bayern</a>'
+                f'\n            <a href="/ihk-notenschluessel/{region_slug}/" class="internal-link">IHK {region_name}</a>'
             )
         if slug == "gymnasium":
             internal_links += (
@@ -664,7 +801,7 @@ def render_page(p):
         "publisher": {{ "@id": "https://notenrechnerapp.de/#organization" }},
         "mainEntityOfPage": "{canonical}",
         "inLanguage": "de-DE",
-        "about": {{ "@type": "Thing", "name": "Notenschlüssel Bayern{(' ' + schulform) if schulform else ''}" }}
+        "about": {{ "@type": "Thing", "name": "Notenschlüssel {region_name}{(' ' + schulform) if schulform else ''}" }}
       }},
       {{ "@type": "SoftwareApplication", "@id": "https://notenrechnerapp.de/#app", "name": "Der Notenrechner", "applicationCategory": "EducationApplication", "operatingSystem": "iOS, iPadOS, Android", "downloadUrl": "https://apps.apple.com/de/app/der-notenrechner/id1662507346", "offers": {{ "@type": "Offer", "price": "0", "priceCurrency": "EUR" }}, "aggregateRating": {{ "@type": "AggregateRating", "ratingValue": "4.5", "ratingCount": "6", "bestRating": "5", "worstRating": "1" }} }},
       {{
@@ -799,17 +936,19 @@ def render_page(p):
 
 
 def main():
-    OUT.mkdir(parents=True, exist_ok=True)
-    for p in PAGES:
-        if p["slug"] == "":
-            target = OUT / "index.html"
-        else:
-            d = OUT / p["slug"]
-            d.mkdir(exist_ok=True)
-            target = d / "index.html"
-        target.write_text(render_page(p), encoding="utf-8")
-        rel = "/notenschluessel-rechner/bayern/" + (p["slug"] + "/" if p["slug"] else "")
-        print(f"  wrote {rel}index.html")
+    for region in REGIONS:
+        region_out = OUT_BASE / region["slug"]
+        region_out.mkdir(parents=True, exist_ok=True)
+        for p in region["pages"]:
+            if p["slug"] == "":
+                target = region_out / "index.html"
+            else:
+                d = region_out / p["slug"]
+                d.mkdir(exist_ok=True)
+                target = d / "index.html"
+            target.write_text(render_page(p, region), encoding="utf-8")
+            rel = f"/notenschluessel-rechner/{region['slug']}/" + (p["slug"] + "/" if p["slug"] else "")
+            print(f"  wrote {rel}index.html")
 
 
 if __name__ == "__main__":
