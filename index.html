@@ -309,13 +309,28 @@
       right: 0;
       height: var(--nav-height);
       z-index: 1000;
-      transition: background 0.3s, box-shadow 0.3s, backdrop-filter 0.3s;
+      transition: box-shadow 0.2s ease-out;
+      isolation: isolate;
     }
-    .nav.scrolled {
-      background: rgba(255, 255, 255, 0.85);
-      backdrop-filter: blur(20px);
-      -webkit-backdrop-filter: blur(20px);
-      box-shadow: 0 1px 0 var(--border);
+    /* Background lives on ::before so backdrop-filter never creates a containing
+       block for the fixed mobile menu. Pseudo-element sits behind nav children
+       via z-index: -1 within the nav's own stacking context. */
+    .nav::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(255, 255, 255, 0.92);
+      -webkit-backdrop-filter: saturate(180%) blur(18px);
+              backdrop-filter: saturate(180%) blur(18px);
+      opacity: 0;
+      transition: opacity 0.2s ease-out;
+      pointer-events: none;
+      z-index: -1;
+    }
+    .nav.scrolled::before { opacity: 1; }
+    .nav.scrolled { box-shadow: 0 1px 0 var(--border); }
+    @supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+      .nav.scrolled::before { background: #ffffff; }
     }
     .nav-inner {
       max-width: 1120px;
@@ -421,20 +436,19 @@
       .nav-toggle { display: flex; }
       .nav-links {
         position: fixed;
-        top: 0;
+        top: var(--nav-height);
         left: 0;
         right: 0;
         bottom: 0;
-        z-index: 999;
-        background: rgba(255, 255, 255, 0.98);
-        backdrop-filter: blur(20px);
-        -webkit-backdrop-filter: blur(20px);
+        z-index: 1100;
+        background: #ffffff;
         flex-direction: column;
         justify-content: center;
         gap: 24px;
+        padding: 0 24px;
         opacity: 0;
         pointer-events: none;
-        transition: opacity 0.3s;
+        transition: opacity 0.2s ease-out;
       }
       .nav-links.open {
         opacity: 1;
@@ -1144,6 +1158,12 @@
       }
       .deep-row.reverse .deep-visual { order: 0; }
       .deep-row.reverse .deep-text { order: 0; }
+      /* Card stops squeezing the phone: drop the 4:3 ratio, size to content. */
+      .deep-visual {
+        aspect-ratio: auto;
+        padding: 32px 0;
+      }
+      .deep-visual-content { padding: 0; }
     }
 
     /* ============================================
@@ -2366,7 +2386,7 @@
     const backToTop = document.getElementById('backToTop');
 
     function onScroll() {
-      const scrolled = window.scrollY > 40;
+      const scrolled = window.scrollY > 8;
       nav.classList.toggle('scrolled', scrolled);
       backToTop.classList.toggle('visible', window.scrollY > 600);
     }

@@ -106,8 +106,9 @@
     :focus-visible { outline: 2px solid var(--primary); outline-offset: 3px; border-radius: 4px; }
     .container { max-width: 880px; margin: 0 auto; padding: 0 24px; }
 
-    .nav { position: fixed; top: 0; left: 0; right: 0; height: var(--nav-height); z-index: 1000; }
-    .nav::before { content: ''; position: absolute; inset: 0; background: rgba(255,255,255,0.85); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); box-shadow: 0 1px 0 var(--border); z-index: -1; }
+    .nav { position: fixed; top: 0; left: 0; right: 0; height: var(--nav-height); z-index: 1000; isolation: isolate; }
+    .nav::before { content: ''; position: absolute; inset: 0; background: rgba(255,255,255,0.92); backdrop-filter: saturate(180%) blur(18px); -webkit-backdrop-filter: saturate(180%) blur(18px); box-shadow: 0 1px 0 var(--border); z-index: -1; }
+@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) { .nav::before { background: #ffffff; } }
     .nav-inner { max-width: 1120px; margin: 0 auto; padding: 0 24px; height: 100%; display: flex; align-items: center; justify-content: space-between; }
     .nav-brand { font-size: 18px; font-weight: 700; color: var(--text); display: flex; align-items: center; gap: 10px; }
     .nav-brand-icon { width: 32px; height: 32px; border-radius: var(--radius-sm); overflow: hidden; flex-shrink: 0; }

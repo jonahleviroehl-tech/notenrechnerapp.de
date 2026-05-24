@@ -291,16 +291,20 @@
       top: 0; left: 0; right: 0;
       height: var(--nav-height);
       z-index: 1000;
+      isolation: isolate;
     }
     .nav::before {
       content: '';
       position: absolute;
       inset: 0;
-      background: rgba(255, 255, 255, 0.85);
-      backdrop-filter: blur(20px);
-      -webkit-backdrop-filter: blur(20px);
+      background: rgba(255, 255, 255, 0.92);
+      backdrop-filter: saturate(180%) blur(18px);
+      -webkit-backdrop-filter: saturate(180%) blur(18px);
       box-shadow: 0 1px 0 var(--border);
       z-index: -1;
+    }
+    @supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+      .nav::before { background: #ffffff; }
     }
     .nav-inner {
       max-width: 1120px;
@@ -394,17 +398,16 @@
       .nav-toggle { display: flex; }
       .nav-links {
         position: fixed;
-        top: 0; left: 0; right: 0; bottom: 0;
-        z-index: 999;
-        background: rgba(255, 255, 255, 0.98);
-        backdrop-filter: blur(20px);
-        -webkit-backdrop-filter: blur(20px);
+        top: var(--nav-height); left: 0; right: 0; bottom: 0;
+        z-index: 1100;
+        background: #ffffff;
         flex-direction: column;
         justify-content: center;
         gap: 24px;
+        padding: 0 24px;
         opacity: 0;
         pointer-events: none;
-        transition: opacity 0.3s;
+        transition: opacity 0.2s ease-out;
       }
       .nav-links.open { opacity: 1; pointer-events: all; }
       .nav-links a { font-size: 20px; font-weight: 600; }
@@ -471,6 +474,7 @@
       grid-template-columns: 1fr 1fr 1.4fr;
       gap: 16px;
       margin-bottom: 22px;
+      align-items: end;
     }
     @media (max-width: 640px) {
       .calc-controls { grid-template-columns: 1fr 1fr; }
@@ -479,7 +483,7 @@
     @media (max-width: 380px) {
       .calc-controls { grid-template-columns: 1fr; }
     }
-    .calc-field { min-width: 0; }
+    .calc-field { min-width: 0; display: flex; flex-direction: column; }
     .calc-label {
       display: block;
       font-size: 11px;
@@ -488,6 +492,8 @@
       margin-bottom: 6px;
       letter-spacing: 0.08em;
       text-transform: uppercase;
+      min-height: 14px;
+      line-height: 14px;
     }
     .calc-input {
       width: 100%;
