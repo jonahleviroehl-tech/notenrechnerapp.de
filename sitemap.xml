@@ -51,11 +51,22 @@
   <url><loc>https://notenrechnerapp.de/ihk-notenschluessel/hamburg/</loc><lastmod>2026-04-25</lastmod><changefreq>yearly</changefreq><priority>0.7</priority></url>
 
   <!-- Lexikon -->
-  <url><loc>https://notenrechnerapp.de/lexikon/</loc><lastmod>2026-05-08</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://notenrechnerapp.de/lexikon/</loc><lastmod>2026-05-24</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://notenrechnerapp.de/lexikon/bestehensgrenze/</loc><lastmod>2026-05-08</lastmod><changefreq>yearly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://notenrechnerapp.de/lexikon/knick/</loc><lastmod>2026-05-08</lastmod><changefreq>yearly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://notenrechnerapp.de/lexikon/maximalpunktzahl/</loc><lastmod>2026-05-08</lastmod><changefreq>yearly</changefreq><priority>0.5</priority></url>
   <url><loc>https://notenrechnerapp.de/lexikon/notenpunkte/</loc><lastmod>2026-05-08</lastmod><changefreq>yearly</changefreq><priority>0.5</priority></url>
   <url><loc>https://notenrechnerapp.de/lexikon/notenschluessel/</loc><lastmod>2026-05-08</lastmod><changefreq>yearly</changefreq><priority>0.5</priority></url>
-  <url><loc>https://notenrechnerapp.de/lexikon/knick/</loc><lastmod>2026-05-08</lastmod><changefreq>yearly</changefreq><priority>0.5</priority></url>
-  <url><loc>https://notenrechnerapp.de/lexikon/bestehensgrenze/</loc><lastmod>2026-05-08</lastmod><changefreq>yearly</changefreq><priority>0.5</priority></url>
-  <url><loc>https://notenrechnerapp.de/lexikon/maximalpunktzahl/</loc><lastmod>2026-05-08</lastmod><changefreq>yearly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://notenrechnerapp.de/lexikon/notensystem/</loc><lastmod>2026-05-24</lastmod><changefreq>yearly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://notenrechnerapp.de/lexikon/punkte-noten-umrechnung/</loc><lastmod>2026-05-24</lastmod><changefreq>yearly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://notenrechnerapp.de/lexikon/tendenznoten/</loc><lastmod>2026-05-24</lastmod><changefreq>yearly</changefreq><priority>0.7</priority></url>
   <url><loc>https://notenrechnerapp.de/lexikon/unterkurs/</loc><lastmod>2026-05-08</lastmod><changefreq>yearly</changefreq><priority>0.5</priority></url>
+
+  <!-- Blog -->
+  <url><loc>https://notenrechnerapp.de/blog/</loc><lastmod>2026-05-24</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://notenrechnerapp.de/blog/notendurchschnitt-berechnen/</loc><lastmod>2026-05-24</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://notenrechnerapp.de/blog/punkte-noten-umrechnen/</loc><lastmod>2026-05-24</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://notenrechnerapp.de/blog/notenpunkte-erklaert/</loc><lastmod>2026-05-24</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://notenrechnerapp.de/blog/welche-note-brauche-ich/</loc><lastmod>2026-05-24</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://notenrechnerapp.de/blog/abiturnote-berechnen/</loc><lastmod>2026-05-24</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
 </urlset>

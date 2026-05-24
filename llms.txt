@@ -40,6 +40,17 @@
 - [Bestehensgrenze](https://notenrechnerapp.de/lexikon/bestehensgrenze/): Mindestprozentzahl, ab der eine Klausur bestanden ist — übliche Werte: 40, 45 oder 50 %.
 - [Maximalpunktzahl](https://notenrechnerapp.de/lexikon/maximalpunktzahl/): Maximal erreichbare Punktzahl einer Klausur, Grundlage der Notenberechnung.
 - [Unterkurs (unterpunktet)](https://notenrechnerapp.de/lexikon/unterkurs/): Halbjahr in der Oberstufe mit weniger als 5 Notenpunkten — Konsequenzen für das Abitur.
+- [Notensystem](https://notenrechnerapp.de/lexikon/notensystem/): Übersicht aller deutschen Notensysteme — Schulnoten 1 bis 6, Notenpunkte 0 bis 15, IHK-Prozentschlüssel und ECTS-Stufen im Studium.
+- [Tendenznoten](https://notenrechnerapp.de/lexikon/tendenznoten/): Plus- und Minus-Noten wie 1+ oder 2− — Bedeutung, Bundesland-Zulässigkeit und direkte Entsprechung als Notenpunkte 13–15 (1+/1/1−).
+- [Punkte-Noten-Umrechnung](https://notenrechnerapp.de/lexikon/punkte-noten-umrechnung/): Wie Klausurpunkte erst in Prozent und dann über einen Notenschlüssel in eine Schulnote oder Notenpunkte überführt werden.
+
+## Blog
+
+- [Notendurchschnitt berechnen](https://notenrechnerapp.de/blog/notendurchschnitt-berechnen/): Anleitung zur Berechnung eines gewichteten Notendurchschnitts mit Tendenznoten und Notenpunkten — inklusive Rechenbeispiele für Sek I und Oberstufe.
+- [Punkte in Noten umrechnen](https://notenrechnerapp.de/blog/punkte-noten-umrechnen/): Wie aus erreichten Klausurpunkten über einen linearen oder geknickten 50/45/40 %-Schlüssel eine Schulnote entsteht — mit Klausurbeispiel.
+- [Notenpunkte erklärt](https://notenrechnerapp.de/blog/notenpunkte-erklaert/): Die 0–15-Notenpunkte-Skala der gymnasialen Oberstufe mit Schulnoten-Zuordnung, Bestehensgrenze und Prozent-Umrechnung.
+- [Welche Note brauche ich noch zum Bestehen?](https://notenrechnerapp.de/blog/welche-note-brauche-ich/): Rückwärtsrechnung vom Zielschnitt zur erforderlichen Klausurnote — mit vier Fallbeispielen aus Sek I, Oberstufe und Leistungskurs.
+- [Abiturnote berechnen](https://notenrechnerapp.de/blog/abiturnote-berechnen/): Wie sich die Abiturnote aus Block I (Kurshalbjahres-Ergebnisse) und Block II (Prüfungen) ergibt — KMK-Formel und Beispielrechnung.
 
 ## App
 
