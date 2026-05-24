@@ -493,7 +493,7 @@ TEMPLATE = """<!DOCTYPE html>
         "inLanguage": "de-DE",
         "about": {{ "@type": "Thing", "name": "{np} Notenpunkte" }}
       }},
-      {{ "@type": "SoftwareApplication", "@id": "https://notenrechnerapp.de/#app", "name": "Der Notenrechner", "applicationCategory": "EducationApplication", "operatingSystem": "iOS, iPadOS", "downloadUrl": "https://apps.apple.com/de/app/der-notenrechner/id1662507346", "offers": {{ "@type": "Offer", "price": "0", "priceCurrency": "EUR" }} }},
+      {{ "@type": "SoftwareApplication", "@id": "https://notenrechnerapp.de/#app", "name": "Der Notenrechner", "applicationCategory": "EducationApplication", "operatingSystem": "iOS, iPadOS, Android", "downloadUrl": "https://apps.apple.com/de/app/der-notenrechner/id1662507346", "offers": {{ "@type": "Offer", "price": "0", "priceCurrency": "EUR" }} }},
       {{
         "@type": "BreadcrumbList",
         "itemListElement": [

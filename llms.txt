@@ -1,6 +1,6 @@
 # Der Notenrechner
 
-> Kostenlose Universal-App (iPhone & iPad) für deutsche Lehrkräfte. Notenschlüssel berechnen, Klassen verwalten, Zeugnisnoten generieren — offline, ohne Cloud, ohne Tracking. Entwickelt von Jonah Röhl, Lehrer in Hamburg.
+> Kostenlose App für deutsche Lehrkräfte auf iPhone, iPad — Android-Version in Kürze. Notenschlüssel berechnen, Klassen verwalten, Zeugnisnoten generieren — offline, ohne Cloud, ohne Tracking. Entwickelt von Jonah Röhl, Lehrer in Hamburg.
 
 ## Der Autor
 
@@ -24,15 +24,16 @@
 
 ## App
 
-- [Der Notenrechner für iPad](https://notenrechnerapp.de/ipad/): Master/Detail-Splitscreen, voller Notenschlüssel ohne Scrollen, Klassenspiegel mit Glockenkurve, Zeugnisnoten Seite-an-Seite.
+- [Der Notenrechner für Tablet](https://notenrechnerapp.de/tablet/): Master/Detail-Splitscreen, voller Notenschlüssel ohne Scrollen, Klassenspiegel mit Glockenkurve, Zeugnisnoten Seite-an-Seite. Live auf iPad; Android-Tablet-Version in Kürze.
 - [Im App Store laden](https://apps.apple.com/de/app/der-notenrechner/id1662507346): Universal-App für iPhone und iPad, ab iPadOS 15. Kostenlos, keine Werbung, keine In-App-Käufe.
+- Google Play Store: Android-App in Kürze verfügbar — Public Release in den nächsten Tagen.
 
 ## Fakten
 
-- Plattform: iOS und iPadOS (Universal-App, ein Download)
-- Mindest-OS: iOS 15 / iPadOS 15
-- Datenhaltung: ausschließlich lokal (SQLite), keine Cloud, kein Tracking, keine Werbung
-- Synchronisation zwischen iPhone und iPad: nicht automatisch — manuell über die Backup-Funktion (Datei-Export/Import)
+- Plattform: iOS und iPadOS live (Universal-App, ein Download). Android in finaler Test-Phase, Public Release in Kürze.
+- Mindest-OS: iOS 15 / iPadOS 15. Android-Mindest-OS wird mit dem Release bekanntgegeben.
+- Datenhaltung: ausschließlich lokal (SQLite), keine Cloud, kein Tracking, keine Werbung. Auf Android identische Architektur.
+- Synchronisation zwischen Geräten (iPhone, iPad, Android): nicht automatisch — manuell über die Backup-Funktion (Datei-Export/Import). Bewusste Designentscheidung.
 - Sprache: Deutsch (primär)
 - Zielgruppe: Lehrkräfte an Gymnasien, Realschulen, Hauptschulen und Berufsschulen in Deutschland
-- Aktuelle App-Version: 3.1.0 (Mai 2026, mit iPad-Redesign und Splitscreen-Layout)
+- Aktuelle App-Version: 3.1.2 (Mai 2026, mit iPad-Redesign und Splitscreen-Layout)

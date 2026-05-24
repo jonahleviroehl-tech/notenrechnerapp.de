@@ -1,0 +1,907 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Notenrechner für Tablet — iPad & Android im Splitscreen | Der Notenrechner</title>
+  <meta name="description" content="Der Notenrechner auf dem Tablet: Notenschlüssel, Klassen und Zeugnisnoten im Splitscreen. Universal-App für iPhone und iPad (ab iPadOS 15). Android-App in Kürze verfügbar. Kostenlos, offline, ohne Cloud.">
+  <meta property="og:title" content="Notenrechner für Tablet — iPad & Android im Splitscreen">
+  <meta property="og:description" content="Der Notenrechner auf dem Tablet: Notenschlüssel, Klassen und Zeugnisnoten im Splitscreen. Kostenlos, offline, ohne Cloud. iPad live, Android in Kürze.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://notenrechnerapp.de/tablet/">
+  <meta property="og:locale" content="de_DE">
+  <meta property="og:site_name" content="Der Notenrechner">
+  <meta property="og:image" content="https://notenrechnerapp.de/assets/og-ipad.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Der Notenrechner auf dem iPad — Klassenverwaltung im Splitscreen">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Notenrechner für Tablet — iPad & Android im Splitscreen">
+  <meta name="twitter:description" content="Der Notenrechner auf dem Tablet: Notenschlüssel, Klassen und Zeugnisnoten im Splitscreen. Kostenlos, offline, ohne Cloud. iPad live, Android in Kürze.">
+  <meta name="twitter:image" content="https://notenrechnerapp.de/assets/og-ipad.png">
+  <meta name="theme-color" content="#2F60C0">
+  <meta name="apple-itunes-app" content="app-id=1662507346">
+  <link rel="canonical" href="https://notenrechnerapp.de/tablet/">
+  <link rel="alternate" hreflang="de" href="https://notenrechnerapp.de/tablet/">
+  <link rel="alternate" hreflang="x-default" href="https://notenrechnerapp.de/tablet/">
+  <meta name="robots" content="index, follow">
+  <link rel="icon" type="image/png" href="/assets/logo.png">
+  <link rel="apple-touch-icon" href="/assets/logo.png">
+
+  <!-- Schema.org structured data — Organization + Person + SoftwareApplication + FAQPage with Speakable
+       Designed for Google AI Overviews / GEO citation eligibility. -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://notenrechnerapp.de/#organization",
+        "name": "Der Notenrechner",
+        "url": "https://notenrechnerapp.de/",
+        "logo": "https://notenrechnerapp.de/assets/logo.png",
+        "founder": { "@id": "https://notenrechnerapp.de/#author" },
+        "sameAs": [
+          "https://apps.apple.com/de/app/der-notenrechner/id1662507346",
+          "https://instagram.com/notenrechnerapp"
+        ]
+      },
+      {
+        "@type": "Person",
+        "@id": "https://notenrechnerapp.de/#author",
+        "name": "Jonah Röhl",
+        "jobTitle": "Lehrer & Entwickler",
+        "description": "Lehrkraft in Hamburg und Entwickler von Der Notenrechner.",
+        "url": "https://notenrechnerapp.de/#author",
+        "worksFor": { "@id": "https://notenrechnerapp.de/#organization" }
+      },
+      {
+        "@type": "SoftwareApplication",
+        "@id": "https://notenrechnerapp.de/#app",
+        "name": "Der Notenrechner",
+        "applicationCategory": "EducationApplication",
+        "operatingSystem": "iOS, iPadOS, Android",
+        "softwareVersion": "3.1.2",
+        "description": "Universal-App für Tablet und Smartphone. Auf dem iPad: Master/Detail-Splitscreen mit Klassenliste und Klausur-Detail nebeneinander. Notenschlüssel, Klassen, Zeugnisnoten — offline, ohne Cloud. iPad-Version live, Android-Version in Kürze verfügbar.",
+        "url": "https://notenrechnerapp.de/tablet/",
+        "downloadUrl": "https://apps.apple.com/de/app/der-notenrechner/id1662507346",
+        "author": { "@id": "https://notenrechnerapp.de/#author" },
+        "publisher": { "@id": "https://notenrechnerapp.de/#organization" },
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "EUR" },
+        "screenshot": [
+          "https://notenrechnerapp.de/assets/screen-ipad-klassen.png",
+          "https://notenrechnerapp.de/assets/screen-ipad-rechner.png",
+          "https://notenrechnerapp.de/assets/screen-ipad-bellcurve.png",
+          "https://notenrechnerapp.de/assets/screen-ipad-zeugnis.png"
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "speakable": {
+          "@type": "SpeakableSpecification",
+          "cssSelector": [".faq-question", ".faq-answer-inner"]
+        },
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Funktioniert der Notenrechner auf dem Tablet?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Ja. Auf dem iPad läuft Der Notenrechner als Universal-App im Splitscreen-Layout — Klassenliste links, geöffnete Klausur rechts — so sehen Sie mehr auf einen Blick und arbeiten effizienter. Hoch- und Querformat werden beide unterstützt. Eine Android-Tablet-Version ist in Kürze verfügbar." }
+          },
+          {
+            "@type": "Question",
+            "name": "Welche iPad-Modelle werden unterstützt?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Alle iPads ab iPadOS 15 — also iPad (6. Generation und neuer), iPad mini 5, iPad Air 3 sowie alle iPad Pro Modelle. Die App läuft im Hoch- und Querformat in beiden Richtungen und passt sich automatisch an die Bildschirmgröße an." }
+          },
+          {
+            "@type": "Question",
+            "name": "Wann gibt es Der Notenrechner für Android?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Die Android-Version befindet sich in der finalen Test-Phase und wird in Kürze im Google Play Store veröffentlicht. Funktionsumfang, Datenschutz-Architektur und Kosten entsprechen 1:1 der iOS-Version: vollständig lokal, ohne Cloud, ohne Werbung, kostenlos." }
+          },
+          {
+            "@type": "Question",
+            "name": "Synchronisiert sich die App zwischen iPhone, iPad und Android?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Nein, Ihre Daten bleiben bewusst lokal — keine Cloud, kein Tracking. Über die Backup-Funktion in der App können Sie Ihre Daten als Datei exportieren und auf einem anderen Gerät importieren, wenn Sie zwischen Geräten wechseln möchten. Das gilt für iPhone, iPad und nach Release auch für Android." }
+          },
+          {
+            "@type": "Question",
+            "name": "Gibt es eine extra iPad-Version?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Nein, Der Notenrechner ist auf iOS eine Universal-App. Sie installieren sie einmal und sie passt sich automatisch an iPhone oder iPad an. Auf dem iPad nutzt sie das größere Display für ein Splitscreen-Layout mit Master/Detail-Ansicht." }
+          }
+        ]
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Der Notenrechner", "item": "https://notenrechnerapp.de/" },
+          { "@type": "ListItem", "position": 2, "name": "Tablet", "item": "https://notenrechnerapp.de/tablet/" }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    :root {
+      --primary: #2F60C0; --primary-light: #6B94E0; --primary-dark: #1F4A9C;
+      --primary-50: #EEF3FB; --primary-100: #DCE5F5; --primary-900: #15336B;
+      --bg: #F7F6F3; --card: #FFFFFF; --surface-subtle: #F1EFEA;
+      --text: #0F0F10; --text-secondary: #3B3B3F; --text-muted: #6E6E73;
+      --border: #E8E6E1; --border-light: #F1EFEA;
+      --success: #15803D;
+      --shadow-card: 0 1px 2px rgba(15,15,16,0.04), 0 0 0 1px rgba(15,15,16,0.04);
+      --shadow-card-hover: 0 6px 18px rgba(15,15,16,0.08), 0 0 0 1px rgba(15,15,16,0.06);
+      --shadow-elevated: 0 2px 8px rgba(15,15,16,0.08);
+      --radius-sm: 8px; --radius-md: 12px; --radius-lg: 16px; --radius-xl: 24px; --radius-pill: 999px;
+      --font: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+      --nav-height: 72px;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+    body { font-family: var(--font); color: var(--text); background: var(--bg); line-height: 1.6; -webkit-font-smoothing: antialiased; overflow-x: hidden; font-variant-numeric: tabular-nums; }
+    img { max-width: 100%; display: block; }
+    a { color: inherit; text-decoration: none; }
+    button { font-family: inherit; cursor: pointer; border: none; background: none; }
+    :focus-visible { outline: 2px solid var(--primary); outline-offset: 3px; border-radius: 4px; }
+
+    .container { max-width: 1120px; margin: 0 auto; padding: 0 24px; }
+
+    /* Nav (shared) */
+    .nav { position: fixed; top: 0; left: 0; right: 0; height: var(--nav-height); z-index: 1000; }
+    .nav::before { content: ''; position: absolute; inset: 0; background: rgba(255,255,255,0.85); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); box-shadow: 0 1px 0 var(--border); z-index: -1; }
+    .nav-inner { max-width: 1120px; margin: 0 auto; padding: 0 24px; height: 100%; display: flex; align-items: center; justify-content: space-between; }
+    .nav-brand { font-size: 18px; font-weight: 700; color: var(--text); display: flex; align-items: center; gap: 10px; }
+    .nav-brand-icon { width: 32px; height: 32px; border-radius: var(--radius-sm); overflow: hidden; flex-shrink: 0; }
+    .nav-brand-icon img { width: 100%; height: 100%; object-fit: cover; }
+    .nav-links { display: flex; align-items: center; gap: 28px; list-style: none; }
+    .nav-links a { font-size: 15px; font-weight: 500; color: var(--text-secondary); transition: color 0.2s; padding: 8px 0; min-height: 44px; display: flex; align-items: center; }
+    .nav-links a:hover { color: var(--primary); }
+    .nav-links a.nav-cta { display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 0 22px 0 18px; height: 36px; min-height: 0; line-height: 1; white-space: nowrap; background: var(--primary); color: white !important; border-radius: var(--radius-pill); font-size: 15px; font-weight: 700; transition: background 0.15s, transform 0.15s; }
+    .nav-links a.nav-cta:hover { background: var(--primary-dark); transform: translateY(-1px); }
+    .nav-toggle { display: none; flex-direction: column; gap: 5px; padding: 10px; min-width: 44px; min-height: 44px; justify-content: center; align-items: center; }
+    .nav-toggle span { display: block; width: 22px; height: 2px; background: var(--text); border-radius: 2px; transition: transform 0.3s, opacity 0.3s; }
+
+    /* Hero */
+    .hero {
+      padding-top: calc(var(--nav-height) + 56px);
+      padding-bottom: 80px;
+      background: linear-gradient(180deg, var(--bg) 0%, #FBFAF6 100%);
+      border-bottom: 1px solid var(--border);
+    }
+    .breadcrumbs { font-size: 13px; color: var(--text-muted); margin-bottom: 24px; display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+    .breadcrumbs a { color: var(--text-secondary); transition: color 0.15s; }
+    .breadcrumbs a:hover { color: var(--primary); }
+    .hero-eyebrow {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 6px 14px;
+      background: var(--primary-50);
+      border: 1px solid var(--primary-100);
+      border-radius: var(--radius-pill);
+      font-size: 13px; font-weight: 600;
+      color: var(--primary-dark);
+      margin-bottom: 20px;
+    }
+    .hero-eyebrow::before {
+      content: ""; width: 7px; height: 7px; border-radius: 50%;
+      background: var(--primary);
+      box-shadow: 0 0 0 4px rgba(47,96,192,0.18);
+    }
+    .hero h1 {
+      font-size: clamp(32px, 5vw, 52px);
+      font-weight: 800;
+      letter-spacing: -0.025em;
+      line-height: 1.08;
+      margin-bottom: 18px;
+      max-width: 880px;
+    }
+    .hero h1 span { color: var(--primary); display: inline; }
+    .hero-sub {
+      font-size: clamp(17px, 2vw, 20px);
+      line-height: 1.6;
+      color: var(--text-secondary);
+      max-width: 620px;
+      margin-bottom: 28px;
+    }
+    .hero-meta {
+      display: flex; flex-wrap: wrap; gap: 14px;
+      font-size: 14px; color: var(--text-muted);
+      margin-bottom: 32px;
+    }
+    .hero-meta-item { display: inline-flex; align-items: center; gap: 6px; }
+    .hero-meta-check { width: 16px; height: 16px; color: var(--success); }
+    .hero-meta-item.pending { color: var(--primary-dark); }
+    .hero-meta-item.pending::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: var(--primary); animation: pulse 1.8s ease-in-out infinite; }
+    @keyframes pulse { 0%, 100% { opacity: 0.45; transform: scale(0.92); } 50% { opacity: 1; transform: scale(1.05); } }
+
+    /* App Store Badge */
+    .app-store-badge {
+      display: inline-flex; align-items: center; gap: 12px;
+      padding: 10px 22px 10px 18px;
+      background: #000;
+      border-radius: 12px;
+      border: 1.5px solid rgba(255,255,255,0.2);
+      color: white;
+      transition: transform 0.2s, box-shadow 0.2s;
+      min-height: 52px;
+    }
+    .app-store-badge:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,0.25); background: #1a1a1a; }
+    .app-store-badge-icon { width: 28px; height: 28px; flex-shrink: 0; }
+    .app-store-badge-icon svg { width: 100%; height: 100%; fill: currentColor; }
+    .app-store-badge-text { display: flex; flex-direction: column; line-height: 1; }
+    .app-store-badge-small { font-size: 11px; opacity: 0.9; margin-bottom: 4px; }
+    .app-store-badge-large { font-size: 20px; font-weight: 600; letter-spacing: -0.01em; }
+
+    /* "Coming soon" placeholder badge — matches App Store badge dimensions but visually subdued */
+    .store-badge-group { display: inline-flex; flex-direction: column; align-items: flex-start; gap: 10px; }
+    .android-coming-soon {
+      display: inline-flex; align-items: center; gap: 10px;
+      padding: 6px 14px;
+      background: transparent;
+      border: 1px dashed var(--border);
+      border-radius: var(--radius-pill);
+      font-size: 13px; font-weight: 500;
+      color: var(--text-secondary);
+    }
+    .android-coming-soon::before {
+      content: ""; width: 8px; height: 8px; border-radius: 50%;
+      background: var(--primary);
+      animation: pulse 1.8s ease-in-out infinite;
+    }
+
+    /* Hero iPad showcase */
+    .hero-ipad-frame {
+      margin-top: 56px;
+      max-width: 920px;
+      margin-left: auto;
+      margin-right: auto;
+      background: linear-gradient(180deg, #3d3d40 0%, #1c1c1f 50%, #3d3d40 100%);
+      border-radius: 28px;
+      padding: 12px;
+      box-shadow:
+        0 24px 60px rgba(0,0,0,0.18),
+        0 0 0 1px rgba(15,15,16,0.06);
+      position: relative;
+    }
+    .hero-ipad-frame::before {
+      content: ""; position: absolute; inset: 0;
+      border-radius: 28px;
+      border: 1.5px solid rgba(255,255,255,0.16);
+      pointer-events: none;
+    }
+    .hero-ipad-screen {
+      border-radius: 18px;
+      overflow: hidden;
+      background: #050506;
+      aspect-ratio: 2420 / 1668;
+      box-shadow: inset 0 0 0 1px rgba(0,0,0,0.55);
+    }
+    .hero-ipad-screen img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+    /* Sections */
+    .section { padding: 96px 0; }
+    .section-header { max-width: 760px; margin: 0 auto 56px; text-align: center; }
+    .section-eyebrow { display: inline-block; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--primary); margin-bottom: 14px; }
+    .section-title { font-size: clamp(28px, 4vw, 40px); font-weight: 800; letter-spacing: -0.02em; line-height: 1.15; margin-bottom: 14px; }
+    .section-sub { font-size: 17px; color: var(--text-secondary); }
+
+    /* Two-up rows */
+    .row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: center;
+      margin-bottom: 96px;
+    }
+    .row:last-child { margin-bottom: 0; }
+    .row.reverse .row-text { order: 2; }
+    .row.reverse .row-visual { order: 1; }
+
+    .row-text h3 {
+      font-size: clamp(24px, 3vw, 32px);
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      line-height: 1.2;
+      margin-bottom: 16px;
+    }
+    .row-text p { font-size: 17px; color: var(--text-secondary); margin-bottom: 16px; }
+    .row-text p:last-child { margin-bottom: 0; }
+    .row-tag {
+      display: inline-block;
+      padding: 4px 12px;
+      background: var(--primary-50);
+      border: 1px solid var(--primary-100);
+      color: var(--primary);
+      border-radius: var(--radius-pill);
+      font-size: 13px;
+      font-weight: 600;
+      margin-bottom: 16px;
+    }
+
+    .row-visual {
+      background: linear-gradient(135deg, var(--primary-50), var(--primary-100));
+      border-radius: var(--radius-xl);
+      padding: 32px;
+      aspect-ratio: 4 / 3;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .row-ipad {
+      background: linear-gradient(180deg, #3d3d40 0%, #1c1c1f 50%, #3d3d40 100%);
+      border-radius: 18px;
+      padding: 8px;
+      max-width: 100%;
+      box-shadow: 0 16px 36px rgba(0,0,0,0.22);
+    }
+    .row-ipad-screen {
+      border-radius: 11px;
+      overflow: hidden;
+      background: #050506;
+      aspect-ratio: 2420 / 1668;
+    }
+    .row-ipad-screen img { width: 100%; height: 100%; object-fit: cover; }
+
+    /* Android section — soft preview state */
+    .android-section {
+      background: var(--card);
+      border-top: 1px solid var(--border-light);
+      border-bottom: 1px solid var(--border-light);
+    }
+    .android-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: center;
+      max-width: 1080px;
+      margin: 0 auto;
+    }
+    .android-text h3 {
+      font-size: clamp(24px, 3vw, 34px);
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      line-height: 1.18;
+      margin-bottom: 18px;
+    }
+    .android-text p { font-size: 17px; color: var(--text-secondary); margin-bottom: 16px; line-height: 1.7; }
+    .android-text p:last-child { margin-bottom: 0; }
+    .android-checklist {
+      list-style: none;
+      margin: 24px 0 0;
+      display: grid;
+      gap: 10px;
+    }
+    .android-checklist li {
+      display: flex; align-items: flex-start; gap: 10px;
+      font-size: 15px;
+      color: var(--text-secondary);
+    }
+    .android-checklist svg {
+      width: 18px; height: 18px;
+      color: var(--success);
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+    .android-visual {
+      position: relative;
+      aspect-ratio: 4 / 3;
+      background: linear-gradient(135deg, #F4F4F0, #EAEDF5);
+      border-radius: var(--radius-xl);
+      padding: 36px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+    .android-visual::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image:
+        radial-gradient(circle at 20% 30%, rgba(47,96,192,0.08), transparent 50%),
+        radial-gradient(circle at 80% 70%, rgba(47,96,192,0.06), transparent 50%);
+      pointer-events: none;
+    }
+    .android-tablet-shape {
+      position: relative;
+      width: 100%;
+      max-width: 360px;
+      aspect-ratio: 4 / 3;
+      background: linear-gradient(180deg, #2c2c2f 0%, #1a1a1d 100%);
+      border-radius: 18px;
+      padding: 10px;
+      box-shadow: 0 16px 36px rgba(0,0,0,0.22);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .android-tablet-screen {
+      width: 100%;
+      height: 100%;
+      border-radius: 10px;
+      background:
+        linear-gradient(135deg, #f6f5f0 0%, #f1eee5 100%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 14px;
+      padding: 24px;
+      position: relative;
+      overflow: hidden;
+    }
+    .android-tablet-screen::before {
+      content: "";
+      position: absolute; inset: 0;
+      background:
+        repeating-linear-gradient(
+          135deg,
+          transparent 0 24px,
+          rgba(47,96,192,0.04) 24px 25px
+        );
+      pointer-events: none;
+    }
+    .android-screen-label {
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: var(--primary);
+      position: relative;
+    }
+    .android-screen-headline {
+      font-size: clamp(18px, 2.4vw, 24px);
+      font-weight: 800;
+      letter-spacing: -0.015em;
+      color: var(--text);
+      text-align: center;
+      position: relative;
+    }
+    .android-screen-pulse {
+      width: 36px; height: 36px;
+      border-radius: 50%;
+      background: var(--primary);
+      box-shadow: 0 0 0 12px rgba(47,96,192,0.12);
+      animation: pulseBig 2s ease-in-out infinite;
+      margin-top: 6px;
+      position: relative;
+    }
+    @keyframes pulseBig { 0%, 100% { box-shadow: 0 0 0 8px rgba(47,96,192,0.08); transform: scale(0.92); } 50% { box-shadow: 0 0 0 18px rgba(47,96,192,0.16); transform: scale(1); } }
+
+    @media (max-width: 767px) {
+      .android-grid { grid-template-columns: 1fr; gap: 36px; }
+      .android-visual { padding: 24px; }
+    }
+
+    /* Feature grid */
+    .features {
+      background: var(--card);
+      border-top: 1px solid var(--border-light);
+      border-bottom: 1px solid var(--border-light);
+    }
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+    .feature-card {
+      padding: 28px;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      transition: border-color 0.2s, box-shadow 0.2s, transform 0.2s;
+    }
+    .feature-card:hover { border-color: var(--primary-100); box-shadow: var(--shadow-card-hover); transform: translateY(-2px); }
+    .feature-card-icon {
+      width: 44px; height: 44px;
+      background: var(--primary-50);
+      border-radius: var(--radius-md);
+      display: flex; align-items: center; justify-content: center;
+      margin-bottom: 16px;
+      font-size: 22px;
+    }
+    .feature-card h4 { font-size: 17px; font-weight: 700; margin-bottom: 8px; }
+    .feature-card p { font-size: 15px; color: var(--text-secondary); line-height: 1.6; }
+
+    /* FAQ */
+    .faq-grid { max-width: 800px; margin: 0 auto; display: flex; flex-direction: column; gap: 12px; }
+    .faq-item { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius-lg); overflow: hidden; transition: border-color 0.2s; }
+    .faq-item:hover { border-color: var(--primary-100); }
+    .faq-question {
+      width: 100%; padding: 20px 24px;
+      display: flex; justify-content: space-between; align-items: center;
+      font-size: 17px; font-weight: 600;
+      color: var(--text);
+      text-align: left;
+      min-height: 44px;
+    }
+    .faq-icon { font-size: 20px; color: var(--primary); flex-shrink: 0; transition: transform 0.2s; }
+    .faq-item.open .faq-icon { transform: rotate(45deg); }
+    .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.3s ease; }
+    .faq-item.open .faq-answer { max-height: 400px; }
+    .faq-answer-inner { padding: 0 24px 20px; font-size: 16px; color: var(--text-secondary); line-height: 1.7; }
+
+    /* CTA banner */
+    .cta-banner {
+      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+      color: white; padding: 80px 24px; text-align: center;
+    }
+    .cta-banner h2 { font-size: clamp(26px, 3.5vw, 36px); font-weight: 800; letter-spacing: -0.02em; margin-bottom: 14px; }
+    .cta-banner p { font-size: 17px; color: rgba(255,255,255,0.9); margin-bottom: 32px; max-width: 540px; margin-left: auto; margin-right: auto; }
+    .cta-banner .app-store-badge { background: white; color: var(--primary-dark); border-color: white; }
+    .cta-banner .app-store-badge:hover { background: rgba(255,255,255,0.95); }
+    .cta-android-note {
+      display: block;
+      margin-top: 18px;
+      font-size: 14px;
+      color: rgba(255,255,255,0.78);
+      font-weight: 500;
+    }
+    .cta-android-note::before {
+      content: "";
+      display: inline-block;
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.6);
+      margin-right: 8px;
+      vertical-align: middle;
+      animation: pulse 1.8s ease-in-out infinite;
+    }
+
+    /* Footer */
+    .footer { background: var(--text); color: rgba(255,255,255,0.7); padding: 48px 24px; }
+    .footer-inner { max-width: 1120px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; }
+    .footer-links { display: flex; gap: 24px; list-style: none; }
+    .footer-links a { font-size: 14px; transition: color 0.2s; padding: 8px 0; min-height: 44px; display: inline-flex; align-items: center; }
+    .footer-links a:hover { color: white; }
+    .footer-tagline { font-size: 14px; font-style: italic; opacity: 0.6; }
+    .footer-copy { font-size: 13px; opacity: 0.5; width: 100%; text-align: center; margin-top: 24px; padding-top: 24px; border-top: 1px solid rgba(255,255,255,0.1); }
+
+    /* Responsive */
+    @media (max-width: 1023px) {
+      .row { gap: 48px; margin-bottom: 64px; }
+      .features-grid { grid-template-columns: 1fr 1fr; }
+    }
+
+    @media (max-width: 767px) {
+      .hero { padding-top: calc(var(--nav-height) + 32px); padding-bottom: 56px; }
+      .hero-ipad-frame { margin-top: 40px; padding: 8px; border-radius: 22px; }
+      .hero-ipad-screen { border-radius: 14px; }
+      .row { grid-template-columns: 1fr; gap: 32px; margin-bottom: 56px; }
+      .row.reverse .row-text { order: 0; }
+      .row.reverse .row-visual { order: 0; }
+      .row-visual { padding: 20px; }
+      .features-grid { grid-template-columns: 1fr; gap: 16px; }
+      .section { padding: 64px 0; }
+      .nav-toggle { display: flex; }
+      .nav-links { display: none; }
+      .footer-inner { flex-direction: column; text-align: center; }
+      .footer-links { flex-wrap: wrap; justify-content: center; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      * { animation: none !important; transition: none !important; }
+    }
+  </style>
+</head>
+<body>
+  <nav class="nav" role="navigation" aria-label="Hauptnavigation">
+    <div class="nav-inner">
+      <a href="/" class="nav-brand"><span class="nav-brand-icon"><img src="/assets/logo.png" alt=""></span>Der Notenrechner</a>
+      <button class="nav-toggle" id="navToggle" aria-label="Menü öffnen" aria-expanded="false"><span></span><span></span><span></span></button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="/">Startseite</a></li>
+        <li><a href="/notenschluessel-rechner/">Notenschlüssel-Rechner</a></li>
+        <li><a href="/notenpunkte-tabelle/">Notenpunkte-Tabelle</a></li>
+        <li><a href="/lexikon/">Lexikon</a></li>
+        <li><a href="https://apps.apple.com/de/app/der-notenrechner/id1662507346" target="_blank" rel="noopener" class="nav-cta">Im App Store laden</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main>
+    <!-- ========== HERO ========== -->
+    <section class="hero">
+      <div class="container">
+        <nav class="breadcrumbs" aria-label="Brotkrumen">
+          <a href="/">Start</a>
+          <span aria-hidden="true">›</span>
+          <span aria-current="page">Für Tablet</span>
+        </nav>
+        <span class="hero-eyebrow">Für iPad &amp; Android-Tablet</span>
+        <h1>Der Notenrechner für <span>Tablet</span>. Notenschlüssel und Klassen im Splitscreen.</h1>
+        <p class="hero-sub lead-answer">Auf dem iPad nutzt Der Notenrechner automatisch das größere Display: Klassenliste links, geöffnete Klausur rechts. Mehr auf einen Blick, ohne Cloud, ohne Konto, offline. Die Android-Tablet-Version ist in der finalen Test-Phase — Public Release in Kürze.</p>
+        <div class="hero-meta">
+          <span class="hero-meta-item"><svg class="hero-meta-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>iPad ab iPadOS 15</span>
+          <span class="hero-meta-item pending">Android in Kürze</span>
+          <span class="hero-meta-item"><svg class="hero-meta-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Kostenlos</span>
+          <span class="hero-meta-item"><svg class="hero-meta-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Offline</span>
+          <span class="hero-meta-item"><svg class="hero-meta-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Keine Cloud</span>
+        </div>
+        <div class="store-badge-group">
+          <a href="https://apps.apple.com/de/app/der-notenrechner/id1662507346" target="_blank" rel="noopener" class="app-store-badge">
+            <span class="app-store-badge-icon"><svg viewBox="0 0 384 512" aria-hidden="true"><path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184 4 273.5c0 26.2 4.8 53.3 14.4 81.2 12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/></svg></span>
+            <span class="app-store-badge-text">
+              <span class="app-store-badge-small">Laden im</span>
+              <span class="app-store-badge-large">App Store</span>
+            </span>
+          </a>
+          <span class="android-coming-soon">Android-App: in Kürze im Google Play Store</span>
+        </div>
+
+        <div class="hero-ipad-frame" aria-hidden="false">
+          <div class="hero-ipad-screen">
+            <img src="/assets/screen-ipad-klassen.png" alt="Der Notenrechner auf dem iPad — Klassenverwaltung im Splitscreen mit Klassenliste links und Klausur-Detail rechts" loading="eager" fetchpriority="high" width="2420" height="1668">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== SPLITSCREEN ========== -->
+    <section class="section" style="background: var(--bg);">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-eyebrow">iPad-spezifisch</div>
+          <h2 class="section-title">Master/Detail im Splitscreen</h2>
+          <p class="section-sub">Auf dem iPad zeigt die App zwei Spalten parallel: links die Klassenliste oder Klausurübersicht, rechts den geöffneten Eintrag. Kein Hin-und-her-Tippen, alles im Blick.</p>
+        </div>
+
+        <div class="row reverse">
+          <div class="row-text">
+            <span class="row-tag">Klassen</span>
+            <h3>Alle Klassen in einer Spalte. Die offene Klausur in der zweiten.</h3>
+            <p>Tippen Sie links auf eine Klasse — rechts erscheint die zugehörige Klausurübersicht mit Schnitt, Notenverteilung und einzelnen Schülerergebnissen. Wechseln Sie zur nächsten Klasse, bleibt der Kontext rechts erhalten. Auf dem iPhone funktioniert dieselbe App in Vollbild — auf dem iPad mit zwei Panels.</p>
+            <p>Die zuletzt geöffnete Klasse wird automatisch wiederhergestellt, sodass Sie nach dem Aufwachen direkt da weitermachen, wo Sie aufgehört haben.</p>
+          </div>
+          <div class="row-visual">
+            <div class="row-ipad">
+              <div class="row-ipad-screen">
+                <img src="/assets/screen-ipad-klassen.png" alt="iPad-Splitscreen mit Klassenliste links und geöffneter Klausur rechts" loading="lazy" width="2420" height="1668">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="row-text">
+            <span class="row-tag">Notenrechner</span>
+            <h3>Voller Notenschlüssel ohne Scrollen.</h3>
+            <p>Das größere iPad-Display zeigt den 16-stufigen Notenschlüssel, das Eingabefeld und den Klassenschnitt nebeneinander. Sie sehen sofort, welcher Punktwert welcher Note entspricht — ohne die Tabelle einzeln aufrollen zu müssen.</p>
+            <p>Knick, Sockel, lineare Schlüssel und der IHK-Notenschlüssel — alle Optionen verfügbar, alles auf einer Bildschirmseite.</p>
+          </div>
+          <div class="row-visual">
+            <div class="row-ipad">
+              <div class="row-ipad-screen">
+                <img src="/assets/screen-ipad-rechner.png" alt="iPad mit dem Notenrechner — vollständiger Notenschlüssel von 0 bis 15 Punkten und Klassenschnitt im Blick" loading="lazy" width="2420" height="1668">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row reverse">
+          <div class="row-text">
+            <span class="row-tag">Klassenspiegel</span>
+            <h3>Notenverteilung sofort sichtbar.</h3>
+            <p>Nach jeder Klausur zeigt der Klassenspiegel die Notenverteilung als Glockenkurve — von 0 bis 15 Notenpunkte, mit Bestehensgrenze und Klassendurchschnitt markiert. Auf dem iPad sehen Sie Kurve, Eckdaten und die komplette Schülerliste auf einer Seite.</p>
+            <p>Hilft beim Erkennen ungewöhnlicher Verteilungen, bevor Sie die Klausur zurückgeben.</p>
+          </div>
+          <div class="row-visual">
+            <div class="row-ipad">
+              <div class="row-ipad-screen">
+                <img src="/assets/screen-ipad-bellcurve.png" alt="iPad zeigt den Klassenspiegel einer Klausur — Glockenkurve der Notenverteilung mit Durchschnitt und Schülerliste" loading="lazy" width="2420" height="1668">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="row-text">
+            <span class="row-tag">Zeugnisnoten</span>
+            <h3>Zeugnisnoten — zwei Schüler nebeneinander.</h3>
+            <p>Auf dem iPad zeigt die Zeugnisnoten-Ansicht zwei Schüler-Karten direkt nebeneinander. Sie sehen die Endnote-Berechnung mit Teilnoten- und Klausurnoten-Anteilen, können einzelne Werte überschreiben und das fertige Zeugnis als PDF exportieren.</p>
+            <p>Vergleichen, korrigieren, drucken — ohne zwischen Bildschirmen zu wechseln.</p>
+          </div>
+          <div class="row-visual">
+            <div class="row-ipad">
+              <div class="row-ipad-screen">
+                <img src="/assets/screen-ipad-zeugnis.png" alt="iPad mit Zeugnisnoten-Editor — zwei Schülerkarten nebeneinander mit Klausurnoten, Teilnoten und Endnote, PDF-Export-Button" loading="lazy" width="2420" height="1668">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== UNIVERSAL-APP ========== -->
+    <section class="section" style="background: var(--card); border-top: 1px solid var(--border-light); border-bottom: 1px solid var(--border-light);">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-eyebrow">Eine App. Drei Geräteklassen.</div>
+          <h2 class="section-title">Universal-App: ein Download, jedes Tablet.</h2>
+          <p class="section-sub">Sie installieren Der Notenrechner einmal aus dem Store. Auf iOS passt sich die App automatisch an iPhone- oder iPad-Bildschirm an. Die Android-Version (in Kürze verfügbar) folgt derselben Logik — eigene Versionen oder Käufe gibt es nicht.</p>
+        </div>
+        <div style="max-width: 720px; margin: 0 auto; padding: 28px 32px; background: var(--bg); border: 1px solid var(--border); border-radius: var(--radius-lg);">
+          <h3 style="font-size: 18px; font-weight: 700; margin-bottom: 12px;">Kein Cloud-Zwang — auch nicht zwischen Geräten</h3>
+          <p style="font-size: 16px; color: var(--text-secondary); line-height: 1.7;">Ihre Daten bleiben bewusst lokal. Es gibt keine Cloud-Synchronisation zwischen iPhone, iPad oder Android — das ist eine Designentscheidung, keine fehlende Funktion. Wenn Sie Daten zwischen Geräten übertragen möchten, nutzen Sie die <strong>Backup-Funktion</strong>: Daten als Datei exportieren, auf dem anderen Gerät importieren. Schnell, transparent, ohne fremde Server.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== ANDROID: COMING SOON ========== -->
+    <section class="section android-section">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-eyebrow">Android · in Kürze</div>
+          <h2 class="section-title">Auch für Android-Tablets — Release in Kürze</h2>
+          <p class="section-sub">Die Android-App von Der Notenrechner befindet sich in der finalen Test-Phase. Funktionsumfang, Datenschutz und Preis (kostenlos) entsprechen 1:1 der iOS-Version.</p>
+        </div>
+
+        <div class="android-grid">
+          <div class="android-text">
+            <h3>Was bleibt gleich, was wird anders.</h3>
+            <p>Die Android-Version teilt sich mit der iOS-App den kompletten Datenkern: dieselbe Notenschlüssel-Logik, dieselben Berechnungsformeln (Knick, lineare Schlüssel, IHK), dieselbe Klassenstruktur, derselbe Zeugnisnoten-Generator. Was auf dem iPad funktioniert, funktioniert auf dem Android-Tablet — bis auf zwei Apple-spezifische Eigenheiten.</p>
+            <p>Plattform-spezifisch bleibt iPad: Apple-Pencil-Eingabe für Schülernamen sowie das Stage-Manager-Splitscreen-Verhalten. Auf Android-Tablets übernehmen die nativen Splitscreen-Mechaniken den Job.</p>
+            <ul class="android-checklist">
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Notenschlüssel-Rechner mit allen Modi (Knick, IHK, linear)</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Klassen-, Klausur- und Zeugnisnoten-Verwaltung</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>PDF-Export</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Vollständig lokal — keine Cloud, kein Tracking, keine Werbung</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Kostenlos im Google Play Store (nach Release)</li>
+            </ul>
+          </div>
+          <div class="android-visual" aria-hidden="true">
+            <div class="android-tablet-shape">
+              <div class="android-tablet-screen">
+                <span class="android-screen-label">Public Release</span>
+                <span class="android-screen-headline">In Kürze für Android</span>
+                <span class="android-screen-pulse"></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== FEATURE GRID ========== -->
+    <section class="features section">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-eyebrow">Tablet-Features</div>
+          <h2 class="section-title">Optimiert für das Tablet</h2>
+        </div>
+        <div class="features-grid">
+          <div class="feature-card">
+            <div class="feature-card-icon">📐</div>
+            <h4>Splitscreen-Layout</h4>
+            <p>Master/Detail-Ansicht: Listen links, Detail rechts. Aktiviert sich automatisch ab Tablet-Bildschirmgröße — auf iPad nativ über das iPadOS-Splitlayout, auf Android über die native Splitscreen-Mechanik.</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-card-icon">⌨️</div>
+            <h4>Externe Tastatur unterstützt</h4>
+            <p>Mit angeschlossener Magic Keyboard, Smart Keyboard oder Bluetooth-Tastatur tippen Sie Punktzahlen und Schülernamen ohne Bildschirmtastatur ein.</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-card-icon">🔄</div>
+            <h4>Hoch- und Querformat</h4>
+            <p>Beide Orientierungen werden voll unterstützt — auch in beide Richtungen. Drehen Sie das Tablet ohne Layoutbruch.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== FAQ ========== -->
+    <section class="section" id="faq" style="background: var(--bg);">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-eyebrow">Häufige Fragen</div>
+          <h2 class="section-title">Notenrechner auf dem Tablet — Fragen &amp; Antworten</h2>
+        </div>
+        <div class="faq-grid">
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              Funktioniert der Notenrechner auf dem Tablet?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer" role="region">
+              <div class="faq-answer-inner">
+                Ja. Auf dem iPad läuft Der Notenrechner als Universal-App im Splitscreen-Layout — Klassenliste links, geöffnete Klausur rechts — so sehen Sie mehr auf einen Blick und arbeiten effizienter. Hoch- und Querformat werden beide unterstützt. Eine Android-Tablet-Version ist in Kürze verfügbar.
+              </div>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              Wann gibt es Der Notenrechner für Android?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer" role="region">
+              <div class="faq-answer-inner">
+                Die Android-Version befindet sich in der finalen Test-Phase und wird in Kürze im Google Play Store veröffentlicht. Funktionsumfang, Datenschutz-Architektur und Kosten entsprechen 1:1 der iOS-Version: vollständig lokal, ohne Cloud, ohne Werbung, kostenlos.
+              </div>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              Welche iPad-Modelle werden unterstützt?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer" role="region">
+              <div class="faq-answer-inner">
+                Alle iPads ab iPadOS 15 — also iPad (6. Generation und neuer), iPad mini 5, iPad Air 3 sowie alle iPad Pro Modelle. Die App läuft im Hoch- und Querformat in beiden Richtungen und passt sich automatisch an die Bildschirmgröße an.
+              </div>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              Synchronisiert sich die App zwischen iPhone, iPad und Android?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer" role="region">
+              <div class="faq-answer-inner">
+                Nein, Ihre Daten bleiben bewusst lokal — keine Cloud, kein Tracking. Über die Backup-Funktion in der App können Sie Ihre Daten als Datei exportieren und auf einem anderen Gerät importieren, wenn Sie zwischen Geräten wechseln möchten. Das gilt für iPhone, iPad und nach Release auch für Android.
+              </div>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              Gibt es eine extra iPad-Version?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer" role="region">
+              <div class="faq-answer-inner">
+                Nein, Der Notenrechner ist auf iOS eine Universal-App. Sie installieren sie einmal und sie passt sich automatisch an iPhone oder iPad an. Auf dem iPad nutzt sie das größere Display für ein Splitscreen-Layout mit Master/Detail-Ansicht.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== CTA ========== -->
+    <section class="cta-banner">
+      <h2>Jetzt kostenlos im App Store laden</h2>
+      <p>Eine App, alle Tablets. Universal für iPhone und iPad — Android-Version in Kürze. Keine Werbung, kein Abo, keine Cloud.</p>
+      <a href="https://apps.apple.com/de/app/der-notenrechner/id1662507346" target="_blank" rel="noopener" class="app-store-badge">
+        <span class="app-store-badge-icon"><svg viewBox="0 0 384 512" aria-hidden="true"><path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184 4 273.5c0 26.2 4.8 53.3 14.4 81.2 12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/></svg></span>
+        <span class="app-store-badge-text">
+          <span class="app-store-badge-small">Laden im</span>
+          <span class="app-store-badge-large">App Store</span>
+        </span>
+      </a>
+      <span class="cta-android-note">Android-App: in Kürze im Google Play Store</span>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <ul class="footer-links">
+        <li><a href="/#datenschutz">Datenschutz</a></li>
+        <li><a href="/#impressum">Impressum</a></li>
+        <li><a href="https://instagram.com/notenrechnerapp" target="_blank" rel="noopener">Instagram</a></li>
+      </ul>
+      <div class="footer-tagline">Entwickelt von einem Lehrer, für Lehrkräfte</div>
+      <div class="footer-copy">© 2026 Der Notenrechner. Alle Rechte vorbehalten.</div>
+    </div>
+  </footer>
+
+  <script>
+    // FAQ toggle
+    document.querySelectorAll('.faq-item').forEach(item => {
+      const q = item.querySelector('.faq-question');
+      if (q) q.addEventListener('click', () => {
+        const open = item.classList.toggle('open');
+        q.setAttribute('aria-expanded', String(open));
+      });
+    });
+
+    // Mobile nav toggle
+    const navToggle = document.getElementById('navToggle');
+    const navLinks = document.getElementById('navLinks');
+    if (navToggle && navLinks) {
+      navToggle.addEventListener('click', () => {
+        const open = !navLinks.classList.contains('open');
+        navToggle.classList.toggle('active', open);
+        navLinks.classList.toggle('open', open);
+        navToggle.setAttribute('aria-expanded', String(open));
+      });
+    }
+  </script>
+</body>
+</html>
