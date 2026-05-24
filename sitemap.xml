@@ -32,6 +32,13 @@
   <url><loc>https://notenrechnerapp.de/notenverwaltungs-apps-vergleich/</loc><lastmod>2026-05-24</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://notenrechnerapp.de/notenschluessel-rechner/lehrerfreund-alternative/</loc><lastmod>2026-05-24</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
 
+  <!-- Per-Bundesland Notenschlüssel cluster (Phase 2 Bayern) -->
+  <url><loc>https://notenrechnerapp.de/notenschluessel-rechner/bayern/</loc><lastmod>2026-05-24</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://notenrechnerapp.de/notenschluessel-rechner/bayern/gymnasium/</loc><lastmod>2026-05-24</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://notenrechnerapp.de/notenschluessel-rechner/bayern/grundschule/</loc><lastmod>2026-05-24</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://notenrechnerapp.de/notenschluessel-rechner/bayern/realschule/</loc><lastmod>2026-05-24</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://notenrechnerapp.de/notenschluessel-rechner/bayern/berufsschule/</loc><lastmod>2026-05-24</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+
   <!-- Per-Bundesland IHK pages -->
   <url><loc>https://notenrechnerapp.de/ihk-notenschluessel/bayern/</loc><lastmod>2026-04-25</lastmod><changefreq>yearly</changefreq><priority>0.7</priority></url>
   <url><loc>https://notenrechnerapp.de/ihk-notenschluessel/nrw/</loc><lastmod>2026-04-25</lastmod><changefreq>yearly</changefreq><priority>0.7</priority></url>

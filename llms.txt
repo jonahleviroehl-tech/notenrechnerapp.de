@@ -18,6 +18,14 @@
 - [Notenverwaltungs-Apps für Lehrkräfte 2026 — Vergleich](https://notenrechnerapp.de/notenverwaltungs-apps-vergleich/): Acht Apps gegenübergestellt (TeacherTool, TeacherStudio, flixGRADE, Maiß, Lehrmeister, Grady, Lehrerfreund, Der Notenrechner). Plattformen, Preise, Datenschutz-Modelle, Funktionsumfang.
 - [Notenschlüssel-Rechner ohne Werbung — werbefreie Alternative](https://notenrechnerapp.de/notenschluessel-rechner/lehrerfreund-alternative/): Werbefreier Notenschlüssel-Rechner mit Knick, IHK und Abitur — ohne Newsletter-Wall, ohne Tracking.
 
+## Notenschlüssel Bayern (Schulform-spezifisch)
+
+- [Notenschlüssel Bayern — Übersicht](https://notenrechnerapp.de/notenschluessel-rechner/bayern/): Hub für alle bayerischen Schulformen. Was die GSO/RSO/GrSO/BSO regelt und was nicht, gängige Bestehensgrenzen (50/45/40 %), pro Schulform-Verlinkung.
+- [Notenschlüssel Bayern Gymnasium](https://notenrechnerapp.de/notenschluessel-rechner/bayern/gymnasium/): Schulaufgabe und Stegreifaufgabe, Sek I (1–6) und Oberstufe (15–0 Notenpunkte) gemäß GSO §§ 28–30.
+- [Notenschlüssel Bayern Grundschule](https://notenrechnerapp.de/notenschluessel-rechner/bayern/grundschule/): Probe in Note umrechnen, Ziffernnoten ab Klasse 3, Übertrittszeugnis nach Klasse 4.
+- [Notenschlüssel Bayern Realschule](https://notenrechnerapp.de/notenschluessel-rechner/bayern/realschule/): Schulaufgabe und Mittlerer Schulabschluss (MAP) gemäß RSO.
+- [Notenschlüssel Bayern Berufsschule](https://notenrechnerapp.de/notenschluessel-rechner/bayern/berufsschule/): Schulische Klausur (1–6) und IHK-Prüfung (DIHK-Tabelle) parallel — zwei Bewertungssysteme.
+
 ## Lexikon
 
 - [Notenpunkte](https://notenrechnerapp.de/lexikon/notenpunkte/): 16-stufiges Punktesystem (15–0) der gymnasialen Oberstufe. Jeweils 3 Notenpunkte entsprechen einer Schulnote.

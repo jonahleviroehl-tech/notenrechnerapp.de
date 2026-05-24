@@ -20,6 +20,7 @@ REGIONS = [
         "slug": "bayern",
         "name": "Bayern",
         "preposition": "in",
+        "school_url": "/notenschluessel-rechner/bayern/",  # Cross-link to school Notenschlüssel Bayern hub (Phase 2 cluster)
         "summary": "Der IHK-Notenschlüssel ist bundesweit identisch — auch in Bayern gilt: bestanden ab 50 %. Anwendbar für alle bayerischen IHK-Kammern.",
         "intro": "In Bayern verteilen sich die IHK-Aufgaben auf neun Kammern, die zusammen rund eine Million Mitgliedsunternehmen betreuen. Der Notenschlüssel selbst ist bundesweit einheitlich (Beschluss DIHK).",
         "chambers": [
@@ -417,6 +418,10 @@ def render_region(r):
         f'<li><strong>{name}</strong><br><span>{web}</span></li>'
         for name, web in r["chambers"]
     )
+    if r.get("school_url"):
+        school_link_html = f'<a href="{r["school_url"]}" class="internal-link">Schul-Notenschlüssel {r["name"]}</a>'
+    else:
+        school_link_html = ""
     return f"""<!DOCTYPE html>
 <html lang="de">
 <head>
@@ -537,6 +542,7 @@ def render_region(r):
             <a href="/ihk-notenschluessel/" class="internal-link">Vollständiger IHK-Rechner</a>
             <a href="/lexikon/bestehensgrenze/" class="internal-link">Lexikon: Bestehensgrenze</a>
             <a href="/notenschluessel-rechner/" class="internal-link">Schul-Notenschlüssel-Rechner</a>
+            {school_link_html}
           </div>
         </article>
       </div>
