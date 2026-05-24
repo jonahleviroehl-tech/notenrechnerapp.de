@@ -27,29 +27,35 @@
   <link rel="icon" type="image/png" href="/assets/logo.png">
   <link rel="apple-touch-icon" href="/assets/logo.png">
 
+  <!-- Schema.org structured data — Organization + Person + Article + SoftwareApplication + BreadcrumbList -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "Article",
-    "headline": "2 Notenpunkte = Note 5 (5,0) | Der Notenrechner",
-    "description": "2 Notenpunkte entsprechen der Schulnote 5 und der Dezimalnote 5,0. Bedeutung, Prozentbereich und Kontext für Klausuren in der gymnasialen Oberstufe.",
-    "url": "https://notenrechnerapp.de/notenpunkte/2/",
-    "datePublished": "2026-04-25",
-    "dateModified": "2026-04-25",
-    "author": { "@type": "Organization", "name": "Der Notenrechner", "url": "https://notenrechnerapp.de" },
-    "publisher": { "@type": "Organization", "name": "Der Notenrechner", "url": "https://notenrechnerapp.de", "logo": { "@type": "ImageObject", "url": "https://notenrechnerapp.de/assets/logo.png" } },
-    "mainEntityOfPage": "https://notenrechnerapp.de/notenpunkte/2/"
-  }
-  </script>
-
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    "itemListElement": [
-      { "@type": "ListItem", "position": 1, "name": "Der Notenrechner", "item": "https://notenrechnerapp.de/" },
-      { "@type": "ListItem", "position": 2, "name": "Notenpunkte-Tabelle", "item": "https://notenrechnerapp.de/notenpunkte-tabelle/" },
-      { "@type": "ListItem", "position": 3, "name": "2 Notenpunkte", "item": "https://notenrechnerapp.de/notenpunkte/2/" }
+    "@graph": [
+      { "@type": "Organization", "@id": "https://notenrechnerapp.de/#organization", "name": "Der Notenrechner", "url": "https://notenrechnerapp.de/", "logo": "https://notenrechnerapp.de/assets/logo.png", "founder": { "@id": "https://notenrechnerapp.de/#author" } },
+      { "@type": "Person", "@id": "https://notenrechnerapp.de/#author", "name": "Jonah Röhl", "jobTitle": "Lehrer & Entwickler", "description": "Lehrkraft in Hamburg und Entwickler von Der Notenrechner.", "url": "https://notenrechnerapp.de/#author", "worksFor": { "@id": "https://notenrechnerapp.de/#organization" } },
+      {
+        "@type": "Article",
+        "headline": "2 Notenpunkte: Bedeutung, Schulnote und Dezimalnote",
+        "description": "2 Notenpunkte entsprechen der Schulnote 5 und der Dezimalnote 5,0. Bedeutung, Prozentbereich und Kontext für Klausuren in der gymnasialen Oberstufe.",
+        "url": "https://notenrechnerapp.de/notenpunkte/2/",
+        "datePublished": "2026-04-25",
+        "dateModified": "2026-05-24",
+        "author": { "@id": "https://notenrechnerapp.de/#author" },
+        "publisher": { "@id": "https://notenrechnerapp.de/#organization" },
+        "mainEntityOfPage": "https://notenrechnerapp.de/notenpunkte/2/",
+        "inLanguage": "de-DE",
+        "about": { "@type": "Thing", "name": "2 Notenpunkte" }
+      },
+      { "@type": "SoftwareApplication", "@id": "https://notenrechnerapp.de/#app", "name": "Der Notenrechner", "applicationCategory": "EducationApplication", "operatingSystem": "iOS, iPadOS", "downloadUrl": "https://apps.apple.com/de/app/der-notenrechner/id1662507346", "offers": { "@type": "Offer", "price": "0", "priceCurrency": "EUR" } },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Der Notenrechner", "item": "https://notenrechnerapp.de/" },
+          { "@type": "ListItem", "position": 2, "name": "Notenpunkte-Tabelle", "item": "https://notenrechnerapp.de/notenpunkte-tabelle/" },
+          { "@type": "ListItem", "position": 3, "name": "2 Notenpunkte", "item": "https://notenrechnerapp.de/notenpunkte/2/" }
+        ]
+      }
     ]
   }
   </script>
@@ -154,7 +160,9 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 /* CONTENT */
 .content-section { padding: 56px 0 72px; }
 .content-prose { max-width: 720px; margin: 0 auto; }
-.content-prose h2 { font-size: clamp(24px, 3.5vw, 30px); font-weight: 800; letter-spacing: -0.02em; margin-bottom: 14px; }
+.content-prose h1 { font-size: clamp(28px, 4vw, 36px); font-weight: 800; letter-spacing: -0.025em; margin-bottom: 18px; line-height: 1.2; color: var(--text); }
+.content-prose h2 { font-size: clamp(24px, 3.5vw, 30px); font-weight: 800; letter-spacing: -0.02em; margin-bottom: 14px; margin-top: 32px; }
+.content-prose h2:first-of-type { margin-top: 0; }
 .content-prose h3 { font-size: 19px; font-weight: 700; margin-top: 36px; margin-bottom: 10px; letter-spacing: -0.01em; }
 .content-prose p { font-size: 16px; line-height: 1.75; color: var(--text-secondary); margin-bottom: 14px; }
 .content-prose a { color: var(--primary); font-weight: 500; text-decoration: underline; text-underline-offset: 3px; }
@@ -240,6 +248,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
     <section class="content-section">
       <div class="container">
         <article class="content-prose">
+          <h1>2 Notenpunkte: Bedeutung, Schulnote und Dezimalnote</h1>
           <h2>Was bedeuten 2 Notenpunkte?</h2>
           <p>2 Punkte stehen für deutliche Mängel. Wesentliche Inhalte sind nicht verstanden, einzelne Teilaspekte zeigen aber, dass der Schüler nicht vollständig abgehängt ist.</p>
 
