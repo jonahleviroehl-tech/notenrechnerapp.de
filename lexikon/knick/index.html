@@ -27,7 +27,7 @@
   {
     "@context": "https://schema.org",
     "@graph": [
-      { "@type": "Organization", "@id": "https://notenrechnerapp.de/#organization", "name": "Der Notenrechner", "url": "https://notenrechnerapp.de/", "logo": "https://notenrechnerapp.de/assets/logo.png", "founder": { "@id": "https://notenrechnerapp.de/#author" }, "sameAs": ["https://apps.apple.com/de/app/der-notenrechner/id1662507346", "https://instagram.com/notenrechnerapp"] },
+      { "@type": "Organization", "@id": "https://notenrechnerapp.de/#organization", "name": "Der Notenrechner", "url": "https://notenrechnerapp.de/", "logo": "https://notenrechnerapp.de/assets/logo.png", "founder": { "@id": "https://notenrechnerapp.de/#author" }, "sameAs": ["https://apps.apple.com/de/app/der-notenrechner/id1662507346", "https://play.google.com/store/apps/details?id=com.notenrechner.App", "https://instagram.com/notenrechnerapp"] },
       { "@type": "Person", "@id": "https://notenrechnerapp.de/#author", "name": "Jonah Röhl", "jobTitle": "Lehrer & Entwickler", "description": "Lehrkraft in Hamburg und Entwickler von Der Notenrechner.", "url": "https://notenrechnerapp.de/#author", "worksFor": { "@id": "https://notenrechnerapp.de/#organization" } },
       {
         "@type": "Article",
@@ -42,7 +42,7 @@
         "inLanguage": "de-DE",
         "about": { "@type": "Thing", "name": "Knick im Notenschlüssel" }
       },
-      { "@type": "SoftwareApplication", "@id": "https://notenrechnerapp.de/#app", "name": "Der Notenrechner", "applicationCategory": "EducationApplication", "operatingSystem": "iOS, iPadOS, Android", "downloadUrl": "https://apps.apple.com/de/app/der-notenrechner/id1662507346", "offers": { "@type": "Offer", "price": "0", "priceCurrency": "EUR" }, "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.5", "ratingCount": "6", "bestRating": "5", "worstRating": "1" } },
+      { "@type": "SoftwareApplication", "@id": "https://notenrechnerapp.de/#app", "name": "Der Notenrechner", "applicationCategory": "EducationApplication", "operatingSystem": "iOS, iPadOS, Android", "downloadUrl": "https://notenrechnerapp.de/", "installUrl": ["https://apps.apple.com/de/app/der-notenrechner/id1662507346", "https://play.google.com/store/apps/details?id=com.notenrechner.App"], "offers": { "@type": "Offer", "price": "0", "priceCurrency": "EUR" }, "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.5", "ratingCount": "6", "bestRating": "5", "worstRating": "1" } },
       {
         "@type": "BreadcrumbList",
         "itemListElement": [
@@ -154,6 +154,10 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 .app-store-badge-text { display: flex; flex-direction: column; line-height: 1; }
 .app-store-badge-small { font-size: 11px; opacity: 0.9; margin-bottom: 4px; }
 .app-store-badge-large { font-size: 20px; font-weight: 600; letter-spacing: -0.01em; }
+.store-badges-row { display: flex; gap: 14px; flex-wrap: wrap; justify-content: center; }
+.play-store-badge { position: relative; }
+.play-store-new { position: absolute; top: -8px; right: -10px; background: linear-gradient(135deg, #3DDC84 0%, #1E8B4E 100%); color: #fff; font-size: 10.5px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; padding: 3px 9px; border-radius: 999px; box-shadow: 0 4px 10px rgba(30,139,78,0.4), 0 0 0 2px rgba(255,255,255,0.95); animation: play-tag-bob 2.4s ease-in-out infinite; }
+@keyframes play-tag-bob { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-3px); } }
 
 .footer { background: var(--surface-subtle); padding: 36px 24px; border-top: 1px solid var(--border); }
 .footer-inner { max-width: 1120px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; gap: 12px; }
@@ -221,11 +225,31 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
     <section class="cta-banner">
       <div class="cta-banner-content">
         <h2>Klausuren bewerten, Klassen führen, Zeugnisse berechnen.</h2>
-        <p class="cta-banner-sub">Der Notenrechner — kostenlos im App Store. Lokal, ohne Account, ohne Werbung.</p>
-        <a href="https://apps.apple.com/de/app/der-notenrechner/id1662507346" target="_blank" rel="noopener" class="app-store-badge">
-          <span class="app-store-badge-icon"><svg viewBox="0 0 384 512"><path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184 4 273.5c0 26.2 4.8 53.3 14.4 81.2 12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/></svg></span>
-          <span class="app-store-badge-text"><span class="app-store-badge-small">Laden im</span><span class="app-store-badge-large">App Store</span></span>
-        </a>
+        <p class="cta-banner-sub">Der Notenrechner — kostenlos für iPhone, iPad und Android. Lokal, ohne Account, ohne Werbung.</p>
+        <div class="store-badges-row">
+          <a href="https://apps.apple.com/de/app/der-notenrechner/id1662507346" target="_blank" rel="noopener" class="app-store-badge">
+            <span class="app-store-badge-icon"><svg viewBox="0 0 384 512"><path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184 4 273.5c0 26.2 4.8 53.3 14.4 81.2 12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/></svg></span>
+            <span class="app-store-badge-text"><span class="app-store-badge-small">Laden im</span><span class="app-store-badge-large">App Store</span></span>
+          </a>
+          <a href="https://play.google.com/store/apps/details?id=com.notenrechner.App" target="_blank" rel="noopener" class="app-store-badge play-store-badge" aria-label="Bei Google Play laden">
+            <span class="play-store-new" aria-hidden="true">Neu</span>
+            <span class="app-store-badge-icon">
+              <svg viewBox="0 0 512 512" aria-hidden="true">
+                <defs>
+                  <linearGradient id="gplay-knick-a" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#00C2FF"/><stop offset="100%" stop-color="#1B72FF"/></linearGradient>
+                  <linearGradient id="gplay-knick-b" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#FFD600"/><stop offset="100%" stop-color="#FF8A00"/></linearGradient>
+                  <linearGradient id="gplay-knick-c" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#FF3A44"/><stop offset="100%" stop-color="#C31162"/></linearGradient>
+                  <linearGradient id="gplay-knick-d" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#00DE5C"/><stop offset="100%" stop-color="#00B649"/></linearGradient>
+                </defs>
+                <path fill="url(#gplay-knick-d)" d="M52 0c-12 6.3-20 17.7-20 32.4v447.2c0 14.7 8 26.1 20 32.4l232.4-232L52 0z"/>
+                <path fill="url(#gplay-knick-a)" d="M284.4 280 52 512c4.4 2.3 9.2 3.5 14.2 3.5 5.4 0 11.1-1.5 16.7-4.7l267.5-152-65.9-78.8z"/>
+                <path fill="url(#gplay-knick-c)" d="M480.3 219.2 350.4 144.3 282 211l65.9 78.8 132.4-75.3c10-5.7 16.3-15.7 16.3-26.5 0-10.7-6.3-20.8-16.3-26.5z" transform="translate(0 48)"/>
+                <path fill="url(#gplay-knick-b)" d="M82.9 1.2c-5.5-3.3-11.3-4.7-16.7-4.7-5 0-9.7 1.2-14.1 3.5L284.4 232l65.9-78.8L82.9 1.2z"/>
+              </svg>
+            </span>
+            <span class="app-store-badge-text"><span class="app-store-badge-small">Jetzt bei</span><span class="app-store-badge-large">Google Play</span></span>
+          </a>
+        </div>
       </div>
     </section>
   </main>
