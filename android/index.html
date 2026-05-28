@@ -180,6 +180,7 @@
     .nav-links a:hover { color: var(--primary); }
     .nav-links a.nav-cta { display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 0 22px 0 18px; height: 36px; min-height: 0; line-height: 1; white-space: nowrap; background: var(--primary); color: white !important; border-radius: var(--radius-pill); font-size: 15px; font-weight: 700; transition: background 0.15s, transform 0.15s; }
     .nav-links a.nav-cta:hover { background: var(--primary-dark); transform: translateY(-1px); }
+    .nav-links a.nav-cta svg { width: 15px; height: 15px; flex-shrink: 0; display: block; }
     .nav-toggle { display: none; flex-direction: column; gap: 5px; padding: 10px; min-width: 44px; min-height: 44px; justify-content: center; align-items: center; }
     .nav-toggle span { display: block; width: 22px; height: 2px; background: var(--text); border-radius: 2px; transition: transform 0.3s, opacity 0.3s; }
 
@@ -368,6 +369,34 @@
       align-items: center;
       justify-content: center;
     }
+    /* Three.js shader backdrop — sits behind the screenshot card */
+    .hero-shader-bg {
+      position: absolute;
+      inset: -32px;
+      border-radius: 40px;
+      overflow: hidden;
+      z-index: 0;
+      pointer-events: none;
+      opacity: 0;
+      transition: opacity 0.8s ease-out;
+      background: #000;
+      box-shadow: 0 30px 80px rgba(15,15,16,0.18);
+    }
+    .hero-shader-bg canvas {
+      display: block;
+      width: 100% !important;
+      height: 100% !important;
+    }
+    body.shader-active .hero-shader-bg { opacity: 1; }
+    /* When shader is live, hide the CSS-only fallback decorations */
+    body.shader-active .hero-devices-halo,
+    body.shader-active .hero-devices-floor { opacity: 0; }
+    body.shader-active .hero-devices-stage::before,
+    body.shader-active .hero-devices-stage::after { opacity: 0; }
+    @media (prefers-reduced-motion: reduce) {
+      .hero-shader-bg { display: none; }
+    }
+
     /* Ambient layered backdrop behind hero card */
     .hero-devices-halo {
       position: absolute;
@@ -928,7 +957,7 @@
         <li><a href="/notenpunkte-tabelle/">Notenpunkte-Tabelle</a></li>
         <li><a href="/ihk-notenschluessel/">IHK-Rechner</a></li>
         <li><a href="/tablet/">Für Tablet</a></li>
-        <li><a href="https://play.google.com/store/apps/details?id=com.notenrechner.App" target="_blank" rel="noopener" class="nav-cta">Bei Google Play</a></li>
+        <li><a href="https://play.google.com/store/apps/details?id=com.notenrechner.App" target="_blank" rel="noopener" class="nav-cta" aria-label="Bei Google Play laden"><svg viewBox="0 0 512 512" aria-hidden="true"><defs><linearGradient id="gplay-nav-a" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#00C2FF"/><stop offset="100%" stop-color="#1B72FF"/></linearGradient><linearGradient id="gplay-nav-b" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#FFD600"/><stop offset="100%" stop-color="#FF8A00"/></linearGradient><linearGradient id="gplay-nav-c" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#FF3A44"/><stop offset="100%" stop-color="#C31162"/></linearGradient><linearGradient id="gplay-nav-d" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#00DE5C"/><stop offset="100%" stop-color="#00B649"/></linearGradient></defs><path fill="url(#gplay-nav-d)" d="M52 0c-12 6.3-20 17.7-20 32.4v447.2c0 14.7 8 26.1 20 32.4l232.4-232L52 0z"/><path fill="url(#gplay-nav-a)" d="M284.4 280 52 512c4.4 2.3 9.2 3.5 14.2 3.5 5.4 0 11.1-1.5 16.7-4.7l267.5-152-65.9-78.8z"/><path fill="url(#gplay-nav-c)" d="M480.3 219.2 350.4 144.3 282 211l65.9 78.8 132.4-75.3c10-5.7 16.3-15.7 16.3-26.5 0-10.7-6.3-20.8-16.3-26.5z" transform="translate(0 48)"/><path fill="url(#gplay-nav-b)" d="M82.9 1.2c-5.5-3.3-11.3-4.7-16.7-4.7-5 0-9.7 1.2-14.1 3.5L284.4 232l65.9-78.8L82.9 1.2z"/></svg>Laden</a></li>
       </ul>
     </div>
   </nav>
@@ -1031,6 +1060,7 @@
             <span class="hero-devices-halo"></span>
             <div class="hero-devices-stage">
               <span class="hero-devices-floor"></span>
+              <div class="hero-shader-bg" id="hero-shader"></div>
               <div class="hero-screen-card">
                 <img src="/assets/android-screens/01-rechner.png" alt="Der Notenrechner auf Android — Notenschlüssel-Rechner mit Punkteingabe und Ergebnis" loading="eager" fetchpriority="high" width="1080" height="1920">
               </div>
@@ -1404,6 +1434,93 @@
         navToggle.setAttribute('aria-expanded', String(open));
       });
     }
+  </script>
+
+  <script type="module">
+    // Three.js shader backdrop for the hero.
+    // Falls back to the CSS halo+blob composition if anything goes wrong
+    // (reduced-motion, WebGL missing, CDN fetch failure).
+    (async () => {
+      const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (reduced) return;
+
+      const container = document.getElementById('hero-shader');
+      if (!container) return;
+
+      let THREE;
+      try {
+        THREE = await import('https://unpkg.com/three@0.157.0/build/three.module.js');
+      } catch (err) {
+        console.warn('hero shader: three.js failed to load', err);
+        return;
+      }
+
+      const vertexShader = `
+        void main() {
+          gl_Position = vec4( position, 1.0 );
+        }
+      `;
+      const fragmentShader = `
+        #define TWO_PI 6.2831853072
+        #define PI 3.14159265359
+        precision highp float;
+        uniform vec2 resolution;
+        uniform float time;
+        void main(void) {
+          vec2 uv = (gl_FragCoord.xy * 2.0 - resolution.xy) / min(resolution.x, resolution.y);
+          float t = time * 0.05;
+          float lineWidth = 0.002;
+          vec3 color = vec3(0.0);
+          for (int j = 0; j < 3; j++) {
+            for (int i = 0; i < 5; i++) {
+              color[j] += lineWidth * float(i * i) / abs(fract(t - 0.01 * float(j) + float(i) * 0.01) * 5.0 - length(uv) + mod(uv.x + uv.y, 0.2));
+            }
+          }
+          gl_FragColor = vec4(color[0], color[1], color[2], 1.0);
+        }
+      `;
+
+      const camera = new THREE.Camera();
+      camera.position.z = 1;
+      const scene = new THREE.Scene();
+      const geometry = new THREE.PlaneGeometry(2, 2);
+      const uniforms = {
+        time: { value: 1.0 },
+        resolution: { value: new THREE.Vector2() }
+      };
+      const material = new THREE.ShaderMaterial({ uniforms, vertexShader, fragmentShader });
+      const mesh = new THREE.Mesh(geometry, material);
+      scene.add(mesh);
+
+      let renderer;
+      try {
+        renderer = new THREE.WebGLRenderer({ antialias: true, alpha: false });
+      } catch (err) {
+        console.warn('hero shader: WebGL unavailable', err);
+        return;
+      }
+      renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+      container.appendChild(renderer.domElement);
+
+      const resize = () => {
+        const w = container.clientWidth;
+        const h = container.clientHeight;
+        renderer.setSize(w, h, false);
+        uniforms.resolution.value.x = renderer.domElement.width;
+        uniforms.resolution.value.y = renderer.domElement.height;
+      };
+      resize();
+      window.addEventListener('resize', resize);
+
+      const animate = () => {
+        requestAnimationFrame(animate);
+        uniforms.time.value += 0.05;
+        renderer.render(scene, camera);
+      };
+      animate();
+
+      document.body.classList.add('shader-active');
+    })();
   </script>
 </body>
 </html>
