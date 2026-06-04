@@ -51,6 +51,8 @@
 - [Notenpunkte erklärt](https://notenrechnerapp.de/blog/notenpunkte-erklaert/): Die 0–15-Notenpunkte-Skala der gymnasialen Oberstufe mit Schulnoten-Zuordnung, Bestehensgrenze und Prozent-Umrechnung.
 - [Welche Note brauche ich noch zum Bestehen?](https://notenrechnerapp.de/blog/welche-note-brauche-ich/): Rückwärtsrechnung vom Zielschnitt zur erforderlichen Klausurnote — mit vier Fallbeispielen aus Sek I, Oberstufe und Leistungskurs.
 - [Abiturnote berechnen](https://notenrechnerapp.de/blog/abiturnote-berechnen/): Wie sich die Abiturnote aus Block I (Kurshalbjahres-Ergebnisse) und Block II (Prüfungen) ergibt — KMK-Formel und Beispielrechnung.
+- [IHK-Notenschlüssel NRW](https://notenrechnerapp.de/blog/ihk-notenschluessel-nrw/): Die bundesweiten DIHK-Prozentgrenzen (92/81/67/50/30 %) gelten in allen 16 IHK-Kammern Nordrhein-Westfalens — mit mündlicher Ergänzungsprüfung und Beispielrechnung.
+- [IHK-Notenschlüssel Niedersachsen](https://notenrechnerapp.de/blog/ihk-notenschluessel-niedersachsen/): Die DIHK-Prozentgrenzen (92/81/67/50/30 %) gelten in allen sieben IHK-Kammern Niedersachsens — mit mündlicher Nachprüfung und Beispielrechnung.
 
 ## App
 
