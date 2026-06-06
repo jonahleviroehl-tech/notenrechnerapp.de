@@ -35,9 +35,9 @@
 
   <!-- Per-Bundesland Notenschlüssel cluster (Phase 2 Bayern + NRW) -->
   <url><loc>https://notenrechnerapp.de/notenschluessel-rechner/bayern/</loc><lastmod>2026-05-24</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://notenrechnerapp.de/notenschluessel-rechner/bayern/gymnasium/</loc><lastmod>2026-05-24</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://notenrechnerapp.de/notenschluessel-rechner/bayern/gymnasium/</loc><lastmod>2026-06-06</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://notenrechnerapp.de/notenschluessel-rechner/bayern/grundschule/</loc><lastmod>2026-06-05</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://notenrechnerapp.de/notenschluessel-rechner/bayern/realschule/</loc><lastmod>2026-05-24</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://notenrechnerapp.de/notenschluessel-rechner/bayern/realschule/</loc><lastmod>2026-06-06</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://notenrechnerapp.de/notenschluessel-rechner/bayern/berufsschule/</loc><lastmod>2026-05-24</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://notenrechnerapp.de/notenschluessel-rechner/nrw/</loc><lastmod>2026-06-06</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://notenrechnerapp.de/notenschluessel-rechner/nrw/zp10/</loc><lastmod>2026-06-06</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
