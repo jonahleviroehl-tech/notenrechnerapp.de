@@ -12,6 +12,7 @@
 - [Notenpunkte-Tabelle](https://notenrechnerapp.de/notenpunkte-tabelle/): 15–0 Notenpunkte zu Schulnoten 1–6 für die gymnasiale Oberstufe.
 - [IHK-Notenschlüssel](https://notenrechnerapp.de/ihk-notenschluessel/): Punkte → Note 1,0–6,0 für IHK-Zwischen- und Abschlussprüfungen, Fachwirt, AEVO. Bestanden ab 50 %.
 - [Notendurchschnitt-Rechner](https://notenrechnerapp.de/notendurchschnitt/): Notendurchschnitt aus mehreren Klausuren oder Halbjahresnoten — mit Notenpunkten oder Schulnoten.
+- [Punkte in Noten umrechnen](https://notenrechnerapp.de/punkte-in-noten/): Erreichte Punkte und Maximalpunktzahl eingeben, Note sofort ablesen — linearer 50/45/40-%-Schlüssel, mit Mindestpunktzahl je Note (auch rückwärts).
 
 ## Vergleich & Alternativen
 
