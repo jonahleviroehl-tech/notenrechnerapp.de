@@ -33,6 +33,9 @@
 - [Notenschlüssel NRW Grundschule](https://notenrechnerapp.de/notenschluessel-rechner/nrw/grundschule/): Klassenarbeit in Note umrechnen, Ziffernnoten ab dem 2. Halbjahr Klasse 3 gemäß AO-GS NRW, Schulformempfehlung Klasse 4 (in NRW nicht bindend).
 - [Notenschlüssel NRW Gymnasium](https://notenrechnerapp.de/notenschluessel-rechner/nrw/gymnasium/): Klassenarbeit (Sek I) und Oberstufenklausur (Q1/Q2) gemäß APO-S I und APO-GOSt. Zentralabitur seit 2007 landeseinheitlich.
 - [ZP10 Notenschlüssel NRW](https://notenrechnerapp.de/notenschluessel-rechner/nrw/zp10/): Zentrale Prüfungen Klasse 10 in Deutsch, Mathe, Englisch — Note 4 ab etwa 45 %, linear darüber, Grenze 5/6 bei 18 %; verbindlicher Schlüssel je Prüfung über die Korrekturvorgaben. Endnote aus Vornote und Prüfung (5:3:2 bei mündlicher Prüfung).
+- [Notenschlüssel NRW Realschule](https://notenrechnerapp.de/notenschluessel-rechner/nrw/realschule/): Klassenarbeit in Note umrechnen (APO-S I), ZP10 und Mittlerer Schulabschluss (FOR).
+- [Notenschlüssel NRW Gesamtschule](https://notenrechnerapp.de/notenschluessel-rechner/nrw/gesamtschule/): Note umrechnen mit G-/E-Kursen; Abschlüsse von Hauptschulabschluss bis FORQ, ZP10 am Ende der Klasse 10.
+- [Notenschlüssel NRW Hauptschule](https://notenrechnerapp.de/notenschluessel-rechner/nrw/hauptschule/): Klassenarbeit in Note umrechnen (APO-S I); Hauptschulabschluss, Typ 10A/10B und ZP10.
 
 ## Lexikon
 
