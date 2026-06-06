@@ -37,6 +37,13 @@
 - [Notenschlüssel NRW Gesamtschule](https://notenrechnerapp.de/notenschluessel-rechner/nrw/gesamtschule/): Note umrechnen mit G-/E-Kursen; Abschlüsse von Hauptschulabschluss bis FORQ, ZP10 am Ende der Klasse 10.
 - [Notenschlüssel NRW Hauptschule](https://notenrechnerapp.de/notenschluessel-rechner/nrw/hauptschule/): Klassenarbeit in Note umrechnen (APO-S I); Hauptschulabschluss, Typ 10A/10B und ZP10.
 
+## Notenschlüssel weitere Bundesländer
+
+- [Notenschlüssel Niedersachsen](https://notenrechnerapp.de/notenschluessel-rechner/niedersachsen/): NSchG; kein fester Klausur-Schlüssel (Fachkonferenz); zentrale Abschlussprüfungen Klasse 10 (D/M/Englisch, je ein Drittel der Jahresnote); Zentralabitur.
+- [Notenschlüssel Sachsen](https://notenrechnerapp.de/notenschluessel-rechner/sachsen/): Sächsisches SchulG; kein fester Klausur-Schlüssel; Besondere Leistungsfeststellung (BLF) Klasse 10 am Gymnasium (D/M/E, doppelt gewichtet, § 29 SOGYA); Zentralabitur.
+- [Notenschlüssel Baden-Württemberg](https://notenrechnerapp.de/notenschluessel-rechner/baden-wuerttemberg/): SchG; kein fester Klausur-Schlüssel; verbindliche Grundschulempfehlung (2,5 in D/M, „zwei aus drei"); Zentralabitur-Pionier.
+- [Notenschlüssel Hessen](https://notenrechnerapp.de/notenschluessel-rechner/hessen/): HSchG/OAVO; kein fester Klausur-Schlüssel; G8/G9-Wahlfreiheit (§§ 24/26 HSchG); Landesabitur seit 2007.
+
 ## Lexikon
 
 - [Notenpunkte](https://notenrechnerapp.de/lexikon/notenpunkte/): 16-stufiges Punktesystem (15–0) der gymnasialen Oberstufe. Jeweils 3 Notenpunkte entsprechen einer Schulnote.
