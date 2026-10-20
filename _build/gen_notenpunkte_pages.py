@@ -9,6 +9,7 @@ Output: website/notenpunkte/<N>/index.html  (16 files)
 """
 
 from pathlib import Path
+from site_common import normalize_html
 from textwrap import dedent
 
 ROOT = Path(__file__).resolve().parent.parent  # website/
@@ -832,7 +833,7 @@ def main():
     for np in range(16):
         d = OUT_ROOT / str(np)
         d.mkdir(exist_ok=True)
-        (d / "index.html").write_text(render_page(np), encoding="utf-8")
+        (d / "index.html").write_text(normalize_html(render_page(np), d / "index.html"), encoding="utf-8")
         print(f"  wrote /notenpunkte/{np}/index.html")
     print(f"\nGenerated 16 pages under {OUT_ROOT}")
 

@@ -69,16 +69,15 @@
 
 ## App
 
-- [Der Notenrechner für Tablet](https://notenrechnerapp.de/tablet/): Master/Detail-Splitscreen, voller Notenschlüssel ohne Scrollen, Klassenspiegel mit Glockenkurve, Zeugnisnoten Seite-an-Seite. Live auf iPad; Android-Tablet-Version in Kürze.
-- [Im App Store laden](https://apps.apple.com/de/app/der-notenrechner/id1662507346): Universal-App für iPhone und iPad, ab iPadOS 15. Kostenlos, keine Werbung, keine In-App-Käufe.
-- Google Play Store: Android-App in Kürze verfügbar — Public Release in den nächsten Tagen.
+- [Der Notenrechner](https://notenrechnerapp.de/#app-download): Für Lehrkräfte auf iPhone, iPad und Android. iOS: 5,99 EUR im deutschen App Store; Android: kostenlos bei Google Play. Preisstand: 20.10.2026.
+- [Tablet](https://notenrechnerapp.de/tablet/): Klassen- und Klausuransicht auf iPad und Android-Tablets.
+- [Android](https://notenrechnerapp.de/android/): Im Google Play Store veröffentlicht.
+- [App-Vergleich](https://notenrechnerapp.de/notenverwaltungs-apps-vergleich/): Auswahl nach Unterrichtsaufgabe und Herstellerangaben, mit Quellen.
+- [Fehlerquotient](https://notenrechnerapp.de/fehlerquotient-berechnen/): Fehler pro 100 Wörter, keine automatische Notenvergabe.
 
 ## Fakten
 
-- Plattform: iOS und iPadOS live (Universal-App, ein Download). Android in finaler Test-Phase, Public Release in Kürze.
-- Mindest-OS: iOS 15 / iPadOS 15. Android-Mindest-OS wird mit dem Release bekanntgegeben.
-- Datenhaltung: ausschließlich lokal (SQLite), keine Cloud, kein Tracking, keine Werbung. Auf Android identische Architektur.
-- Synchronisation zwischen Geräten (iPhone, iPad, Android): nicht automatisch — manuell über die Backup-Funktion (Datei-Export/Import). Bewusste Designentscheidung.
-- Sprache: Deutsch (primär)
-- Zielgruppe: Lehrkräfte an Gymnasien, Realschulen, Hauptschulen und Berufsschulen in Deutschland
-- Aktuelle App-Version: 3.1.2 (Mai 2026, mit iPad-Redesign und Splitscreen-Layout)
+- Datenhaltung der App: lokal, keine automatische Cloud-Synchronisation, kein Tracking, keine Werbung. Manueller Backup-Export und Import.
+- App-Funktionen: Notenberechnung, eigene Notenschlüssel, Klassen, Klausuren, mündliche Leistungen, Zeugnisnoten und PDF-Export.
+- Web-Werkzeuge: kostenlose Einzelberechnungen ohne Anmeldung und Speicherung. Der Durchschnittsrechner unterstützt Gewichte.
+- Zielgruppe: Lehrkräfte. Eine rechtliche Freigabe der Schule ergibt sich nicht allein aus lokaler Speicherung.

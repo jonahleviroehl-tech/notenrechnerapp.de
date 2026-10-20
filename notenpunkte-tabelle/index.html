@@ -17,7 +17,7 @@
   <meta property="og:image:alt" content="Notenpunkte in Noten umrechnen — Tabelle 15 bis 0">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Notenpunkte in Noten umrechnen: Tabelle 15–0 + Rechner">
-  <meta name="twitter:description" content="15 → 1+, 12 → 2-, 7 → 3-, 5 → 4, 0 → 6: Notenpunkte in Schulnoten und Dezimalnoten umrechnen. Komplette Oberstufen-Tabelle, kostenlos.">
+  <meta name="twitter:description" content="15 → 1+, 12 → 2+, 7 → 3-, 5 → 4, 0 → 6: Notenpunkte in Schulnoten und Dezimalnoten umrechnen. Komplette Oberstufen-Tabelle, kostenlos.">
   <meta name="twitter:image" content="https://notenrechnerapp.de/assets/og-notenpunkte.png">
   <meta name="twitter:image:alt" content="Notenpunkte in Noten umrechnen — Tabelle 15 bis 0">
   <meta name="theme-color" content="#2F60C0">
@@ -32,130 +32,166 @@
   <!-- Schema.org structured data — Organization + Person + Article + SoftwareApplication
        Designed for Google AI Overviews / GEO citation eligibility. -->
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "Organization",
-        "@id": "https://notenrechnerapp.de/#organization",
-        "name": "Der Notenrechner",
-        "url": "https://notenrechnerapp.de/",
-        "logo": "https://notenrechnerapp.de/assets/logo.png",
-        "founder": { "@id": "https://notenrechnerapp.de/#author" }
-      },
-      {
-        "@type": "Person",
-        "@id": "https://notenrechnerapp.de/#author",
-        "name": "Jonah Röhl",
-        "jobTitle": "Entwickler",
-        "description": "Entwickler von Der Notenrechner.",
-        "url": "https://notenrechnerapp.de/#author",
-        "worksFor": { "@id": "https://notenrechnerapp.de/#organization" }
-      },
-      {
-        "@type": "Article",
-        "headline": "Notenpunkte in Noten umrechnen — Tabelle 15 bis 0",
-        "description": "Notenpunkte (15-0) in Schulnoten (1+ bis 6) umrechnen. Die vollständige Tabelle für die gymnasiale Oberstufe.",
-        "url": "https://notenrechnerapp.de/notenpunkte-tabelle/",
-        "datePublished": "2026-03-15",
-        "dateModified": "2026-06-06",
-        "author": { "@id": "https://notenrechnerapp.de/#author" },
-        "publisher": { "@id": "https://notenrechnerapp.de/#organization" },
-        "mainEntityOfPage": "https://notenrechnerapp.de/notenpunkte-tabelle/",
-        "inLanguage": "de-DE"
-      },
-      {
-        "@type": "SoftwareApplication",
-        "@id": "https://notenrechnerapp.de/#app",
-        "name": "Der Notenrechner",
-        "applicationCategory": "EducationApplication",
-        "operatingSystem": "iOS, iPadOS, Android",
-        "downloadUrl": "https://apps.apple.com/de/app/der-notenrechner/id1662507346",
-        "installUrl": ["https://apps.apple.com/de/app/der-notenrechner/id1662507346", "https://play.google.com/store/apps/details?id=com.notenrechner.App"],
-        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "EUR" }
-      },
-      {
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-          { "@type": "ListItem", "position": 1, "name": "Der Notenrechner", "item": "https://notenrechnerapp.de/" },
-          { "@type": "ListItem", "position": 2, "name": "Notenpunkte-Tabelle", "item": "https://notenrechnerapp.de/notenpunkte-tabelle/" }
-        ]
-      },
-      {
-        "@type": "FAQPage",
-        "mainEntity": [
-          {
-            "@type": "Question",
-            "name": "Wie rechnet man Notenpunkte in Noten um?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Notenpunkte lassen sich direkt in traditionelle Schulnoten umrechnen. Die Zuordnung folgt einem festen Schema: 15 Punkte entsprechen der Note 1+ (sehr gut plus), 14 Punkte einer glatten 1, 13 Punkte einer 1- und so weiter bis 0 Punkte, die der Note 6 (ungenügend) entsprechen. Jede der Notenstufen 1 bis 5 wird in drei Bereiche unterteilt (+, glatt, -), woraus sich insgesamt 16 Stufen ergeben (15 bis 0). Die obenstehende Tabelle zeigt die vollständige Zuordnung auf einen Blick. Sie können sie als Referenz für die Bewertung von Klausuren, Klausurrückgaben oder Elterngespräche nutzen."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Wann werden Notenpunkte verwendet?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Notenpunkte kommen ausschließlich in der gymnasialen Oberstufe zum Einsatz — also in den Jahrgangsstufen 11 und 12 (G8) bzw. 12 und 13 (G9). In der Sekundarstufe I und an Realschulen, Hauptschulen sowie Berufsschulen werden weiterhin die traditionellen Noten 1 bis 6 vergeben. In der Einführungsphase (EF bzw. Klasse 10/11) werden an manchen Schulen bereits Notenpunkte erteilt, an anderen noch klassische Noten. Die Qualifikationsphase (Q1–Q4) arbeitet dann einheitlich mit dem Punktesystem, da hier die Ergebnisse direkt in die Abitur-Gesamtqualifikation einfließen."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Wie viele Notenpunkte braucht man zum Bestehen?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Zum Bestehen eines Kurses in der Oberstufe sind mindestens 5 Notenpunkte (Note 4, „ausreichend\") erforderlich. Wer weniger als 5 Punkte erzielt, hat den Kurs als „unterpunktet\" — mit möglichen Konsequenzen für die Zulassung zum Abitur. Im Abitur gelten strengere Regeln: In Block I (Kursnoten der Qualifikationsphase) darf eine bestimmte Anzahl an Kursen nicht unterpunktet sein. In Block II (Abiturprüfungen) müssen in mindestens drei Prüfungsfächern jeweils 5 Punkte erreicht werden. Die genauen Anforderungen variieren je nach Bundesland — erkundigen Sie sich bei Ihrer Oberstufenkoordination."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Wie berechnet man die Abitur-Gesamtqualifikation?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Die Abiturnote ergibt sich aus zwei Blöcken: Block I umfasst die Kursnoten der Qualifikationsphase (in der Regel 36 bis 40 Kurse, je nach Bundesland), Block II die fünf Abiturprüfungen. Die Notenpunkte beider Blöcke werden addiert. Maximal erreichbar sind in der Regel 900 Punkte (600 aus Block I, 300 aus Block II). Die Gesamtpunktzahl wird dann in eine Abiturdurchschnittsnote umgerechnet — bei 823 Punkten oder mehr ergibt sich eine 1,0."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Was ist der Unterschied zwischen G8 und G9 bei Notenpunkten?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Am Punktesystem selbst ändert sich nichts — ob G8 oder G9, die Skala reicht immer von 15 bis 0. Der Unterschied liegt im Zeitpunkt: Bei G8 beginnt die Oberstufe in Klasse 10 (EF), die Qualifikationsphase in Klasse 11 und 12. Bei G9 verschiebt sich alles um ein Jahr: EF in Klasse 11, Qualifikationsphase in Klasse 12 und 13. Für die Bewertung und die Abiturberechnung gelten in beiden Modellen dieselben Regeln."
-            }
-          }
-        ]
-      },
-      {
-        "@type": "LearningResource",
-        "name": "Notenpunkte-Tabelle",
-        "url": "https://notenrechnerapp.de/notenpunkte-tabelle/",
-        "inLanguage": "de-DE",
-        "learningResourceType": "Berechnungswerkzeug",
-        "educationalUse": [
-          "Notenberechnung",
-          "Klausurbewertung",
-          "Unterrichtsvorbereitung"
-        ],
-        "audience": {
-          "@type": "EducationalAudience",
-          "educationalRole": "teacher",
-          "name": "Lehrkräfte"
-        },
-        "about": {
-          "@type": "Thing",
-          "name": "Notenpunkte 15–0 zu Schulnote und Dezimalnote"
-        },
-        "isAccessibleForFree": true,
-        "author": {
-          "@id": "https://notenrechnerapp.de/#author"
-        },
-        "publisher": {
-          "@id": "https://notenrechnerapp.de/#organization"
-        }
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://notenrechnerapp.de/#organization",
+      "name": "Der Notenrechner",
+      "url": "https://notenrechnerapp.de/",
+      "logo": "https://notenrechnerapp.de/assets/logo.png",
+      "founder": {
+        "@id": "https://notenrechnerapp.de/#author"
       }
-    ]
-  }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://notenrechnerapp.de/#author",
+      "name": "Jonah Röhl",
+      "jobTitle": "Entwickler",
+      "description": "Entwickler von Der Notenrechner.",
+      "url": "https://notenrechnerapp.de/#author",
+      "worksFor": {
+        "@id": "https://notenrechnerapp.de/#organization"
+      }
+    },
+    {
+      "@type": "Article",
+      "headline": "Notenpunkte in Noten umrechnen — Tabelle 15 bis 0",
+      "description": "Notenpunkte (15-0) in Schulnoten (1+ bis 6) umrechnen. Die vollständige Tabelle für die gymnasiale Oberstufe.",
+      "url": "https://notenrechnerapp.de/notenpunkte-tabelle/",
+      "datePublished": "2026-03-15",
+      "dateModified": "2026-10-20",
+      "author": {
+        "@id": "https://notenrechnerapp.de/#author"
+      },
+      "publisher": {
+        "@id": "https://notenrechnerapp.de/#organization"
+      },
+      "mainEntityOfPage": "https://notenrechnerapp.de/notenpunkte-tabelle/",
+      "inLanguage": "de-DE"
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://notenrechnerapp.de/#app",
+      "name": "Der Notenrechner",
+      "applicationCategory": "EducationApplication",
+      "operatingSystem": "iOS, iPadOS, Android",
+      "downloadUrl": "https://apps.apple.com/de/app/der-notenrechner/id1662507346",
+      "installUrl": [
+        "https://apps.apple.com/de/app/der-notenrechner/id1662507346",
+        "https://play.google.com/store/apps/details?id=com.notenrechner.App"
+      ],
+      "offers": [
+        {
+          "@type": "Offer",
+          "name": "iPhone und iPad",
+          "price": "5.99",
+          "priceCurrency": "EUR",
+          "url": "https://apps.apple.com/de/app/der-notenrechner/id1662507346"
+        },
+        {
+          "@type": "Offer",
+          "name": "Android",
+          "price": "0",
+          "priceCurrency": "EUR",
+          "url": "https://play.google.com/store/apps/details?id=com.notenrechner.App"
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Der Notenrechner",
+          "item": "https://notenrechnerapp.de/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Notenpunkte-Tabelle",
+          "item": "https://notenrechnerapp.de/notenpunkte-tabelle/"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Wie rechnet man Notenpunkte in Noten um?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Notenpunkte lassen sich direkt in traditionelle Schulnoten umrechnen. Die Zuordnung folgt einem festen Schema: 15 Punkte entsprechen der Note 1+ (sehr gut plus), 14 Punkte einer glatten 1, 13 Punkte einer 1- und so weiter bis 0 Punkte, die der Note 6 (ungenügend) entsprechen. Jede der Notenstufen 1 bis 5 wird in drei Bereiche unterteilt (+, glatt, -), woraus sich insgesamt 16 Stufen ergeben (15 bis 0). Die obenstehende Tabelle zeigt die vollständige Zuordnung auf einen Blick. Sie können sie als Referenz für die Bewertung von Klausuren, Klausurrückgaben oder Elterngespräche nutzen."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Wann werden Notenpunkte verwendet?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Notenpunkte kommen ausschließlich in der gymnasialen Oberstufe zum Einsatz — also in den Jahrgangsstufen 11 und 12 (G8) bzw. 12 und 13 (G9). In der Sekundarstufe I und an Realschulen, Hauptschulen sowie Berufsschulen werden weiterhin die traditionellen Noten 1 bis 6 vergeben. In der Einführungsphase (EF bzw. Klasse 10/11) werden an manchen Schulen bereits Notenpunkte erteilt, an anderen noch klassische Noten. Die Qualifikationsphase (Q1–Q4) arbeitet dann einheitlich mit dem Punktesystem, da hier die Ergebnisse direkt in die Abitur-Gesamtqualifikation einfließen."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Wie viele Notenpunkte braucht man zum Bestehen?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Zum Bestehen eines Kurses in der Oberstufe sind mindestens 5 Notenpunkte (Note 4, „ausreichend\") erforderlich. Wer weniger als 5 Punkte erzielt, hat den Kurs als „unterpunktet\" — mit möglichen Konsequenzen für die Zulassung zum Abitur. Im Abitur gelten strengere Regeln: In Block I (Kursnoten der Qualifikationsphase) darf eine bestimmte Anzahl an Kursen nicht unterpunktet sein. In Block II (Abiturprüfungen) müssen in mindestens drei Prüfungsfächern jeweils 5 Punkte erreicht werden. Die genauen Anforderungen variieren je nach Bundesland — erkundigen Sie sich bei Ihrer Oberstufenkoordination."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Wie berechnet man die Abitur-Gesamtqualifikation?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Die Abiturnote ergibt sich aus zwei Blöcken: Block I umfasst die Kursnoten der Qualifikationsphase (in der Regel 36 bis 40 Kurse, je nach Bundesland), Block II die fünf Abiturprüfungen. Die Notenpunkte beider Blöcke werden addiert. Maximal erreichbar sind in der Regel 900 Punkte (600 aus Block I, 300 aus Block II). Die Gesamtpunktzahl wird dann in eine Abiturdurchschnittsnote umgerechnet — bei 823 Punkten oder mehr ergibt sich eine 1,0."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Was ist der Unterschied zwischen G8 und G9 bei Notenpunkten?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Am Punktesystem selbst ändert sich nichts — ob G8 oder G9, die Skala reicht immer von 15 bis 0. Der Unterschied liegt im Zeitpunkt: Bei G8 beginnt die Oberstufe in Klasse 10 (EF), die Qualifikationsphase in Klasse 11 und 12. Bei G9 verschiebt sich alles um ein Jahr: EF in Klasse 11, Qualifikationsphase in Klasse 12 und 13. Für die Bewertung und die Abiturberechnung gelten in beiden Modellen dieselben Regeln."
+          }
+        }
+      ]
+    },
+    {
+      "@type": "LearningResource",
+      "name": "Notenpunkte-Tabelle",
+      "url": "https://notenrechnerapp.de/notenpunkte-tabelle/",
+      "inLanguage": "de-DE",
+      "learningResourceType": "Berechnungswerkzeug",
+      "educationalUse": [
+        "Notenberechnung",
+        "Klausurbewertung",
+        "Unterrichtsvorbereitung"
+      ],
+      "audience": {
+        "@type": "EducationalAudience",
+        "educationalRole": "teacher",
+        "name": "Lehrkräfte"
+      },
+      "about": {
+        "@type": "Thing",
+        "name": "Notenpunkte 15–0 zu Schulnote und Dezimalnote"
+      },
+      "isAccessibleForFree": true,
+      "author": {
+        "@id": "https://notenrechnerapp.de/#author"
+      },
+      "publisher": {
+        "@id": "https://notenrechnerapp.de/#organization"
+      }
+    }
+  ]
+}
   </script>
 
   <style>
@@ -618,8 +654,9 @@
     }
     .print-header, .print-footer { display: none; }
   </style>
+  <link rel="stylesheet" href="/assets/site-enhancements.css?v=20261020">
 </head>
-<body>
+<body class="print-table-page">
   <div class="print-header"><span class="print-header-brand">Der Notenrechner</span><span class="print-header-url">notenrechnerapp.de</span></div>
 
   <nav class="nav" aria-label="Hauptnavigation">
@@ -634,10 +671,11 @@
         <li><a href="../notenpunkte-tabelle/" class="active" onclick="closeMenu()">Notenpunkte-Tabelle</a></li>
         <li><a href="../ihk-notenschluessel/" onclick="closeMenu()">IHK-Rechner</a></li>
         <li>
-          <a href="https://apps.apple.com/de/app/der-notenrechner/id1662507346" target="_blank" rel="noopener" class="nav-cta" onclick="closeMenu()" aria-label="Im App Store laden"><svg viewBox="0 0 384 512" fill="currentColor" aria-hidden="true"><path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184 4 273.5c0 26.2 4.8 53.3 14.4 81.2 12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/></svg>Laden</a>
+          <a href="/#app-download" class="nav-cta" onclick="closeMenu()" aria-label="App für iPhone, iPad und Android">App</a>
         </li>
       </ul>
-      <button class="nav-toggle" id="navToggle" aria-label="Menü öffnen">
+      <a class="nav-app-mobile" href="/#app-download" aria-label="App für iPhone, iPad und Android">App</a>
+        <button class="nav-toggle" id="navToggle" aria-label="Menü öffnen">
         <span></span><span></span><span></span>
       </button>
     </div>
@@ -691,8 +729,25 @@
                 <th class="text-right">Dezimal</th>
               </tr>
             </thead>
-            <tbody id="mainTable"></tbody>
-          </table>
+            <tbody id="mainTable">
+<tr><td><div class="grade-cell"><span class="grade-name">15</span></div></td><td><span class="grade-trad">1+</span></td><td><span class="grade-desc">sehr gut</span></td><td class="text-right"><span class="grade-decimal">0,7</span></td></tr>
+<tr><td><div class="grade-cell"><span class="grade-name">14</span></div></td><td><span class="grade-trad">1</span></td><td><span class="grade-desc">sehr gut</span></td><td class="text-right"><span class="grade-decimal">1,0</span></td></tr>
+<tr><td><div class="grade-cell"><span class="grade-name">13</span></div></td><td><span class="grade-trad">1-</span></td><td><span class="grade-desc">sehr gut</span></td><td class="text-right"><span class="grade-decimal">1,3</span></td></tr>
+<tr><td><div class="grade-cell"><span class="grade-name">12</span></div></td><td><span class="grade-trad">2+</span></td><td><span class="grade-desc">gut</span></td><td class="text-right"><span class="grade-decimal">1,7</span></td></tr>
+<tr><td><div class="grade-cell"><span class="grade-name">11</span></div></td><td><span class="grade-trad">2</span></td><td><span class="grade-desc">gut</span></td><td class="text-right"><span class="grade-decimal">2,0</span></td></tr>
+<tr><td><div class="grade-cell"><span class="grade-name">10</span></div></td><td><span class="grade-trad">2-</span></td><td><span class="grade-desc">gut</span></td><td class="text-right"><span class="grade-decimal">2,3</span></td></tr>
+<tr><td><div class="grade-cell"><span class="grade-name">9</span></div></td><td><span class="grade-trad">3+</span></td><td><span class="grade-desc">befriedigend</span></td><td class="text-right"><span class="grade-decimal">2,7</span></td></tr>
+<tr><td><div class="grade-cell"><span class="grade-name">8</span></div></td><td><span class="grade-trad">3</span></td><td><span class="grade-desc">befriedigend</span></td><td class="text-right"><span class="grade-decimal">3,0</span></td></tr>
+<tr><td><div class="grade-cell"><span class="grade-name">7</span></div></td><td><span class="grade-trad">3-</span></td><td><span class="grade-desc">befriedigend</span></td><td class="text-right"><span class="grade-decimal">3,3</span></td></tr>
+<tr><td><div class="grade-cell"><span class="grade-name">6</span></div></td><td><span class="grade-trad">4+</span></td><td><span class="grade-desc">ausreichend</span></td><td class="text-right"><span class="grade-decimal">3,7</span></td></tr>
+<tr class="passing-line"><td><div class="grade-cell"><span class="grade-name">5</span></div></td><td><span class="grade-trad">4</span></td><td><span class="grade-desc">ausreichend</span></td><td class="text-right"><span class="grade-decimal">4,0</span></td></tr>
+<tr><td><div class="grade-cell"><span class="grade-name">4</span></div></td><td><span class="grade-trad">4-</span></td><td><span class="grade-desc">ausreichend</span></td><td class="text-right"><span class="grade-decimal">4,3</span></td></tr>
+<tr><td><div class="grade-cell"><span class="grade-name">3</span></div></td><td><span class="grade-trad">5+</span></td><td><span class="grade-desc">mangelhaft</span></td><td class="text-right"><span class="grade-decimal">4,7</span></td></tr>
+<tr><td><div class="grade-cell"><span class="grade-name">2</span></div></td><td><span class="grade-trad">5</span></td><td><span class="grade-desc">mangelhaft</span></td><td class="text-right"><span class="grade-decimal">5,0</span></td></tr>
+<tr><td><div class="grade-cell"><span class="grade-name">1</span></div></td><td><span class="grade-trad">5-</span></td><td><span class="grade-desc">mangelhaft</span></td><td class="text-right"><span class="grade-decimal">5,3</span></td></tr>
+<tr><td><div class="grade-cell"><span class="grade-name">0</span></div></td><td><span class="grade-trad">6</span></td><td><span class="grade-desc">ungenügend</span></td><td class="text-right"><span class="grade-decimal">5,7</span></td></tr>
+</tbody>
+          </table><div class="tool-followup"><div class="tool-actions"><button type="button" onclick="window.print()">Tabelle drucken</button></div><p>Mehrere Notenpunkte zusammenrechnen? <a href="/notendurchschnitt/">Durchschnitt mit Gewichtung berechnen</a>.</p><p class="source-note">Stand: 20.10.2026. Die Dezimalwerte sind eine rechnerische Orientierung nach (17 − Notenpunkte) ÷ 3, gerundet auf eine Nachkommastelle. Der Randwert 0 ergibt damit rechnerisch 5,7, gehört aber zur Schulnote 6. Dies ist keine Abitur-Gesamtnote. <a href="/lexikon/notenpunkte/">Einordnung der Notenpunkte</a>.</p></div>
         </div>
 
         <!-- Inline CTA -->
@@ -701,7 +756,7 @@
             <div class="inline-cta-title">Klausurergebnisse eingeben?</div>
             <div class="inline-cta-desc">In der App geben Sie Ergebnisse für die ganze Klasse ein und sehen den Schnitt live.</div>
           </div>
-          <a href="https://apps.apple.com/de/app/der-notenrechner/id1662507346" target="_blank" rel="noopener" class="inline-cta-link">
+          <a href="https://apps.apple.com/de/app/der-notenrechner/id1662507346?pt=125935959&amp;ct=general_calculators&amp;mt=8" target="_blank" rel="noopener" class="inline-cta-link">
             <svg viewBox="0 0 384 512"><path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184 4 273.5c0 26.2 4.8 53.3 14.4 81.2 12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/></svg>
             Kostenlos laden
           </a>
@@ -758,8 +813,8 @@
 
     <section class="cta-banner">
       <div class="cta-banner-content">
-        <h2>Mehr als eine Tabelle.</h2>
-        <p class="cta-banner-sub">In der App auf iPhone, iPad und Android geben Sie Klausurergebnisse ein und sehen sofort den Klassenschnitt — mit Notenpunkten und traditionellen Noten parallel.</p>
+        <h2>Eine Note berechnet. Die ganze Klasse im Blick.</h2>
+        <p class="cta-banner-sub">Klausurpunkte pro Klasse erfassen, Durchschnitt und Verteilung gemeinsam auswerten. Lokal auf Ihrem Gerät, ohne Konto und ohne Cloud.</p>
         <div class="cta-features">
           <div class="cta-feature"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Klausurergebnisse eingeben</div>
           <div class="cta-feature"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Klassenschnitt live sehen</div>
@@ -767,17 +822,18 @@
           <div class="cta-feature"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>PDF-Export für Konferenzen</div>
         </div>
         <div class="cta-badges" style="display:flex;gap:14px;justify-content:center;align-items:center;flex-wrap:wrap;">
-          <a href="https://apps.apple.com/de/app/der-notenrechner/id1662507346" target="_blank" rel="noopener" class="app-store-badge">
+          <a href="https://apps.apple.com/de/app/der-notenrechner/id1662507346?pt=125935959&amp;ct=general_calculators&amp;mt=8" target="_blank" rel="noopener" class="app-store-badge">
           <span class="app-store-badge-icon"><svg viewBox="0 0 384 512"><path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184 4 273.5c0 26.2 4.8 53.3 14.4 81.2 12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/></svg></span>
           <span class="app-store-badge-text">
             <span class="app-store-badge-small">Laden im</span>
             <span class="app-store-badge-large">App Store</span>
           </span>
         </a>
-          <a href="https://play.google.com/store/apps/details?id=com.notenrechner.App" target="_blank" rel="noopener" class="app-store-badge" aria-label="Bei Google Play laden"><span class="app-store-badge-icon"><svg viewBox="0 0 512 512" aria-hidden="true"><path d="M325.3 234.3 104.6 13l280.8 161.2-60.1 60.1zM47 0C34 6.8 25.3 19.2 25.3 35.3v441.3c0 16.1 8.7 28.5 21.7 35.3l256.6-256L47 0zm425.2 225.6-58.9-34.1-65.7 64.5 65.7 64.5 60.1-34.1c18-14.3 18-46.5-1.2-60.8zM104.6 499l220.7-221.3 60.1 60.1L104.6 499z"/></svg></span><span class="app-store-badge-text"><span class="app-store-badge-small">Jetzt bei</span><span class="app-store-badge-large">Google Play</span></span></a>
+          <a href="https://play.google.com/store/apps/details?id=com.notenrechner.App&amp;referrer=utm_source%3Dnotenrechnerapp.de%26utm_medium%3Dwebsite%26utm_campaign%3Dgeneral_calculators" target="_blank" rel="noopener" class="app-store-badge" aria-label="Bei Google Play laden"><span class="app-store-badge-icon"><svg viewBox="0 0 512 512" aria-hidden="true"><path d="M325.3 234.3 104.6 13l280.8 161.2-60.1 60.1zM47 0C34 6.8 25.3 19.2 25.3 35.3v441.3c0 16.1 8.7 28.5 21.7 35.3l256.6-256L47 0zm425.2 225.6-58.9-34.1-65.7 64.5 65.7 64.5 60.1-34.1c18-14.3 18-46.5-1.2-60.8zM104.6 499l220.7-221.3 60.1 60.1L104.6 499z"/></svg></span><span class="app-store-badge-text"><span class="app-store-badge-small">Jetzt bei</span><span class="app-store-badge-large">Google Play</span></span></a>
         </div>
-        <p class="cta-note">Kostenlos · Keine Werbung · Kein Abo</p>
-      </div>
+        <p class="cta-note">Ohne Werbung · Ohne Konto · Offline</p>
+      <p class="store-prices">iPhone &amp; iPad: 5,99 € im deutschen App Store · Android: kostenlos bei Google Play. Stand: 20.10.2026.</p>
+</div>
     </section>
 
     <section class="content-section">
@@ -839,6 +895,9 @@
   <footer class="footer">
     <div class="footer-inner">
       <nav class="footer-nav" aria-label="Seitenübersicht" style="display:flex;flex-wrap:wrap;justify-content:center;gap:8px 20px;margin-bottom:16px;font-size:14px;">
+        <a href="/punkte-in-noten/">Punkte in Noten</a>
+        <a href="/fehlerquotient-berechnen/">Fehlerquotient</a>
+        <a href="/android/">Android-App</a>
         <a href="/notenschluessel-rechner/">Notenschlüssel-Rechner</a>
         <a href="/notenpunkte-tabelle/">Notenpunkte-Tabelle</a>
         <a href="/ihk-notenschluessel/">IHK-Notenschlüssel</a>
@@ -895,21 +954,7 @@
       return { dot: 'var(--grade-5)', bg: 'var(--grade-5-bg)' };
     }
 
-    // Main table — Punkte / Note / Bezeichnung / Dezimal
-    const mainTable = document.getElementById('mainTable');
-    let html = '';
-    for (const row of NP) {
-      const c = gradeColor(row.pts);
-      const passingClass = row.pts === 5 ? ' class="passing-line"' : '';
-      html += '<tr' + passingClass + '>'
-        + '<td><div class="grade-cell"><span class="grade-dot" style="background:' + c.dot + '"></span><span class="grade-name">' + row.pts + '</span></div></td>'
-        + '<td><span class="grade-trad">' + row.note + '</span></td>'
-        + '<td><span class="grade-desc">' + row.desc + '</span></td>'
-        + '<td class="text-right"><span class="grade-decimal">' + row.decimal + '</span></td>'
-        + '</tr>';
-    }
-    mainTable.innerHTML = html;
-
+    // The reference table is already present in the delivered HTML.
     // Quick converter — labeled stepper, pre-filled at 10, full result
     const convertInput   = document.getElementById('convertInput');
     const convertResult  = document.getElementById('convertResult');
@@ -1000,6 +1045,6 @@
     // Initial render — input is pre-filled at 10
     renderConverter(false);
   </script>
-  <div class="print-footer">Erstellt mit notenrechnerapp.de — Kostenlose App im App Store laden</div>
+  <div class="print-footer">Erstellt mit notenrechnerapp.de — Online-Rechner kostenlos nutzen</div>
 </body>
 </html>

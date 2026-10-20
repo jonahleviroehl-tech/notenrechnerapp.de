@@ -32,138 +32,174 @@
   <!-- Schema.org structured data — Organization + Person + Article + SoftwareApplication
        Designed for Google AI Overviews / GEO citation eligibility. -->
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "Organization",
-        "@id": "https://notenrechnerapp.de/#organization",
-        "name": "Der Notenrechner",
-        "url": "https://notenrechnerapp.de/",
-        "logo": "https://notenrechnerapp.de/assets/logo.png",
-        "founder": { "@id": "https://notenrechnerapp.de/#author" }
-      },
-      {
-        "@type": "Person",
-        "@id": "https://notenrechnerapp.de/#author",
-        "name": "Jonah Röhl",
-        "jobTitle": "Entwickler",
-        "description": "Entwickler von Der Notenrechner.",
-        "url": "https://notenrechnerapp.de/#author",
-        "worksFor": { "@id": "https://notenrechnerapp.de/#organization" }
-      },
-      {
-        "@type": "Article",
-        "headline": "IHK-Notenschlüssel: Punkte in Note umrechnen",
-        "description": "IHK-Notenschlüssel: Prozent und Punkte in IHK-Noten (1,0–6,0) umrechnen. Bestanden ab 50 %, sehr gut ab 92 %.",
-        "url": "https://notenrechnerapp.de/ihk-notenschluessel/",
-        "datePublished": "2026-03-15",
-        "dateModified": "2026-05-08",
-        "author": { "@id": "https://notenrechnerapp.de/#author" },
-        "publisher": { "@id": "https://notenrechnerapp.de/#organization" },
-        "mainEntityOfPage": "https://notenrechnerapp.de/ihk-notenschluessel/",
-        "inLanguage": "de-DE"
-      },
-      {
-        "@type": "SoftwareApplication",
-        "@id": "https://notenrechnerapp.de/#app",
-        "name": "Der Notenrechner",
-        "applicationCategory": "EducationApplication",
-        "operatingSystem": "iOS, iPadOS, Android",
-        "downloadUrl": "https://apps.apple.com/de/app/der-notenrechner/id1662507346",
-        "installUrl": ["https://apps.apple.com/de/app/der-notenrechner/id1662507346", "https://play.google.com/store/apps/details?id=com.notenrechner.App"],
-        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "EUR" }
-      },
-      {
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-          { "@type": "ListItem", "position": 1, "name": "Der Notenrechner", "item": "https://notenrechnerapp.de/" },
-          { "@type": "ListItem", "position": 2, "name": "IHK-Notenschlüssel", "item": "https://notenrechnerapp.de/ihk-notenschluessel/" }
-        ]
-      },
-      {
-        "@type": "FAQPage",
-        "mainEntity": [
-          {
-            "@type": "Question",
-            "name": "Wie funktioniert der IHK-Notenschlüssel?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Bei IHK-Prüfungen werden die erreichten Punkte ins Verhältnis zur Maximalpunktzahl gesetzt. Aus dem Prozentsatz ergibt sich die Note: Ab 92 % eine 1 (sehr gut), ab 81 % eine 2 (gut), ab 67 % eine 3 (befriedigend), ab 50 % eine 4 (ausreichend), ab 30 % eine 5 (mangelhaft) und darunter eine 6 (ungenügend). Die genauen Dezimalnoten werden anhand des detaillierten Bewertungsschlüssels ermittelt. Mit dem Rechner oben können Sie die Note für jede beliebige Punktzahl sofort berechnen. Geben Sie die Maximalpunktzahl und die erreichten Punkte ein — die Note erscheint in Echtzeit."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Ab wie viel Prozent besteht man eine IHK-Prüfung?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Eine IHK-Prüfung gilt als bestanden, wenn mindestens 50 % der erreichbaren Punkte erzielt werden. Das entspricht der Note 4,4 (ausreichend). Unterhalb von 50 % erhält man die Note 5 (mangelhaft) oder 6 (ungenügend) — die Prüfung ist dann nicht bestanden. Bei der Abschlussprüfung müssen zudem alle Prüfungsbereiche einzeln bestanden werden — es genügt nicht, einen schwachen Bereich durch einen starken auszugleichen. In manchen Berufen gibt es zusätzlich sogenannte Sperrfächer, in denen eine Mindestpunktzahl erreicht werden muss."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Was ist der Unterschied zwischen IHK- und Schulnoten?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Im Gegensatz zum schulischen Notensystem, bei dem Lehrkräfte die Prozentgrenzen selbst festlegen können (z. B. 50 %, 45 % oder 40 % als Bestehensgrenze), verwendet der IHK-Schlüssel feste, unveränderbare Grenzen. Zudem arbeitet das IHK-System mit Dezimalnoten von 1,0 bis 6,0, was eine feinere Abstufung als die klassischen Schulnoten erlaubt. Einen schulischen Notenschlüssel-Rechner mit wählbaren Prozentgrenzen finden Sie auf unserer Rechner-Seite."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Welche Prüfungen verwenden den IHK-Notenschlüssel?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Der IHK-Schlüssel gilt für alle Prüfungen, die von einer Industrie- und Handelskammer abgenommen werden. Dazu gehören die Zwischenprüfung und Abschlussprüfung in über 250 anerkannten Ausbildungsberufen (z. B. Kaufleute für Büromanagement, Industriemechaniker, Fachinformatiker), Weiterbildungsprüfungen (Fachwirt, Betriebswirt, Meister) sowie die Ausbildereignungsprüfung (AEVO/AdA-Schein). Nicht unter den IHK-Schlüssel fallen Prüfungen der Handwerkskammern (HWK), die einen eigenen, aber sehr ähnlichen Bewertungsmaßstab haben."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Wie werden IHK-Dezimalnoten berechnet?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Die Dezimalnote ergibt sich aus dem exakten Prozentsatz innerhalb einer Notenstufe. Wer z. B. 86 % erreicht, liegt im Bereich „gut\" (81–91 %) und erhält eine Dezimalnote zwischen 2,0 und 2,4. Die genaue Berechnung erfolgt durch lineare Interpolation innerhalb der Stufe. Der Rechner oben zeigt Ihnen die exakte Dezimalnote für jede Punktzahl."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Was passiert, wenn man die IHK-Prüfung nicht besteht?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Bei Nichtbestehen kann die IHK-Prüfung zweimal wiederholt werden — insgesamt hat man also drei Versuche. Zwischen den Versuchen gibt es keine vorgeschriebene Wartezeit, allerdings werden Prüfungstermine in der Regel nur zweimal jährlich angeboten (Sommer und Winter). Bereits bestandene Prüfungsteile können auf Antrag angerechnet werden, sodass nur die nicht bestandenen Teile wiederholt werden müssen."
-            }
-          }
-        ]
-      },
-      {
-        "@type": "LearningResource",
-        "name": "IHK-Notenschlüssel-Rechner",
-        "url": "https://notenrechnerapp.de/ihk-notenschluessel/",
-        "inLanguage": "de-DE",
-        "learningResourceType": "Berechnungswerkzeug",
-        "educationalUse": [
-          "Notenberechnung",
-          "Klausurbewertung",
-          "Unterrichtsvorbereitung"
-        ],
-        "audience": {
-          "@type": "EducationalAudience",
-          "educationalRole": "teacher",
-          "name": "Lehrkräfte"
-        },
-        "about": {
-          "@type": "Thing",
-          "name": "IHK-Notenschlüssel — Dezimalnote 1,0–6,0"
-        },
-        "isAccessibleForFree": true,
-        "author": {
-          "@id": "https://notenrechnerapp.de/#author"
-        },
-        "publisher": {
-          "@id": "https://notenrechnerapp.de/#organization"
-        }
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://notenrechnerapp.de/#organization",
+      "name": "Der Notenrechner",
+      "url": "https://notenrechnerapp.de/",
+      "logo": "https://notenrechnerapp.de/assets/logo.png",
+      "founder": {
+        "@id": "https://notenrechnerapp.de/#author"
       }
-    ]
-  }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://notenrechnerapp.de/#author",
+      "name": "Jonah Röhl",
+      "jobTitle": "Entwickler",
+      "description": "Entwickler von Der Notenrechner.",
+      "url": "https://notenrechnerapp.de/#author",
+      "worksFor": {
+        "@id": "https://notenrechnerapp.de/#organization"
+      }
+    },
+    {
+      "@type": "Article",
+      "headline": "IHK-Notenschlüssel: Punkte in Note umrechnen",
+      "description": "IHK-Notenschlüssel: Prozent und Punkte in IHK-Noten (1,0–6,0) umrechnen. Bestanden ab 50 %, sehr gut ab 92 %.",
+      "url": "https://notenrechnerapp.de/ihk-notenschluessel/",
+      "datePublished": "2026-03-15",
+      "dateModified": "2026-10-20",
+      "author": {
+        "@id": "https://notenrechnerapp.de/#author"
+      },
+      "publisher": {
+        "@id": "https://notenrechnerapp.de/#organization"
+      },
+      "mainEntityOfPage": "https://notenrechnerapp.de/ihk-notenschluessel/",
+      "inLanguage": "de-DE"
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://notenrechnerapp.de/#app",
+      "name": "Der Notenrechner",
+      "applicationCategory": "EducationApplication",
+      "operatingSystem": "iOS, iPadOS, Android",
+      "downloadUrl": "https://apps.apple.com/de/app/der-notenrechner/id1662507346",
+      "installUrl": [
+        "https://apps.apple.com/de/app/der-notenrechner/id1662507346",
+        "https://play.google.com/store/apps/details?id=com.notenrechner.App"
+      ],
+      "offers": [
+        {
+          "@type": "Offer",
+          "name": "iPhone und iPad",
+          "price": "5.99",
+          "priceCurrency": "EUR",
+          "url": "https://apps.apple.com/de/app/der-notenrechner/id1662507346"
+        },
+        {
+          "@type": "Offer",
+          "name": "Android",
+          "price": "0",
+          "priceCurrency": "EUR",
+          "url": "https://play.google.com/store/apps/details?id=com.notenrechner.App"
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Der Notenrechner",
+          "item": "https://notenrechnerapp.de/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "IHK-Notenschlüssel",
+          "item": "https://notenrechnerapp.de/ihk-notenschluessel/"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Wie funktioniert der IHK-Notenschlüssel?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Bei IHK-Prüfungen werden die erreichten Punkte ins Verhältnis zur Maximalpunktzahl gesetzt. Aus dem Prozentsatz ergibt sich die Note: Ab 92 % eine 1 (sehr gut), ab 81 % eine 2 (gut), ab 67 % eine 3 (befriedigend), ab 50 % eine 4 (ausreichend), ab 30 % eine 5 (mangelhaft) und darunter eine 6 (ungenügend). Die genauen Dezimalnoten werden anhand des detaillierten Bewertungsschlüssels ermittelt. Mit dem Rechner oben können Sie die Note für jede beliebige Punktzahl sofort berechnen. Geben Sie die Maximalpunktzahl und die erreichten Punkte ein — die Note erscheint in Echtzeit."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Ab wie viel Prozent besteht man eine IHK-Prüfung?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Eine IHK-Prüfung gilt als bestanden, wenn mindestens 50 % der erreichbaren Punkte erzielt werden. Das entspricht der Note 4,4 (ausreichend). Unterhalb von 50 % erhält man die Note 5 (mangelhaft) oder 6 (ungenügend) — die Prüfung ist dann nicht bestanden. Bei der Abschlussprüfung müssen zudem alle Prüfungsbereiche einzeln bestanden werden — es genügt nicht, einen schwachen Bereich durch einen starken auszugleichen. In manchen Berufen gibt es zusätzlich sogenannte Sperrfächer, in denen eine Mindestpunktzahl erreicht werden muss."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Was ist der Unterschied zwischen IHK- und Schulnoten?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Im Gegensatz zum schulischen Notensystem, bei dem Lehrkräfte die Prozentgrenzen selbst festlegen können (z. B. 50 %, 45 % oder 40 % als Bestehensgrenze), verwendet der IHK-Schlüssel feste, unveränderbare Grenzen. Zudem arbeitet das IHK-System mit Dezimalnoten von 1,0 bis 6,0, was eine feinere Abstufung als die klassischen Schulnoten erlaubt. Einen schulischen Notenschlüssel-Rechner mit wählbaren Prozentgrenzen finden Sie auf unserer Rechner-Seite."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Welche Prüfungen verwenden den IHK-Notenschlüssel?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Der IHK-Schlüssel gilt für alle Prüfungen, die von einer Industrie- und Handelskammer abgenommen werden. Dazu gehören die Zwischenprüfung und Abschlussprüfung in über 250 anerkannten Ausbildungsberufen (z. B. Kaufleute für Büromanagement, Industriemechaniker, Fachinformatiker), Weiterbildungsprüfungen (Fachwirt, Betriebswirt, Meister) sowie die Ausbildereignungsprüfung (AEVO/AdA-Schein). Nicht unter den IHK-Schlüssel fallen Prüfungen der Handwerkskammern (HWK), die einen eigenen, aber sehr ähnlichen Bewertungsmaßstab haben."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Wie werden IHK-Dezimalnoten berechnet?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Die Dezimalnote ergibt sich aus dem exakten Prozentsatz innerhalb einer Notenstufe. Wer z. B. 86 % erreicht, liegt im Bereich „gut\" (81–91 %) und erhält eine Dezimalnote zwischen 2,0 und 2,4. Die genaue Berechnung erfolgt durch lineare Interpolation innerhalb der Stufe. Der Rechner oben zeigt Ihnen die exakte Dezimalnote für jede Punktzahl."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Was passiert, wenn man die IHK-Prüfung nicht besteht?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Bei Nichtbestehen kann die IHK-Prüfung zweimal wiederholt werden — insgesamt hat man also drei Versuche. Zwischen den Versuchen gibt es keine vorgeschriebene Wartezeit, allerdings werden Prüfungstermine in der Regel nur zweimal jährlich angeboten (Sommer und Winter). Bereits bestandene Prüfungsteile können auf Antrag angerechnet werden, sodass nur die nicht bestandenen Teile wiederholt werden müssen."
+          }
+        }
+      ]
+    },
+    {
+      "@type": "LearningResource",
+      "name": "IHK-Notenschlüssel-Rechner",
+      "url": "https://notenrechnerapp.de/ihk-notenschluessel/",
+      "inLanguage": "de-DE",
+      "learningResourceType": "Berechnungswerkzeug",
+      "educationalUse": [
+        "Notenberechnung",
+        "Klausurbewertung",
+        "Unterrichtsvorbereitung"
+      ],
+      "audience": {
+        "@type": "EducationalAudience",
+        "educationalRole": "teacher",
+        "name": "Lehrkräfte"
+      },
+      "about": {
+        "@type": "Thing",
+        "name": "IHK-Notenschlüssel — Dezimalnote 1,0–6,0"
+      },
+      "isAccessibleForFree": true,
+      "author": {
+        "@id": "https://notenrechnerapp.de/#author"
+      },
+      "publisher": {
+        "@id": "https://notenrechnerapp.de/#organization"
+      }
+    }
+  ]
+}
   </script>
 
   <style>
@@ -488,6 +524,7 @@
     }
     .print-header, .print-footer { display: none; }
   </style>
+  <link rel="stylesheet" href="/assets/site-enhancements.css?v=20261020">
 </head>
 <body>
   <div class="print-header"><span class="print-header-brand">Der Notenrechner</span><span class="print-header-url">notenrechnerapp.de</span></div>
@@ -504,10 +541,11 @@
         <li><a href="../notenpunkte-tabelle/">Notenpunkte-Tabelle</a></li>
         <li><a href="../ihk-notenschluessel/" class="active" onclick="closeMenu()">IHK-Rechner</a></li>
         <li>
-          <a href="https://apps.apple.com/de/app/der-notenrechner/id1662507346" target="_blank" rel="noopener" class="nav-cta" onclick="closeMenu()" aria-label="Im App Store laden"><svg viewBox="0 0 384 512" fill="currentColor" aria-hidden="true"><path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184 4 273.5c0 26.2 4.8 53.3 14.4 81.2 12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/></svg>Laden</a>
+          <a href="/#app-download" class="nav-cta" onclick="closeMenu()" aria-label="App für iPhone, iPad und Android">App</a>
         </li>
       </ul>
-      <button class="nav-toggle" id="navToggle" aria-label="Menü öffnen">
+      <a class="nav-app-mobile" href="/#app-download" aria-label="App für iPhone, iPad und Android">App</a>
+        <button class="nav-toggle" id="navToggle" aria-label="Menü öffnen">
         <span></span><span></span><span></span>
       </button>
     </div>
@@ -541,7 +579,7 @@
               <div class="calc-result-desc" id="resultDesc">Punkte eingeben</div>
               <div class="calc-result-pct" id="resultPct"></div>
             </div>
-          </div>
+          </div><aside class="app-bridge"><strong>Sie bewerten regelmäßig eine ganze Klasse?</strong><p>In der App speichern Sie Ihre Notenschlüssel, erfassen Klausurpunkte pro Klasse und sehen Durchschnitt und Notenverteilung gemeinsam. Ihre Daten bleiben auf dem Gerät, ohne Konto und ohne Cloud.</p><p><a href="/#klassenablauf">Klassenverwaltung ansehen</a> · <a href="/#app-download">App für iPhone, iPad und Android</a> · <a href="/notenverwaltungs-apps-vergleich/">Apps für Lehrkräfte vergleichen</a></p></aside>
         </div>
 
         <!-- IHK Reference Table -->
@@ -568,7 +606,7 @@
             <div class="inline-cta-title">Prüfungsergebnisse verwalten?</div>
             <div class="inline-cta-desc">In der App geben Sie alle Ergebnisse ein, sehen den Schnitt und exportieren als PDF.</div>
           </div>
-          <a href="https://apps.apple.com/de/app/der-notenrechner/id1662507346" target="_blank" rel="noopener" class="inline-cta-link">
+          <a href="https://apps.apple.com/de/app/der-notenrechner/id1662507346?pt=125935959&amp;ct=general_calculators&amp;mt=8" target="_blank" rel="noopener" class="inline-cta-link">
             <svg viewBox="0 0 384 512"><path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184 4 273.5c0 26.2 4.8 53.3 14.4 81.2 12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/></svg>
             Kostenlos laden
           </a>
@@ -578,8 +616,8 @@
 
     <section class="cta-banner">
       <div class="cta-banner-content">
-        <h2>IHK-Prüfungen komplett verwalten.</h2>
-        <p class="cta-banner-sub">In der App auf iPhone, iPad und Android geben Sie alle Prüfungsergebnisse ein, sehen den Schnitt und exportieren die Ergebnisliste als PDF.</p>
+        <h2>Eine Note berechnet. Die ganze Klasse im Blick.</h2>
+        <p class="cta-banner-sub">Klausurpunkte pro Klasse erfassen, Durchschnitt und Verteilung gemeinsam auswerten. Lokal auf Ihrem Gerät, ohne Konto und ohne Cloud.</p>
         <div class="cta-features">
           <div class="cta-feature"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Prüfungsergebnisse eingeben</div>
           <div class="cta-feature"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Schnitt automatisch berechnen</div>
@@ -587,17 +625,18 @@
           <div class="cta-feature"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Ergebnisliste als PDF</div>
         </div>
         <div class="cta-badges" style="display:flex;gap:14px;justify-content:center;align-items:center;flex-wrap:wrap;">
-          <a href="https://apps.apple.com/de/app/der-notenrechner/id1662507346" target="_blank" rel="noopener" class="app-store-badge">
+          <a href="https://apps.apple.com/de/app/der-notenrechner/id1662507346?pt=125935959&amp;ct=general_calculators&amp;mt=8" target="_blank" rel="noopener" class="app-store-badge">
           <span class="app-store-badge-icon"><svg viewBox="0 0 384 512"><path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184 4 273.5c0 26.2 4.8 53.3 14.4 81.2 12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/></svg></span>
           <span class="app-store-badge-text">
             <span class="app-store-badge-small">Laden im</span>
             <span class="app-store-badge-large">App Store</span>
           </span>
         </a>
-          <a href="https://play.google.com/store/apps/details?id=com.notenrechner.App" target="_blank" rel="noopener" class="app-store-badge" aria-label="Bei Google Play laden"><span class="app-store-badge-icon"><svg viewBox="0 0 512 512" aria-hidden="true"><path d="M325.3 234.3 104.6 13l280.8 161.2-60.1 60.1zM47 0C34 6.8 25.3 19.2 25.3 35.3v441.3c0 16.1 8.7 28.5 21.7 35.3l256.6-256L47 0zm425.2 225.6-58.9-34.1-65.7 64.5 65.7 64.5 60.1-34.1c18-14.3 18-46.5-1.2-60.8zM104.6 499l220.7-221.3 60.1 60.1L104.6 499z"/></svg></span><span class="app-store-badge-text"><span class="app-store-badge-small">Jetzt bei</span><span class="app-store-badge-large">Google Play</span></span></a>
+          <a href="https://play.google.com/store/apps/details?id=com.notenrechner.App&amp;referrer=utm_source%3Dnotenrechnerapp.de%26utm_medium%3Dwebsite%26utm_campaign%3Dgeneral_calculators" target="_blank" rel="noopener" class="app-store-badge" aria-label="Bei Google Play laden"><span class="app-store-badge-icon"><svg viewBox="0 0 512 512" aria-hidden="true"><path d="M325.3 234.3 104.6 13l280.8 161.2-60.1 60.1zM47 0C34 6.8 25.3 19.2 25.3 35.3v441.3c0 16.1 8.7 28.5 21.7 35.3l256.6-256L47 0zm425.2 225.6-58.9-34.1-65.7 64.5 65.7 64.5 60.1-34.1c18-14.3 18-46.5-1.2-60.8zM104.6 499l220.7-221.3 60.1 60.1L104.6 499z"/></svg></span><span class="app-store-badge-text"><span class="app-store-badge-small">Jetzt bei</span><span class="app-store-badge-large">Google Play</span></span></a>
         </div>
-        <p class="cta-note">Kostenlos · Keine Werbung · Kein Abo</p>
-      </div>
+        <p class="cta-note">Ohne Werbung · Ohne Konto · Offline</p>
+      <p class="store-prices">iPhone &amp; iPad: 5,99 € im deutschen App Store · Android: kostenlos bei Google Play. Stand: 20.10.2026.</p>
+</div>
     </section>
 
     <section class="content-section">
@@ -700,6 +739,9 @@
   <footer class="footer">
     <div class="footer-inner">
       <nav class="footer-nav" aria-label="Seitenübersicht" style="display:flex;flex-wrap:wrap;justify-content:center;gap:8px 20px;margin-bottom:16px;font-size:14px;">
+        <a href="/punkte-in-noten/">Punkte in Noten</a>
+        <a href="/fehlerquotient-berechnen/">Fehlerquotient</a>
+        <a href="/android/">Android-App</a>
         <a href="/notenschluessel-rechner/">Notenschlüssel-Rechner</a>
         <a href="/notenpunkte-tabelle/">Notenpunkte-Tabelle</a>
         <a href="/ihk-notenschluessel/">IHK-Notenschlüssel</a>
@@ -844,6 +886,6 @@
     maxPtsInput.addEventListener('input', calculate);
     calculate();
   </script>
-  <div class="print-footer">Erstellt mit notenrechnerapp.de — Kostenlose App im App Store laden</div>
+  <div class="print-footer">Erstellt mit notenrechnerapp.de — Online-Rechner kostenlos nutzen</div>
 </body>
 </html>

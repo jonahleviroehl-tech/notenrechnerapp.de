@@ -10,6 +10,7 @@ Each page has:
 - Cross-links back to the national IHK page and Lexikon
 """
 from pathlib import Path
+from site_common import normalize_html
 from textwrap import dedent
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -594,7 +595,7 @@ def main():
     for r in REGIONS:
         d = OUT / r["slug"]
         d.mkdir(exist_ok=True)
-        (d / "index.html").write_text(render_region(r), encoding="utf-8")
+        (d / "index.html").write_text(normalize_html(render_region(r), d / "index.html"), encoding="utf-8")
         print(f"  wrote /ihk-notenschluessel/{r['slug']}/index.html")
 
 

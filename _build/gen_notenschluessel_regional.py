@@ -20,6 +20,7 @@ Each page has:
 - Internal links to other Schulform sub-pages + pillar + main hub
 """
 from pathlib import Path
+from site_common import normalize_html
 from textwrap import dedent
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -114,7 +115,7 @@ BAYERN_PAGES = [
         ],
         "section_h2": "Probe in Note umrechnen — Beispiel",
         "section_intro_body": [
-            "Ein typischer Fall: Mathematik-Probe in Klasse 4, Maximalpunktzahl&nbsp;20, 45-%-Schlüssel (Note&nbsp;4 ab&nbsp;9&nbsp;Punkten). Ein Kind erreicht 14&nbsp;Punkte → das sind 70&nbsp;% → Note 2−. Der Rechner oben rechnet das sofort durch.",
+            "Ein typischer Fall: Mathematik-Probe in Klasse 4, Maximalpunktzahl&nbsp;20, 45-%-Voreinstellung (Note&nbsp;4− ab&nbsp;9, glatte&nbsp;4 ab&nbsp;10&nbsp;Punkten). Ein Kind erreicht 14&nbsp;Punkte → das sind 70&nbsp;% → Note 3+. Der Rechner oben rechnet das sofort durch.",
             "<strong>Übertrittszeugnis</strong>: In der vierten Klasse entscheidet der Notendurchschnitt aus Deutsch, Mathematik und Heimat- und Sachunterricht (HSU) über den empfohlenen weiterführenden Schultyp. Bis 2,33: Gymnasium, bis 2,66: Realschule, schlechter: Mittelschule. Der Durchschnitt wird ungewichtet gebildet. Berechenbar mit dem <a href=\"/notendurchschnitt/\">Notendurchschnitt-Rechner</a>.",
         ],
         "show_subpage_cards": False,
@@ -128,7 +129,7 @@ BAYERN_PAGES = [
         ],
         "faq": [
             ("Ab welcher Klasse gibt es in Bayern Noten in der Grundschule?", "Verpflichtend ab Klasse 3. In Klasse 1 und 2 werden Lernentwicklungsgespräche geführt; im Zeugnis erscheinen Berichte statt Ziffernnoten. Manche Schulen führen Ziffernnoten optional ab dem 2. Halbjahr der 2. Klasse ein."),
-            ("Welche Bestehensgrenze gilt für Proben an der Grundschule?", "Es gibt keine landesweite Vorgabe. Üblich sind 40–50&nbsp;% — also Note 4 ab 8–10 Punkten bei einer 20-Punkte-Probe. Die Klassenlehrkraft legt das fest."),
+            ("Welche Bestehensgrenze gilt für Proben an der Grundschule?", "Es gibt keine landesweite Vorgabe. Der Schlüssel richtet sich nach dem schulischen Bewertungskonzept. Im Rechner bezeichnen 40/45/50 % die Grenze zur 4−; die glatte 4 liegt jeweils eine Stufe höher. Prüfen Sie die Grenzen vor der Verwendung."),
             ("Wie wird der Schnitt fürs Übertrittszeugnis gebildet?", "Ungewichteter Durchschnitt aus Deutsch, Mathematik und HSU im Jahreszeugnis Klasse 4. Bis 2,33 Gymnasial-Empfehlung, bis 2,66 Realschul-Empfehlung."),
         ],
     },
@@ -260,7 +261,7 @@ NRW_PAGES = [
         ],
         "section_h2": "Klassenarbeit in Note umrechnen — Beispiel",
         "section_intro_body": [
-            "Typische Mathematik-Klassenarbeit in Klasse 4, Maximalpunktzahl&nbsp;20, 45-%-Schlüssel (Note&nbsp;4 ab&nbsp;9&nbsp;Punkten). Ein Kind erreicht 15&nbsp;Punkte → 75&nbsp;% → Note 2−. Der Rechner oben rechnet das sofort durch — Maximalpunktzahl ändern, Punkte eintippen, Note ablesen.",
+            "Typische Mathematik-Klassenarbeit in Klasse 4, Maximalpunktzahl&nbsp;20, 45-%-Voreinstellung (Note&nbsp;4− ab&nbsp;9, glatte&nbsp;4 ab&nbsp;10&nbsp;Punkten). Ein Kind erreicht 15&nbsp;Punkte → 75&nbsp;% → Note 2−. Der Rechner oben rechnet das sofort durch — Maximalpunktzahl ändern, Punkte eintippen, Note ablesen.",
             "<strong>Anmeldung Sek I (Schulformempfehlung)</strong>: Am Ende der 4. Klasse stellt die Grundschule eine begründete Empfehlung für die weiterführende Schulform aus (Gymnasium, Realschule, Gesamtschule). Anders als in Bayern ist die Empfehlung in NRW <em>nicht bindend</em> — Eltern entscheiden über die Anmeldung. Die Empfehlung basiert auf Leistungen, Arbeitsverhalten und Sozialkompetenz, nicht auf einem festen Notenschnitt. Den Notendurchschnitt aus den Hauptfächern können Sie mit dem <a href=\"/notendurchschnitt/\">Notendurchschnitt-Rechner</a> bilden.",
         ],
         "show_subpage_cards": False,
@@ -946,7 +947,7 @@ def main():
                 d = region_out / p["slug"]
                 d.mkdir(exist_ok=True)
                 target = d / "index.html"
-            target.write_text(render_page(p, region), encoding="utf-8")
+            target.write_text(normalize_html(render_page(p, region), target), encoding="utf-8")
             rel = f"/notenschluessel-rechner/{region['slug']}/" + (p["slug"] + "/" if p["slug"] else "")
             print(f"  wrote {rel}index.html")
 

@@ -13,6 +13,7 @@ Each entry is hand-curated below (definition, context, examples, related links).
 Output: website/lexikon/<slug>/index.html plus website/lexikon/index.html
 """
 from pathlib import Path
+from site_common import normalize_html
 from textwrap import dedent
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -550,12 +551,12 @@ def render_index():
 
 def main():
     OUT.mkdir(exist_ok=True)
-    (OUT / "index.html").write_text(render_index(), encoding="utf-8")
+    (OUT / "index.html").write_text(normalize_html(render_index(), OUT / "index.html"), encoding="utf-8")
     print("  wrote /lexikon/index.html")
     for entry in ENTRIES:
         d = OUT / entry["slug"]
         d.mkdir(exist_ok=True)
-        (d / "index.html").write_text(render_entry(entry), encoding="utf-8")
+        (d / "index.html").write_text(normalize_html(render_entry(entry), d / "index.html"), encoding="utf-8")
         print(f"  wrote /lexikon/{entry['slug']}/index.html")
 
 

@@ -1,0 +1,55 @@
+.app-bridge { max-width: 720px; margin: 20px auto; padding: 18px 0; border-top: 1px solid var(--border); color: var(--text-secondary); font-size: 15px; line-height: 1.65; }
+.nav-app-mobile { display: none; }
+#app-download, #klassenablauf, #linearer-notenschluessel { scroll-margin-top: 96px; }
+.app-bridge strong { color: var(--text); }
+.app-bridge a, .tool-followup a, .source-note a { color: var(--primary); text-decoration: underline; text-underline-offset: 3px; }
+.store-prices { margin: 16px auto 0; font-size: 14px; line-height: 1.6; max-width: 620px; }
+.tool-followup { max-width: 720px; margin: 18px auto; line-height: 1.7; }
+.tool-actions, .example-actions { display: flex; flex-wrap: wrap; gap: 10px; margin: 16px 0; }
+.tool-actions a, .tool-actions button, .example-actions button { min-height: 44px; padding: 10px 16px; border: 1px solid var(--border); border-radius: var(--radius-sm); background: var(--card); color: var(--primary); font: inherit; font-weight: 600; cursor: pointer; }
+.source-note { font-size: 13px; color: var(--text-muted); margin: 12px 0; }
+.content-prose { overflow-wrap: anywhere; }
+.average-field { display: grid; gap: 4px; min-width: 0; }
+.average-field > span { font-size: 12px; font-weight: 600; color: var(--text-secondary); }
+.avg-row { grid-template-columns: minmax(0, 1fr) 100px 85px 44px !important; align-items: end !important; }
+.avg-row input { min-width: 0; }
+.avg-row input.weight { width: 100%; height: 44px; padding: 0 10px; border: 1.5px solid var(--border); border-radius: var(--radius-md); background: var(--bg); color: var(--text); font: inherit; font-variant-numeric: tabular-nums; }
+.avg-row [aria-invalid="true"] { border-color: var(--grade-5) !important; }
+.example-actions { max-width: 720px; margin: 0 auto 18px; }
+.average-explanation { max-width: 720px; margin: 12px auto; font-size: 14px; color: var(--text-secondary); }
+.workflow { max-width: 900px; margin: 30px auto; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 32px; align-items: center; }
+.workflow img { display: block; max-width: 100%; height: auto; border-radius: var(--radius-md); }
+.workflow ol { padding-left: 22px; line-height: 1.8; }
+.simple-tool { max-width: 720px; margin: 24px auto; padding: 24px; background: var(--card); border: 1px solid var(--border); border-radius: var(--radius-lg); }
+.simple-tool label { display: grid; gap: 6px; font-weight: 600; margin: 12px 0; }
+.simple-tool input, .simple-tool select { width: 100%; min-height: 48px; padding: 10px 14px; border: 1px solid var(--border); border-radius: var(--radius-sm); font: inherit; background: var(--bg); color: var(--text); }
+.simple-tool output { display: block; font-size: 30px; font-weight: 750; font-variant-numeric: tabular-nums; margin: 16px 0; }
+@media (max-width: 768px) {
+  .nav-links:not(.open) { visibility: hidden; }
+  .nav-links.open { visibility: visible; }
+  .nav-app-mobile { display: inline-flex; align-items: center; justify-content: center; min-height: 44px; padding: 0 12px; border-radius: var(--radius-pill); background: var(--primary); color: white; font-size: 14px; font-weight: 700; }
+  .nav-brand { margin-right: auto; }
+}
+@media (max-width: 540px) {
+  .nav-inner { padding-left: 16px !important; padding-right: 16px !important; gap: 8px; }
+  .nav-brand { margin-right: auto; font-size: 15px !important; gap: 7px !important; }
+  .nav-brand-icon { width: 24px !important; height: 24px !important; }
+  .nav-app-mobile { display: inline-flex; align-items: center; justify-content: center; min-height: 44px; padding: 0 12px; border-radius: var(--radius-pill); background: var(--primary); color: white; font-size: 14px; font-weight: 700; }
+  .avg-row { grid-template-columns: minmax(0, 1fr) 74px 44px !important; gap: 8px !important; }
+  .avg-row .average-field:first-child { grid-column: 1 / -1; }
+  .workflow { grid-template-columns: 1fr; gap: 20px; }
+  .simple-tool { padding: 18px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+}
+@media print {
+  .nav, .footer, .cta-banner, .app-bridge, .tool-actions, .converter, .converter-card, .converter-wrap, .internal-links, .table-note, .example-actions { display: none !important; }
+  .tool-hero { padding-top: 0 !important; }
+  body { background: white !important; color: black !important; }
+  .table-wrap, .table-wrapper, .grade-table-wrap, .np-table-wrap { box-shadow: none !important; overflow: visible !important; }
+  table { width: 100% !important; border-collapse: collapse; break-inside: avoid; }
+  td, th { padding: 4px 10px !important; color: black !important; }
+  .print-table-page .content-section { display: none; }
+  .print-table-page main::after { content: 'Notenpunkte-Tabelle · notenrechnerapp.de/notenpunkte-tabelle/ · Stand: 20.10.2026 · Dezimalwerte sind Orientierung, keine Abitur-Gesamtnote.'; display: block; margin-top: 18px; font-size: 10pt; }
+}

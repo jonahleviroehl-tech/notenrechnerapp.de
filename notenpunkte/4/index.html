@@ -29,36 +29,107 @@
 
   <!-- Schema.org structured data — Organization + Person + Article + SoftwareApplication + BreadcrumbList -->
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@graph": [
-      { "@type": "Organization", "@id": "https://notenrechnerapp.de/#organization", "name": "Der Notenrechner", "url": "https://notenrechnerapp.de/", "logo": "https://notenrechnerapp.de/assets/logo.png", "founder": { "@id": "https://notenrechnerapp.de/#author" }, "sameAs": ["https://apps.apple.com/de/app/der-notenrechner/id1662507346", "https://instagram.com/notenrechnerapp"] },
-      { "@type": "Person", "@id": "https://notenrechnerapp.de/#author", "name": "Jonah Röhl", "jobTitle": "Entwickler", "description": "Entwickler von Der Notenrechner.", "url": "https://notenrechnerapp.de/#author", "worksFor": { "@id": "https://notenrechnerapp.de/#organization" } },
-      {
-        "@type": "Article",
-        "headline": "4 Notenpunkte: Bedeutung, Schulnote und Dezimalnote",
-        "description": "4 Notenpunkte entsprechen der Schulnote 4- und der Dezimalnote 4,3. Bedeutung, Prozentbereich und Kontext für Klausuren in der gymnasialen Oberstufe.",
-        "url": "https://notenrechnerapp.de/notenpunkte/4/",
-        "datePublished": "2026-04-25",
-        "dateModified": "2026-05-24",
-        "author": { "@id": "https://notenrechnerapp.de/#author" },
-        "publisher": { "@id": "https://notenrechnerapp.de/#organization" },
-        "mainEntityOfPage": "https://notenrechnerapp.de/notenpunkte/4/",
-        "inLanguage": "de-DE",
-        "about": { "@type": "Thing", "name": "4 Notenpunkte" }
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://notenrechnerapp.de/#organization",
+      "name": "Der Notenrechner",
+      "url": "https://notenrechnerapp.de/",
+      "logo": "https://notenrechnerapp.de/assets/logo.png",
+      "founder": {
+        "@id": "https://notenrechnerapp.de/#author"
       },
-      { "@type": "SoftwareApplication", "@id": "https://notenrechnerapp.de/#app", "name": "Der Notenrechner", "applicationCategory": "EducationApplication", "operatingSystem": "iOS, iPadOS, Android", "downloadUrl": "https://apps.apple.com/de/app/der-notenrechner/id1662507346",
- "installUrl": ["https://apps.apple.com/de/app/der-notenrechner/id1662507346", "https://play.google.com/store/apps/details?id=com.notenrechner.App"], "offers": { "@type": "Offer", "price": "0", "priceCurrency": "EUR" }, "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.5", "ratingCount": "6", "bestRating": "5", "worstRating": "1" } },
-      {
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-          { "@type": "ListItem", "position": 1, "name": "Der Notenrechner", "item": "https://notenrechnerapp.de/" },
-          { "@type": "ListItem", "position": 2, "name": "Notenpunkte-Tabelle", "item": "https://notenrechnerapp.de/notenpunkte-tabelle/" },
-          { "@type": "ListItem", "position": 3, "name": "4 Notenpunkte", "item": "https://notenrechnerapp.de/notenpunkte/4/" }
-        ]
+      "sameAs": [
+        "https://apps.apple.com/de/app/der-notenrechner/id1662507346",
+        "https://instagram.com/notenrechnerapp"
+      ]
+    },
+    {
+      "@type": "Person",
+      "@id": "https://notenrechnerapp.de/#author",
+      "name": "Jonah Röhl",
+      "jobTitle": "Entwickler",
+      "description": "Entwickler von Der Notenrechner.",
+      "url": "https://notenrechnerapp.de/#author",
+      "worksFor": {
+        "@id": "https://notenrechnerapp.de/#organization"
       }
-    ]
-  }
+    },
+    {
+      "@type": "Article",
+      "headline": "4 Notenpunkte: Bedeutung, Schulnote und Dezimalnote",
+      "description": "4 Notenpunkte entsprechen der Schulnote 4- und der Dezimalnote 4,3. Bedeutung, Prozentbereich und Kontext für Klausuren in der gymnasialen Oberstufe.",
+      "url": "https://notenrechnerapp.de/notenpunkte/4/",
+      "datePublished": "2026-04-25",
+      "dateModified": "2026-10-20",
+      "author": {
+        "@id": "https://notenrechnerapp.de/#author"
+      },
+      "publisher": {
+        "@id": "https://notenrechnerapp.de/#organization"
+      },
+      "mainEntityOfPage": "https://notenrechnerapp.de/notenpunkte/4/",
+      "inLanguage": "de-DE",
+      "about": {
+        "@type": "Thing",
+        "name": "4 Notenpunkte"
+      }
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://notenrechnerapp.de/#app",
+      "name": "Der Notenrechner",
+      "applicationCategory": "EducationApplication",
+      "operatingSystem": "iOS, iPadOS, Android",
+      "downloadUrl": "https://apps.apple.com/de/app/der-notenrechner/id1662507346",
+      "installUrl": [
+        "https://apps.apple.com/de/app/der-notenrechner/id1662507346",
+        "https://play.google.com/store/apps/details?id=com.notenrechner.App"
+      ],
+      "offers": [
+        {
+          "@type": "Offer",
+          "name": "iPhone und iPad",
+          "price": "5.99",
+          "priceCurrency": "EUR",
+          "url": "https://apps.apple.com/de/app/der-notenrechner/id1662507346"
+        },
+        {
+          "@type": "Offer",
+          "name": "Android",
+          "price": "0",
+          "priceCurrency": "EUR",
+          "url": "https://play.google.com/store/apps/details?id=com.notenrechner.App"
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Der Notenrechner",
+          "item": "https://notenrechnerapp.de/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Notenpunkte-Tabelle",
+          "item": "https://notenrechnerapp.de/notenpunkte-tabelle/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "4 Notenpunkte",
+          "item": "https://notenrechnerapp.de/notenpunkte/4/"
+        }
+      ]
+    }
+  ]
+}
   </script>
 
   <style>
@@ -203,18 +274,20 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 .footer-tagline { font-size: 13px; color: var(--text-muted); font-style: italic; }
 .footer-copy { font-size: 13px; color: var(--text-muted); }
   </style>
+  <link rel="stylesheet" href="/assets/site-enhancements.css?v=20261020">
 </head>
 <body>
   <nav class="nav" role="navigation" aria-label="Hauptnavigation">
     <div class="nav-inner">
       <a href="/" class="nav-brand"><span class="nav-brand-icon"><img src="/assets/logo.png" alt=""></span>Der Notenrechner</a>
-      <button class="nav-toggle" id="navToggle" aria-label="Menü öffnen" aria-expanded="false"><span></span><span></span><span></span></button>
+      <a class="nav-app-mobile" href="/#app-download" aria-label="App für iPhone, iPad und Android">App</a>
+        <button class="nav-toggle" id="navToggle" aria-label="Menü öffnen" aria-expanded="false"><span></span><span></span><span></span></button>
       <ul class="nav-links" id="navLinks">
         <li><a href="/" onclick="closeMenu()">Startseite</a></li>
         <li><a href="/notenschluessel-rechner/" onclick="closeMenu()">Notenschlüssel-Rechner</a></li>
         <li><a href="/notenpunkte-tabelle/" class="active" onclick="closeMenu()">Notenpunkte-Tabelle</a></li>
         <li><a href="/ihk-notenschluessel/" onclick="closeMenu()">IHK-Rechner</a></li>
-        <li><a href="https://apps.apple.com/de/app/der-notenrechner/id1662507346" target="_blank" rel="noopener" class="nav-cta" onclick="closeMenu()" aria-label="Im App Store laden"><svg viewBox="0 0 384 512" fill="currentColor" aria-hidden="true"><path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184 4 273.5c0 26.2 4.8 53.3 14.4 81.2 12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/></svg>Laden</a></li>
+        <li><a href="/#app-download" class="nav-cta" onclick="closeMenu()" aria-label="App für iPhone, iPad und Android">App</a></li>
       </ul>
     </div>
   </nav>
@@ -239,11 +312,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
           <p class="np-hero-intro">4 Notenpunkte entsprechen einer 4- — die untere Tendenz im Bereich „ausreichend". Als Dezimalnote ergibt sich 4,3. <strong>Wichtig:</strong> 4 Notenpunkte gelten in der gymnasialen Oberstufe bereits als <em>unterpunktet</em> — also als nicht bestanden für Zwecke der Abitur-Gesamtqualifikation.</p>
         </div>
 
-        <div class="np-pct-strip">
-          <div class="np-pct-cell"><span class="np-pct-label">50 %-Schlüssel</span><span class="np-pct-value">40–44 %</span></div>
-          <div class="np-pct-cell"><span class="np-pct-label">45 %-Schlüssel</span><span class="np-pct-value">45–49 %</span></div>
-          <div class="np-pct-cell"><span class="np-pct-label">40 %-Schlüssel</span><span class="np-pct-value">50–54 %</span></div>
-        </div>
+        <div class="np-pct-strip"><div class="np-pct-cell"><span class="np-pct-label">50-%-Voreinstellung</span><span class="np-pct-value">50 bis unter 56 %</span></div><div class="np-pct-cell"><span class="np-pct-label">45-%-Voreinstellung</span><span class="np-pct-value">45 bis unter 50 %</span></div><div class="np-pct-cell"><span class="np-pct-label">40-%-Voreinstellung</span><span class="np-pct-value">40 bis unter 45 %</span></div></div>
       </div>
     </section>
 
@@ -278,8 +347,8 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 
     <section class="cta-banner">
       <div class="cta-banner-content">
-        <h2>Klausuren, Klassen, Zeugnisse — alles in einer App.</h2>
-        <p class="cta-banner-sub">Der Notenrechner ist kostenlos im App Store. Lokal, ohne Account, ohne Werbung.</p>
+        <h2>Eine Note berechnet. Die ganze Klasse im Blick.</h2>
+        <p class="cta-banner-sub">Klausurpunkte pro Klasse erfassen, Durchschnitt und Verteilung gemeinsam auswerten. Lokal auf Ihrem Gerät, ohne Konto und ohne Cloud.</p>
         <div class="cta-features">
           <div class="cta-feature"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Klausurergebnisse für die ganze Klasse</div>
           <div class="cta-feature"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Klassenschnitt + Verteilungs-Diagramm</div>
@@ -287,23 +356,27 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
           <div class="cta-feature"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>PDF-Export für Konferenzen</div>
         </div>
         <div class="cta-badges" style="display:flex;gap:14px;justify-content:center;align-items:center;flex-wrap:wrap;">
-          <a href="https://apps.apple.com/de/app/der-notenrechner/id1662507346" target="_blank" rel="noopener" class="app-store-badge">
+          <a href="https://apps.apple.com/de/app/der-notenrechner/id1662507346?pt=125935959&amp;ct=general_calculators&amp;mt=8" target="_blank" rel="noopener" class="app-store-badge">
           <span class="app-store-badge-icon"><svg viewBox="0 0 384 512"><path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184 4 273.5c0 26.2 4.8 53.3 14.4 81.2 12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/></svg></span>
           <span class="app-store-badge-text">
             <span class="app-store-badge-small">Laden im</span>
             <span class="app-store-badge-large">App Store</span>
           </span>
         </a>
-          <a href="https://play.google.com/store/apps/details?id=com.notenrechner.App" target="_blank" rel="noopener" class="app-store-badge" aria-label="Bei Google Play laden"><span class="app-store-badge-icon"><svg viewBox="0 0 512 512" aria-hidden="true"><path d="M325.3 234.3 104.6 13l280.8 161.2-60.1 60.1zM47 0C34 6.8 25.3 19.2 25.3 35.3v441.3c0 16.1 8.7 28.5 21.7 35.3l256.6-256L47 0zm425.2 225.6-58.9-34.1-65.7 64.5 65.7 64.5 60.1-34.1c18-14.3 18-46.5-1.2-60.8zM104.6 499l220.7-221.3 60.1 60.1L104.6 499z"/></svg></span><span class="app-store-badge-text"><span class="app-store-badge-small">Jetzt bei</span><span class="app-store-badge-large">Google Play</span></span></a>
+          <a href="https://play.google.com/store/apps/details?id=com.notenrechner.App&amp;referrer=utm_source%3Dnotenrechnerapp.de%26utm_medium%3Dwebsite%26utm_campaign%3Dgeneral_calculators" target="_blank" rel="noopener" class="app-store-badge" aria-label="Bei Google Play laden"><span class="app-store-badge-icon"><svg viewBox="0 0 512 512" aria-hidden="true"><path d="M325.3 234.3 104.6 13l280.8 161.2-60.1 60.1zM47 0C34 6.8 25.3 19.2 25.3 35.3v441.3c0 16.1 8.7 28.5 21.7 35.3l256.6-256L47 0zm425.2 225.6-58.9-34.1-65.7 64.5 65.7 64.5 60.1-34.1c18-14.3 18-46.5-1.2-60.8zM104.6 499l220.7-221.3 60.1 60.1L104.6 499z"/></svg></span><span class="app-store-badge-text"><span class="app-store-badge-small">Jetzt bei</span><span class="app-store-badge-large">Google Play</span></span></a>
         </div>
-        <p class="cta-note">Kostenlos · Keine Werbung · Kein Abo</p>
-      </div>
+        <p class="cta-note">Ohne Werbung · Ohne Konto · Offline</p>
+      <p class="store-prices">iPhone &amp; iPad: 5,99 € im deutschen App Store · Android: kostenlos bei Google Play. Stand: 20.10.2026.</p>
+</div>
     </section>
   </main>
 
   <footer class="footer">
     <div class="footer-inner">
       <nav class="footer-nav" aria-label="Seitenübersicht" style="display:flex;flex-wrap:wrap;justify-content:center;gap:8px 20px;margin-bottom:16px;font-size:14px;">
+        <a href="/punkte-in-noten/">Punkte in Noten</a>
+        <a href="/fehlerquotient-berechnen/">Fehlerquotient</a>
+        <a href="/android/">Android-App</a>
         <a href="/notenschluessel-rechner/">Notenschlüssel-Rechner</a>
         <a href="/notenpunkte-tabelle/">Notenpunkte-Tabelle</a>
         <a href="/ihk-notenschluessel/">IHK-Notenschlüssel</a>

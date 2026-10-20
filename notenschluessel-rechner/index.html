@@ -32,190 +32,230 @@
   <!-- Schema.org structured data — Organization + Person + WebApplication + SoftwareApplication
        Designed for Google AI Overviews / GEO citation eligibility. -->
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "Organization",
-        "@id": "https://notenrechnerapp.de/#organization",
-        "name": "Der Notenrechner",
-        "url": "https://notenrechnerapp.de/",
-        "logo": "https://notenrechnerapp.de/assets/logo.png",
-        "founder": { "@id": "https://notenrechnerapp.de/#author" },
-        "sameAs": [
-          "https://apps.apple.com/de/app/der-notenrechner/id1662507346",
-          "https://instagram.com/notenrechnerapp"
-        ]
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://notenrechnerapp.de/#organization",
+      "name": "Der Notenrechner",
+      "url": "https://notenrechnerapp.de/",
+      "logo": "https://notenrechnerapp.de/assets/logo.png",
+      "founder": {
+        "@id": "https://notenrechnerapp.de/#author"
       },
-      {
-        "@type": "Person",
-        "@id": "https://notenrechnerapp.de/#author",
-        "name": "Jonah Röhl",
-        "jobTitle": "Entwickler",
-        "description": "Entwickler von Der Notenrechner.",
-        "url": "https://notenrechnerapp.de/#author",
-        "worksFor": { "@id": "https://notenrechnerapp.de/#organization" }
-      },
-      {
-        "@type": "WebApplication",
-        "name": "Notenschlüssel-Rechner",
-        "description": "Notenschlüssel online berechnen: Maximalpunktzahl eingeben, Prozentgrenzen wählen, sofort die Notentabelle erhalten.",
-        "url": "https://notenrechnerapp.de/notenschluessel-rechner/",
-        "applicationCategory": "EducationalApplication",
-        "operatingSystem": "All",
-        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "EUR" },
-        "datePublished": "2026-03-15",
-        "dateModified": "2026-06-06",
-        "author": { "@id": "https://notenrechnerapp.de/#author" },
-        "publisher": { "@id": "https://notenrechnerapp.de/#organization" }
-      },
-      {
-        "@type": "SoftwareApplication",
-        "@id": "https://notenrechnerapp.de/#app",
-        "name": "Der Notenrechner",
-        "applicationCategory": "EducationApplication",
-        "operatingSystem": "iOS, iPadOS, Android",
-        "downloadUrl": "https://apps.apple.com/de/app/der-notenrechner/id1662507346",
-        "installUrl": ["https://apps.apple.com/de/app/der-notenrechner/id1662507346", "https://play.google.com/store/apps/details?id=com.notenrechner.App"],
-        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "EUR" }
-      },
-      {
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-          { "@type": "ListItem", "position": 1, "name": "Der Notenrechner", "item": "https://notenrechnerapp.de/" },
-          { "@type": "ListItem", "position": 2, "name": "Notenschlüssel-Rechner", "item": "https://notenrechnerapp.de/notenschluessel-rechner/" }
-        ]
-      },
-      {
-        "@type": "FAQPage",
-        "mainEntity": [
-          {
-            "@type": "Question",
-            "name": "Wie funktioniert ein linearer Notenschlüssel?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Bei einem linearen Notenschlüssel werden die Noten gleichmäßig über den Punktebereich verteilt. Die Prozentzahl — etwa 50 %, 45 % oder 40 % — gibt an, ab welchem Anteil der erreichbaren Punkte die Note 4 („ausreichend\") vergeben wird. Ein 50-%-Schlüssel ist der verbreitetste Standard und wird an vielen Schulen als Grundlage verwendet. Strengere Lehrkräfte greifen zum 45-%-Schlüssel, mildere zum 40-%-Schlüssel. Die Bezeichnung „linear\" bedeutet, dass die Notenstufen in gleichmäßigen Abständen auf der Punkteskala liegen. Der Vorteil: Die Bewertung ist transparent und nachvollziehbar, da sich jede Note klar aus dem Prozentanteil ergibt. Eltern und Schüler können die Bewertung leicht nachprüfen."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Was bedeutet 50 %, 45 % oder 40 % beim Notenschlüssel?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Diese Prozentzahl gibt die Bestehensgrenze an — also den Anteil der Maximalpunktzahl, ab dem die Note „ausreichend\" (4) vergeben wird. Bei einem 50-%-Schlüssel braucht ein Schüler die Hälfte aller Punkte zum Bestehen. Bei einem 40-%-Schlüssel reichen bereits 40 % der Punkte für eine 4. Die Wahl der Grenze hat großen Einfluss auf die Notenverteilung. Ein 50-%-Schlüssel ist strenger: Es bleibt weniger Raum für die Noten 1 bis 3, weil der gesamte Bereich oberhalb von 50 % auf nur vier Stufen verteilt wird. Ein 40-%-Schlüssel ist milder und gibt Schülern mehr Spielraum nach oben. In der Praxis wählen viele Lehrkräfte den Schlüssel abhängig vom Schwierigkeitsgrad der Klausur."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Was ist ein Notenschlüssel mit Knick?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Ein Notenschlüssel mit Knick teilt die Punkteskala an der Bestehensgrenze in zwei Segmente. Oberhalb des Knicks (Noten 1–4) werden die Notenstufen linear auf den oberen Bereich verteilt, unterhalb (Noten 5–6) auf den unteren. Der Knick sorgt dafür, dass der Abstand zwischen den Noten im Bereich „bestanden\" und „nicht bestanden\" unterschiedlich groß ist — ein strengerer oder milderer Übergang am kritischen Punkt. In der Der Notenrechner-App können Sie per Schieberegler die Bestehensgrenze frei einstellen und optional einen Sockel (Mindestprozentsatz für 0 Punkte) setzen. Alle 16 Notenstufen werden automatisch berechnet."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Wie erstelle ich einen Notenschlüssel für meine Klausur?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Geben Sie oben die Maximalpunktzahl Ihrer Klausur ein und wählen Sie den gewünschten Schlüssel (z. B. 50 %). Der Rechner erstellt sofort eine vollständige Tabelle mit allen Notenstufen und den zugehörigen Punktgrenzen. Sie können die Tabelle direkt als Referenz nutzen oder ausdrucken. Wenn Sie regelmäßig Klausuren bewerten und individuelle Schlüssel mit Knick oder eigenen Prozentgrenzen benötigen, bietet die Der Notenrechner-App einen Generator: Bestehensgrenze per Schieberegler einstellen, optional einen Sockel setzen, und die App berechnet alle Notenstufen automatisch. Dazu kommen halbe Punkte, Rundungsregeln und Klassenverwaltung."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Welchen Notenschlüssel sollte ich verwenden?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Das hängt von Ihrer Schulform, dem Bundesland und den internen Vorgaben Ihrer Schule ab. An den meisten allgemeinbildenden Schulen ist der lineare 50-%-Schlüssel Standard. Für die Oberstufe am Gymnasium verwenden Sie die Notenpunkte-Variante. Für IHK-Prüfungen in der Berufsausbildung gilt der offizielle IHK-Notenschlüssel. Im Zweifel orientieren Sie sich an der Fachkonferenz Ihrer Schule oder den Prüfungsordnungen Ihres Bundeslandes."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Darf ich als Lehrkraft den Notenschlüssel selbst festlegen?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Grundsätzlich ja — mit Einschränkungen. In den meisten Bundesländern haben Lehrkräfte pädagogischen Spielraum bei der Bewertung. Die Fachkonferenz kann jedoch verbindliche Vorgaben zum Notenschlüssel machen. Schulform- und länderspezifische Hinweise haben wir für Bayern zusammengestellt (Gymnasium, Grundschule, Realschule, Berufsschule). Erkundigen Sie sich im Zweifel bei Ihrer Schulleitung oder Fachkonferenz, welche Regelungen an Ihrer Schule gelten."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Was ist der Unterschied zwischen Noten und Notenpunkten?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Die traditionellen Schulnoten reichen von 1 (sehr gut) bis 6 (ungenügend) und werden in der Sekundarstufe I verwendet. Notenpunkte (15 bis 0) sind das Bewertungssystem der gymnasialen Oberstufe und des Abiturs. Jede Schulnote entspricht drei Notenpunkten: Die Note 1 umfasst 15, 14 und 13 Punkte (1+, 1, 1-). Dieser feinere Maßstab erlaubt eine genauere Differenzierung, die für die Abitur-Gesamtqualifikation benötigt wird."
-            }
-          }
-        ]
-      },
-      {
-        "@type": "HowTo",
-        "name": "Notenschlüssel für eine Klausur erstellen",
-        "description": "Punkte einer Klausur in Sekundenschnelle in eine Note umrechnen — mit linearem Schlüssel (50, 45 oder 40 % Bestehensgrenze).",
-        "inLanguage": "de-DE",
-        "totalTime": "PT30S",
-        "step": [
-          {
-            "@type": "HowToStep",
-            "position": 1,
-            "name": "Maximalpunktzahl eingeben",
-            "text": "Tragen Sie die maximal erreichbare Punktzahl Ihrer Klausur in das Feld „Maximalpunktzahl\" ein. Beliebige ganze oder Dezimalwerte werden akzeptiert."
-          },
-          {
-            "@type": "HowToStep",
-            "position": 2,
-            "name": "Notenschlüssel auswählen",
-            "text": "Wählen Sie den passenden linearen Schlüssel: 50 % (streng, häufig am Gymnasium), 45 % (mittel, oft an Realschulen) oder 40 % (milde). Die Note 4 wird ab dem gewählten Prozentwert vergeben."
-          },
-          {
-            "@type": "HowToStep",
-            "position": 3,
-            "name": "Tabelle ablesen oder PDF herunterladen",
-            "text": "Die vollständige Notentabelle wird sofort generiert — pro Notenstufe sehen Sie Mindestpunktzahl und Mindestprozent. Optional erreichte Punkte eingeben, um sofort die Note für ein konkretes Klausurergebnis zu erhalten. Die Gesamttabelle aller drei Schlüssel ist als A4-PDF herunterladbar."
-          }
-        ],
-        "tool": [
-          {
-            "@type": "HowToTool",
-            "name": "Notenschlüssel-Rechner (notenrechnerapp.de)"
-          }
-        ],
-        "supply": [
-          {
-            "@type": "HowToSupply",
-            "name": "Maximalpunktzahl und erreichte Punkte einer Klausur"
-          }
-        ]
-      },
-      {
-        "@type": "LearningResource",
-        "name": "Notenschlüssel-Rechner",
-        "url": "https://notenrechnerapp.de/notenschluessel-rechner/",
-        "inLanguage": "de-DE",
-        "learningResourceType": "Berechnungswerkzeug",
-        "educationalUse": [
-          "Notenberechnung",
-          "Klausurbewertung",
-          "Unterrichtsvorbereitung"
-        ],
-        "audience": {
-          "@type": "EducationalAudience",
-          "educationalRole": "teacher",
-          "name": "Lehrkräfte"
-        },
-        "about": {
-          "@type": "Thing",
-          "name": "Notenschlüssel — Umrechnung Punkte zu Note"
-        },
-        "isAccessibleForFree": true,
-        "author": {
-          "@id": "https://notenrechnerapp.de/#author"
-        },
-        "publisher": {
-          "@id": "https://notenrechnerapp.de/#organization"
-        }
+      "sameAs": [
+        "https://apps.apple.com/de/app/der-notenrechner/id1662507346",
+        "https://instagram.com/notenrechnerapp"
+      ]
+    },
+    {
+      "@type": "Person",
+      "@id": "https://notenrechnerapp.de/#author",
+      "name": "Jonah Röhl",
+      "jobTitle": "Entwickler",
+      "description": "Entwickler von Der Notenrechner.",
+      "url": "https://notenrechnerapp.de/#author",
+      "worksFor": {
+        "@id": "https://notenrechnerapp.de/#organization"
       }
-    ]
-  }
+    },
+    {
+      "@type": "WebApplication",
+      "name": "Notenschlüssel-Rechner",
+      "description": "Notenschlüssel online berechnen: Maximalpunktzahl eingeben, Prozentgrenzen wählen, sofort die Notentabelle erhalten.",
+      "url": "https://notenrechnerapp.de/notenschluessel-rechner/",
+      "applicationCategory": "EducationalApplication",
+      "operatingSystem": "All",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "EUR"
+      },
+      "datePublished": "2026-03-15",
+      "dateModified": "2026-10-20",
+      "author": {
+        "@id": "https://notenrechnerapp.de/#author"
+      },
+      "publisher": {
+        "@id": "https://notenrechnerapp.de/#organization"
+      }
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://notenrechnerapp.de/#app",
+      "name": "Der Notenrechner",
+      "applicationCategory": "EducationApplication",
+      "operatingSystem": "iOS, iPadOS, Android",
+      "downloadUrl": "https://apps.apple.com/de/app/der-notenrechner/id1662507346",
+      "installUrl": [
+        "https://apps.apple.com/de/app/der-notenrechner/id1662507346",
+        "https://play.google.com/store/apps/details?id=com.notenrechner.App"
+      ],
+      "offers": [
+        {
+          "@type": "Offer",
+          "name": "iPhone und iPad",
+          "price": "5.99",
+          "priceCurrency": "EUR",
+          "url": "https://apps.apple.com/de/app/der-notenrechner/id1662507346"
+        },
+        {
+          "@type": "Offer",
+          "name": "Android",
+          "price": "0",
+          "priceCurrency": "EUR",
+          "url": "https://play.google.com/store/apps/details?id=com.notenrechner.App"
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Der Notenrechner",
+          "item": "https://notenrechnerapp.de/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Notenschlüssel-Rechner",
+          "item": "https://notenrechnerapp.de/notenschluessel-rechner/"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Wie funktioniert ein linearer Notenschlüssel?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Bei einem linearen Notenschlüssel werden die Noten gleichmäßig über den Punktebereich verteilt. Die Prozentzahl — etwa 50 %, 45 % oder 40 % — gibt an, ab welchem Anteil der erreichbaren Punkte die Note 4 („ausreichend\") vergeben wird. Ein 50-%-Schlüssel ist der verbreitetste Standard und wird an vielen Schulen als Grundlage verwendet. Eine niedrigere Prozentgrenze führt bei gleicher Punktzahl zu einer günstigeren Zuordnung. Die Bezeichnung „linear\" bedeutet, dass die Notenstufen in gleichmäßigen Abständen auf der Punkteskala liegen. Der Vorteil: Die Bewertung ist transparent und nachvollziehbar, da sich jede Note klar aus dem Prozentanteil ergibt. Eltern und Schüler können die Bewertung leicht nachprüfen."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Was bedeutet 50 %, 45 % oder 40 % beim Notenschlüssel?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Diese Prozentzahl gibt die Bestehensgrenze an — also den Anteil der Maximalpunktzahl, ab dem die Note „ausreichend\" (4) vergeben wird. Bei einem 50-%-Schlüssel braucht ein Schüler die Hälfte aller Punkte zum Bestehen. Bei einem 40-%-Schlüssel reichen bereits 40 % der Punkte für eine 4. Die Wahl der Grenze hat großen Einfluss auf die Notenverteilung. Ein 50-%-Schlüssel ist strenger: Es bleibt weniger Raum für die Noten 1 bis 3, weil der gesamte Bereich oberhalb von 50 % auf nur vier Stufen verteilt wird. Ein 40-%-Schlüssel ist milder und gibt Schülern mehr Spielraum nach oben. In der Praxis wählen viele Lehrkräfte den Schlüssel abhängig vom Schwierigkeitsgrad der Klausur."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Was ist ein Notenschlüssel mit Knick?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ein Notenschlüssel mit Knick teilt die Punkteskala an der Bestehensgrenze in zwei Segmente. Oberhalb des Knicks (Noten 1–4) werden die Notenstufen linear auf den oberen Bereich verteilt, unterhalb (Noten 5–6) auf den unteren. Der Knick sorgt dafür, dass der Abstand zwischen den Noten im Bereich „bestanden\" und „nicht bestanden\" unterschiedlich groß ist — ein strengerer oder milderer Übergang am kritischen Punkt. In der Der Notenrechner-App können Sie per Schieberegler die Bestehensgrenze frei einstellen und optional einen Sockel (Mindestprozentsatz für 0 Punkte) setzen. Alle 16 Notenstufen werden automatisch berechnet."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Wie erstelle ich einen Notenschlüssel für meine Klausur?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Geben Sie oben die Maximalpunktzahl Ihrer Klausur ein und wählen Sie den gewünschten Schlüssel (z. B. 50 %). Der Rechner erstellt sofort eine vollständige Tabelle mit allen Notenstufen und den zugehörigen Punktgrenzen. Sie können die Tabelle direkt als Referenz nutzen oder ausdrucken. Wenn Sie regelmäßig Klausuren bewerten und individuelle Schlüssel mit Knick oder eigenen Prozentgrenzen benötigen, bietet die Der Notenrechner-App einen Generator: Bestehensgrenze per Schieberegler einstellen, optional einen Sockel setzen, und die App berechnet alle Notenstufen automatisch. Dazu kommen halbe Punkte, Rundungsregeln und Klassenverwaltung."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Welchen Notenschlüssel sollte ich verwenden?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Das hängt von Ihrer Schulform, dem Bundesland und den internen Vorgaben Ihrer Schule ab. An den meisten allgemeinbildenden Schulen ist der lineare 50-%-Schlüssel Standard. Für die Oberstufe am Gymnasium verwenden Sie die Notenpunkte-Variante. Für IHK-Prüfungen in der Berufsausbildung gilt der offizielle IHK-Notenschlüssel. Im Zweifel orientieren Sie sich an der Fachkonferenz Ihrer Schule oder den Prüfungsordnungen Ihres Bundeslandes."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Darf ich als Lehrkraft den Notenschlüssel selbst festlegen?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Grundsätzlich ja — mit Einschränkungen. In den meisten Bundesländern haben Lehrkräfte pädagogischen Spielraum bei der Bewertung. Die Fachkonferenz kann jedoch verbindliche Vorgaben zum Notenschlüssel machen. Schulform- und länderspezifische Hinweise haben wir für Bayern zusammengestellt (Gymnasium, Grundschule, Realschule, Berufsschule). Erkundigen Sie sich im Zweifel bei Ihrer Schulleitung oder Fachkonferenz, welche Regelungen an Ihrer Schule gelten."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Was ist der Unterschied zwischen Noten und Notenpunkten?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Die traditionellen Schulnoten reichen von 1 (sehr gut) bis 6 (ungenügend) und werden in der Sekundarstufe I verwendet. Notenpunkte (15 bis 0) sind das Bewertungssystem der gymnasialen Oberstufe und des Abiturs. Jede Schulnote entspricht drei Notenpunkten: Die Note 1 umfasst 15, 14 und 13 Punkte (1+, 1, 1-). Dieser feinere Maßstab erlaubt eine genauere Differenzierung, die für die Abitur-Gesamtqualifikation benötigt wird."
+          }
+        }
+      ]
+    },
+    {
+      "@type": "HowTo",
+      "name": "Notenschlüssel für eine Klausur erstellen",
+      "description": "Punkte einer Klausur in Sekundenschnelle in eine Note umrechnen — mit linearem Schlüssel (50, 45 oder 40 % Bestehensgrenze).",
+      "inLanguage": "de-DE",
+      "totalTime": "PT30S",
+      "step": [
+        {
+          "@type": "HowToStep",
+          "position": 1,
+          "name": "Maximalpunktzahl eingeben",
+          "text": "Tragen Sie die maximal erreichbare Punktzahl Ihrer Klausur in das Feld „Maximalpunktzahl\" ein. Beliebige ganze oder Dezimalwerte werden akzeptiert."
+        },
+        {
+          "@type": "HowToStep",
+          "position": 2,
+          "name": "Notenschlüssel auswählen",
+          "text": "Wählen Sie den passenden linearen Schlüssel: 50 % (streng, häufig am Gymnasium), 45 % (mittel, oft an Realschulen) oder 40 % (milde). Die Note 4 wird ab dem gewählten Prozentwert vergeben."
+        },
+        {
+          "@type": "HowToStep",
+          "position": 3,
+          "name": "Tabelle ablesen oder PDF herunterladen",
+          "text": "Die vollständige Notentabelle wird sofort generiert — pro Notenstufe sehen Sie Mindestpunktzahl und Mindestprozent. Optional erreichte Punkte eingeben, um sofort die Note für ein konkretes Klausurergebnis zu erhalten. Die Gesamttabelle aller drei Schlüssel ist als A4-PDF herunterladbar."
+        }
+      ],
+      "tool": [
+        {
+          "@type": "HowToTool",
+          "name": "Notenschlüssel-Rechner (notenrechnerapp.de)"
+        }
+      ],
+      "supply": [
+        {
+          "@type": "HowToSupply",
+          "name": "Maximalpunktzahl und erreichte Punkte einer Klausur"
+        }
+      ]
+    },
+    {
+      "@type": "LearningResource",
+      "name": "Notenschlüssel-Rechner",
+      "url": "https://notenrechnerapp.de/notenschluessel-rechner/",
+      "inLanguage": "de-DE",
+      "learningResourceType": "Berechnungswerkzeug",
+      "educationalUse": [
+        "Notenberechnung",
+        "Klausurbewertung",
+        "Unterrichtsvorbereitung"
+      ],
+      "audience": {
+        "@type": "EducationalAudience",
+        "educationalRole": "teacher",
+        "name": "Lehrkräfte"
+      },
+      "about": {
+        "@type": "Thing",
+        "name": "Notenschlüssel — Umrechnung Punkte zu Note"
+      },
+      "isAccessibleForFree": true,
+      "author": {
+        "@id": "https://notenrechnerapp.de/#author"
+      },
+      "publisher": {
+        "@id": "https://notenrechnerapp.de/#organization"
+      }
+    }
+  ]
+}
   </script>
 
   <style>
@@ -1110,6 +1150,8 @@
     }
     .print-header, .print-footer { display: none; }
   </style>
+  <link rel="stylesheet" href="/assets/site-enhancements.css?v=20261020">
+<script src="/assets/calculations.js" data-preset-validation></script>
 </head>
 <body>
   <div class="print-header"><span class="print-header-brand">Der Notenrechner</span><span class="print-header-url">notenrechnerapp.de</span></div>
@@ -1127,10 +1169,11 @@
         <li><a href="../notenpunkte-tabelle/" onclick="closeMenu()">Notenpunkte-Tabelle</a></li>
         <li><a href="../ihk-notenschluessel/" onclick="closeMenu()">IHK-Rechner</a></li>
         <li>
-          <a href="https://apps.apple.com/de/app/der-notenrechner/id1662507346" target="_blank" rel="noopener" class="nav-cta" onclick="closeMenu()" aria-label="Im App Store laden"><svg viewBox="0 0 384 512" fill="currentColor" aria-hidden="true"><path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184 4 273.5c0 26.2 4.8 53.3 14.4 81.2 12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/></svg>Laden</a>
+          <a href="/#app-download" class="nav-cta" onclick="closeMenu()" aria-label="App für iPhone, iPad und Android">App</a>
         </li>
       </ul>
-      <button class="nav-toggle" id="navToggle" aria-label="Menü öffnen">
+      <a class="nav-app-mobile" href="/#app-download" aria-label="App für iPhone, iPad und Android">App</a>
+        <button class="nav-toggle" id="navToggle" aria-label="Menü öffnen">
         <span></span><span></span><span></span>
       </button>
     </div>
@@ -1161,9 +1204,9 @@
               <div class="calc-field calc-field--full">
                 <label class="calc-label" for="gradeType">Notenschlüssel</label>
                 <select id="gradeType" class="calc-select">
-                  <option value="50">50 % Schlüssel (Note 4 ab 50 %)</option>
-                  <option value="45">45 % Schlüssel (Note 4 ab 45 %)</option>
-                  <option value="40">40 % Schlüssel (Note 4 ab 40 %)</option>
+                  <option value="50">50 % Schlüssel (Note 4− ab 50 %)</option>
+                  <option value="45">45 % Schlüssel (Note 4− ab 45 %)</option>
+                  <option value="40">40 % Schlüssel (Note 4− ab 40 %)</option>
                 </select>
               </div>
             </div>
@@ -1173,7 +1216,7 @@
               <div class="calc-result-desc" id="resultDesc">Erreichte Punkte eingeben</div>
               <div class="calc-result-pct" id="resultPct"></div>
             </div>
-          </div>
+          </div><aside class="app-bridge"><strong>Sie bewerten regelmäßig eine ganze Klasse?</strong><p>In der App speichern Sie Ihre Notenschlüssel, erfassen Klausurpunkte pro Klasse und sehen Durchschnitt und Notenverteilung gemeinsam. Ihre Daten bleiben auf dem Gerät, ohne Konto und ohne Cloud.</p><p><a href="/#klassenablauf">Klassenverwaltung ansehen</a> · <a href="/#app-download">App für iPhone, iPad und Android</a> · <a href="/notenverwaltungs-apps-vergleich/">Apps für Lehrkräfte vergleichen</a></p></aside><p class="average-explanation"><strong>Schlüsselbezeichnung:</strong> 50/45/40 % bezeichnet in diesen Voreinstellungen die Grenze zur 4−. Die glatte 4 beginnt jeweils eine Stufe darüber. Für Ihre Bewertung gelten die Vorgaben Ihrer Schule; die Voreinstellungen sind keine amtlichen Landes-Schlüssel.</p>
 
           <!-- Threshold table -->
           <div class="grade-table-wrapper fade-in fade-in-delay-2">
@@ -1189,7 +1232,23 @@
                 </tr>
               </thead>
               <tbody id="tableBody">
-              </tbody>
+<tr><td><div class="grade-cell"><span class="grade-name">15 <span class="grade-label">1+</span></span></div></td><td>98 Punkte <span class="grade-label">(98 %)</span></td></tr>
+<tr><td><div class="grade-cell"><span class="grade-name">14 <span class="grade-label">1</span></span></div></td><td>95 Punkte <span class="grade-label">(95 %)</span></td></tr>
+<tr><td><div class="grade-cell"><span class="grade-name">13 <span class="grade-label">1-</span></span></div></td><td>92 Punkte <span class="grade-label">(92 %)</span></td></tr>
+<tr><td><div class="grade-cell"><span class="grade-name">12 <span class="grade-label">2+</span></span></div></td><td>88 Punkte <span class="grade-label">(88 %)</span></td></tr>
+<tr><td><div class="grade-cell"><span class="grade-name">11 <span class="grade-label">2</span></span></div></td><td>85 Punkte <span class="grade-label">(85 %)</span></td></tr>
+<tr><td><div class="grade-cell"><span class="grade-name">10 <span class="grade-label">2-</span></span></div></td><td>81 Punkte <span class="grade-label">(81 %)</span></td></tr>
+<tr><td><div class="grade-cell"><span class="grade-name">9 <span class="grade-label">3+</span></span></div></td><td>76 Punkte <span class="grade-label">(76 %)</span></td></tr>
+<tr><td><div class="grade-cell"><span class="grade-name">8 <span class="grade-label">3</span></span></div></td><td>72 Punkte <span class="grade-label">(72 %)</span></td></tr>
+<tr><td><div class="grade-cell"><span class="grade-name">7 <span class="grade-label">3-</span></span></div></td><td>67 Punkte <span class="grade-label">(67 %)</span></td></tr>
+<tr><td><div class="grade-cell"><span class="grade-name">6 <span class="grade-label">4+</span></span></div></td><td>61 Punkte <span class="grade-label">(61 %)</span></td></tr>
+<tr><td><div class="grade-cell"><span class="grade-name">5 <span class="grade-label">4</span></span></div></td><td>56 Punkte <span class="grade-label">(56 %)</span></td></tr>
+<tr><td><div class="grade-cell"><span class="grade-name">4 <span class="grade-label">4-</span></span></div></td><td>50 Punkte <span class="grade-label">(50 %)</span></td></tr>
+<tr><td><div class="grade-cell"><span class="grade-name">3 <span class="grade-label">5+</span></span></div></td><td>43 Punkte <span class="grade-label">(43 %)</span></td></tr>
+<tr><td><div class="grade-cell"><span class="grade-name">2 <span class="grade-label">5</span></span></div></td><td>37 Punkte <span class="grade-label">(37 %)</span></td></tr>
+<tr><td><div class="grade-cell"><span class="grade-name">1 <span class="grade-label">5-</span></span></div></td><td>30 Punkte <span class="grade-label">(30 %)</span></td></tr>
+<tr><td><div class="grade-cell"><span class="grade-name">0 <span class="grade-label">6</span></span></div></td><td>0 Punkte <span class="grade-label">(0 %)</span></td></tr>
+</tbody>
             </table>
             <div class="grade-table-footer">
               <span class="grade-table-footer-note">Übersicht aller drei Schlüssel (50 %, 45 %, 40 %) als druckbares A4-PDF — zum Pinnen an die Tür oder Verteilen in der Fachschaft.</span>
@@ -1208,14 +1267,14 @@
     </section>
 
     <!-- ========== KNICK TEASER (P3) ========== -->
-    <section class="knick-teaser" aria-labelledby="knick-heading">
+    <section class="content-section" id="linearer-notenschluessel"><div class="container"><article class="content-prose"><h2>Linearen Notenschlüssel berechnen</h2><p>Dieser zusätzliche Rechner verwendet ein ausdrücklich gewähltes lineares Modell: 100 % der Punkte entsprechen der Dezimalnote 1,0; 0 % entsprechen 6,0. Dazwischen gilt <strong>Note = 6 − 5 × erreichte Punkte ÷ Maximalpunktzahl</strong>. Beispiel: 66 von 100 Punkten ergeben 2,70. Das Modell ist keine allgemeine Schulvorgabe und unterscheidet sich von den 50/45/40-%-Voreinstellungen oben.</p><div class="simple-tool"><label>Maximalpunktzahl<input id="linearMax" type="text" inputmode="decimal" value="100"></label><label>Erreichte Punkte<input id="linearPoints" type="text" inputmode="decimal" value="66"></label><output id="linearResult" aria-live="polite">2,70</output></div><p><a href="/assets/notenschluessel-uebersicht.pdf">Vorhandene Übersicht der 50/45/40-%-Voreinstellungen als PDF</a> · <a href="/punkte-in-noten/">Punkte für eine Zielnote zurückrechnen</a> · <a href="/fehlerquotient-berechnen/">Fehlerquotient berechnen</a></p></article></div></section><section class="knick-teaser" aria-labelledby="knick-heading">
       <div class="knick-teaser-inner">
         <div class="knick-screen-frame" aria-hidden="true">
           <img src="../assets/screen-knick.png" alt="Notenschlüssel-Generator mit Knick-Schieberegler in der Der-Notenrechner-App" loading="lazy" width="1206" height="2622">
         </div>
         <div class="knick-teaser-text">
           <h2 id="knick-heading">Notenschlüssel mit Knick erstellen</h2>
-          <p>In der App stellst du die Bestehensgrenze per Schieberegler ein — auch außerhalb der 50/45/40-Standards. Optional kommt ein Sockel dazu. Alle 16 Notenstufen werden automatisch berechnet.</p>
+          <p>In der App stellen Sie die Bestehensgrenze per Schieberegler ein — auch außerhalb der 50/45/40-Standards. Optional kommt ein Sockel dazu. Alle 16 Notenstufen werden automatisch berechnet.</p>
           <ul class="knick-features">
             <li class="knick-feature">
               <span class="knick-feature-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>
@@ -1236,17 +1295,18 @@
           </ul>
           <div class="knick-cta-row">
             <div class="cta-badges" style="display:flex;gap:14px;justify-content:center;align-items:center;flex-wrap:wrap;">
-              <a href="https://apps.apple.com/de/app/der-notenrechner/id1662507346" target="_blank" rel="noopener" class="app-store-badge">
+              <a href="https://apps.apple.com/de/app/der-notenrechner/id1662507346?pt=125935959&amp;ct=general_calculators&amp;mt=8" target="_blank" rel="noopener" class="app-store-badge">
               <span class="app-store-badge-icon"><svg viewBox="0 0 384 512"><path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184 4 273.5c0 26.2 4.8 53.3 14.4 81.2 12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/></svg></span>
               <span class="app-store-badge-text">
                 <span class="app-store-badge-small">Laden im</span>
                 <span class="app-store-badge-large">App Store</span>
               </span>
             </a>
-              <a href="https://play.google.com/store/apps/details?id=com.notenrechner.App" target="_blank" rel="noopener" class="app-store-badge" aria-label="Bei Google Play laden"><span class="app-store-badge-icon"><svg viewBox="0 0 512 512" aria-hidden="true"><path d="M325.3 234.3 104.6 13l280.8 161.2-60.1 60.1zM47 0C34 6.8 25.3 19.2 25.3 35.3v441.3c0 16.1 8.7 28.5 21.7 35.3l256.6-256L47 0zm425.2 225.6-58.9-34.1-65.7 64.5 65.7 64.5 60.1-34.1c18-14.3 18-46.5-1.2-60.8zM104.6 499l220.7-221.3 60.1 60.1L104.6 499z"/></svg></span><span class="app-store-badge-text"><span class="app-store-badge-small">Jetzt bei</span><span class="app-store-badge-large">Google Play</span></span></a>
+              <a href="https://play.google.com/store/apps/details?id=com.notenrechner.App&amp;referrer=utm_source%3Dnotenrechnerapp.de%26utm_medium%3Dwebsite%26utm_campaign%3Dgeneral_calculators" target="_blank" rel="noopener" class="app-store-badge" aria-label="Bei Google Play laden"><span class="app-store-badge-icon"><svg viewBox="0 0 512 512" aria-hidden="true"><path d="M325.3 234.3 104.6 13l280.8 161.2-60.1 60.1zM47 0C34 6.8 25.3 19.2 25.3 35.3v441.3c0 16.1 8.7 28.5 21.7 35.3l256.6-256L47 0zm425.2 225.6-58.9-34.1-65.7 64.5 65.7 64.5 60.1-34.1c18-14.3 18-46.5-1.2-60.8zM104.6 499l220.7-221.3 60.1 60.1L104.6 499z"/></svg></span><span class="app-store-badge-text"><span class="app-store-badge-small">Jetzt bei</span><span class="app-store-badge-large">Google Play</span></span></a>
             </div>
-            <span class="knick-cta-note">Kostenlos · Keine Werbung · Kein Abo</span>
-          </div>
+            <span class="knick-cta-note">Ohne Werbung · Ohne Konto · Offline</span>
+          <p class="store-prices">iPhone &amp; iPad: 5,99 € im deutschen App Store · Android: kostenlos bei Google Play. Stand: 20.10.2026.</p>
+</div>
         </div>
       </div>
     </section>
@@ -1254,8 +1314,8 @@
     <!-- ========== CTA BANNER ========== -->
     <section class="cta-banner">
       <div class="cta-banner-content">
-        <h2>Klausuren, Klassen, Zeugnisse — alles in einer App.</h2>
-        <p class="cta-banner-sub">Lokal auf iPhone, iPad und Android, ohne Account, ohne Abo. Alles, was nach dem Notenschlüssel kommt.</p>
+        <h2>Eine Note berechnet. Die ganze Klasse im Blick.</h2>
+        <p class="cta-banner-sub">Klausurpunkte pro Klasse erfassen, Durchschnitt und Verteilung gemeinsam auswerten. Lokal auf Ihrem Gerät, ohne Konto und ohne Cloud.</p>
         <div class="cta-features">
           <div class="cta-feature"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Klausuren mit ganzer Klasse eingeben</div>
           <div class="cta-feature"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Klassenschnitt + Verteilungs-Diagramm</div>
@@ -1263,17 +1323,18 @@
           <div class="cta-feature"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>PDF-Export für Konferenzen</div>
         </div>
         <div class="cta-badges" style="display:flex;gap:14px;justify-content:center;align-items:center;flex-wrap:wrap;">
-          <a href="https://apps.apple.com/de/app/der-notenrechner/id1662507346" target="_blank" rel="noopener" class="app-store-badge">
+          <a href="https://apps.apple.com/de/app/der-notenrechner/id1662507346?pt=125935959&amp;ct=general_calculators&amp;mt=8" target="_blank" rel="noopener" class="app-store-badge">
           <span class="app-store-badge-icon"><svg viewBox="0 0 384 512"><path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184 4 273.5c0 26.2 4.8 53.3 14.4 81.2 12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/></svg></span>
           <span class="app-store-badge-text">
             <span class="app-store-badge-small">Laden im</span>
             <span class="app-store-badge-large">App Store</span>
           </span>
         </a>
-          <a href="https://play.google.com/store/apps/details?id=com.notenrechner.App" target="_blank" rel="noopener" class="app-store-badge" aria-label="Bei Google Play laden"><span class="app-store-badge-icon"><svg viewBox="0 0 512 512" aria-hidden="true"><path d="M325.3 234.3 104.6 13l280.8 161.2-60.1 60.1zM47 0C34 6.8 25.3 19.2 25.3 35.3v441.3c0 16.1 8.7 28.5 21.7 35.3l256.6-256L47 0zm425.2 225.6-58.9-34.1-65.7 64.5 65.7 64.5 60.1-34.1c18-14.3 18-46.5-1.2-60.8zM104.6 499l220.7-221.3 60.1 60.1L104.6 499z"/></svg></span><span class="app-store-badge-text"><span class="app-store-badge-small">Jetzt bei</span><span class="app-store-badge-large">Google Play</span></span></a>
+          <a href="https://play.google.com/store/apps/details?id=com.notenrechner.App&amp;referrer=utm_source%3Dnotenrechnerapp.de%26utm_medium%3Dwebsite%26utm_campaign%3Dgeneral_calculators" target="_blank" rel="noopener" class="app-store-badge" aria-label="Bei Google Play laden"><span class="app-store-badge-icon"><svg viewBox="0 0 512 512" aria-hidden="true"><path d="M325.3 234.3 104.6 13l280.8 161.2-60.1 60.1zM47 0C34 6.8 25.3 19.2 25.3 35.3v441.3c0 16.1 8.7 28.5 21.7 35.3l256.6-256L47 0zm425.2 225.6-58.9-34.1-65.7 64.5 65.7 64.5 60.1-34.1c18-14.3 18-46.5-1.2-60.8zM104.6 499l220.7-221.3 60.1 60.1L104.6 499z"/></svg></span><span class="app-store-badge-text"><span class="app-store-badge-small">Jetzt bei</span><span class="app-store-badge-large">Google Play</span></span></a>
         </div>
-        <p class="cta-note">Kostenlos · Keine Werbung · Kein Abo</p>
-      </div>
+        <p class="cta-note">Ohne Werbung · Ohne Konto · Offline</p>
+      <p class="store-prices">iPhone &amp; iPad: 5,99 € im deutschen App Store · Android: kostenlos bei Google Play. Stand: 20.10.2026.</p>
+</div>
     </section>
 
     <!-- ========== SEO CONTENT ========== -->
@@ -1284,13 +1345,9 @@
           <p>Ein Notenschlüssel legt fest, wie viele Punkte einer Klausur oder Prüfung für welche Note erforderlich sind. Er definiert Prozentgrenzen, ab denen eine bestimmte Bewertung vergeben wird — zum Beispiel „ausreichend" ab 50 % der Maximalpunktzahl. Lehrkräfte an Gymnasien, Realschulen, Hauptschulen und Berufsschulen verwenden je nach Schulform und Bundesland unterschiedliche Schlüssel.</p>
           <p>Mit diesem Rechner erstellen Sie in Sekunden eine vollständige Notentabelle für Ihre nächste Klausur. Geben Sie einfach die Maximalpunktzahl ein und wählen Sie den passenden Notenschlüssel.</p>
 
-          <h3>Wie funktioniert ein linearer Notenschlüssel?</h3>
-          <p>Bei einem linearen Notenschlüssel werden die Noten gleichmäßig über den Punktebereich verteilt. Die Prozentzahl — etwa 50 %, 45 % oder 40 % — gibt an, ab welchem Anteil der erreichbaren Punkte die Note 4 („ausreichend") vergeben wird. Ein 50-%-Schlüssel ist der verbreitetste Standard und wird an vielen Schulen als Grundlage verwendet. Strengere Lehrkräfte greifen zum 45-%-Schlüssel, mildere zum 40-%-Schlüssel.</p>
-          <p>Die Bezeichnung „linear" bedeutet, dass die Notenstufen in gleichmäßigen Abständen auf der Punkteskala liegen. Der Vorteil: Die Bewertung ist transparent und nachvollziehbar, da sich jede Note klar aus dem Prozentanteil ergibt. Eltern und Schüler können die Bewertung leicht nachprüfen.</p>
-
-          <h3>Was bedeutet 50 %, 45 % oder 40 % beim Notenschlüssel?</h3>
-          <p>Diese Prozentzahl gibt die Bestehensgrenze an — also den Anteil der Maximalpunktzahl, ab dem die Note „ausreichend" (4) vergeben wird. Bei einem 50-%-Schlüssel braucht ein Schüler die Hälfte aller Punkte zum Bestehen. Bei einem 40-%-Schlüssel reichen bereits 40 % der Punkte für eine 4.</p>
-          <p>Die Wahl der Grenze hat großen Einfluss auf die Notenverteilung. Ein 50-%-Schlüssel ist strenger: Es bleibt weniger Raum für die Noten 1 bis 3, weil der gesamte Bereich oberhalb von 50 % auf nur vier Stufen verteilt wird. Ein 40-%-Schlüssel ist milder und gibt Schülern mehr Spielraum nach oben. In der Praxis wählen viele Lehrkräfte den Schlüssel abhängig vom Schwierigkeitsgrad der Klausur.</p>
+          <h3>Wie funktioniert ein linearer Notenschlüssel?</h3><p>Bei einem linearen Modell liegen die Dezimalnoten auf einer Geraden zwischen zwei festgelegten Punkten. Der <a href="#linearer-notenschluessel">lineare Rechner mit offen gelegter Formel</a> verwendet die Endpunkte 100 % = 1,0 und 0 % = 6,0. Die festen 50/45/40-%-Voreinstellungen oben sind davon zu unterscheiden: Ihre einzelnen Grenzwerte stehen in der Tabelle.</p><h3>Was bedeutet 50 %, 45 % oder 40 % beim Notenschlüssel?</h3>
+          <p>Die Prozentzahl bezeichnet in den hier verwendeten Voreinstellungen die Grenze zur 4−. Bei 50 % beginnt diese bei der Hälfte der erreichbaren Punkte; die glatte 4 folgt bei 56 %. Bei der 45-%-Voreinstellung liegt die 4− bei 45 %, die glatte 4 bei 50 %. Maßgeblich sind die einzelnen Grenzen in der Tabelle, nicht allein der Name des Schlüssels.</p>
+          <p>Die Voreinstellungen verteilen die Punktgrenzen unterschiedlich. Vergleichen Sie die Tabelle mit dem Bewertungskonzept Ihrer Schule. Ein niedrigerer Grenzwert kann bei derselben Punktzahl eine günstigere Note ergeben.</p>
 
           <h3>Notenpunkte in der Oberstufe</h3>
           <p>In der gymnasialen Oberstufe werden Leistungen nicht mit den klassischen Noten 1 bis 6 bewertet, sondern mit Notenpunkten von 15 (beste Leistung) bis 0 (ungenügend). Dieses System ermöglicht eine feinere Differenzierung: Jede Notenstufe wird in drei Bereiche unterteilt — zum Beispiel entspricht 1+ dem Wert 15, 1 dem Wert 14 und 1- dem Wert 13. Unser Rechner zeigt beide Darstellungen parallel an.</p>
@@ -1307,7 +1364,7 @@
           <h3>Punkte-Noten-Rechner: Punkte zu Noten in einer Tabelle</h3>
           <p>Der Rechner oben ist zugleich ein <strong>Punkte-Noten-Rechner</strong>: Aus der Maximalpunktzahl erzeugt er eine vollständige <strong>Punkte-zu-Noten-Tabelle</strong> mit der Mindestpunktzahl je Note. Wer nur eine einzelne Klausur umrechnen will — erreichte Punkte rein, Note raus — nutzt den dedizierten <a href="../punkte-in-noten/">Punkte-in-Noten-Rechner</a>. Beide arbeiten mit demselben 50/45/40-%-Schlüssel.</p>
 
-          <h3>Welchen Notenschlüssel sollte ich verwenden?</h3>
+          <p><a href="/notenschluessel-rechner/lehrerfreund-alternative/">Webrechner und App für die eigene Unterrichtsaufgabe einordnen</a>.</p><h3>Welchen Notenschlüssel sollte ich verwenden?</h3>
           <p>Das hängt von Ihrer Schulform, dem Bundesland und den internen Vorgaben Ihrer Schule ab. An den meisten allgemeinbildenden Schulen ist der lineare 50-%-Schlüssel Standard. Für die Oberstufe am Gymnasium verwenden Sie die Notenpunkte-Variante. Für IHK-Prüfungen in der Berufsausbildung gilt der offizielle <a href="../ihk-notenschluessel/">IHK-Notenschlüssel</a>. Im Zweifel orientieren Sie sich an der Fachkonferenz Ihrer Schule oder den Prüfungsordnungen Ihres Bundeslandes.</p>
 
           <h3>Darf ich als Lehrkraft den Notenschlüssel selbst festlegen?</h3>
@@ -1359,6 +1416,9 @@
   <footer class="footer">
     <div class="footer-inner">
       <nav class="footer-nav" aria-label="Seitenübersicht" style="display:flex;flex-wrap:wrap;justify-content:center;gap:8px 20px;margin-bottom:16px;font-size:14px;">
+        <a href="/punkte-in-noten/">Punkte in Noten</a>
+        <a href="/fehlerquotient-berechnen/">Fehlerquotient</a>
+        <a href="/android/">Android-App</a>
         <a href="/notenschluessel-rechner/">Notenschlüssel-Rechner</a>
         <a href="/notenpunkte-tabelle/">Notenpunkte-Tabelle</a>
         <a href="/ihk-notenschluessel/">IHK-Notenschlüssel</a>
@@ -1440,9 +1500,7 @@
     }
 
     // Format min points: show decimal only if not whole
-    function fmtPts(v) {
-      return v === Math.floor(v) ? v.toString() : v.toFixed(1).replace('.', ',');
-    }
+    function fmtPts(v) { return v.toLocaleString('de-DE', {maximumFractionDigits: 4}); }
 
     // Earth-tone background tints for the result card (mirrors gradeColor())
     function gradeBgColor(grade) {
@@ -1483,11 +1541,20 @@
     let pulseTimer = null;
 
     function calculate(triggerPulse) {
+      const suppliedMaximum = NotenrechnerMath.number((document.getElementById('maxPts') || document.getElementById('maxPoints')).value);
+      if (suppliedMaximum === null || suppliedMaximum <= 0) {
+        resultGrade.textContent = '—';
+        resultDesc.textContent = 'Bitte eine positive Maximalpunktzahl eingeben.';
+        resultPct.textContent = '';
+        tableBody.innerHTML = '';
+        return;
+      }
+
       const maxPoints  = Math.max(1, parseFloat((maxPointsInput.value || '').replace(',', '.')) || 100);
       const thresholds = PRESETS[gradeTypeSelect.value];
       const achievedRaw = (achievedInput.value || '').replace(',', '.').trim();
-      const achievedNum = parseFloat(achievedRaw);
-      const hasAchieved = achievedRaw !== '' && !isNaN(achievedNum) && achievedNum >= 0;
+      const achievedNum = NotenrechnerMath.number(achievedRaw);
+      const hasAchieved = achievedNum !== null && achievedNum >= 0 && achievedNum <= maxPoints;
 
       tableBadge.textContent = (maxPoints === Math.floor(maxPoints) ? maxPoints : maxPoints.toFixed(1)) + ' Punkte';
 
@@ -1525,7 +1592,7 @@
         calcResult.style.background = 'var(--border-light)';
         calcResult.style.color = 'var(--text-muted)';
         resultGrade.textContent = '—';
-        resultDesc.textContent = 'Erreichte Punkte eingeben';
+        resultDesc.textContent = achievedRaw ? 'Bitte Punkte zwischen 0 und dem Maximum eingeben.' : 'Erreichte Punkte eingeben';
         resultPct.textContent = '';
         return;
       }
@@ -1554,6 +1621,6 @@
     // Initial render — no achieved value yet
     calculate(false);
   </script>
-  <div class="print-footer">Erstellt mit notenrechnerapp.de — Kostenlose App im App Store laden</div>
-</body>
+  <div class="print-footer">Erstellt mit notenrechnerapp.de — Online-Rechner kostenlos nutzen</div>
+<script>(() => { const result = document.getElementById("linearResult"); function update() { const value = NotenrechnerMath.linearGrade(document.getElementById("linearPoints").value, document.getElementById("linearMax").value); result.textContent = value === null ? "Bitte eine positive Maximalpunktzahl und Punkte zwischen 0 und dem Maximum eingeben." : value.toLocaleString("de-DE", {minimumFractionDigits:2, maximumFractionDigits:2}); } document.getElementById("linearMax").addEventListener("input", update); document.getElementById("linearPoints").addEventListener("input", update); update(); })();</script></body>
 </html>

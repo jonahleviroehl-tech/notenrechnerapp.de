@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fehlerquotient berechnen: Fehler pro 100 Wörter</title>
+  <meta name="description" content="Fehlerzahl und Wortzahl eingeben: Fehlerquotient sofort als Fehler pro 100 Wörter berechnen. Mit Rechenweg, ohne Anmeldung und ohne automatische Schulnote.">
+  <meta property="og:title" content="Fehlerquotient berechnen: Fehler pro 100 Wörter">
+  <meta property="og:description" content="Fehlerzahl und Wortzahl eingeben: Fehlerquotient sofort als Fehler pro 100 Wörter berechnen. Mit Rechenweg, ohne Anmeldung und ohne automatische Schulnote.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://notenrechnerapp.de/fehlerquotient-berechnen/">
+  <meta property="og:locale" content="de_DE">
+  <meta property="og:site_name" content="Der Notenrechner">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Fehlerquotient berechnen: Fehler pro 100 Wörter">
+  <meta name="twitter:description" content="Fehlerzahl und Wortzahl eingeben: Fehlerquotient sofort als Fehler pro 100 Wörter berechnen. Mit Rechenweg, ohne Anmeldung und ohne automatische Schulnote.">
+  <meta name="theme-color" content="#2F60C0">
+  <meta name="apple-itunes-app" content="app-id=1662507346">
+  <link rel="canonical" href="https://notenrechnerapp.de/fehlerquotient-berechnen/">
+  <meta name="robots" content="index, follow">
+  <link rel="icon" type="image/png" href="/assets/logo.png">
+  <link rel="apple-touch-icon" href="/assets/logo.png">
+
+  <!-- Schema.org structured data — Organization + Person + Article + SoftwareApplication
+       Designed for Google AI Overviews / GEO citation eligibility. -->
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Fehlerquotient-Rechner",
+  "url": "https://notenrechnerapp.de/fehlerquotient-berechnen/",
+  "applicationCategory": "EducationalApplication",
+  "operatingSystem": "Web",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "EUR"
+  }
+}
+  </script>
+
+  <style>
+    :root {
+      --primary: #2F60C0; --primary-light: #6B94E0; --primary-dark: #1F4A9C;
+      --primary-50: #EEF3FB; --primary-100: #DCE5F5;
+      --bg: #F7F6F3; --card: #FFFFFF; --surface-subtle: #F1EFEA;
+      --text: #0F0F10; --text-secondary: #3B3B3F; --text-muted: #6E6E73;
+      --border: #E8E6E1; --border-light: #F1EFEA;
+      --grade-1: #15803D; --grade-1-bg: #E6F2EA;
+      --grade-2: #4D7C0F; --grade-2-bg: #EFF1E2;
+      --grade-3: #A16207; --grade-3-bg: #F8EFE0;
+      --grade-4: #C2410C; --grade-4-bg: #FAEADD;
+      --grade-5: #B91C1C; --grade-5-bg: #F7E6E6;
+      --shadow-card: 0 1px 2px rgba(15,15,16,0.04), 0 0 0 1px rgba(15,15,16,0.04);
+      --radius-sm: 8px; --radius-md: 12px; --radius-lg: 16px; --radius-pill: 999px;
+      --font: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+      --nav-height: 72px;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: var(--font); color: var(--text); background: var(--bg); line-height: 1.6; -webkit-font-smoothing: antialiased; }
+    a { color: inherit; text-decoration: none; }
+    button { font-family: inherit; cursor: pointer; border: none; background: none; }
+    :focus-visible { outline: 2px solid var(--primary); outline-offset: 3px; border-radius: 4px; }
+
+    .nav { position: fixed; top: 0; left: 0; right: 0; height: var(--nav-height); z-index: 1000; isolation: isolate; }
+    .nav::before { content: ''; position: absolute; inset: 0; background: rgba(255,255,255,0.92); backdrop-filter: saturate(180%) blur(18px); -webkit-backdrop-filter: saturate(180%) blur(18px); box-shadow: 0 1px 0 var(--border); z-index: -1; }
+@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) { .nav::before { background: #ffffff; } }
+    .nav-inner { max-width: 1120px; margin: 0 auto; padding: 0 24px; height: 100%; display: flex; align-items: center; justify-content: space-between; }
+    .nav-brand { font-size: 18px; font-weight: 700; color: var(--text); display: flex; align-items: center; gap: 10px; z-index: 1001; }
+    .nav-brand-icon { width: 32px; height: 32px; border-radius: var(--radius-sm); overflow: hidden; flex-shrink: 0; }
+    .nav-brand-icon img { width: 100%; height: 100%; object-fit: cover; }
+    .nav-links { display: flex; align-items: center; gap: 28px; list-style: none; }
+    .nav-links a { font-size: 15px; font-weight: 500; color: var(--text-secondary); transition: color 0.2s; padding: 8px 0; min-height: 44px; display: flex; align-items: center; }
+    .nav-links a:hover { color: var(--primary); }
+    .nav-links a.active { color: var(--primary); font-weight: 600; }
+    .nav-links a.nav-cta { display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 0 22px 0 18px; height: 36px; min-height: 0; line-height: 1; white-space: nowrap; background: var(--primary); color: white !important; border-radius: var(--radius-pill); font-size: 15px; font-weight: 700; transition: background 0.15s, transform 0.15s; }
+    .nav-links a.nav-cta svg { width: 13px; height: 15px; flex-shrink: 0; display: block; }
+    .nav-links a.nav-cta:hover { background: var(--primary-dark); color: white !important; transform: translateY(-1px); }
+    .nav-toggle { display: none; flex-direction: column; gap: 5px; padding: 10px; min-width: 44px; min-height: 44px; justify-content: center; align-items: center; z-index: 1001; }
+    .nav-toggle span { display: block; width: 22px; height: 2px; background: var(--text); border-radius: 2px; transition: transform 0.3s, opacity 0.3s; }
+    .nav-toggle.active span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .nav-toggle.active span:nth-child(2) { opacity: 0; }
+    .nav-toggle.active span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+    @media (max-width: 768px) {
+      .nav-toggle { display: flex; }
+      .nav-links { position: fixed; top: var(--nav-height); left: 0; right: 0; bottom: 0; z-index: 1100; background: #ffffff; flex-direction: column; justify-content: center; gap: 24px; padding: 0 24px; opacity: 0; pointer-events: none; transition: opacity 0.2s ease-out; }
+      .nav-links.open { opacity: 1; pointer-events: all; }
+      .nav-links a { font-size: 20px; font-weight: 600; }
+      .nav-links a.nav-cta { height: 46px; padding: 0 30px 0 26px; font-size: 17px; gap: 10px; }
+      .nav-links a.nav-cta svg { width: 15px; height: 17px; }
+    }
+
+    .container { max-width: 1120px; margin: 0 auto; padding: 0 24px; }
+
+    .tool-hero { padding-top: calc(var(--nav-height) + 40px); padding-bottom: 32px; background: linear-gradient(180deg, var(--bg) 0%, #FBFAF6 100%); border-bottom: 1px solid var(--border); }
+    .breadcrumbs { font-size: 13px; color: var(--text-muted); margin-bottom: 16px; display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
+    .breadcrumbs a { color: var(--text-secondary); }
+    .breadcrumbs a:hover { color: var(--primary); }
+    .breadcrumbs span[aria-current] { color: var(--text); font-weight: 500; }
+    .tool-hero-header { text-align: center; margin-bottom: 32px; }
+    .tool-hero-header h1 { font-size: clamp(28px, 4.5vw, 42px); font-weight: 800; letter-spacing: -0.025em; line-height: 1.15; margin-bottom: 12px; }
+    .tool-hero-header h1 span { color: var(--primary); }
+    .tool-hero-sub { font-size: 17px; color: var(--text-secondary); max-width: 580px; margin: 0 auto; }
+
+    /* Mode toggle */
+    .mode-toggle { display: inline-flex; padding: 4px; background: var(--card); border: 1px solid var(--border); border-radius: var(--radius-pill); margin: 0 auto 24px; }
+    .mode-toggle-wrap { text-align: center; }
+    .mode-btn { padding: 8px 20px; border-radius: var(--radius-pill); font-size: 14px; font-weight: 600; color: var(--text-secondary); transition: background 0.15s, color 0.15s; }
+    .mode-btn.active { background: var(--primary); color: white; }
+
+    /* Average calculator */
+    .avg-calc { max-width: 720px; margin: 0 auto; }
+    .avg-card { background: var(--card); border-radius: var(--radius-lg); box-shadow: var(--shadow-card); padding: 24px 24px 20px; }
+    .avg-rows { display: flex; flex-direction: column; gap: 10px; margin-bottom: 16px; }
+    .avg-row { display: grid; grid-template-columns: 1fr 110px 44px; gap: 12px; align-items: stretch; }
+    .avg-row input.subj { width: 100%; height: 44px; padding: 0 14px; border: 1.5px solid var(--border); border-radius: var(--radius-md); font-family: var(--font); font-size: 15px; color: var(--text); background: var(--bg); transition: border-color 0.15s, box-shadow 0.15s; box-sizing: border-box; }
+    .avg-row input.subj:focus, .avg-row input.val:focus { outline: none; border-color: var(--primary); box-shadow: 0 0 0 4px rgba(47,96,192,0.1); }
+    .avg-row input.val { width: 100%; height: 44px; padding: 0 12px; border: 1.5px solid var(--border); border-radius: var(--radius-md); font-family: var(--font); font-size: 17px; font-weight: 700; text-align: center; color: var(--text); background: var(--bg); font-variant-numeric: tabular-nums; transition: border-color 0.15s, box-shadow 0.15s; -moz-appearance: textfield; box-sizing: border-box; }
+    .avg-row input.val::-webkit-outer-spin-button, .avg-row input.val::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; }
+    .avg-row .remove-btn { width: 44px; height: 44px; border-radius: var(--radius-md); border: 1.5px solid var(--border); background: var(--card); color: var(--text-muted); font-size: 18px; line-height: 1; display: flex; align-items: center; justify-content: center; transition: border-color 0.15s, color 0.15s; box-sizing: border-box; }
+    @media (max-width: 380px) {
+      .avg-row { grid-template-columns: 1fr 84px 44px; gap: 8px; }
+      .avg-row input.val { padding: 0 8px; font-size: 16px; }
+    }
+    .avg-row .remove-btn:hover { border-color: var(--grade-5); color: var(--grade-5); }
+    .avg-row.disabled-remove .remove-btn { opacity: 0.3; cursor: not-allowed; }
+    .add-row-btn { display: inline-flex; align-items: center; gap: 6px; padding: 8px 16px; background: var(--primary-50); color: var(--primary); border-radius: var(--radius-pill); font-size: 14px; font-weight: 600; transition: background 0.15s, transform 0.15s; }
+    .add-row-btn:hover { background: var(--primary-100); transform: translateY(-1px); }
+
+    .avg-result { margin-top: 18px; padding: 22px 24px 20px; border-radius: var(--radius-md); text-align: center; transition: background 0.25s ease-out, color 0.25s ease-out; }
+    .avg-result-label { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; opacity: 0.7; margin-bottom: 6px; }
+    .avg-result-grade { font-size: 48px; font-weight: 800; line-height: 1; letter-spacing: -0.02em; font-variant-numeric: tabular-nums; }
+    .avg-result-meta { font-size: 14px; font-weight: 600; margin-top: 6px; font-variant-numeric: tabular-nums; }
+    .avg-result-count { font-size: 12px; opacity: 0.7; margin-top: 4px; font-variant-numeric: tabular-nums; }
+    .avg-empty { color: var(--text-muted); }
+
+    /* Content */
+    .content-section { padding: 56px 0 64px; }
+    .content-prose { max-width: 720px; margin: 0 auto; }
+    .content-prose h2 { font-size: clamp(22px, 3vw, 28px); font-weight: 800; letter-spacing: -0.02em; margin-bottom: 14px; }
+    .content-prose h3 { font-size: 19px; font-weight: 700; margin-top: 36px; margin-bottom: 10px; }
+    .content-prose p { font-size: 16px; line-height: 1.75; color: var(--text-secondary); margin-bottom: 14px; }
+    .content-prose a { color: var(--primary); font-weight: 500; text-decoration: underline; text-underline-offset: 3px; }
+    .content-prose strong { color: var(--text); }
+
+    .internal-links { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 36px; }
+    .internal-link { display: inline-flex; align-items: center; gap: 6px; padding: 10px 16px; background: var(--card); border: 1px solid var(--border); border-radius: var(--radius-pill); font-size: 14px; font-weight: 500; color: var(--text); text-decoration: none !important; transition: border-color 0.2s, transform 0.15s; }
+    .internal-link:hover { border-color: var(--primary); transform: translateY(-1px); color: var(--primary); }
+
+    .cta-banner { background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 100%); color: white; text-align: center; padding: 64px 24px; position: relative; overflow: hidden; }
+    .cta-banner::before { content: ''; position: absolute; inset: 0; background-image: radial-gradient(rgba(255,255,255,0.08) 1px, transparent 1px); background-size: 24px 24px; }
+    .cta-banner-content { position: relative; z-index: 1; max-width: 640px; margin: 0 auto; }
+    .cta-banner h2 { font-size: clamp(22px, 3.5vw, 28px); font-weight: 800; margin-bottom: 10px; letter-spacing: -0.02em; }
+    .cta-banner-sub { font-size: 15px; color: rgba(255,255,255,0.9); margin-bottom: 28px; }
+    .app-store-badge { display: inline-flex; align-items: center; gap: 12px; padding: 10px 22px 10px 18px; border-radius: 12px; min-height: 52px; background: #000; color: white; transition: transform 0.2s, box-shadow 0.2s; }
+    .app-store-badge:hover { transform: translateY(-2px); background: #1a1a1a; box-shadow: 0 10px 28px rgba(0,0,0,0.35); }
+    .app-store-badge-icon { width: 28px; height: 28px; flex-shrink: 0; }
+    .app-store-badge-icon svg { width: 100%; height: 100%; fill: currentColor; }
+    .app-store-badge-text { display: flex; flex-direction: column; line-height: 1; }
+    .app-store-badge-small { font-size: 11px; opacity: 0.9; margin-bottom: 4px; }
+    .app-store-badge-large { font-size: 20px; font-weight: 600; letter-spacing: -0.01em; }
+
+    .footer { background: var(--surface-subtle); padding: 36px 24px; border-top: 1px solid var(--border); }
+    .footer-inner { max-width: 1120px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; gap: 12px; }
+    .footer-links { display: flex; gap: 24px; list-style: none; flex-wrap: wrap; justify-content: center; }
+    .footer-links a { font-size: 14px; color: var(--text-secondary); transition: color 0.2s; }
+    .footer-links a:hover { color: var(--primary); }
+    .footer-tagline { font-size: 13px; color: var(--text-muted); font-style: italic; }
+    .footer-copy { font-size: 13px; color: var(--text-muted); }
+  </style>
+  <link rel="stylesheet" href="/assets/site-enhancements.css?v=20261020">
+</head>
+<body>
+  <nav class="nav" role="navigation" aria-label="Hauptnavigation">
+    <div class="nav-inner">
+      <a href="/" class="nav-brand"><span class="nav-brand-icon"><img src="/assets/logo.png" alt=""></span>Der Notenrechner</a>
+      <a class="nav-app-mobile" href="/#app-download" aria-label="App für iPhone, iPad und Android">App</a>
+        <button class="nav-toggle" id="navToggle" aria-label="Menü öffnen" aria-expanded="false"><span></span><span></span><span></span></button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="/" onclick="closeMenu()">Startseite</a></li>
+        <li><a href="/notenschluessel-rechner/" onclick="closeMenu()">Notenschlüssel-Rechner</a></li>
+        <li><a href="/notenpunkte-tabelle/" onclick="closeMenu()">Notenpunkte-Tabelle</a></li>
+        <li><a href="/ihk-notenschluessel/" onclick="closeMenu()">IHK-Rechner</a></li>
+        <li><a href="/#app-download" class="nav-cta" onclick="closeMenu()" aria-label="App für iPhone, iPad und Android">App</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main><section class="tool-hero"><div class="container"><nav class="breadcrumbs" aria-label="Brotkrumen"><a href="/">Start</a><span aria-current="page">Fehlerquotient</span></nav><div class="tool-hero-header"><h1>Fehlerquotient berechnen</h1><p class="tool-hero-sub">Der Fehlerquotient gibt die Fehlerzahl je 100 Wörter an: Fehlerzahl ÷ Wortzahl × 100. Tragen Sie die nach Ihren Vorgaben gezählten Fehler und die Wortzahl ein.</p></div><div class="simple-tool"><label for="errorCount">Fehlerzahl<input id="errorCount" type="text" inputmode="decimal" value="6" aria-describedby="errorHelp"></label><label for="wordCount">Wortzahl<input id="wordCount" type="text" inputmode="numeric" value="200"></label><output id="errorResult" aria-live="polite">3 Fehler pro 100 Wörter</output><p id="errorHelp">Auch halbe Fehler sind als Eingabe möglich, wenn Ihr Bewertungsschema sie vorsieht. Die Wortzahl muss eine positive ganze Zahl sein.</p><p id="errorFormula">6 ÷ 200 × 100 = 3</p></div><aside class="app-bridge"><strong>Sie bewerten regelmäßig eine ganze Klasse?</strong><p>In der App speichern Sie Ihre Notenschlüssel, erfassen Klausurpunkte pro Klasse und sehen Durchschnitt und Notenverteilung gemeinsam. Ihre Daten bleiben auf dem Gerät, ohne Konto und ohne Cloud.</p><p><a href="/#klassenablauf">Klassenverwaltung ansehen</a> · <a href="/#app-download">App für iPhone, iPad und Android</a> · <a href="/notenverwaltungs-apps-vergleich/">Apps für Lehrkräfte vergleichen</a></p></aside></div></section><section class="content-section"><div class="container"><article class="content-prose"><h2>Fehlerquotient am Beispiel</h2><p>6 Fehler bei 200 Wörtern ergeben 6 ÷ 200 × 100 = <strong>3 Fehler pro 100 Wörter</strong>. Bei 0 Fehlern und einer positiven Wortzahl ist der Quotient 0. Die Fehlerzahl wird vom Rechner nicht verändert.</p><h2>Welche Note ergibt sich daraus?</h2><p>Aus einem Fehlerquotienten folgt keine allgemein gültige Schulnote. Welche Fehler gezählt werden, ob halbe Fehler vorkommen und welche Grenzen gelten, muss zu Aufgabe und Bewertungsvorgaben passen. Der Rechner bewertet auch keinen Text automatisch.</p><p>Für eine Punkteskala verwenden Sie den <a href="/notenschluessel-rechner/">Notenschlüssel-Rechner</a>. Mehrere Leistungen verbinden Sie mit dem <a href="/notendurchschnitt/">gewichteten Notendurchschnitt</a>. Den Begriff erklärt das <a href="/lexikon/notenschluessel/">Lexikon: Notenschlüssel</a>.</p><p class="source-note">Rechenmodell: Fehlerzahl je 100 Wörter. Aktualisiert am 20.10.2026.</p></article></div></section><section class="cta-banner"><div class="cta-banner-content"><h2>Leistungen einer ganzen Klasse verwalten.</h2><p class="cta-banner-sub">Die App führt Klassen, Klausuren und mündliche Leistungen zusammen. Der Fehlerquotient-Rechner ist ein eigenständiges Web-Werkzeug.</p><div class="cta-badges"><a class="app-store-badge" href="https://apps.apple.com/de/app/der-notenrechner/id1662507346?pt=125935959&amp;ct=general_calculators&amp;mt=8">Laden im App Store</a> <a class="app-store-badge" href="https://play.google.com/store/apps/details?id=com.notenrechner.App&amp;referrer=utm_source%3Dnotenrechnerapp.de%26utm_medium%3Dwebsite%26utm_campaign%3Dgeneral_calculators">Jetzt bei Google Play</a></div><p class="store-prices">iPhone &amp; iPad: 5,99 € im deutschen App Store · Android: kostenlos bei Google Play. Stand: 20.10.2026.</p>
+</div></section></main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <nav class="footer-nav" aria-label="Seitenübersicht" style="display:flex;flex-wrap:wrap;justify-content:center;gap:8px 20px;margin-bottom:16px;font-size:14px;">
+        <a href="/punkte-in-noten/">Punkte in Noten</a>
+        <a href="/fehlerquotient-berechnen/">Fehlerquotient</a>
+        <a href="/android/">Android-App</a>
+        <a href="/notenschluessel-rechner/">Notenschlüssel-Rechner</a>
+        <a href="/notenpunkte-tabelle/">Notenpunkte-Tabelle</a>
+        <a href="/ihk-notenschluessel/">IHK-Notenschlüssel</a>
+        <a href="/notendurchschnitt/">Notendurchschnitt</a>
+        <a href="/lexikon/">Lexikon</a>
+        <a href="/blog/">Blog</a>
+        <a href="/notenverwaltungs-apps-vergleich/">App-Vergleich</a>
+      </nav>
+      <ul class="footer-links">
+        <li><a href="/#datenschutz">Datenschutz</a></li>
+        <li><a href="/#impressum">Impressum</a></li>
+        <li><a href="https://instagram.com/notenrechnerapp" target="_blank" rel="noopener">Instagram</a></li>
+      </ul>
+      <div class="footer-tagline">Entwickelt für Lehrkräfte</div>
+      <div class="footer-copy">&copy; 2026 Der Notenrechner. Alle Rechte vorbehalten.</div>
+    </div>
+  </footer>
+
+  <script>
+    const navToggle = document.getElementById('navToggle');
+    const navLinks = document.getElementById('navLinks');
+    navToggle.addEventListener('click', () => {
+      const open = !navLinks.classList.contains('open');
+      navToggle.classList.toggle('active', open);
+      navLinks.classList.toggle('open', open);
+      navToggle.setAttribute('aria-expanded', String(open));
+    });
+    function closeMenu() { navToggle.classList.remove('active'); navLinks.classList.remove('open'); navToggle.setAttribute('aria-expanded', 'false'); }
+
+  </script>
+  <script src="/assets/calculations.js"></script>
+
+<script>(()=>{function update(){const e=document.getElementById('errorCount').value,w=document.getElementById('wordCount').value;const result=NotenrechnerMath.errorQuotient(e,w);document.getElementById('errorResult').textContent=result===null?'Bitte eine Fehlerzahl ab 0 und eine positive ganze Wortzahl eingeben.':result.toLocaleString('de-DE',{maximumFractionDigits:4})+' Fehler pro 100 Wörter';document.getElementById('errorFormula').textContent=result===null?'':e+' ÷ '+w+' × 100 = '+result.toLocaleString('de-DE',{maximumFractionDigits:4});}document.getElementById('errorCount').addEventListener('input',update);document.getElementById('wordCount').addEventListener('input',update);update();})();</script></body>
+</html>

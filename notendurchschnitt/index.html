@@ -3,17 +3,17 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Notendurchschnitt berechnen — Rechner für Schule & Abi</title>
-  <meta name="description" content="Notendurchschnitt sofort berechnen — aus Schulnoten (1–6), Notenpunkten (15–0) oder Dezimalnoten, auch gewichtet (mündlich/schriftlich). Kostenlos, ohne Anmeldung.">
-  <meta property="og:title" content="Notendurchschnitt berechnen — Rechner für Schule & Abi">
-  <meta property="og:description" content="Notendurchschnitt aus Klausuren, Halbjahres- oder Jahresnoten — mit Notenpunkten (15–0), Schulnoten (1–6) und Dezimalnote. Auch gewichtet (mündlich/schriftlich). Kostenlos &amp; ohne Anmeldung.">
+  <title>Notendurchschnitt mit Gewichtung berechnen | Der Notenrechner</title>
+  <meta name="description" content="Notendurchschnitt aus Schulnoten oder Notenpunkten berechnen. Gewichte frei wählen, schriftlich und mündlich kombinieren, Rechenweg direkt sehen.">
+  <meta property="og:title" content="Notendurchschnitt mit Gewichtung berechnen | Der Notenrechner">
+  <meta property="og:description" content="Notendurchschnitt aus Schulnoten oder Notenpunkten berechnen. Gewichte frei wählen, schriftlich und mündlich kombinieren, Rechenweg direkt sehen.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://notenrechnerapp.de/notendurchschnitt/">
   <meta property="og:locale" content="de_DE">
   <meta property="og:site_name" content="Der Notenrechner">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Notendurchschnitt berechnen — Rechner für Schule & Abi">
-  <meta name="twitter:description" content="Notendurchschnitt aus mehreren Klausuren oder Halbjahresnoten berechnen. Funktioniert mit Notenpunkten (15–0) und Schulnoten (1–6).">
+  <meta name="twitter:title" content="Notendurchschnitt mit Gewichtung berechnen | Der Notenrechner">
+  <meta name="twitter:description" content="Notendurchschnitt aus Schulnoten oder Notenpunkten berechnen. Gewichte frei wählen, schriftlich und mündlich kombinieren, Rechenweg direkt sehen.">
   <meta name="theme-color" content="#2F60C0">
   <meta name="apple-itunes-app" content="app-id=1662507346">
   <link rel="canonical" href="https://notenrechnerapp.de/notendurchschnitt/">
@@ -24,123 +24,159 @@
   <!-- Schema.org structured data — Organization + Person + Article + SoftwareApplication
        Designed for Google AI Overviews / GEO citation eligibility. -->
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "Organization",
-        "@id": "https://notenrechnerapp.de/#organization",
-        "name": "Der Notenrechner",
-        "url": "https://notenrechnerapp.de/",
-        "logo": "https://notenrechnerapp.de/assets/logo.png",
-        "founder": { "@id": "https://notenrechnerapp.de/#author" }
-      },
-      {
-        "@type": "Person",
-        "@id": "https://notenrechnerapp.de/#author",
-        "name": "Jonah Röhl",
-        "jobTitle": "Entwickler",
-        "description": "Entwickler von Der Notenrechner.",
-        "url": "https://notenrechnerapp.de/#author",
-        "worksFor": { "@id": "https://notenrechnerapp.de/#organization" }
-      },
-      {
-        "@type": "Article",
-        "headline": "Notendurchschnitt berechnen — mit Notenpunkten oder Schulnoten",
-        "description": "Notendurchschnitt aus Klausuren, Halbjahres- oder Jahresnoten berechnen. Mit Notenpunkten (15–0), Schulnoten (1–6) und Dezimalnote für Bewerbungen. Auch gewichtet (mündlich/schriftlich).",
-        "url": "https://notenrechnerapp.de/notendurchschnitt/",
-        "datePublished": "2026-04-01",
-        "dateModified": "2026-05-24",
-        "author": { "@id": "https://notenrechnerapp.de/#author" },
-        "publisher": { "@id": "https://notenrechnerapp.de/#organization" },
-        "mainEntityOfPage": "https://notenrechnerapp.de/notendurchschnitt/",
-        "inLanguage": "de-DE"
-      },
-      {
-        "@type": "SoftwareApplication",
-        "@id": "https://notenrechnerapp.de/#app",
-        "name": "Der Notenrechner",
-        "applicationCategory": "EducationApplication",
-        "operatingSystem": "iOS, iPadOS, Android",
-        "downloadUrl": "https://apps.apple.com/de/app/der-notenrechner/id1662507346",
-        "installUrl": ["https://apps.apple.com/de/app/der-notenrechner/id1662507346", "https://play.google.com/store/apps/details?id=com.notenrechner.App"],
-        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "EUR" }
-      },
-      {
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-          { "@type": "ListItem", "position": 1, "name": "Der Notenrechner", "item": "https://notenrechnerapp.de/" },
-          { "@type": "ListItem", "position": 2, "name": "Notendurchschnitt-Rechner", "item": "https://notenrechnerapp.de/notendurchschnitt/" }
-        ]
-      },
-      {
-        "@type": "FAQPage",
-        "mainEntity": [
-          {
-            "@type": "Question",
-            "name": "Wie viele Noten brauche ich für einen aussagekräftigen Durchschnitt?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Mathematisch funktioniert der Durchschnitt ab zwei Noten. Pädagogisch ist ein Durchschnitt aus zwei Klausuren wenig belastbar — ab vier Noten wird der Schnitt stabiler. Bei nur einer Note ist der Durchschnitt identisch mit der Note selbst."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Werden mündliche Noten anders als schriftliche bewertet?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Numerisch nicht — eine 2 ist eine 2. Sie werden aber in der Regel anders gewichtet (oft 50:50, manchmal 60:40 oder 40:60). Das Verhältnis ist länderabhängig und in den schulinternen Curricula festgelegt."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Was passiert mit 0 Notenpunkten (ungenügend) im Durchschnitt?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Eine 0 zieht den Durchschnitt mathematisch stark nach unten. In der Oberstufe gilt ein Halbjahr mit 0 Notenpunkten in einem schriftlichen Prüfungsfach als nicht erbracht — mit Versetzungs- und Zulassungsfolgen je nach Oberstufen- bzw. Abiturverordnung des Bundeslandes."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Lässt sich der Notendurchschnitt nachträglich verbessern?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Nur über zusätzliche Noten — eine weitere Klausur oder verstärkte mündliche Mitarbeit, die in den Gesamtschnitt einfließt. Eine schlechte Note streichen geht in der Regel nicht."
-            }
-          }
-        ]
-      },
-      {
-        "@type": "LearningResource",
-        "name": "Notendurchschnitt-Rechner",
-        "url": "https://notenrechnerapp.de/notendurchschnitt/",
-        "inLanguage": "de-DE",
-        "learningResourceType": "Berechnungswerkzeug",
-        "educationalUse": [
-          "Notenberechnung",
-          "Klausurbewertung",
-          "Unterrichtsvorbereitung"
-        ],
-        "audience": {
-          "@type": "EducationalAudience",
-          "educationalRole": "teacher",
-          "name": "Lehrkräfte"
-        },
-        "about": {
-          "@type": "Thing",
-          "name": "Notendurchschnitt aus Notenpunkten oder Schulnoten"
-        },
-        "isAccessibleForFree": true,
-        "author": {
-          "@id": "https://notenrechnerapp.de/#author"
-        },
-        "publisher": {
-          "@id": "https://notenrechnerapp.de/#organization"
-        }
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://notenrechnerapp.de/#organization",
+      "name": "Der Notenrechner",
+      "url": "https://notenrechnerapp.de/",
+      "logo": "https://notenrechnerapp.de/assets/logo.png",
+      "founder": {
+        "@id": "https://notenrechnerapp.de/#author"
       }
-    ]
-  }
-  </script>
+    },
+    {
+      "@type": "Person",
+      "@id": "https://notenrechnerapp.de/#author",
+      "name": "Jonah Röhl",
+      "jobTitle": "Entwickler",
+      "description": "Entwickler von Der Notenrechner.",
+      "url": "https://notenrechnerapp.de/#author",
+      "worksFor": {
+        "@id": "https://notenrechnerapp.de/#organization"
+      }
+    },
+    {
+      "@type": "Article",
+      "headline": "Notendurchschnitt berechnen",
+      "description": "Notendurchschnitt aus Schulnoten oder Notenpunkten berechnen. Gewichte frei wählen, schriftlich und mündlich kombinieren, Rechenweg direkt sehen.",
+      "url": "https://notenrechnerapp.de/notendurchschnitt/",
+      "datePublished": "2026-04-01",
+      "dateModified": "2026-10-20",
+      "author": {
+        "@id": "https://notenrechnerapp.de/#author"
+      },
+      "publisher": {
+        "@id": "https://notenrechnerapp.de/#organization"
+      },
+      "mainEntityOfPage": "https://notenrechnerapp.de/notendurchschnitt/",
+      "inLanguage": "de-DE"
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://notenrechnerapp.de/#app",
+      "name": "Der Notenrechner",
+      "applicationCategory": "EducationApplication",
+      "operatingSystem": "iOS, iPadOS, Android",
+      "downloadUrl": "https://apps.apple.com/de/app/der-notenrechner/id1662507346",
+      "installUrl": [
+        "https://apps.apple.com/de/app/der-notenrechner/id1662507346",
+        "https://play.google.com/store/apps/details?id=com.notenrechner.App"
+      ],
+      "offers": [
+        {
+          "@type": "Offer",
+          "name": "iPhone und iPad",
+          "price": "5.99",
+          "priceCurrency": "EUR",
+          "url": "https://apps.apple.com/de/app/der-notenrechner/id1662507346"
+        },
+        {
+          "@type": "Offer",
+          "name": "Android",
+          "price": "0",
+          "priceCurrency": "EUR",
+          "url": "https://play.google.com/store/apps/details?id=com.notenrechner.App"
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Der Notenrechner",
+          "item": "https://notenrechnerapp.de/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Notendurchschnitt-Rechner",
+          "item": "https://notenrechnerapp.de/notendurchschnitt/"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Wie viele Noten brauche ich für einen aussagekräftigen Durchschnitt?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Mathematisch funktioniert der Durchschnitt ab zwei Noten. Pädagogisch ist ein Durchschnitt aus zwei Klausuren wenig belastbar — ab vier Noten wird der Schnitt stabiler. Bei nur einer Note ist der Durchschnitt identisch mit der Note selbst."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Werden mündliche Noten anders als schriftliche bewertet?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Numerisch nicht — eine 2 ist eine 2. Sie werden aber in der Regel anders gewichtet (oft 50:50, manchmal 60:40 oder 40:60). Das Verhältnis ist länderabhängig und in den schulinternen Curricula festgelegt."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Was passiert mit 0 Notenpunkten (ungenügend) im Durchschnitt?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Eine 0 zieht den Durchschnitt mathematisch stark nach unten. In der Oberstufe gilt ein Halbjahr mit 0 Notenpunkten in einem schriftlichen Prüfungsfach als nicht erbracht — mit Versetzungs- und Zulassungsfolgen je nach Oberstufen- bzw. Abiturverordnung des Bundeslandes."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Lässt sich der Notendurchschnitt nachträglich verbessern?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Nur über zusätzliche Noten — eine weitere Klausur oder verstärkte mündliche Mitarbeit, die in den Gesamtschnitt einfließt. Eine schlechte Note streichen geht in der Regel nicht."
+          }
+        }
+      ]
+    },
+    {
+      "@type": "LearningResource",
+      "name": "Notendurchschnitt-Rechner",
+      "url": "https://notenrechnerapp.de/notendurchschnitt/",
+      "inLanguage": "de-DE",
+      "learningResourceType": "Berechnungswerkzeug",
+      "educationalUse": [
+        "Notenberechnung",
+        "Klausurbewertung",
+        "Unterrichtsvorbereitung"
+      ],
+      "audience": {
+        "@type": "EducationalAudience",
+        "educationalRole": "teacher",
+        "name": "Lehrkräfte"
+      },
+      "about": {
+        "@type": "Thing",
+        "name": "Notendurchschnitt aus Notenpunkten oder Schulnoten"
+      },
+      "isAccessibleForFree": true,
+      "author": {
+        "@id": "https://notenrechnerapp.de/#author"
+      },
+      "publisher": {
+        "@id": "https://notenrechnerapp.de/#organization"
+      }
+    }
+  ]
+}
+</script>
 
   <style>
     :root {
@@ -272,18 +308,20 @@
     .footer-tagline { font-size: 13px; color: var(--text-muted); font-style: italic; }
     .footer-copy { font-size: 13px; color: var(--text-muted); }
   </style>
+  <link rel="stylesheet" href="/assets/site-enhancements.css?v=20261020">
 </head>
 <body>
   <nav class="nav" role="navigation" aria-label="Hauptnavigation">
     <div class="nav-inner">
       <a href="/" class="nav-brand"><span class="nav-brand-icon"><img src="/assets/logo.png" alt=""></span>Der Notenrechner</a>
-      <button class="nav-toggle" id="navToggle" aria-label="Menü öffnen" aria-expanded="false"><span></span><span></span><span></span></button>
+      <a class="nav-app-mobile" href="/#app-download" aria-label="App für iPhone, iPad und Android">App</a>
+        <button class="nav-toggle" id="navToggle" aria-label="Menü öffnen" aria-expanded="false"><span></span><span></span><span></span></button>
       <ul class="nav-links" id="navLinks">
         <li><a href="/" onclick="closeMenu()">Startseite</a></li>
         <li><a href="/notenschluessel-rechner/" onclick="closeMenu()">Notenschlüssel-Rechner</a></li>
         <li><a href="/notenpunkte-tabelle/" onclick="closeMenu()">Notenpunkte-Tabelle</a></li>
         <li><a href="/ihk-notenschluessel/" onclick="closeMenu()">IHK-Rechner</a></li>
-        <li><a href="https://apps.apple.com/de/app/der-notenrechner/id1662507346" target="_blank" rel="noopener" class="nav-cta" onclick="closeMenu()" aria-label="Im App Store laden"><svg viewBox="0 0 384 512" fill="currentColor" aria-hidden="true"><path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184 4 273.5c0 26.2 4.8 53.3 14.4 81.2 12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/></svg>Laden</a></li>
+        <li><a href="/#app-download" class="nav-cta" onclick="closeMenu()" aria-label="App für iPhone, iPad und Android">App</a></li>
       </ul>
     </div>
   </nav>
@@ -298,7 +336,7 @@
         </nav>
         <div class="tool-hero-header">
           <h1>Notendurchschnitt <span>berechnen</span></h1>
-          <p class="tool-hero-sub lead-answer">Der Notendurchschnitt ist das arithmetische Mittel aus mehreren Einzelnoten — meist gewichtet nach Anzahl Klausuren oder Halbjahresnoten. Tragen Sie Ihre Noten ein und der Rechner berechnet den Schnitt sofort: in Notenpunkten (15–0), Schulnoten (1–6) oder als Dezimalnote für Bewerbungen.</p>
+          <p class="tool-hero-sub lead-answer">Ein gewichteter Notendurchschnitt berücksichtigt, wie stark jede Leistung zählt. Tragen Sie Schulnoten oder Notenpunkte ein, wählen Sie die Gewichte und sehen Sie Mittelwert und Rechenweg sofort.</p>
         </div>
 
         <div class="mode-toggle-wrap">
@@ -308,10 +346,10 @@
           </div>
         </div>
 
-        <div class="avg-calc">
+        <div class="example-actions" aria-label="Rechenbeispiele"><button type="button" data-average-example="written">Schriftlich 2 : mündlich 1</button><button type="button" data-average-example="exams">Klausuren 1 : 1 : 2</button><button type="button" data-average-example="semesters">Halbjahre 40 : 60</button></div><div class="avg-calc">
           <div class="avg-card">
             <div class="avg-rows" id="rows">
-              <!-- rows injected by JS -->
+              <noscript>Für den Rechner benötigen Sie JavaScript. Die Rechenbeispiele und die Formel stehen weiter unten.</noscript>
             </div>
             <button type="button" class="add-row-btn" id="addRow">
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
@@ -325,7 +363,7 @@
               <div class="avg-result-count" id="avgCount"></div>
             </div>
           </div>
-        </div>
+        </div><aside class="app-bridge"><strong>Sie bewerten regelmäßig eine ganze Klasse?</strong><p>In der App speichern Sie Ihre Notenschlüssel, erfassen Klausurpunkte pro Klasse und sehen Durchschnitt und Notenverteilung gemeinsam. Ihre Daten bleiben auf dem Gerät, ohne Konto und ohne Cloud.</p><p><a href="/#klassenablauf">Klassenverwaltung ansehen</a> · <a href="/#app-download">App für iPhone, iPad und Android</a> · <a href="/notenverwaltungs-apps-vergleich/">Apps für Lehrkräfte vergleichen</a></p></aside><p class="average-explanation">Gewicht 1 zählt einfach, Gewicht 2 doppelt. Gewicht 0 lässt eine Leistung aus. Alle Gewichte sind frei gewählte Beispiele; maßgeblich sind Ihre Fach- und Schulvorgaben. Eine Zeugnisnote kann zusätzlich eine pädagogische Entscheidung erfordern.</p><p id="averageFormula" class="average-explanation" aria-live="polite"></p>
       </div>
     </section>
 
@@ -340,10 +378,10 @@
           <p>In der gymnasialen Oberstufe wird mit <strong>Notenpunkten (15–0)</strong> gerechnet — die Skala hat 16 Stufen, je drei Notenpunkte ergeben eine Schulnote. Hintergrund dazu im Lexikoneintrag <a href="/lexikon/notenpunkte/">Notenpunkte</a>. In der Sekundarstufe&nbsp;I (Klassen 5–10), an Realschulen, Hauptschulen, Berufsschulen und teilweise an Gesamtschulen sind klassische <strong>Schulnoten (1–6)</strong> üblich, oft mit Tendenzen („2 plus", „3 minus") in Dezimalform. Der Rechner unterstützt beide Modi — einfach oben umschalten.</p>
 
           <h3>Halbe Noten und Tendenzen</h3>
-          <p>Im Schulnoten-Modus sind Werte mit Komma erlaubt — etwa 2,3 für die Tendenz „2 minus" oder 1,7 für „2 plus". Im Notenpunkte-Modus werden ganzzahlige Werte (0 bis 15) erwartet, weil Notenpunkte selbst keine Dezimalstellen haben. Wer einzelne Tendenzen wie „11 plus" eintragen möchte, kann das durch eine Halbschrittweite (10,5 oder 11,5) abbilden — pädagogisch sauberer ist allerdings, in der App pro Klausur einen sauberen Notenpunkt zu vergeben.</p>
+          <p>Im Schulnoten-Modus sind Kommawerte wie 2,3 oder 1,7 möglich. Im Notenpunkte-Modus können Sie Werte von 0 bis 15 eingeben, auch bereits berechnete Schnitte wie 11,5. Der Rechner rundet das Endergebnis zur Anzeige auf zwei Nachkommastellen; gerechnet wird mit den eingegebenen Werten.</p>
 
           <h2>Gewichteter Notendurchschnitt — wann ist er sinnvoll?</h2>
-          <p>Der oben implementierte Rechner ermittelt den <em>ungewichteten</em> Durchschnitt — jede Note zählt gleich viel. In der Praxis kommt das selten so vor. Drei häufige Fälle, in denen Sie gewichten müssen:</p>
+          <p>Der Rechner oben bildet einen <strong>gewichteten Durchschnitt</strong>. Bei Gewicht 1 für jede Leistung ergibt sich der einfache Mittelwert. Die Beispielschaltflächen zeigen drei frei gewählte Aufgaben; sie legen keine schulischen Vorgaben fest.</p>
 
           <h3>1. Klausuren vs. mündliche Mitarbeit</h3>
           <p>An den meisten Schulen zählt die mündliche Mitarbeit (sonstige Leistungen, SoMi) zu einem festen Anteil neben den Klausuren. Die Gewichtung ist <strong>länderabhängig und schulinterner Beschluss</strong> — gängige Verhältnisse sind 50:50 (zwei gleichwertige Säulen), 60:40 zugunsten mündlich, oder 40:60 zugunsten schriftlich. In der gymnasialen Oberstufe schreibt z.&nbsp;B. Hamburg in den Bildungsplänen ein 50:50-Verhältnis als Regelfall vor; an einzelnen Bundesländern und Schulformen weicht das ab. <strong>Klären Sie das mit Ihrer Fachkonferenz, nicht mit diesem Artikel.</strong></p>
@@ -356,7 +394,7 @@
           <p>Die <strong>Jahresnote</strong> setzt sich an vielen Schulen aus dem ersten und zweiten Halbjahr zusammen — wieder mit lokal vereinbarter Gewichtung. Häufig zählt das zweite Halbjahr stärker (z.&nbsp;B. 40:60), weil dort die Lernfortschritte aus dem ersten Halbjahr eingeflossen sein sollen. Andere Schulen rechnen 50:50. Für den Übergang in die Qualifikationsphase (Q1, Q2) sind <em>beide</em> Halbjahresnoten getrennt relevant — die Jahresnote ist hier kein zusammenfassender Rundungswert, sondern die beiden Halbjahre erscheinen separat als zwei eingebrachte Halbjahresnoten.</p>
 
           <h2>Dezimalnote für Bewerbungen</h2>
-          <p>Bewerbungen — etwa um Ausbildungs- oder Studienplätze — verlangen meist die <strong>Dezimalnote</strong>, also einen Durchschnitt im Format „2,3" statt einer Notenpunktzahl. Wenn Sie aus der Oberstufe kommen, rechnen Sie den Notenpunkte-Durchschnitt mit der Formel (17&nbsp;−&nbsp;Notenpunkte)&nbsp;÷&nbsp;3 in eine Dezimalnote um. Beispiel: 11,5 Notenpunkte → (17&nbsp;−&nbsp;11,5)&nbsp;÷&nbsp;3&nbsp;=&nbsp;1,83. Der Rechner oben zeigt diese Umrechnung automatisch unter dem Hauptergebnis an.</p>
+          <p>Notenpunkte und Dezimalnoten sind unterschiedliche Darstellungen. Eine rechnerische Orientierung für viele Werte liefert (17 − Notenpunkte) ÷ 3; die <a href="/notenpunkte-tabelle/">Notenpunkte-Tabelle</a> ordnet die einzelnen Stufen ein. Diese Orientierung ersetzt weder eine Zeugnisnote noch die Abitur-Gesamtqualifikation. Der Rechner oben zeigt den Mittelwert in der von Ihnen ausgewählten Skala.</p>
           <p>Bei reinen Schulnoten-Halbjahren (Sek&nbsp;I, Realschule, Berufsschule) ist der ungewichtete Durchschnitt aus den Fachnoten bereits die Dezimalnote. Achtung beim Zeugnis-Durchschnitt: Hier zählen typischerweise <em>alle</em> versetzungsrelevanten Fächer, nicht nur die Klausurfächer.</p>
 
           <h2>Was zählt als guter Durchschnitt?</h2>
@@ -403,22 +441,26 @@
 
     <section class="cta-banner">
       <div class="cta-banner-content">
-        <h2>Klausuren bewerten, Klassen führen, Zeugnisse berechnen.</h2>
-        <p class="cta-banner-sub">Der Notenrechner für iPhone, iPad und Android — kostenlos im App Store. Lokal, ohne Account, ohne Werbung.</p>
+        <h2>Den Notendurchschnitt einer ganzen Klasse führen.</h2>
+        <p class="cta-banner-sub">Schriftliche und mündliche Leistungen pro Klasse gewichten und über mehrere Klausuren bis zur Zeugnisnote verwalten.</p>
         <div class="cta-badges" style="display:flex;gap:14px;justify-content:center;align-items:center;flex-wrap:wrap;">
-          <a href="https://apps.apple.com/de/app/der-notenrechner/id1662507346" target="_blank" rel="noopener" class="app-store-badge">
+          <a href="https://apps.apple.com/de/app/der-notenrechner/id1662507346?pt=125935959&amp;ct=general_calculators&amp;mt=8" target="_blank" rel="noopener" class="app-store-badge">
           <span class="app-store-badge-icon"><svg viewBox="0 0 384 512"><path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184 4 273.5c0 26.2 4.8 53.3 14.4 81.2 12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/></svg></span>
           <span class="app-store-badge-text"><span class="app-store-badge-small">Laden im</span><span class="app-store-badge-large">App Store</span></span>
         </a>
-          <a href="https://play.google.com/store/apps/details?id=com.notenrechner.App" target="_blank" rel="noopener" class="app-store-badge" aria-label="Bei Google Play laden"><span class="app-store-badge-icon"><svg viewBox="0 0 512 512" aria-hidden="true"><path d="M325.3 234.3 104.6 13l280.8 161.2-60.1 60.1zM47 0C34 6.8 25.3 19.2 25.3 35.3v441.3c0 16.1 8.7 28.5 21.7 35.3l256.6-256L47 0zm425.2 225.6-58.9-34.1-65.7 64.5 65.7 64.5 60.1-34.1c18-14.3 18-46.5-1.2-60.8zM104.6 499l220.7-221.3 60.1 60.1L104.6 499z"/></svg></span><span class="app-store-badge-text"><span class="app-store-badge-small">Jetzt bei</span><span class="app-store-badge-large">Google Play</span></span></a>
+          <a href="https://play.google.com/store/apps/details?id=com.notenrechner.App&amp;referrer=utm_source%3Dnotenrechnerapp.de%26utm_medium%3Dwebsite%26utm_campaign%3Dgeneral_calculators" target="_blank" rel="noopener" class="app-store-badge" aria-label="Bei Google Play laden"><span class="app-store-badge-icon"><svg viewBox="0 0 512 512" aria-hidden="true"><path d="M325.3 234.3 104.6 13l280.8 161.2-60.1 60.1zM47 0C34 6.8 25.3 19.2 25.3 35.3v441.3c0 16.1 8.7 28.5 21.7 35.3l256.6-256L47 0zm425.2 225.6-58.9-34.1-65.7 64.5 65.7 64.5 60.1-34.1c18-14.3 18-46.5-1.2-60.8zM104.6 499l220.7-221.3 60.1 60.1L104.6 499z"/></svg></span><span class="app-store-badge-text"><span class="app-store-badge-small">Jetzt bei</span><span class="app-store-badge-large">Google Play</span></span></a>
         </div>
-      </div>
+      <p class="store-prices">iPhone &amp; iPad: 5,99 € im deutschen App Store · Android: kostenlos bei Google Play. Stand: 20.10.2026.</p>
+</div>
     </section>
   </main>
 
   <footer class="footer">
     <div class="footer-inner">
       <nav class="footer-nav" aria-label="Seitenübersicht" style="display:flex;flex-wrap:wrap;justify-content:center;gap:8px 20px;margin-bottom:16px;font-size:14px;">
+        <a href="/punkte-in-noten/">Punkte in Noten</a>
+        <a href="/fehlerquotient-berechnen/">Fehlerquotient</a>
+        <a href="/android/">Android-App</a>
         <a href="/notenschluessel-rechner/">Notenschlüssel-Rechner</a>
         <a href="/notenpunkte-tabelle/">Notenpunkte-Tabelle</a>
         <a href="/ihk-notenschluessel/">IHK-Notenschlüssel</a>
@@ -448,157 +490,8 @@
     });
     function closeMenu() { navToggle.classList.remove('active'); navLinks.classList.remove('open'); navToggle.setAttribute('aria-expanded', 'false'); }
 
-    // ─── Notendurchschnitt-Rechner ───────────────────────────────
-    let mode = 'np'; // 'np' or 'note'
-    const rowsEl = document.getElementById('rows');
-    const addRowBtn = document.getElementById('addRow');
-    const modeNP = document.getElementById('modeNP');
-    const modeNote = document.getElementById('modeNote');
-    const avgResult = document.getElementById('avgResult');
-    const avgGrade = document.getElementById('avgGrade');
-    const avgMeta = document.getElementById('avgMeta');
-    const avgCount = document.getElementById('avgCount');
-
-    // Initial 4 placeholder rows for typical semester
-    const DEFAULT_SUBJECTS_NP = ['Mathe', 'Deutsch', 'Englisch', ''];
-    const DEFAULT_VALUES_NP   = ['13', '11', '12', ''];
-    const DEFAULT_VALUES_NOTE = ['1,7', '2,3', '2,0', ''];
-
-    function gradeColor(np) {
-      if (np >= 13) return { dot: 'var(--grade-1)', bg: 'var(--grade-1-bg)', text: 'var(--grade-1)' };
-      if (np >= 10) return { dot: 'var(--grade-2)', bg: 'var(--grade-2-bg)', text: 'var(--grade-2)' };
-      if (np >=  7) return { dot: 'var(--grade-3)', bg: 'var(--grade-3-bg)', text: 'var(--grade-3)' };
-      if (np >=  4) return { dot: 'var(--grade-4)', bg: 'var(--grade-4-bg)', text: 'var(--grade-4)' };
-      return { dot: 'var(--grade-5)', bg: 'var(--grade-5-bg)', text: 'var(--grade-5)' };
-    }
-    function noteToColor(note) {
-      // For schulnote 1-6 mode: invert mapping
-      if (note <= 1.5) return { bg: 'var(--grade-1-bg)', text: 'var(--grade-1)' };
-      if (note <= 2.5) return { bg: 'var(--grade-2-bg)', text: 'var(--grade-2)' };
-      if (note <= 3.5) return { bg: 'var(--grade-3-bg)', text: 'var(--grade-3)' };
-      if (note <= 4.0) return { bg: 'var(--grade-4-bg)', text: 'var(--grade-4)' };
-      return { bg: 'var(--grade-5-bg)', text: 'var(--grade-5)' };
-    }
-    // NP integer 0-15 → trad note string
-    const NP_TO_TRAD = ['6','5-','5','5+','4-','4','4+','3-','3','3+','2-','2','2+','1-','1','1+'];
-    function npToTrad(np) {
-      const i = Math.max(0, Math.min(15, Math.round(np)));
-      return NP_TO_TRAD[i];
-    }
-    function fmt(n, places) { return Number(n).toFixed(places).replace('.', ','); }
-
-    function makeRow(subject, value) {
-      const row = document.createElement('div');
-      row.className = 'avg-row';
-      row.innerHTML = `
-        <input type="text" class="subj" placeholder="Fach (optional)" value="${subject || ''}">
-        <input type="text" class="val" inputmode="decimal" placeholder="${mode === 'np' ? '0–15' : '1–6'}" value="${value || ''}" autocomplete="off">
-        <button type="button" class="remove-btn" aria-label="Zeile entfernen">×</button>
-      `;
-      row.querySelector('.val').addEventListener('input', recalc);
-      row.querySelector('.subj').addEventListener('input', recalc);
-      row.querySelector('.remove-btn').addEventListener('click', () => {
-        if (rowsEl.children.length > 1) {
-          row.remove();
-          recalc();
-        }
-      });
-      return row;
-    }
-
-    function rebuildRows(subjects, values) {
-      rowsEl.innerHTML = '';
-      for (let i = 0; i < subjects.length; i++) {
-        rowsEl.appendChild(makeRow(subjects[i], values[i]));
-      }
-    }
-
-    function parseValue(raw) {
-      const s = (raw || '').trim().replace(',', '.');
-      if (s === '') return null;
-      const n = parseFloat(s);
-      if (isNaN(n)) return null;
-      if (mode === 'np') {
-        if (n < 0 || n > 15) return null;
-        return n;
-      } else {
-        if (n < 1 || n > 6) return null;
-        return n;
-      }
-    }
-
-    function recalc() {
-      const inputs = rowsEl.querySelectorAll('input.val');
-      const values = [];
-      inputs.forEach(inp => {
-        const v = parseValue(inp.value);
-        if (v !== null) values.push(v);
-      });
-
-      if (values.length === 0) {
-        avgResult.style.background = 'var(--border-light)';
-        avgResult.style.color = 'var(--text-muted)';
-        avgGrade.textContent = '—';
-        avgGrade.classList.add('avg-empty');
-        avgMeta.textContent = mode === 'np' ? 'Notenpunkte eingeben' : 'Schulnoten eingeben';
-        avgCount.textContent = '';
-        return;
-      }
-
-      const sum = values.reduce((a, b) => a + b, 0);
-      const avg = sum / values.length;
-      avgGrade.classList.remove('avg-empty');
-
-      if (mode === 'np') {
-        const c = gradeColor(avg);
-        avgResult.style.background = c.bg;
-        avgResult.style.color = c.text;
-        // Show: NP avg as e.g. "11,5" big, then trad + decimal note line
-        const decimal = (17 - avg) / 3;
-        avgGrade.textContent = fmt(avg, 1);
-        avgMeta.textContent = '≈ Note ' + npToTrad(avg) + ' · Dezimal ' + fmt(decimal, 2);
-      } else {
-        const c = noteToColor(avg);
-        avgResult.style.background = c.bg;
-        avgResult.style.color = c.text;
-        avgGrade.textContent = fmt(avg, 2);
-        // Determine label
-        let label = 'ungenügend';
-        if (avg <= 1.5) label = 'sehr gut';
-        else if (avg <= 2.5) label = 'gut';
-        else if (avg <= 3.5) label = 'befriedigend';
-        else if (avg <= 4.0) label = 'ausreichend';
-        else if (avg <= 5.0) label = 'mangelhaft';
-        avgMeta.textContent = label;
-      }
-      avgCount.textContent = values.length === 1 ? '(aus 1 Note)' : '(aus ' + values.length + ' Noten)';
-    }
-
-    // Mode toggle
-    function setMode(newMode) {
-      if (mode === newMode) return;
-      mode = newMode;
-      modeNP.classList.toggle('active', mode === 'np');
-      modeNote.classList.toggle('active', mode === 'note');
-      modeNP.setAttribute('aria-selected', String(mode === 'np'));
-      modeNote.setAttribute('aria-selected', String(mode === 'note'));
-      // Reset rows with appropriate defaults
-      rebuildRows(DEFAULT_SUBJECTS_NP, mode === 'np' ? DEFAULT_VALUES_NP : DEFAULT_VALUES_NOTE);
-      recalc();
-    }
-    modeNP.addEventListener('click', () => setMode('np'));
-    modeNote.addEventListener('click', () => setMode('note'));
-
-    addRowBtn.addEventListener('click', () => {
-      rowsEl.appendChild(makeRow('', ''));
-      // Focus the new value input
-      const newRow = rowsEl.lastElementChild;
-      newRow.querySelector('.val').focus();
-    });
-
-    // Initial render
-    rebuildRows(DEFAULT_SUBJECTS_NP, DEFAULT_VALUES_NP);
-    recalc();
   </script>
+  <script src="/assets/calculations.js"></script>
+  <script src="/assets/average.js"></script>
 </body>
 </html>
